@@ -1,0 +1,10 @@
+/* print document stylesheet for greenstone. */
+
+@import "preview-document.css";
+
+ul.printmessage{
+  display:none; 
+}
+
+
+

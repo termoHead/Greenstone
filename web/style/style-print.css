@@ -1,0 +1,97 @@
+/* printer stylesheet for greenstone. */
+
+/* black text on white */
+body {
+  background: #ffffff;
+  color: #000000;
+}
+
+/* a:visited { color: #666633; } */
+
+a { border: 0; }
+
+img.link { border: 0; }
+
+/* for unesco/human info etc logos on home page */
+img.logo {
+  border: 0;
+  float: right;
+  margin-left: 10px;
+}
+
+/* this contains everything - all the other divs */
+#page {
+/*  width: 537px; */
+  margin-left: 80px;
+  margin-right: 30px;
+}
+
+/* the collection image and home/help/prefs links at the top */
+#banner {
+  display: none;
+}
+
+/* blankiconbar */
+div.section p.bar {
+  text-align: center;
+}
+p.bar img {
+  text-align: center;
+  height: 17px;
+/* can't do this, it will stretch the "select a collection" text */
+/*  width: 90%; */
+}
+div.navbar {
+  display: none;
+}
+p.navbar {
+  text-align: center;
+  font-family: arial;
+  font-size: 10pt;
+  font-weight: bold;
+}
+span.navlink {
+  vertical-align: top;
+  background-image: url("/web/images/bg_off.png");
+  padding: 0 10px;
+}
+span.navlink_sel {
+  vertical-align: top;
+  background-image: url("/web/images/bg_selected.png");
+  padding: 0 10px;
+}
+span.navlink:hover {
+  background-image: url("/web/images/bg_on.png");
+}
+
+span.navlink a {
+  color: blue; /* for debugging... set to black */
+  text-decoration: none;
+}
+
+div.queryform {
+  text-align: center;
+}
+span.textselect { white-space: nowrap; }
+
+
+div.section p {
+  text-align: justify;
+/*  border: solid blue 2px; /* */
+}
+
+/* for a=d (document) */
+div.doc_buttons {
+  display: none;
+}
+
+/* for the home page - auto-generated _homeextra_ macro */
+table.collections {
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  /* centres a block element for gecko and opera. (IE 5.5 needs parent
+   * text-align) */
+  margin-left:auto; margin-right:auto;
+}
+

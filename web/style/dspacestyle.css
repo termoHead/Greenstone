@@ -1,0 +1,479 @@
+
+
+
+
+
+
+
+A { color: #336699 }
+
+BODY { font-family: "verdana", Arial, Helvetica, sans-serif;
+       font-size: 10pt;
+       font-style: normal;
+       color: #000000;
+       background: #ffffff;
+       margin: 0;
+       padding: 0 }
+
+/*       background: #bbbbbb; */
+
+H1 { margin-left: 10px;
+     margin-right: 10px;
+     font-size: 16pt;
+     font-weight: bold;
+     font-style: normal;
+     font-family: "verdana", "Arial", "Helvetica", sans-serif;
+     color: #336699 }
+
+H2 { margin-left: 10px;
+     margin-right: 10px;
+     font-size: 14pt;
+     font-style: normal;
+     font-family: "verdana", "Arial", "Helvetica", sans-serif;
+     color: #336699 }
+
+H3 { margin-left: 10px;
+     margin-right: 10px;
+     font-size: 12pt;
+     font-weight: bold;
+     font-family: "verdana", "Arial", "Helvetica", sans-serif;
+     color: black }
+
+p {  margin-left: 10px;
+     margin-right: 10px;
+     font-family: "verdana", "Arial", "Helvetica", sans-serif;
+     font-size: 10pt }
+
+UL { font-family: "verdana", "Arial", "Helvetica", sans-serif;
+     font-size: 10pt }
+
+
+
+.standard { margin-left: 10px;
+            margin-right: 10px;
+            font-family: "verdana", "Arial", "Helvetica", sans-serif;
+            font-size: 10pt }
+
+.pageBanner { width: 100%;
+              border: 0;
+              margin: 0;
+              background: #ffffff;
+              color: #000000;
+              padding: 0;
+              vertical-align: middle }
+
+.tagLine { vertical-align: bottom;
+           padding: 10px;
+           border: 0;
+           margin: 0;
+           background: #ffffff;
+           color: #ff6600 }
+
+.tagLineText { background: #ffffff;
+               color: #ff6600;
+               font-size: 10pt;
+               font-weight: bold;
+               border: 0;
+               margin: 0 }
+
+.stripe { background: #336699 url(/dspace/image/stripe.gif) repeat-x;
+          vertical-align: top;
+          border: 0;
+          padding: 0;
+          margin: 0;
+          color: #ffffff }
+
+.locationBar { font-size: 10pt;
+               font-family: "verdana", "Arial", "Helvetica", sans-serif;
+               text-align: left }
+
+.centralPane { margin: 1px;
+               vertical-align: top;
+               padding: 3px;
+               border: 0 }
+
+
+
+
+
+
+
+.pageContents { FONT-FAMILY: "verdana", Arial, Helvetica, sans-serif;
+                background: white;
+                color: black;
+                vertical-align: top;
+                width: 100% }
+
+.navigationBarTable{ width: 100%;
+                     padding: 2px;
+                     margin: 2px;
+                     border: 0 }
+
+.navigationBar { font-family: "verdana", "Arial", "Helvetica", sans-serif;
+                 font-size: 10pt;
+                 font-style: normal;
+                 font-weight: bold;
+                 color: #252645;
+                 text-decoration: none;
+                 background: white }
+
+.navigationBarSublabel{  font-family: "verdana", "Arial", "Helvetica", sans-serif;
+                         font-size: 12pt;
+                         font-style: normal;
+                         font-weight: bold;
+                         color: black;
+                         text-decoration: none;
+                         background: white;
+                         white-space: nowrap }
+
+
+
+
+
+.navigationBarItem { font-family: "verdana", "Arial", "Helvetica", sans-serif;
+                     font-size: 10pt;
+                     font-style: normal;
+                     font-weight: normal;
+                     color: #252645;
+                     background: #ffffff;
+                     text-decoration: none;
+                     vertical-align: middle;
+                     white-space: nowrap }
+
+.loggedIn { font-family: "verdana", "Arial", "Helvetica", sans-serif;
+            font-size: 8pt;
+            font-style: normal;
+            font-weight: normal;
+            color: #882222;
+            background: #ffffff }
+
+.pageFooterBar { width: 100%;
+                 border: 0;
+                 margin: 0;
+                 padding: 0;
+                 background: #ffffff;
+                 color: #000000;
+                 vertical-align: middle }
+
+.pageFootnote { font-family: "verdana", "Arial", "Helvetica", sans-serif;
+                font-size: 10pt;
+                font-style: normal;
+                font-weight: normal;
+                background: #ffffff;
+                color: #252645;
+                text-decoration: none;
+                text-align: left;
+                vertical-align: middle;
+                margin-left: 10px;
+                margin-right: 10px }
+
+.sidebar { background: #ffffff;
+           color: #000000 }
+
+.communityLink { font-family: "verdana", "Arial", "Helvetica", sans-serif;
+                 font-size: 14pt;
+                 font-weight: bold }
+
+.communityDescription { margin-left: 20px;
+                        margin-right: 10px;
+                        font-family: "verdana", "Arial", "Helvetica", sans-serif;
+                        font-size: 10pt;
+                        font-weight: normal;
+                        list-style-type: none }
+
+.collectionListItem { font-family: "verdana", "Arial", "Helvetica", sans-serif;
+                      font-size: 12pt;
+                      font-weight: normal }
+
+.collectionDescription { margin-left: 20px;
+                     margin-right: 10px;
+                     font-family: "verdana", "Arial", "Helvetica", sans-serif;
+                     font-size: 10pt;
+                         font-weight: normal;
+                     list-style-type: none }
+
+.miscListItem { margin-left: 20px;
+                margin-right: 10px;
+                font-family: "verdana", "Arial", "Helvetica", sans-serif;
+                font-size: 12pt;
+                list-style-type: none }
+
+.copyrightText { margin-left: 20px;
+                 margin-right: 20px;
+                 text-align: center;
+                 font-style: italic;
+                 font-family: "verdana", "Arial", "Helvetica", sans-serif;
+                 font-size: 10pt;
+                 list-style-type: none }
+
+.browseBarLabel { font-family: "verdana", "Arial", "Helvetica", sans-serif;
+                  font-size: 10pt;
+                  font-style: normal;
+                  font-weight: bold;
+                  color: #000000;
+                  background: #ffffff;
+                  vertical-align: middle;
+                  text-decoration: none }
+
+.browseBar { font-family: "verdana", "Arial", "Helvetica", sans-serif;
+             font-size: 12pt;
+             font-style: normal;
+             font-weight: bold;
+             background: #ffffff;
+             color: #252645;
+             vertical-align: middle;
+             text-decoration: none }
+
+.itemListCellOdd { font-family: "verdana", "Arial", "Helvetica", sans-serif;
+                   font-size: 12pt;
+                   font-style: normal;
+                   font-weight: normal;
+                   color: #000000;
+                   vertical-align: middle;
+                   text-decoration: none;
+                   background: #ffffff }
+
+
+.itemListCellEven { font-family: "verdana", "Arial", "Helvetica", sans-serif;
+                    font-size: 12pt;
+                    font-style: normal;
+                    font-weight: normal;
+                    color: #000000;
+                    vertical-align: middle;
+                    text-decoration: none;
+                    background: #eeeeee }
+
+.itemListCellHilight { font-family: "verdana", "Arial", "Helvetica", sans-serif;
+                       font-size: 12pt;
+                       font-style: normal;
+                       font-weight: normal;
+                       color: #000000;
+                       vertical-align: middle;
+                       text-decoration: none;
+                       background: #ddddff }
+
+.topNavLink { margin-left: 10px;
+          margin-right: 10px;
+          font-family: "verdana", "Arial", "Helvetica", sans-serif;
+          font-size: 10pt;
+          text-align: center }
+
+.submitFormLabel { margin-left: 10px;
+           margin-right: 10px;
+           font-family: "verdana", "Arial", "Helvetica", sans-serif;
+                   font-weight: bold;
+           font-size: 10pt;
+           text-align: right }
+
+.submitFormHelp {  margin-left: 10px;
+           margin-right: 10px;
+           font-family: "verdana", "Arial", "Helvetica", sans-serif;
+           font-size: 8pt;
+           text-align: center }
+
+.submitFormWarn {  margin-left: 10px;
+           margin-right: 10px;
+           font-family: "verdana", "Arial", "Helvetica", sans-serif;
+           font-weight: bold;
+           font-size: 12pt;
+           color: #ff6600;
+           text-align: center }
+
+.uploadHelp { margin-left: 20px;
+              margin-right: 20px;
+              font-family: "verdana", "Arial", "Helvetica", sans-serif;
+              font-size: 10pt;
+              text-align: left }
+
+.submitFormDateLabel {  margin-left: 10px;
+                        margin-right: 10px;
+                        font-family: "verdana", "Arial", "Helvetica", sans-serif;
+                        font-size: 10pt;
+                        font-style: italic;
+                        text-align: center }
+
+.submitProgressTable{ margin: 0;
+                      padding: 0;
+                      border: 0;
+                      vertical-align: top;
+                      text-align: center;
+                      white-space: nowrap }
+
+.submitProgressButton{ border: 0 }
+
+.miscTable { font-family: "verdana", "Arial", "Helvetica", sans-serif;
+             font-size: 12pt;
+             font-style: normal;
+             font-weight: normal;
+             color: #000000;
+             vertical-align: middle;
+             text-decoration: none;
+             background: #cccccc }
+
+.miscTableNoColor { font-family: "verdana", "Arial", "Helvetica", sans-serif;
+             font-size: 12pt;
+             font-style: normal;
+             font-weight: normal;
+             color: #000000;
+             vertical-align: middle;
+             text-decoration: none;
+             background: #ffffff }
+
+
+
+
+
+.oddRowOddCol{ font-family: "verdana", "Arial", "Helvetica", sans-serif;
+               font-size: 12pt;
+               font-style: normal;
+               font-weight: normal;
+               color: #000000;
+               vertical-align: middle;
+               text-decoration: none;
+               background: #ffffff;
+               padding: 3px }
+
+.evenRowOddCol{ font-family: "verdana", "Arial", "Helvetica", sans-serif;
+                font-size: 12pt;
+                font-style: normal;
+                font-weight: normal;
+                color: #000000;
+                vertical-align: middle;
+                text-decoration: none;
+                background: #eeeeee;
+                padding: 3px  }
+
+.oddRowEvenCol{ font-family: "verdana", "Arial", "Helvetica", sans-serif;
+                font-size: 12pt;
+                font-style: normal;
+                font-weight: normal;
+                color: #000000;
+                vertical-align: middle;
+                text-decoration: none;
+                background: #eeeeee;
+                padding: 3px  }
+
+.evenRowEvenCol{ font-family: "verdana", "Arial", "Helvetica", sans-serif;
+                 font-size: 12pt;
+                 font-style: normal;
+                 font-weight: normal;
+                 color: #000000;
+                 vertical-align: middle;
+                 text-decoration: none;
+                 background: #dddddd;
+                 padding: 3px  }
+
+.highlightRowOddCol{ font-family: "verdana", "Arial", "Helvetica", sans-serif;
+                     font-size: 12pt;
+                     font-style: normal;
+                     font-weight: normal;
+                     color: #000000;
+                     vertical-align: middle;
+                     text-decoration: none;
+                     background: #ccccee;
+                     padding: 3px }
+
+.highlightRowEvenCol{ font-family: "verdana", "Arial", "Helvetica", sans-serif;
+                      font-size: 12pt;
+                      font-style: normal;
+                      font-weight: normal;
+                      color: #000000;
+                      vertical-align: middle;
+                      text-decoration: none;
+                      background: #bbbbcc;
+                      padding: 3px }
+
+.itemDisplayTable{ text-align: center;
+                   border: 0;
+                   color: #000000 }
+
+.metadataFieldLabel{ font-family: "verdana", "Arial", "Helvetica", sans-serif;
+                     font-size: 12pt;
+                     font-style: normal;
+                     font-weight: bold;
+                     color: #000000;
+                     vertical-align: top;
+                     text-align: right;
+                     text-decoration: none;
+                     white-space: nowrap;
+                     padding: 3px }
+
+.metadataFieldValue{ font-family: "verdana", "Arial", "Helvetica", sans-serif;
+                     font-size: 12pt;
+                     font-style: normal;
+                     font-weight: normal;
+                     color: #000000;
+                     vertical-align: top;
+                     text-align: left;
+                     text-decoration: none;
+                     padding: 3px }  
+
+.recentItem { margin-left: 10px;
+              margin-right: 10px;
+              font-family: "verdana", "Arial", "Helvetica", sans-serif;
+              font-size: 10pt }
+
+.searchBox { font-family: "verdana", "Arial", "Helvetica", sans-serif;
+             font-size: 10pt;
+             font-style: normal;
+             font-weight: bold;
+             color: #000000;
+             vertical-align: middle;
+             text-decoration: none;
+             background: #fefecd;
+             padding: 0;
+             border: 0;
+             margin: 0 }
+
+.searchBoxLabel { font-family: "verdana", "Arial", "Helvetica", sans-serif;
+                  font-size: 10pt;
+                  font-style: normal;
+                  font-weight: bold;
+                  color: #000000;
+                  background: #fefecd;
+                  text-decoration: none;
+                  vertical-align: middle }
+
+.searchBoxLabelSmall { font-family: "verdana", "Arial", "Helvetica", sans-serif;
+                  font-size: 8pt;
+                  font-style: normal;
+                  font-weight: bold;
+                  color: #000000;
+                  background: #fefecd;
+                  text-decoration: none;
+                  vertical-align: middle }
+
+.help {font-family: "verdana", "Arial", "Helvetica", sans-serif;
+        background: #ffffff;
+        margin-left:10px;}
+
+.help h2{text-align:center;
+                font-size:18pt;
+                color:#000000;}
+
+.help h3{font-weight:bold;
+         margin-left:0px;}
+
+.help h4{font-weight:bold;
+         font-size: 10pt;
+         margin-left:5px;}
+
+.help h5{font-weight:bold;
+         margin-left:10px;
+         line-height:.5;}
+
+.help p {font-size:10pt;}
+
+.help table{margin-left:8px;
+            width:90%;}
+
+.help table.formats{font-size:10pt;}
+
+.help ul {font-size:10pt;}
+
+.help p.bottomLinks {font-size:10pt;
+                    font-weight:bold;}
+
+.help td.leftAlign{font-size:10pt;}
+.help td.rightAlign{text-align:right;
+                    font-size:10pt;}

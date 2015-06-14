@@ -1,0 +1,55 @@
+/* print document stylesheet for greenstone. */
+
+/* black text on white */
+body {
+  background: #ffffff;
+  color: #000000;
+}
+
+
+a { border: 0; }
+
+img.link { border: 0; }
+
+/* this contains everything - all the other divs */
+#page {
+  margin: 0 2em 0 2em;  
+}
+
+/* the collection image and home/help/prefs links at the top */
+div#banner, div.navbar, div.searchresults,div.heading_image,div.buttons,div.navarrowsbottom{
+  display:none;
+}
+
+ul.printmessage{
+  margin: 1em 0 1em 0;
+  padding:0;
+  color: blue;
+  font-family: sans-serif, arial, helvetica;
+  font-size: 14px;
+  font-weight: bold;
+  list-style-type:none; 
+  text-decoration:underline;
+  width: 30%;
+}
+
+ul.printmessage li{
+  margin: .3em 0 .3em 0;
+  padding:0;
+  cursor:pointer;
+}
+
+
+table.v_list img.icon {
+   border: none;
+   padding:0;
+   margin:0;
+}
+
+table.v_list {
+ font-size: 16px;
+ font-family:arial, helvetica;
+}
+
+
+

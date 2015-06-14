@@ -1,0 +1,368 @@
+/* default stylesheet for greenstone. */
+
+body {
+  background-color: #ffffff;
+}
+
+/* bg image set in style macro */
+body.bgimage { }
+
+a:link { color: #006666; } 
+
+a:hover { color: #cc9900; }
+
+a:visited { color: #666633; } 
+
+img.link { border: 0; }
+
+/* for unesco/human info etc logos on home page */
+img.logo {
+  border: 0;
+  float: right;
+  margin-left: 10px;
+}
+
+
+/* this contains everything - all the other divs */
+#page {
+  margin-left: 80px;
+  margin-right: 30px;
+}
+
+
+#banner {
+  margin: 0 0 5px 0;
+  padding:0;
+ 
+}
+
+/* this div contains the bannerlinks and bannertitle paragraphs */
+div.pageinfo {
+  float: right;
+  text-align: right;
+  padding: 0;
+  margin:0 0 3px 0;	
+  width: 50%;
+}
+
+/* home, help, preferences links */
+p.bannerlinks {
+  font-family: sans-serif, arial, helvetica;
+  font-size: 10pt;
+  font-weight: bold;
+  margin:0;
+  padding:0;
+}
+
+/* the title set by the receptionist based on the page action */
+p.bannertitle {
+  font-family: sans-serif, arial, helvetica;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0 0 0;
+  text-transform: lowercase;
+  white-space: nowrap;
+  padding: 6px 2px 10px 0px;
+  background-repeat: repeat-y;
+  background-position: top right; 
+ }
+
+p.collectiontitle {
+  font-family: sans-serif, arial, helvetica;
+  font-size: 24px;
+  font-weight: bold;
+  white-space: nowrap;
+  padding: 8px 0px 12px 2px;
+  background-repeat: repeat-y;
+  background-position: top left; 
+  margin:0;
+}
+
+a.collectiontitle {
+  color: black;
+  text-decoration: none;
+}
+
+/* the image for the collection, shown in the banner */
+div.collectimage {
+  text-align: left;
+  float: left;
+  width: 45%;
+  padding:0;
+  margin:0;
+}
+/* make sure this is shown under the other divs (which may be floating) */
+div.bannerextra {
+   clear: both;
+}
+
+/* blankiconbar */
+div.section p.bar {
+  text-align: center;
+}
+
+
+
+/* bg image set in style macro */
+div.navbar {
+  min-width: 500px;
+  white-space: nowrap;
+  font-family: sans-serif, arial, helvetica;
+  font-size: 10pt;
+  font-weight: bold;
+  text-transform: lowercase;
+  border: 0;
+  width: 100%; /* for ns4 */
+}
+
+
+/* bg image set in style macro */
+div.divbar { /* for "select a collection" */
+  font-family: arial;
+  font-size: 10pt;
+  font-weight: bold;
+  border: 0;
+  width: 100%; /* for ns4 */
+}
+
+
+p.navbar { /* opt navbar text inside a divbar div */
+  text-align: center; 
+  margin: 0;
+}
+
+/* bg image set in style macro */
+a.navlink {
+  vertical-align: top; 
+  padding: 0 10px; 
+  color: black;
+  text-decoration: none;
+}
+
+/* bg image set in style macro */
+a.navlink_sel {
+  vertical-align: top;
+  padding: 0 10px;
+  color: black;
+  text-decoration: none;
+}
+
+a.navlink:visited {
+  color: black;
+}
+
+/* for the nav_ns4.dm macro only (for netscape4 support) */
+a.navlink_ns4 {
+  background-color: #e8d9b1;
+}
+
+a.navlink_sel_ns4 {
+  background-color: #96c19b;
+}
+
+span.highlight {
+  background: #ffff77;
+}
+
+/* content inside the pages */
+img.icon { border: 0; }
+
+span.textselect { 
+  white-space: nowrap;
+}
+
+span.textselect select { 
+  text-transform: lowercase;
+}
+
+div.document {
+ padding: .2em 0 0 0;
+ clear: both;
+}
+
+div.documenttext { clear: both; } /* come after any floating divs */
+
+ul#searchresults{
+  list-style-type: none;
+  margin: 0 0 .2em 0;
+  padding:0;
+  overflow: hidden;
+}
+
+ul#searchresults li{
+  margin: 0; 
+  padding: 2px 0 2px 0;
+  font-size: 11px;
+  font-weight: bold;	
+  width: 160px;
+  background-color:#f7e7c5;
+  text-align:center; 
+}
+ 
+li#nextresult{
+  float:right;
+}
+
+li#prevresult{
+  float:left;
+}
+
+
+ul#searchresults li a {
+  margin:0;	 
+  padding:0;
+  text-decoration: none;
+  color: black;
+}
+
+
+div.warning { /* eg expanding more than 10 sections in table of contents */
+}
+div.warning div.buttons { float: right; } /* continue button */
+
+div.heading_image {
+ float: left;
+
+ } /* optional cover image */
+
+div.heading_title {
+ font-size: 14pt;
+ } /* alternate to cover image */
+
+div.document div.buttons {
+   /* anything that holds buttons... toc_buttons but also continue button */
+   width: 100px; /* each button (inside its own div) can overflow this */
+}
+div#toc_buttons { /* expand/contract etc "buttons" */
+  clear: left; /* don't put next to another float on our left-hand side */
+  float: left;
+  margin: 0 15px 5px 0; 
+}
+
+div.button {
+  font-size: 11px;
+  font-weight: bold;
+  background: #f7e7c5;
+  margin: 1px;
+  border: 1px solid #eeddbb;
+  text-align: center;
+  vertical-align: middle;
+  width: 110px;
+}
+
+*>div.button { /* for other browsers - IE6 doesn't apply this */
+  height: auto;
+  width: auto;
+  min-width: 110px;
+}
+
+span.button {}
+span.button a { text-decoration: none; color: black; }
+span.button a:hover { /* IE6 doesn't do :hover for things that aren't <A> */
+  background: #eeddbb;
+}
+
+div.homebutton {
+  font-size: 11px;
+  font-weight: bold;
+  background: #f7e7c5;
+  margin: 1px;
+  border: 1px solid #eeddbb;
+  text-align: center;
+  vertical-align: middle;
+  width: 110px;
+  height: 30px;
+}
+
+div.section p {
+  text-align: justify;
+}
+
+/* for the home page - auto-generated _homeextra_ macro */
+table.collections {
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  /* centres a block element for gecko and opera. (IE 5.5 needs parent
+   * text-align) */
+  margin-left:auto; margin-right:auto;
+}
+
+/* collections that have a logo should have a border around them */
+table.collections img {
+  border: 1px solid;
+}
+
+/* collector bar */
+table.wizardbar {
+   text-align: center;
+   vertical-align: middle;
+}
+		       
+td.wizardbargreen {
+   background-color: #96BE9C;
+}
+td.wizardbaryellow {
+   background-color: #EEE8AA;
+}
+td.wizardbargrey {
+   background-color: #D3D3D3;
+}
+
+table.wizardbar a {
+  color: black;
+  text-decoration: none;
+}
+
+table.wizardbar a:visited {
+  color: black;
+}
+
+
+span.date_list_year {
+  font-weight: bold;
+}
+span.date_list_month {
+  font-weight: bold;
+}
+
+.h_item {
+    text-transform:uppercase;
+}
+
+#toc_top.v_list {
+    text-transform:capitalize;
+}
+
+/* User comments area: display of existing user comments and display of the form and of the add user/logout links */
+
+#usercomments, #usercommentform, #usercommentlink a, #usercommentlogoutlink a {
+    font-family: sans-serif;
+    font-size: 12px;
+}
+
+#usercomments {
+    margin: 10px 0;
+}
+
+.usercommentheading {
+    font-weight: bold;
+    color: #006666;
+    border-top: solid 1px black;
+}
+
+.usercomment {
+    margin: 10px 0;
+}
+
+#usercommentlink, #usercommentlogoutlink {
+    margin: 10px 0 20px 0;
+}
+
+#usercommentlink a, #usercommentlogoutlink a {
+ text-decoration: none;
+ font-weight: bold;
+}
+#usercommentlink a:visited, #usercommentlogoutlink a:visited {
+    color: #006666;
+}

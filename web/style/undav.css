@@ -1,0 +1,95 @@
+/* CSS Document */
+@font-face {
+    font-family: 'fira_sansextralight';
+    src: url('/greenstone/web/fonts/firasans-extralight-webfont.eot');
+    src: url('/greenstone/web/fonts/firasans-extralight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/greenstone/web/fonts/firasans-extralight-webfont.woff2') format('woff2'),
+         url('/greenstone/web/fonts/firasans-extralight-webfont.woff') format('woff'),
+         url('/greenstone/web/fonts/firasans-extralight-webfont.ttf') format('truetype'),
+         url('/greenstone/web/fonts/firasans-extralight-webfont.svg#fira_sansextralight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+	 -webkit-font-smoothing: antialiased;
+
+}
+body{ color: #333}
+.sloganP1, .sloganP2{font-size:28px; line-height:28px}
+.sloganP1{color:#1c3259}
+.sloganP2{color:#8cbade}
+header{clear:both; height:130px}
+
+.carousel-inner{overflow:visible !important; }
+.navbar-brand{padding-top:0;}
+.navbar-nav{margin-top: 36px !important}
+ul.navbar-right a{border-radius: 0!important;border: 0!important; background:transparent !important; color:#999 !important}
+.navbar-nav a{border-radius: 10px;border: 2px solid #8abae0}
+.navbar-nav a{border-radius: 10px;border: 2px solid #8abae0;  background:#8abae0; color:#fff !important; font-weight: 700;margin-right: 0.5em;}
+.navbar-nav a:hover{color:#8abae0 !important}
+.navbar-nav > li > a { padding:4px !important; margin;0}
+.navbar-default{background-image: none !important;	border-radius: 0;box-shadow: none !important;	background-color: transparent !important;	border-color: transparent  !important}
+.glyphicon-home::before,.glyphicon-home::after { display:none}
+#miSlider{position:relative; widows:100%; height: auto; background-color:#eee}
+.slider-inner .item { width: 565px !important ; float:left}
+.slider-inner{width:9000px; height:363px; position: relative;}
+.slogan{margin:10px 0 25px 0}
+.tituloCentrado{ text-align:center;color:#1c3259; font-size:18px; margin:30px 0 10px 0;font-family:'fira_sansextralight', 'Fira Sans', sans-serif !important;}
+.nuevas .tarjeta p.labelA{display:block; text-align:left; padding: 10px 10px 10px 25px ; color:#fff}
+.nuevas .tarjeta p,.nuevas .tarjeta h3{padding-left:25px;padding-right: 10px;font-family:'fira_sansextralight', 'Fira Sans', sans-serif !important;}
+.nuevas .tarjeta h3{font-size:18px; color:#1a3c69;}
+.nuevas .tarjeta p{font-size:14px; color:#3e3e3e}
+.nuevas .tarjeta a{color:#757575;font-size:12px}
+.nuevas .tarjeta{ box-shadow: 1px 1px 10px 1px #dadada;}
+.pie{background-color:#f4f4f4; margin-top35px; border-top:8px solid #1a3c69;font-size:12px ;font-family:'fira_sansextralight', 'Fira Sans', sans-serif !important;margin-top: 31px;}
+.pie .pieAlto ul{ float: left;width: 50%;padding-top: 30px;}
+.pie .pieAlto a{color:#62708b; font-size:14px}
+.pie li{list-style: none}
+.pie a{color:#7a7a7a; font-size:14px}
+.pieBajo {margin-top:31px}
+.pieBajo ul{ border-left:1px solid #c4c6c6}
+.pieBajo ul.instit {border-left:0; padding-left:35px; padding-left: 48px; color: #1b3d83; font-size:16px}
+.pieAlto .contactos{text-align: right}
+.pieAlto .telefonos{ padding-right:52px}
+.colecciones a,.colecciones p,
+.colecciones h1,.colecciones h3,
+.departamentos  a,.departamentos h1,
+.departamentos h3, .departamentos p{font-family:'fira_sansextralight', 'Fira Sans', sans-serif !important;}
+.colecciones h1 {padding-left:28px;}
+.departamentos h3 span{display:block; font-size:12px; color:#999}
+.departamentos .row{ margin-bottom:15px}
+.departamentos h3{margin-top:23px;    padding-left: 16px;}
+.departamentos h6{margin-top:15px;}
+.colecciones h1,
+.departamentos h1,
+.tematicas h1{ color:#4c9ad8; font-size:34px}
+.departamentos h1{padding-left: 30px;}
+.tematicas h1{padding-left: 0;}
+.departamentos p.descripcion{padding-left:20px; border-left:2px solid #99ccff;}
+.tematicas a{color:#fff}
+.tematicas .col-md-3{margin-bottom:16px}
+.tematicas h3{ height: 88px; margin:8px 0 0 0; font-family:'Fira Sans',"fira_sansextralight", sans-serif; font-size:1.1em}
+.tematicas h3 span{display: block; }
+.tematicas .wrap{padding: 0 1.3em 0 1.3em;;}
+.tematicas .wrap img {margin-left:-1.3em;width:118% }
+.tematicas  .row{padding-left:30px}
+.tematicas .tema_arteIndustrial .wrap{ background-color:#4599c3;}
+.tematicas .tema_derecho .wrap{ background-color:#392626;}
+.tematicas .tema_econo .wrap{ background-color:#873e35}
+.tematicas .tema_conservacion .wrap{ background-color:#809879}
+.tematicas .tema_inge .wrap{ background-color:#873e35}
+.tematicas .tema_trabajo  .wrap{ background-color:#687ca1}
+.tematicas .tema_estado .wrap{ background-color:#c45c26}
+.tematicas .tema_arte .wrap{ background-color:#7c6054}
+.tematicas .tema_actiFisica  .wrap{ background-color:#a5c1dd}
+.tematicas .tema_actiFisica h3 a{color:#3c5c6c}
+.tematicas .tema_arq  .wrap{ background-color:#d48830}
+.tematicas .tema_historia .wrap{ background-color:#c9b64c}
+.tematicas .tema_salud  .wrap{ background-color:#edcc49}
+.tematicas .tema_medios  .wrap{ background-color:#c9b64c}
+.tematicas .tema_turismo  .wrap{ background-color:#5b7782}
+.tematicas .tema_salud h3 a,
+.tematicas .tema_historia h3 a{color:#7f0100}
+.tematicas .tema_medios h3 a{color:#141d28}
+.tematicas .colCell{width: auto; margin: .5em; height:217px; overflow:hidden;}
+.tematicas .colCell{box-sizing: content-box !important;}
+#grillado{position: relative;}
+
