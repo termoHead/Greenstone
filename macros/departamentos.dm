@@ -7,9 +7,8 @@ _content_ {
    	 <h1>Departamentos</h1>
     </div>
     <div class="row">
-		<div class="col-md-4 col-sm-5" >
-			
-			<h3><span>Departamento de</span><a href="#">Ciencias Ambientales</a></h3>
+		<div class="col-md-4 col-sm-5" >			
+			<h3><span>Departamento de</span><a href="?p=depto&area=Ciencias+Ambientales">Ciencias Ambientales</a></h3>
 		</div>
 		<div class="col-md-7 col-sm-5">
 	        <div class="wrapp">

@@ -24,7 +24,7 @@ _regformlist_ {}
 _sqladvformlist_ {}
 _sqlregformlist_ {}
 #_fqfselection_ {}
-
+_pablo_{HOLMANSÑALKÑLKAÑDLKAÑLKSDA}
 
 #######################################################################
 # icons
@@ -787,12 +787,10 @@ _If_(_searchhistorylist_,<center>_searchhistorybar_</center><br>
 _searchhistorylist_
 </center>)
 _If_(_cgiargq_,_queryresultsbar_
-<small>
-_freqmsg_
-_textpostprocess_
-_If_(_stopwordsmsg_,(_stopwordsmsg_))</small><br />
+<small>_freqmsg__textpostprocess__If_(_stopwordsmsg_,(_stopwordsmsg_))</small><br />
 _resultline_
 ,<div class="divbar">&nbsp;</div>)
+ 
 }
 
 _selectqueryform_{_If_("_cgiargqt_" ge "1",_fieldqueryform_,_queryform_)}
@@ -813,46 +811,20 @@ _optdatesearch_
 }
 
 
-_sqlqueryform_ {
 
-<!-- simple query box that requires you to type SQL where clause directly -->
-<!-- sqlquery form (\_query:plainqueryform\_) -->
-<form name="QueryForm" method="get" action="_gwcgi_">
-<p>
-<input type="hidden" name="a" value="sqlq">
-<input type="hidden" name="r" value="1">
-<input type="hidden" name="hs" value="1">
-<input type="hidden" name="e" value="_decodedcompressedoptions_">
-_sqlqueryformcontent_
-</p>
-</form>
-<!-- end of sqlquery form -->
-}
-
-
-_ifeellucky_ { <br><input type="checkbox" name="ifl" value="1">_textifeellucky_ }
-_useifeellucky_ { }  # Set this to _ifeellucky_ if you want this functionality available
 
 _allowformbreak_{</span>  <span class="textselect">}
 
 _queryformcontent_{
-<span class="textselect">
-_textselect_
-</span>
-
-<span class="querybox">
-_If_(_cgiargqb_,_largequerybox_,_smallquerybox_)
-_useifeellucky_
-</span>
+	<span class="textselect">
+		_textselect_
+	</span>
+	<span class="querybox">
+		_If_(_cgiargqb_,_largequerybox_,_smallquerybox_)
+	</span>
+	
 }
 
-
-_sqlqueryformcontent_ {
-<span class="querybox">
-_If_(_cgiargqb_,_query:largequerybox_,_query:smallquerybox_)
-_query:useifeellucky_
-</span>
-}
 
 # Automatically set by receptionist if config file switches
 # date searching on

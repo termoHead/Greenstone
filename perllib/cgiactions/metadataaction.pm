@@ -740,11 +740,12 @@ sub tematicas_undav
     # y genera un array con los nombres de las bases        
     #
     my @xbases=get_site_names($gsdl_cgi);
-      
+    
     foreach my $bas (@xbases){
         print '<base name="';
         print $bas;
-        print '">';        
+        print '">';     
+		
         my $collect_tail = $bas;
         $collect_tail =~ s/^.*[\/|\\]//;
         my $index_text_directory = &util::filename_cat($collect_dir,$bas,"index","text");
@@ -757,6 +758,7 @@ sub tematicas_undav
             
             if ($k eq "contains"){                
                 my @mamadera = split /"/, ${$doc_rec->{$k}}[0];
+				
                 foreach my $mm (@mamadera){                    
                     my $newID=$docid.$mm;
                     my $testD = dameTema($infodbtype, $infodb_file_path, $newID);					
@@ -827,7 +829,7 @@ sub dameTema
 	my $convertido = Encode::encode("utf8",$doc_rec->{'Title'}[0]);
     
     #return Encode::encode('utf8',$doc_rec->{'Title'}[0]);
-	return $convertido
+	return $convertido;
 }
 
 sub get_index_metadata

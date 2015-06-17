@@ -11,6 +11,7 @@ UNDAV_TEMATICAS.lista       = new Array();
 UNDAV_TEMATICAS.imgLoaded   =0;
 UNDAV_TEMATICAS.sliderLock  =false;
 UNDAV_TEMATICAS.actualSlide =0;
+UNDAV_TEMATICAS.urlParams = new Object()
 
 /*metodos del objeto UNDAV_TEMATICAS*/
 UNDAV_TEMATICAS.dameColorTematica=function(tematica){
@@ -147,7 +148,25 @@ function filtraTematicas(xml){
     flagCol++    
     loadImg(UNDAV_TEMATICAS.dameImagTematica(UNDAV_TEMATICAS.tematicasActivas[0])); 
 }
-
+function cargaUrlParametros(){
+	var params = window.location.search;
+	params =	params.substr(1,params.length);	
+	
+	if (params.indexOf("&")>0){
+		var pars=params.split("&")		
+		console.log(pars.length)
+		for(var e=0;e<pars.length;e++){
+			var stra=pars[e]
+			var k=stra.substr(0,stra.indexOf("="))
+			var v=stra.substr(stra.indexOf("=")+1,stra.length)
+			UNDAV_TEMATICAS.urlParams[k]=v
+		}
+	}else if(params.indexOf("=")>-1){
+		var k=params.substr(0,params.indexOf("="))
+		var v=params.substr(params.indexOf("=")+1,params.length)
+		UNDAV_TEMATICAS.urlParams[k]=v
+	}
+}
 //-----------------------------------
 //funcionalidad de los botones slides
 function botonPrev(e){
@@ -178,18 +197,36 @@ function animaSlider(numero){
 }
 //fin funcionalidad de los botones slides
 //-----------------------------------
-
 function initSlide(){
 	loadXML("/greenstone/web/xml/tematicas.xml",parseTemas)
 }
 
 
+//DEPARTAMENTO
+
+
+function iniciaDepto(){
+	var depto=UNDAV_TEMATICAS.urlParams["area"]
+	var DeptoURL="/greenstone/cgi-bin/library.cgi?a=q&q="+depto+"&c=tesis";
+	$("#resultados").load( DeptoURL+" #group_top" )
+}
+function creaFromQuery(html){
+	console.log(html)
+	$(".resultados").append($("#group_top",$(html).html()))
+}
+
+
+
+
 
 $( document ).ready(function() {
   // Handler for .ready() called.
- if( $("#miSlider").children().length>0){
-	 initSlide()
+  cargaUrlParametros()
+	if( $("#miSlider").children().length>0){
+		initSlide()
+	}else if($("article.baseDepto").children().length>0){
+		iniciaDepto()
 	}else{
-	  console.log("aca arranco la interna")
+		console.log("aca arranco la interna")
 	}
 });

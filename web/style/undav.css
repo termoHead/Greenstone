@@ -25,10 +25,10 @@ ul.navbar-right a{border-radius: 0!important;border: 0!important; background:tra
 .navbar-nav a{border-radius: 10px;border: 2px solid #8abae0}
 .navbar-nav a{border-radius: 10px;border: 2px solid #8abae0;  background:#8abae0; color:#fff !important; font-weight: 700;margin-right: 0.5em;}
 .navbar-nav a:hover{color:#8abae0 !important}
-.navbar-nav > li > a { padding:4px !important; margin;0}
+.navbar-nav > li > a { padding:4px !important; margin:0}
 .navbar-default{background-image: none !important;	border-radius: 0;box-shadow: none !important;	background-color: transparent !important;	border-color: transparent  !important}
 .glyphicon-home::before,.glyphicon-home::after { display:none}
-#miSlider{position:relative; widows:100%; height: auto; background-color:#eee}
+#miSlider{position:relative; width:100%; height: auto; background-color:#eee}
 .slider-inner .item { width: 565px !important ; float:left}
 .slider-inner{width:9000px; height:363px; position: relative;}
 .slogan{margin:10px 0 25px 0}
@@ -58,7 +58,7 @@ ul.navbar-right a{border-radius: 0!important;border: 0!important; background:tra
 .departamentos .row{ margin-bottom:15px}
 .departamentos h3{margin-top:23px;    padding-left: 16px;}
 .departamentos h6{margin-top:15px;}
-.colecciones h1,
+.colecciones h1,.baseDepto h1 ,
 .departamentos h1,
 .tematicas h1{ color:#4c9ad8; font-size:34px}
 .departamentos h1{padding-left: 30px;}
@@ -92,4 +92,25 @@ ul.navbar-right a{border-radius: 0!important;border: 0!important; background:tra
 .tematicas .colCell{width: auto; margin: .5em; height:217px; overflow:hidden;}
 .tematicas .colCell{box-sizing: content-box !important;}
 #grillado{position: relative;}
+.baseDepto #toolbox{ background-color:#4c9bd9; color:white;}
+#resultados{margin-top:25px}
+.ficha {border:1px solid #e3e3e3; 
+font-family: "Fira Sans","fira_sansextralight",Tahoma, Geneva, sans-serif;
+-webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.4);
+-moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.4);
+box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.4);}
+.ficha h4 a:link{color:#293f66 !important; font-size:1em}
+.ficha .wraper{padding:0 0.3em 1em 1.5em}
+.ficha .tipoDoc{color:#7c7c7c}
+.ficha .responsables{color:#3f3f3f;font-size:.9em}
+.ficha .institucional{font-size:.8em}
+.info{font-size:1em; line-height: 1em;}
 
+.ficha .iconos{height:50px; text-align:right}
+.ficha .iconos a{ margin-right:13px;}
+.ficha .iconos a img{height:38px;}
+.ficha a.pdf_bt{background-image:url("/greenstone/web/images/pdf_bt.gif"); font-size:24px; background-repeat:no-repeat}
+.ficha a.compartir_bt{background-image:url("/greenstone/web/images/share_bt.gif"); font-size:24px; background-repeat:no-repeat}
+.ficha a.cita_bt{background-image:url("/greenstone/web/images/cita_bt.gif"); font-size:24px; background-repeat:no-repeat}
+.ficha .iconos a:hover{background-position: top right}
+.ficha .iconos a:active{background-position:top left}
