@@ -61,6 +61,11 @@ my $action_table =
 	    'compulsory-args' => [ "d", "metaname" ],
 	    'optional-args'   => [ "metapos" ] },
         
+	"novedades_undav" => { # alias for get-index-metadata
+	    'compulsory-args' => [ "d", "metaname" ],
+	    'optional-args'   => [ "metapos" ] },	
+		
+		
 	"get-metadata" => { # alias for get-index-metadata
 	    'compulsory-args' => [ "d", "metaname" ],
 	    'optional-args'   => [ "metapos" ] },
@@ -754,36 +759,114 @@ sub tematicas_undav
         my $doc_rec = &dbutil::read_infodb_entry($infodbtype, $infodb_file_path, $docid);
 		
         foreach my $k (keys %$doc_rec) {    
-            my @escaped_v = ();
-            
+            my @escaped_v = ();            
             if ($k eq "contains"){                
                 my @mamadera = split /"/, ${$doc_rec->{$k}}[0];
 				
                 foreach my $mm (@mamadera){                    
                     my $newID=$docid.$mm;
                     my $testD = dameTema($infodbtype, $infodb_file_path, $newID);					
-                    print '<tema title="'.$testD.'"/>';                    
+                    print '<tema title="'.$testD.'"/>';
                 }
                 
             }           
             $doc_rec->{$k} = \@escaped_v;
         }
         print "</base>"      
-    }
-    
-      
-
-    # Obtain the specified metadata value
-    #$metapos = 0 if (!defined $metapos);
-    #my $metavalue = $doc_rec->{$metaname}->[$metapos];
-    #$gsdl_cgi->generate_ok_message("$metavalue");
-    
+    } 
 }
 
 
 
+sub novedades_undav
+{
+	my $self = shift @_;
+    
+    my $username  = $self->{'username'};
+    my $collect   = $self->{'collect'};
+    my $gsdl_cgi  = $self->{'gsdl_cgi'};
+    my $gsdlhome  = $self->{'gsdlhome'};
 
+    # Obtain the collect dir
+	my $site = $self->{'site'};
+	my $collect_dir = $gsdl_cgi->get_collection_dir($site);
+    ##my $collect_dir = &util::filename_cat($gsdlhome, "collect");
 
+    # look up additional args
+    my $docid     = $self->{'d'};
+    my $metaname  = $self->{'metaname'};
+    my $metapos   = $self->{'metapos'};
+    my $infodbtype = $self->{'infodbtype'};
+
+    # To people who know $collect_tail please add some comments
+    # Obtain path to the database
+    
+    
+    
+    
+    # aca llama a la funcion que lee la carpeta "colect" 
+    # y genera un array con los nombres de las bases        
+    #
+    my @xbases=get_site_names($gsdl_cgi);
+    
+    foreach my $bas (@xbases){
+        print '<base name="';
+        print $bas;
+        print '">';     
+		
+        my $collect_tail = $bas;
+        $collect_tail =~ s/^.*[\/|\\]//;
+        my $index_text_directory = &util::filename_cat($collect_dir,$bas,"index","text");
+        my $infodb_file_path = &dbutil::get_infodb_file_path($infodbtype, $collect_tail, $index_text_directory);
+        # Read the docid entry
+        my $doc_rec = &dbutil::read_infodb_entry($infodbtype, $infodb_file_path, $docid);
+		
+        foreach my $k (keys %$doc_rec) {    
+            my @escaped_v = ();
+			
+            if ($k eq "contains"){                
+                my @mamadera = split /;/, ${$doc_rec->{$k}}[0];
+				
+                foreach my $mm (@mamadera){					
+                    dameNovedad($infodbtype, $infodb_file_path, $mm);
+                }
+            }
+            $doc_rec->{$k} = \@escaped_v;
+        }
+        print "</base>"      
+    } 
+}
+sub dameNovedad
+{
+    my ($infodbtype, $infodb_file_path, $newID)=@_;    	
+    my $doc_rec = &dbutil::read_infodb_entry($infodbtype, $infodb_file_path, $newID);    
+	#my $convertido = Encode::encode("utf8",$doc_rec->{'Title'}[0]);
+	print '<doc id="'.$newID.'">';
+	foreach my $as (keys %$doc_rec) {
+		my $str = Encode::encode("utf8",$doc_rec->{$as}[0]);
+		my $find = "&ldquo;";
+		my $replace = '"';
+		$find = quotemeta $find; # escape regex metachars if present
+		$str =~ s/$find/$replace/g;
+		print '<meta title="'.$as.'">'.$str.'</meta>';
+	}
+	print "</doc>";
+    #return Encode::encode('utf8',$doc_rec->{'Title'}[0]);
+	return "convertido";
+}
+sub dameTema
+{
+    my ($infodbtype, $infodb_file_path, $newID)=@_;
+    if(index($newID , ";")gt-1) {
+        $newID=substr ($newID,0,index($newID , ";"))
+    };
+    my $doc_rec = &dbutil::read_infodb_entry($infodbtype, $infodb_file_path, $newID);
+    
+	my $convertido = Encode::encode("utf8",$doc_rec->{'Title'}[0]);
+    
+    #return Encode::encode('utf8',$doc_rec->{'Title'}[0]);
+	return $convertido;
+}
 
 sub get_site_names
 {
@@ -818,19 +901,6 @@ sub get_site_names
 
 
 
-sub dameTema
-{
-    my ($infodbtype, $infodb_file_path, $newID)=@_;
-    if(index($newID , ";")gt-1) {
-        $newID=substr ($newID,0,index($newID , ";"))
-    };
-    my $doc_rec = &dbutil::read_infodb_entry($infodbtype, $infodb_file_path, $newID);
-    
-	my $convertido = Encode::encode("utf8",$doc_rec->{'Title'}[0]);
-    
-    #return Encode::encode('utf8',$doc_rec->{'Title'}[0]);
-	return $convertido;
-}
 
 sub get_index_metadata
 {

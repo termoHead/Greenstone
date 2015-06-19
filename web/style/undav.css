@@ -96,9 +96,10 @@ ul.navbar-right a{border-radius: 0!important;border: 0!important; background:tra
 #resultados{margin-top:25px}
 .ficha {border:1px solid #e3e3e3; 
 font-family: "Fira Sans","fira_sansextralight",Tahoma, Geneva, sans-serif;
--webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.4);
--moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.4);
-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.4);}
+-webkit-box-shadow: 6px 6px 9px 0px rgba(0, 0, 0, 0.2);
+-moz-box-shadow: 6px 6px 9px 0px rgba(0, 0, 0, 0.2);
+box-shadow: 6px 6px 9px 0px rgba(0, 0, 0, 0.2);
+margin-bottom:25px}
 .ficha h4 a:link{color:#293f66 !important; font-size:1em}
 .ficha .wraper{padding:0 0.3em 1em 1.5em}
 .ficha .tipoDoc{color:#7c7c7c}

@@ -52,74 +52,17 @@ _content_ {
 			<p class="tituloCentrado">Nuevas Publicaciones</p>
 		</div>		
 	</div>
-	<div class="row nuevas">
-		<div class="col-md-3 tema0">
+	<div class="row nuevas">		
+	  <!div class="col-md-3 tema0">
 			<div class="tarjeta">
 				<p class="labelA">tematica</p>
 				<h3>Titulo del registro</h3>
 				<p class="autor">Autores del documento, Mas o Menos, algunos que si y otros que tal vez</p>
 				<p class="colec"><a href="#" class="coleccion">Coleccion TESIS</a></p>
 			</div>
-		</div>
-		<div class="col-md-3 tema1">
-			<div class="tarjeta">
-			<p class="labelA">tematica</p>
-			<h3>Titulo del registro</h3>
-			<p class="autor">Autores del documento, Mas o Menos, algunos que si y otros que tal vez</p>
-			<p class="colec"><a href="#" class="coleccion">Coleccion TESIS</a></p>
-			</div>
-		</div>
-		<div class="col-md-3 tema3">
-			<div class="tarjeta">
-			<p class="labelA">tematica</p>
-			<h3>Titulo del registro</h3>
-			<p class="autor">Autores del documento, </p>
-			<p class="colec"><a href="#" class="coleccion">Coleccion TESIS</a></p>
-			</div>
-		</div>
-		<div class="col-md-3 tema2">
-			<div class="tarjeta">
-			<p class="labelA">tematica</p>
-			<h3>Titulo del registro</h3>
-			<p class="autor">Autores del documento, Mas o Menos, algunos que si y otros que tal vez</p>
-			<p class="colec"><a href="#" class="coleccion">Coleccion TESIS</a></p>
-			</div>
-		</div>
+		</div -->
 	</div>
-	<div class="row nuevas">
-		<div class="col-md-3 tema0">
-			<div class="tarjeta">
-				<p class="labelA">tematica</p>
-				<h3>Titulo del registro</h3>
-				<p class="autor">Autores del documento, Mas o Menos, algunos que si y otros que tal vez</p>
-				<p class="colec"><a href="#" class="coleccion">Coleccion TESIS</a></p>
-			</div>
-		</div>
-		<div class="col-md-3 tema1">
-			<div class="tarjeta">
-			<p class="labelA">tematica</p>
-			<h3>Titulo del registro</h3>
-			<p class="autor">Autores del documento, Mas o Menos, algunos que si y otros que tal vez</p>
-			<p class="colec"><a href="#" class="coleccion">Coleccion TESIS</a></p>
-			</div>
-		</div>
-		<div class="col-md-3 tema3">
-			<div class="tarjeta">
-			<p class="labelA">tematica</p>
-			<h3>Titulo del registro</h3>
-			<p class="autor">Autores del documento, </p>
-			<p class="colec"><a href="#" class="coleccion">Coleccion TESIS</a></p>
-			</div>
-		</div>
-		<div class="col-md-3 tema2">
-			<div class="tarjeta">
-			<p class="labelA">tematica</p>
-			<h3>Titulo del registro</h3>
-			<p class="autor">Autores del documento, Mas o Menos, algunos que si y otros que tal vez</p>
-			<p class="colec"><a href="#" class="coleccion">Coleccion TESIS</a></p>
-			</div>
-		</div>
-	</div>
+	
 	<div id="content">
 		<p>Es posible navegar los documentos de este repositorio en las siguientes colecciones:</p>
 		<div class="bloqueLinks">

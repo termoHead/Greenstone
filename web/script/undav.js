@@ -203,19 +203,27 @@ function initSlide(){
 
 
 //DEPARTAMENTO
-
-
 function iniciaDepto(){
 	var depto=UNDAV_TEMATICAS.urlParams["area"]
 	var DeptoURL="/greenstone/cgi-bin/library.cgi?a=q&q="+depto+"&c=tesis";
-	$("#resultados").load( DeptoURL+" #group_top" )
+	var resu=new Array();
+	
+	$.get(DeptoURL, function( my_var ) {
+		// my_var contains whatever that request returned		
+		$($(".ficha",my_var).get().reverse()).each(function (a){
+			$("#resultados").append(this)			
+		})
+		$("#msj").remove();
+	}, 'html');
 }
 function creaFromQuery(html){
 	console.log(html)
 	$(".resultados").append($("#group_top",$(html).html()))
 }
 
-
+function dameNovedades(){
+	
+}
 
 
 
