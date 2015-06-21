@@ -58,8 +58,7 @@ UNDAV_TEMATICAS.dameColecciones=function(){
 }
 
 /*buscaXMLTEMATICAS*/
-function loadXML(_url,callbak){
-	console.log("llamo?")
+function loadXML(_url,callbak){	
 	$.ajax({
 		async:true,
 		url: _url,
@@ -73,7 +72,7 @@ function loadXML(_url,callbak){
 		},
 		timeout: 8000,
 		type: "GET"
-	});		
+	});
 }
 
 function parseTemas(xml){
@@ -167,8 +166,7 @@ function cargaUrlParametros(){
 	var params = window.location.search;
 	params =	params.substr(1,params.length);	
 	if (params.indexOf("&")>0){
-		var pars=params.split("&")		
-		console.log(pars.length)
+		var pars=params.split("&")				
 		for(var e=0;e<pars.length;e++){
 			var stra=pars[e]
 			var k=stra.substr(0,stra.indexOf("="))
@@ -212,8 +210,7 @@ function animaSlider(numero){
 //fin funcionalidad de los botones slides
 //-----------------------------------
 function initSlide(){
-	loadXML(ruataAlXML+"tematicas.xml",parseTemas)
-	dameNovedades()
+	loadXML(ruataAlXML+"tematicas.xml",parseTemas)	
 }
 
 
@@ -231,24 +228,24 @@ function iniciaDepto(){
 		$("#msj").remove();
 	}, 'html');
 }
-function creaFromQuery(html){
-	console.log(html)
+function creaFromQuery(html){	
 	$(".resultados").append($("#group_top",$(html).html()))
 }
 
 //NOVEDADES
-function dameNovedades(){
+function dameNovedades()
+{
 	var clasificador=UNDAV_TEMATICAS.CLNovedades
     loadXML(clasificador,filtraNovedades)
 }
-function filtraNovedades(xml){
+function filtraNovedades(xml)
+{	
 	var miX		= $(xml).find('base');
-	var docus	= new Array();
-	
+	var docus	= new Array();	
 	miX.each(function(){
-		var flagC	= 0;		
+		var flagC	= 0;
 		if($("doc",this).length>0){
-			$("doc",this).each(function(){				
+			$("doc",this).each(function(){
 				flagC++;
 				docus.push({
 					"titulo":$(this).find("meta[title='ma.titulo']").text(),
@@ -264,29 +261,16 @@ function filtraNovedades(xml){
 					"tematicas":$(this).find("meta[title='ma.tematica']").text().split(","),
 					"area":$(this).find("meta[title='ma.comunidad']").text().split(","),
 				});
-				if(flagC>2){return false}
-					
+				if(flagC>2){return false;}
 			})
 		};
 		
 	});
 	//muestro los resultados
 	$(docus).each(function (){		
-		
-		$(".nuevas").append(creaHTMLTarjeta(this))
-		
+		$(".nuevas").append(creaHTMLTarjeta(this))		
 	})
-	
-	
-	/*
-	
-			<div class="tarjeta">
-				<p class="labelA">tematica</p>
-				<h3>Titulo del registro</h3>
-				<p class="autor">Autores del documento, Mas o Menos, algunos que si y otros que tal vez</p>
-				<p class="colec"><a href="#" class="coleccion">Coleccion TESIS</a></p>
-			</div>
-		</div>*/
+
 }
 
 /*funciones para armar html de las tarjetas*/
@@ -298,6 +282,7 @@ function creaHTMLTarjeta(dato){//barra con el area a la que pertenece
 	
 	var colcLink = ruta.substr(0,ruta.lastIndexOf('/')+1)+ "&a=p&p=about&l=es&w=utf-8&c="+dato["coleccion"];		
 	var inte=$(document.createElement('div'))
+	if(classCC==""){classCC="general";}
 	inte.attr('class','col-md-3 col-sm-6 '+classCC)		
 	var PT=$(document.createElement('p'))
 	PT.attr("class","labelA")
@@ -316,13 +301,13 @@ function creaHTMLTarjeta(dato){//barra con el area a la que pertenece
 	var PC=$(document.createElement('p'))
 	PC.attr("class","coleccion")
 	var PCA=$(document.createElement('a'))
-	PCA.attr("href",colcLink)		
+	PCA.attr("href",colcLink);
 	
-	PCA.append(indiceColecciones[indiceColecciones.indexOf(dato["coleccion"])+1])
-	PC.append(PCA)
+	PCA.append(indiceColecciones[indiceColecciones.indexOf(dato["coleccion"])+1]);
+	PC.append(PCA);
 	
 	var tarjeta=$(document.createElement('div'))
-	tarjeta.attr("class","tarjeta")	
+	tarjeta.attr("class","tarjeta");
 	tarjeta.append(PT)
 	tarjeta.append(HH)
 	tarjeta.append(PA)
@@ -380,6 +365,7 @@ function creaHTMLFicha(dato){ //tiene la barra con los iconos
 	inte.append(ficha)	
 	return inte;
 }
+
 function creaImgVacia(){
 	var icoPDFE=$(document.createElement('img'));
     icoPDFE.attr({src:ruataAIMG+"empty.gif",alt:"",width:"24"})			

@@ -45,17 +45,18 @@ ul.navbar-right a{border-radius: 0!important;border: 0!important; background:tra
 .economaygestin .labelA{background-color:#873e35}
 .turismoyrecreacin .labelA{background-color:#5b7782}
 .comunicacinymedios .labelA{background-color:#b62529}
-.actividadfsicaydeportes .labelA{background-color:#a5c1dd}
+.actividadfsicaydeporte .labelA{background-color:#a5c1dd}
 .cienciasdelasalud .labelA{background-color:#edcc49}
 .historia .labelA{background-color:#c9b64c}
-
+.general .labelA{background-color:#333}
 
 
 .nuevas .tarjeta p,.nuevas .tarjeta h3{padding-left:25px;padding-right: 10px;font-family:'fira_sansextralight', 'Fira Sans', sans-serif !important;}
 .nuevas .tarjeta h3{font-size:18px; color:#1a3c69;}
 .nuevas .tarjeta p{font-size:14px; color:#3e3e3e}
 .nuevas .tarjeta a{color:#757575;font-size:12px}
-.nuevas .tarjeta{ box-shadow: 1px 1px 10px 1px #dadada;}
+.nuevas .tarjeta{ box-shadow: 1px 1px 10px 1px #dadada;min-height: 280px;
+margin-bottom: 25px;}
 .pie{background-color:#f4f4f4; margin-top35px; border-top:8px solid #1a3c69;font-size:12px ;font-family:'fira_sansextralight', 'Fira Sans', sans-serif !important;margin-top: 31px;}
 .pie .pieAlto ul{ float: left;width: 50%;padding-top: 30px;}
 .pie .pieAlto a{color:#62708b; font-size:14px}
