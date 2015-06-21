@@ -28,7 +28,7 @@ ul.navbar-right a{border-radius: 0!important;border: 0!important; background:tra
 .navbar-nav > li > a { padding:4px !important; margin:0}
 .navbar-default{background-image: none !important;	border-radius: 0;box-shadow: none !important;	background-color: transparent !important;	border-color: transparent  !important}
 .glyphicon-home::before,.glyphicon-home::after { display:none}
-#miSlider{position:relative; width:100%; height: auto; background-color:#eee}
+#miSlider{position:relative; width:100%; height: auto; background-color:#eee;overflow: hidden;}
 .slider-inner .item { width: 565px !important ; float:left}
 .slider-inner{width:9000px; height:363px; position: relative;}
 .slogan{margin:10px 0 25px 0}

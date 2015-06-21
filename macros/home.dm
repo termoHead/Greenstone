@@ -53,7 +53,7 @@ _content_ {
 		</div>		
 	</div>
 	<div class="row nuevas">		
-	  <!div class="col-md-3 tema0">
+	  <!--div class="col-md-3 tema0">
 			<div class="tarjeta">
 				<p class="labelA">tematica</p>
 				<h3>Titulo del registro</h3>

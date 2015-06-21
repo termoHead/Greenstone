@@ -798,11 +798,6 @@ sub novedades_undav
     my $metapos   = $self->{'metapos'};
     my $infodbtype = $self->{'infodbtype'};
 
-    # To people who know $collect_tail please add some comments
-    # Obtain path to the database
-    
-    
-    
     
     # aca llama a la funcion que lee la carpeta "colect" 
     # y genera un array con los nombres de las bases        
@@ -810,9 +805,7 @@ sub novedades_undav
     my @xbases=get_site_names($gsdl_cgi);
     
     foreach my $bas (@xbases){
-        print '<base name="';
-        print $bas;
-        print '">';     
+        print '<base name="'.$bas.'">';     
 		
         my $collect_tail = $bas;
         $collect_tail =~ s/^.*[\/|\\]//;
@@ -828,7 +821,7 @@ sub novedades_undav
                 my @mamadera = split /;/, ${$doc_rec->{$k}}[0];
 				
                 foreach my $mm (@mamadera){					
-                    dameNovedad($infodbtype, $infodb_file_path, $mm);
+                    dameNovedad($infodbtype, $infodb_file_path, $mm,$bas );
                 }
             }
             $doc_rec->{$k} = \@escaped_v;
@@ -838,10 +831,11 @@ sub novedades_undav
 }
 sub dameNovedad
 {
-    my ($infodbtype, $infodb_file_path, $newID)=@_;    	
+    my ($infodbtype, $infodb_file_path, $newID,$colec)=@_;    	
     my $doc_rec = &dbutil::read_infodb_entry($infodbtype, $infodb_file_path, $newID);    
 	#my $convertido = Encode::encode("utf8",$doc_rec->{'Title'}[0]);
 	print '<doc id="'.$newID.'">';
+	print '<meta title="coleccion">'.$colec.'</meta>';
 	foreach my $as (keys %$doc_rec) {
 		my $str = Encode::encode("utf8",$doc_rec->{$as}[0]);
 		my $find = "&ldquo;";
