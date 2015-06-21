@@ -1,17 +1,21 @@
 // JavaScript Document
+//variables auxiliares
 var imgLargo=562+2;
 var flagCol	=0;
 var ruta = window.location.href;
 var ruataAIMG="/greenstone/web/images/";
 var ruataAlXML="/greenstone/web/xml/";
+//Aca se convierte el nombre de la coleccion como está en el GS 
+//a un text más comprensible
 var indiceColecciones=new Array("arti","Artículos de revistas","tesis","Tesis de grado y de posgrado",
 "eventos","Trabajos presentados a eventos","libros","Libros y capítulos de libros",
 "proy","Proyectos de investigación","informes","Informes")
+
+//Objeto donde se organiza la home
 var UNDAV_TEMATICAS = UNDAV_TEMATICAS || {};
 UNDAV_TEMATICAS.URLBASE = ruta.substr(0,ruta.lastIndexOf('/')+1) //"http://localhost/greenstone/cgi-bin/"  
 UNDAV_TEMATICAS.CLTematicas=UNDAV_TEMATICAS.URLBASE+"undav.pl?a=tematicas_undav&c=libros&metaname=Title&d=CL3"
 UNDAV_TEMATICAS.CLNovedades=UNDAV_TEMATICAS.URLBASE+"undav.pl?a=novedades_undav&c=libros&metaname=Title&d=CL5"
-
 UNDAV_TEMATICAS.tematicasActivas=new Array()
 UNDAV_TEMATICAS.colecciones =new Array();
 UNDAV_TEMATICAS.colsAPI     =new Array()
@@ -22,7 +26,7 @@ UNDAV_TEMATICAS.sliderLock  =false;
 UNDAV_TEMATICAS.actualSlide =0;
 UNDAV_TEMATICAS.urlParams = new Object()
 
-/*metodos del objeto UNDAV_TEMATICAS*/
+//Metodos del objeto UNDAV_TEMATICAS
 UNDAV_TEMATICAS.dameColorTematica=function(tematica){
 	for(var a=0; a<UNDAV_TEMATICAS.lista.length;a++){
 		if (UNDAV_TEMATICAS.lista[a]["titulo"].toLowerCase()==tematica.toLowerCase()){
@@ -242,8 +246,7 @@ function filtraNovedades(xml){
 	var docus	= new Array();
 	
 	miX.each(function(){
-		var flagC	= 0;
-		
+		var flagC	= 0;		
 		if($("doc",this).length>0){
 			$("doc",this).each(function(){				
 				flagC++;
@@ -258,7 +261,8 @@ function filtraNovedades(xml){
 					"link":"_gwcgi_?a=d&c=arti&d="+$(this).find("meta[title='ma.identificador']").text(),
 					"tituRev":$(this).find("meta[title='pr.titulorevista']"),
 					"paginacion":$(this).find("meta[title='pr.paginacion']"),
-					"tematicas":$(this).find("meta[title='ma.tematica']").text().split(),
+					"tematicas":$(this).find("meta[title='ma.tematica']").text().split(","),
+					"area":$(this).find("meta[title='ma.comunidad']").text().split(","),
 				});
 				if(flagC>2){return false}
 					
@@ -268,60 +272,8 @@ function filtraNovedades(xml){
 	});
 	//muestro los resultados
 	$(docus).each(function (){		
-		var colcLink = ruta.substr(0,ruta.lastIndexOf('/')+1)+ "&a=p&p=about&l=es&w=utf-8&c="+this["coleccion"];		
-		var inte=$(document.createElement('div'))		
-		inte.attr('class','col-md-3 '+this["tematicas"].toString().replace(/,/gi,' '))
-		var PT=$(document.createElement('p'))
-		var ICO=$(document.createElement('div'))
-		ICO.attr("class","iconos")
 		
-		
-		if(this["oai"]){
-			var icoPDFA=$(document.createElement('a'));			
-			icoPDFA.attr({class:"pdf_bt",href:this["oai"],title:"PDF oara descargar"})
-			icoPDFA.append(creaImgVacia());
-			ICO.append(icoPDFA)
-		}
-		var icoPDFC=$(document.createElement('a'));
-		icoPDFC.attr({class:"cita_bt",href:"#",title:"Cita"});
-		icoPDFC.append(creaImgVacia());
-		ICO.append(icoPDFC)
-		var icoPDFS=$(document.createElement('a'));
-		icoPDFS.attr({class:"compartir_bt",href:"#",title:"Compartir"});
-		icoPDFS.append(creaImgVacia());
-		ICO.append(icoPDFS)
-		
-		
-		
-		PT.append(this["tematicas"].toString())
-		PT.attr("class","labelA")
-		var HH=$(document.createElement('h3'))
-		HH.append(this["titulo"])
-		var PA=$(document.createElement('p'))
-		PA.attr("class","autor")
-		PA.append(this["autor"])
-		var PC=$(document.createElement('p'))
-		PC.attr("class","coleccion")
-		var PCA=$(document.createElement('a'))
-		PCA.attr("href",colcLink)		
-		console.log(this["coleccion"])
-		PCA.append(indiceColecciones[indiceColecciones.indexOf(this["coleccion"])+1])
-		PC.append(PCA)
-		
-		var ficha=$(document.createElement('div'))
-		ficha.attr("class","ficha")
-		ficha.append(ICO)
-		ficha.append(PT)
-		ficha.append(HH)
-		ficha.append(PA)
-		ficha.append(PC)
-	
-		
-		
-		
-		
-		inte.append(ficha)		
-		$(".nuevas").append(inte)
+		$(".nuevas").append(creaHTMLTarjeta(this))
 		
 	})
 	
@@ -335,6 +287,98 @@ function filtraNovedades(xml){
 				<p class="colec"><a href="#" class="coleccion">Coleccion TESIS</a></p>
 			</div>
 		</div>*/
+}
+
+/*funciones para armar html de las tarjetas*/
+function creaHTMLTarjeta(dato){//barra con el area a la que pertenece
+
+	//IMPORTANTE QUITA los acentos y los espacios en blanco
+	//para hacer el class de estilo de la temática
+	var classCC=dato["tematicas"][0].replace(/[^a-z0-9]/gi,'').toLowerCase();
+	
+	var colcLink = ruta.substr(0,ruta.lastIndexOf('/')+1)+ "&a=p&p=about&l=es&w=utf-8&c="+dato["coleccion"];		
+	var inte=$(document.createElement('div'))
+	inte.attr('class','col-md-3 col-sm-6 '+classCC)		
+	var PT=$(document.createElement('p'))
+	PT.attr("class","labelA")
+	if(dato["area"][0]==""){ 
+		PT.append("departamento");	
+	}else{
+		PT.append(dato["area"][0].toLowerCase());
+	}
+	var ICO=$(document.createElement('div'))
+	
+	var HH=$(document.createElement('h3'))
+	HH.append(dato["titulo"])
+	var PA=$(document.createElement('p'))
+	PA.attr("class","autor")
+	PA.append(dato["autor"])
+	var PC=$(document.createElement('p'))
+	PC.attr("class","coleccion")
+	var PCA=$(document.createElement('a'))
+	PCA.attr("href",colcLink)		
+	
+	PCA.append(indiceColecciones[indiceColecciones.indexOf(dato["coleccion"])+1])
+	PC.append(PCA)
+	
+	var tarjeta=$(document.createElement('div'))
+	tarjeta.attr("class","tarjeta")	
+	tarjeta.append(PT)
+	tarjeta.append(HH)
+	tarjeta.append(PA)
+	tarjeta.append(PC)
+
+	inte.append(tarjeta)	
+	return inte;
+	
+	return inte;
+}
+
+function creaHTMLFicha(dato){ //tiene la barra con los iconos
+	var colcLink = ruta.substr(0,ruta.lastIndexOf('/')+1)+ "&a=p&p=about&l=es&w=utf-8&c="+dato["coleccion"];		
+	var inte=$(document.createElement('div'))		
+	inte.attr('class','col-md-3 col-sm-6 '+dato["tematicas"].toString().replace(/,/gi,' '))
+	var PT=$(document.createElement('p'))
+	var ICO=$(document.createElement('div'))
+	ICO.attr("class","iconos")	
+	if(dato["oai"]){
+		var icoPDFA=$(document.createElement('a'));			
+		icoPDFA.attr({class:"pdf_bt",href:dato["oai"],title:"PDF oara descargar"})
+		icoPDFA.append(creaImgVacia());
+		ICO.append(icoPDFA)
+	}
+	var icoPDFC=$(document.createElement('a'));
+	icoPDFC.attr({class:"cita_bt",href:"#",title:"Cita"});
+	icoPDFC.append(creaImgVacia());
+	ICO.append(icoPDFC)
+	var icoPDFS=$(document.createElement('a'));
+	icoPDFS.attr({class:"compartir_bt",href:"#",title:"Compartir"});
+	icoPDFS.append(creaImgVacia());
+	ICO.append(icoPDFS)	
+	PT.append(dato["tematicas"].toString())
+	PT.attr("class","labelA")
+	var HH=$(document.createElement('h3'))
+	HH.append(dato["titulo"])
+	var PA=$(document.createElement('p'))
+	PA.attr("class","autor")
+	PA.append(dato["autor"])
+	var PC=$(document.createElement('p'))
+	PC.attr("class","coleccion")
+	var PCA=$(document.createElement('a'))
+	PCA.attr("href",colcLink)			
+	PCA.append(indiceColecciones[indiceColecciones.indexOf(dato["coleccion"])+1])
+	PC.append(PCA)
+	
+	var ficha=$(document.createElement('div'))
+	ficha.attr("class","ficha")
+	ficha.append(ICO)
+	ficha.append(PT)
+	ficha.append(HH)
+	ficha.append(PA)
+	ficha.append(PC)
+
+	inte.append(ficha)	
+	return inte;
 }
 function creaImgVacia(){
 	var icoPDFE=$(document.createElement('img'));

@@ -776,8 +776,6 @@ sub tematicas_undav
     } 
 }
 
-
-
 sub novedades_undav
 {
 	my $self = shift @_;
@@ -829,6 +827,7 @@ sub novedades_undav
         print "</base>"      
     } 
 }
+
 sub dameNovedad
 {
     my ($infodbtype, $infodb_file_path, $newID,$colec)=@_;    	
@@ -848,6 +847,7 @@ sub dameNovedad
     #return Encode::encode('utf8',$doc_rec->{'Title'}[0]);
 	return "convertido";
 }
+
 sub dameTema
 {
     my ($infodbtype, $infodb_file_path, $newID)=@_;

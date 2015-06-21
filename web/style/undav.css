@@ -33,7 +33,24 @@ ul.navbar-right a{border-radius: 0!important;border: 0!important; background:tra
 .slider-inner{width:9000px; height:363px; position: relative;}
 .slogan{margin:10px 0 25px 0}
 .tituloCentrado{ text-align:center;color:#1c3259; font-size:18px; margin:30px 0 10px 0;font-family:'fira_sansextralight', 'Fira Sans', sans-serif !important;}
-.nuevas .tarjeta p.labelA{display:block; text-align:left; padding: 10px 10px 10px 25px ; color:#fff}
+.nuevas .tarjeta p.labelA{display:block; text-align:left; padding: 10px 10px 10px 25px ; color:#fff;}
+.conservacin .labelA{background-color:#809879}
+.arteydiseoindustrial  .labelA{background-color:#4599c3}
+.arteycultura  .labelA{background-color:#7c6054}
+.ingenieraytecnologa  .labelA{background-color:#873e35}
+.arquitecturayurbanismo .labelA{background-color:#d48830}
+.trabajosocialycomunitario .labelA{background-color:#687ca1}
+.estadoysociedad .labelA{background-color:#c45c26}
+.derecho .labelA{background-color:#392626}
+.economaygestin .labelA{background-color:#873e35}
+.turismoyrecreacin .labelA{background-color:#5b7782}
+.comunicacinymedios .labelA{background-color:#b62529}
+.actividadfsicaydeportes .labelA{background-color:#a5c1dd}
+.cienciasdelasalud .labelA{background-color:#edcc49}
+.historia .labelA{background-color:#c9b64c}
+
+
+
 .nuevas .tarjeta p,.nuevas .tarjeta h3{padding-left:25px;padding-right: 10px;font-family:'fira_sansextralight', 'Fira Sans', sans-serif !important;}
 .nuevas .tarjeta h3{font-size:18px; color:#1a3c69;}
 .nuevas .tarjeta p{font-size:14px; color:#3e3e3e}
