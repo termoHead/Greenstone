@@ -34,20 +34,34 @@ ul.navbar-right a{border-radius: 0!important;border: 0!important; background:tra
 .slogan{margin:10px 0 25px 0}
 .tituloCentrado{ text-align:center;color:#1c3259; font-size:18px; margin:30px 0 10px 0;font-family:'fira_sansextralight', 'Fira Sans', sans-serif !important;}
 .nuevas .tarjeta p.labelA{display:block; text-align:left; padding: 10px 10px 10px 25px ; color:#fff;}
-.conservacin .labelA{background-color:#809879}
-.arteydiseoindustrial  .labelA{background-color:#4599c3}
-.arteycultura  .labelA{background-color:#7c6054}
-.ingenieraytecnologa  .labelA{background-color:#873e35}
-.arquitecturayurbanismo .labelA{background-color:#d48830}
-.trabajosocialycomunitario .labelA{background-color:#687ca1}
-.estadoysociedad .labelA{background-color:#c45c26}
-.derecho .labelA{background-color:#392626}
-.economaygestin .labelA{background-color:#873e35}
-.turismoyrecreacin .labelA{background-color:#5b7782}
-.comunicacinymedios .labelA{background-color:#b62529}
-.actividadfsicaydeporte .labelA{background-color:#a5c1dd}
-.cienciasdelasalud .labelA{background-color:#edcc49}
-.historia .labelA{background-color:#c9b64c}
+.conservacin .labelA,
+.seccionTematicas .conservacin  .wrap{background-color:#809879}
+.arteydiseoindustrial  .labelA,
+.seccionTematicas .arteydiseoindustrial  .wrap{background-color:#4599c3}
+.arteycultura  .labelA,
+.seccionTematicas .arteycultura  .wrap{background-color:#7c6054}
+.ingenieraytecnologa  .labelA,
+.seccionTematicas .ingenieraytecnologa  .wrap{background-color:#873e35}
+.arquitecturayurbanismo .labelA,
+.seccionTematicas .arquitecturayurbanismo  .wrap{background-color:#d48830}
+.trabajosocialycomunitario .labelA,
+.seccionTematicas .trabajosocialycomunitario  .wrap{background-color:#687ca1}
+.estadoysociedad .labelA,
+.seccionTematicas .estadoysociedad  .wrap{background-color:#c45c26}
+.derecho .labelA,
+.seccionTematicas .derecho  .wrap{ background-color:#392626;}
+.economaygestin .labelA,
+.seccionTematicas .economaygestin  .wrap{background-color:#873e35}
+.turismoyrecreacin .labelA,
+.seccionTematicas .turismoyrecreacin  .wrap{background-color:#5b7782}
+.comunicacinymedios .labelA,
+.seccionTematicas .comunicacinymedios  .wrap{background-color:#b62529}
+.actividadfsicaydeporte .labelA,
+.seccionTematicas .actividadfsicaydeporte  .wrap{background-color:#a5c1dd}
+.cienciasdelasalud .labelA,
+.seccionTematicas .cienciasdelasalud  .wrap{background-color:#edcc49}
+.historia .labelA,
+.seccionTematicas .historia  .wrap{background-color:#c9b64c}
 .general .labelA{background-color:#333}
 
 
@@ -78,37 +92,37 @@ margin-bottom: 25px;}
 .departamentos h6{margin-top:15px;}
 .colecciones h1,.baseDepto h1 ,
 .departamentos h1,
-.tematicas h1{ color:#4c9ad8; font-size:34px}
+.seccionTematicas h1{ color:#4c9ad8; font-size:34px}
 .departamentos h1{padding-left: 30px;}
-.tematicas h1{padding-left: 0;}
+.seccionTematicas h1{padding-left: 0;}
 .departamentos p.descripcion{padding-left:20px; border-left:2px solid #99ccff;}
-.tematicas a{color:#fff}
-.tematicas .col-md-3{margin-bottom:16px}
-.tematicas h3{ height: 88px; margin:8px 0 0 0; font-family:'Fira Sans',"fira_sansextralight", sans-serif; font-size:1.1em}
-.tematicas h3 span{display: block; }
-.tematicas .wrap{padding: 0 1.3em 0 1.3em;;}
-.tematicas .wrap img {margin-left:-1.3em;width:118% }
-.tematicas  .row{padding-left:30px}
-.tematicas .tema_arteIndustrial .wrap{ background-color:#4599c3;}
-.tematicas .tema_derecho .wrap{ background-color:#392626;}
-.tematicas .tema_econo .wrap{ background-color:#873e35}
-.tematicas .tema_conservacion .wrap{ background-color:#809879}
-.tematicas .tema_inge .wrap{ background-color:#873e35}
-.tematicas .tema_trabajo  .wrap{ background-color:#687ca1}
-.tematicas .tema_estado .wrap{ background-color:#c45c26}
-.tematicas .tema_arte .wrap{ background-color:#7c6054}
-.tematicas .tema_actiFisica  .wrap{ background-color:#a5c1dd}
-.tematicas .tema_actiFisica h3 a{color:#3c5c6c}
-.tematicas .tema_arq  .wrap{ background-color:#d48830}
-.tematicas .tema_historia .wrap{ background-color:#c9b64c}
-.tematicas .tema_salud  .wrap{ background-color:#edcc49}
-.tematicas .tema_medios  .wrap{ background-color:#c9b64c}
-.tematicas .tema_turismo  .wrap{ background-color:#5b7782}
-.tematicas .tema_salud h3 a,
-.tematicas .tema_historia h3 a{color:#7f0100}
-.tematicas .tema_medios h3 a{color:#141d28}
-.tematicas .colCell{width: auto; margin: .5em; height:217px; overflow:hidden;}
-.tematicas .colCell{box-sizing: content-box !important;}
+.seccionTematicas a{color:#fff}
+.seccionTematicas .col-md-3{margin-bottom:16px}
+.seccionTematicas h3{ height: 88px; margin:8px 0 0 0; font-family:'Fira Sans',"fira_sansextralight", sans-serif; font-size:1.1em}
+.seccionTematicas h3 span{display: block; }
+.seccionTematicas .wrap{padding: 0 1.3em 0 1.3em;;}
+.seccionTematicas .wrap img {margin-left:-1.3em;width:118% }
+.seccionTematicas  .row{padding-left:30px}
+.seccionTematicas .tema_arteIndustrial .wrap{ background-color:#4599c3;}
+
+.seccionTematicas .tema_econo .wrap{ background-color:#873e35}
+.seccionTematicas .tema_conservacion .wrap{ background-color:#809879}
+.seccionTematicas .tema_inge .wrap{ background-color:#873e35}
+.seccionTematicas .tema_trabajo  .wrap{ background-color:#687ca1}
+.seccionTematicas .tema_estado .wrap{ background-color:#c45c26}
+.seccionTematicas .tema_arte .wrap{ background-color:#7c6054}
+.seccionTematicas .tema_actiFisica  .wrap{ background-color:#a5c1dd}
+.seccionTematicas .tema_actiFisica h3 a{color:#3c5c6c}
+.seccionTematicas .tema_arq  .wrap{ background-color:#d48830}
+.seccionTematicas .tema_historia .wrap{ background-color:#c9b64c}
+.seccionTematicas .tema_salud  .wrap{ background-color:#edcc49}
+.seccionTematicas .tema_medios  .wrap{ background-color:#c9b64c}
+.seccionTematicas .tema_turismo  .wrap{ background-color:#5b7782}
+.seccionTematicas .tema_salud h3 a,
+.seccionTematicas .tema_historia h3 a{color:#7f0100}
+.seccionTematicas .tema_medios h3 a{color:#141d28}
+.seccionTematicas .colCell{width: auto; margin: .5em; height:217px; overflow:hidden;}
+.seccionTematicas .colCell{box-sizing: content-box !important;}
 #grillado{position: relative;}
 .baseDepto #toolbox{ background-color:#4c9bd9; color:white;}
 #resultados{margin-top:25px}

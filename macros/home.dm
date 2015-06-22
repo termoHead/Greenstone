@@ -33,9 +33,6 @@ _content_ {
 		<!-- Wrapper for slides -->
         <div class="slider-inner" role="listbox"></div>
 		<!-- fin Wrapper for slides -->
-	
-		
-		
 		<!-- Controls-->
 		<a class="left carousel-control" href="#miSlider" role="button" data-slide="prev">
 			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -44,18 +41,18 @@ _content_ {
 		<a class="right carousel-control" href="#miSlider" role="button" data-slide="next">
 			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 			<span class="sr-only">Next</span>
-		</a>       
+		</a>
     </div>
     <!-- fin slider -->
     <div class="row">
 		<div class="col-md-12 center-block">
 			<p class="tituloCentrado">Nuevas Publicaciones</p>
-		</div>		
+		</div>
 	</div>
-	<div class="row nuevas">		
-	 <!--seccion novedades-->
+	<div class="row nuevas">
+		<!-- seccion novedades -->
+		
 	</div>
-	
 	<div id="content">
 		<p>Es posible navegar los documentos de este repositorio en las siguientes colecciones:</p>
 		<div class="bloqueLinks">
@@ -74,6 +71,4 @@ _content_ {
 			<li><a href="_httpprefix_/cgi-bin/oaiserver.cgi?verb=Identify" target="_blank">Servidor OAI para cosecha de metadatos</a></li>
 		</ul>
 	</div>
-
-
 }

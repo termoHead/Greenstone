@@ -833,6 +833,9 @@ sub dameNovedad
     my ($infodbtype, $infodb_file_path, $newID,$colec)=@_;    	
     my $doc_rec = &dbutil::read_infodb_entry($infodbtype, $infodb_file_path, $newID);    
 	#my $convertido = Encode::encode("utf8",$doc_rec->{'Title'}[0]);
+	my $stra=q/"/;
+	my $replS=" ";	
+	$newID =~ s/$stra/$replS/g;		
 	print '<doc id="'.$newID.'">';
 	print '<meta title="coleccion">'.$colec.'</meta>';
 	foreach my $as (keys %$doc_rec) {
@@ -843,8 +846,7 @@ sub dameNovedad
 		$str =~ s/$find/$replace/g;
 		print '<meta title="'.$as.'">'.$str.'</meta>';
 	}
-	print "</doc>";
-    #return Encode::encode('utf8',$doc_rec->{'Title'}[0]);
+	print "</doc>";    
 	return "convertido";
 }
 
