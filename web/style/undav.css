@@ -90,7 +90,7 @@ margin-bottom: 25px;}
 .seccionDeptos .row{ margin-bottom:15px}
 .seccionDeptos h3{margin-top:23px;    padding-left: 16px;}
 .seccionDeptos h6{margin-top:15px;}
-.colecciones  h1,.baseDepto h1 ,
+.colecciones  h1,.aboutDepto h1 ,
 .seccionDeptos h1,
 .seccionTematicas h1{ color:#4c9ad8; font-size:34px}
 .seccionDeptos h1{padding-left: 30px;}
@@ -124,7 +124,7 @@ margin-bottom: 25px;}
 .seccionTematicas .colCell{width: auto; margin: .5em; height:217px; overflow:hidden;}
 .seccionTematicas .colCell{box-sizing: content-box !important;}
 #grillado{position: relative;}
-.baseDepto #toolbox{ background-color:#4c9bd9; color:white;}
+.aboutDepto #toolbox{ background-color:#4c9bd9; color:white; padding:20px;}
 #resultados{margin-top:25px}
 .ficha {border:1px solid #e3e3e3; 
 font-family: "Fira Sans","fira_sansextralight",Tahoma, Geneva, sans-serif;
@@ -153,4 +153,5 @@ margin-bottom:25px}
 
 .tooltipFail + .tooltip > .tooltip-inner {background-color: #645c56;}
 .tooltipFail + .tooltip > .tooltip-arrow { border-bottom-color:#645c56; }
-
+#btColec a{display:block; color:white; font-family:"fira_sansextralight"}
+#btColec a.selected{background-color: #8a88e0; font-size:1em; border-bottom-color:#8a88e0;}

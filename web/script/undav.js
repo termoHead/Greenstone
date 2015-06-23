@@ -3,8 +3,9 @@
 var imgLargo=562+2;
 var flagCol	=0;
 var ruta = window.location.href;
-var ruataAIMG="/greenstone/web/images/";
-var ruataAlXML="/greenstone/web/xml/";
+rutaConLib
+var ruataAIMG=rutaIMG;
+var ruataAlXML=rutaXML;
 //Aca se convierte el nombre de la coleccion como está en el GS 
 //a un text más comprensible
 var indiceColecciones=new Array("arti","Artículos de revistas","tesis","Tesis de grado y de posgrado",
@@ -217,7 +218,8 @@ function renderDeptosPage(xml)
 		if($.inArray($(this).attr("id"),acti)>-1){
 			var tmp=$(this).attr("href")
 			var OBJ=UNDAV_TEMATICAS.dameDeptoByID($(this).attr("id"));			
-			$(this).attr("href",tmp+"&listCol="+OBJ.colec.toString().replace(",","+"))
+			var tmpCole=OBJ.colec.toString().replace(",","+");
+			$(this).attr("href",tmp+"&listCol="+tmpCole+"&sel="+OBJ.colec[0])
 			$(this).attr("data-toggle","tooltip");
 			$(this).attr("data-placement","bottom" )
 			var tmpC=$(this).attr("class");
@@ -315,7 +317,6 @@ function parseDeptos(xml)
 //SLIDE HOME
 function botonPrev(e)
 {
-	
 	if(UNDAV_TEMATICAS.actualSlide>(0-(UNDAV_TEMATICAS.listaTemas.length-2)) 
 	&& !UNDAV_TEMATICAS.sliderLock){
 		var obj = $(".slider-inner");
@@ -343,7 +344,7 @@ function animaSlider(numero)
 	})	
 }
 //fin funcionalidad de los botones slides
-///////////////
+//////////////////////
 //////////////////////
 //NOVEDADES
 //
@@ -490,16 +491,64 @@ function creaImgVacia()
 	return icoPDFE;
 }
 //fin NOVEDADES
-//////////////////////////////////////
+//////////////////////////
+//////////////////////////
+//ABOUT DEPARTAMENTO
+function aboutDepto()
+{
+	var tmpColLista=UNDAV_TEMATICAS.urlParams["listCol"].split("+")
+	var coleccionINI=tmpColLista[0]
+	var depto=UNDAV_TEMATICAS.urlParams["area"]
+	var DeptoURL=rutaConLib+"a=q&q="+depto+"&c="+coleccionINI+"&fqf=MC";
+	var resu=new Array();
+	
+	$.get(DeptoURL, function( my_var ) {
+		if($(".ficha",my_var).length==0){
+			$("#msj").remove();
+			$('#resultados').append('<h3 id="msj">No se encontraron registros para esta colección, elija otra desde\
+			la barra de filtros</h3>')
+			return false;
+		}
+		
+		$($(".ficha",my_var).get().reverse()).each(function (a){
+			$("#resultados").append(this)
+		})
+		$("#msj").remove();
+	}, 'html');
+	
+	var AElegido=UNDAV_TEMATICAS.urlParams["sel"]
+	for(var ind in tmpColLista){
+		var link=$(document.createElement("a"))		
+		
+		var rA=rutaConLib+"p=depto&area="+UNDAV_TEMATICAS.urlParams["area"]+"&listCol="+UNDAV_TEMATICAS.urlParams["listCol"]+"&sel="+tmpColLista[ind]
+		link.attr("href",rA)
+		link.attr("class","btn-xs")
+		if(AElegido==tmpColLista[ind]){
+			link.attr("class","btn-xs selected")
+		}else{
+			link.attr("class","btn-xs")
+		}
+		link.text(indiceColecciones[indiceColecciones.indexOf(tmpColLista[ind])+1])
+		$("#toolbox #btColec").append(link)
+	}
+	
+	
+}
 
-
-function  iniciaPagina(){	
+function creaFromQuery(html)
+{	
+	$(".resultados").append($("#group_top",$(html).html()))
+}
+//fin DEPTO
+////////////////
+function  iniciaPagina()
+{
 	if( $("#miSlider").children().length>0){
 		//loadXML(ruataAlXML+"tematicas.xml",iniTemasHome);		
 		var clasificador=UNDAV_TEMATICAS.CLTematicas
 		loadXML(clasificador,iniTemasHome)
-	}else if($("article.baseDepto").children().length>0){
-		//iniciaDepto();
+	}else if($("article.aboutDepto").children().length>0){
+		aboutDepto();
 	}else if($(".seccionTematicas").length>0){
 		var clasificador=UNDAV_TEMATICAS.CLTematicas
 		loadXML(clasificador,renderTematicas)
@@ -509,7 +558,9 @@ function  iniciaPagina(){
 	}
 	
 }
-function setup(){
+
+function setup()
+{
 	cargaUrlParametros();
 	initEscuchadores()
 	loadXML(ruataAlXML+"tematicas.xml",parseTemasXML);
@@ -550,6 +601,7 @@ function initEscuchadores()
 	    iniciaPagina()
 	}, false);
 }
+
 //Carga los paramentros que vienen en la URL
 //dentro del diccionario UNDAV_TEMATICAS.urlParams
 function cargaUrlParametros()

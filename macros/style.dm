@@ -120,10 +120,17 @@ _htmlhead_ {<!doctype html>
     _globalscripts_
     _cssheader_
     _document:documentheader_
+	<script language="javascript" type="text/javascript">
+		var rutaConLib="_gwcgi_?";
+		var rutaIMG="_httpimages_/";
+		var rutaXML="_httpxml_/";
+	</script>
 	
     </head>
 
     <body _1_>
+	
+	
 }
 # Link and meta tags must be closed differently for HTML/XHTML validation
 _linktagend_ {_If_("_compliance_" eq "xhtml",/>,>)}
