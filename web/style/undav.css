@@ -148,3 +148,9 @@ margin-bottom:25px}
 .ficha .iconos a:hover{background-position: top right}
 .ficha .iconos a:active{background-position:top left}
 #msj{margin-left:25px; font-size:14px; color:#f00 }
+.tooltipOk + .tooltip > .tooltip-inner {background-color: #293f66;}
+.tooltipOk + .tooltip > .tooltip-arrow { border-bottom-color:#293f66; }
+
+.tooltipFail + .tooltip > .tooltip-inner {background-color: #645c56;}
+.tooltipFail + .tooltip > .tooltip-arrow { border-bottom-color:#645c56; }
+

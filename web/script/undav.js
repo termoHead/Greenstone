@@ -203,7 +203,8 @@ function renderTematicas(xml)
 	})
 }
 
-function renderDeptosPage(xml){
+function renderDeptosPage(xml)
+{
 	parseDeptosCL(xml)
 	var acti=new Array()
 	var lis=UNDAV_TEMATICAS.dameDeptosActivos()
@@ -212,15 +213,24 @@ function renderDeptosPage(xml){
 	}
 	 
 	$("article h3 a").each(function(e){
-		console.log($.inArray($(this).attr("id"),acti))	
+		
 		if($.inArray($(this).attr("id"),acti)>-1){
 			var tmp=$(this).attr("href")
-			var OBJ=UNDAV_TEMATICAS.dameDeptoByID($(this).attr("id"));
+			var OBJ=UNDAV_TEMATICAS.dameDeptoByID($(this).attr("id"));			
 			$(this).attr("href",tmp+"&listCol="+OBJ.colec.toString().replace(",","+"))
+			$(this).attr("data-toggle","tooltip");
+			$(this).attr("data-placement","bottom" )
+			var tmpC=$(this).attr("class");
+			$(this).attr("class", tmpC+" tooltipOk" )
+			$(this).attr("title","Colecciones: "+OBJ.colec.toString());
+			$(this).tooltip(); 
 		}else{			
 			$(this).attr("data-toggle","tooltip");
 			$(this).attr("data-placement","bottom" )
-			$(this).attr("title","Sin datos registrados");
+			var tmpC=$(this).attr("class");
+			$(this).attr("class", tmpC+" tooltipFail" )
+			$(this).attr("title","Sin registros cargados");
+			$(this).attr("href", "#" )
 			$(this).tooltip(); 
 		}
 	})
