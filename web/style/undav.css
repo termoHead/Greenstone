@@ -83,19 +83,19 @@ margin-bottom: 25px;}
 .pieAlto .telefonos{ padding-right:52px}
 .colecciones a,.colecciones p,
 .colecciones h1,.colecciones h3,
-.departamentos  a,.departamentos h1,
-.departamentos h3, .departamentos p{font-family:'fira_sansextralight', 'Fira Sans', sans-serif !important;}
+.seccionDeptos .seccionDeptos a,.seccionDeptos h1,
+.seccionDeptos h3, .seccionDeptos p{font-family:'fira_sansextralight', 'Fira Sans', sans-serif !important;}
 .colecciones h1 {padding-left:28px;}
-.departamentos h3 span{display:block; font-size:12px; color:#999}
-.departamentos .row{ margin-bottom:15px}
-.departamentos h3{margin-top:23px;    padding-left: 16px;}
-.departamentos h6{margin-top:15px;}
-.colecciones h1,.baseDepto h1 ,
-.departamentos h1,
+.seccionDeptos h3 span{display:block; font-size:12px; color:#999}
+.seccionDeptos .row{ margin-bottom:15px}
+.seccionDeptos h3{margin-top:23px;    padding-left: 16px;}
+.seccionDeptos h6{margin-top:15px;}
+.colecciones  h1,.baseDepto h1 ,
+.seccionDeptos h1,
 .seccionTematicas h1{ color:#4c9ad8; font-size:34px}
-.departamentos h1{padding-left: 30px;}
+.seccionDeptos h1{padding-left: 30px;}
 .seccionTematicas h1{padding-left: 0;}
-.departamentos p.descripcion{padding-left:20px; border-left:2px solid #99ccff;}
+.seccionDeptos p.descripcion{padding-left:20px; border-left:2px solid #99ccff;}
 .seccionTematicas a{color:#fff}
 .seccionTematicas .col-md-3{margin-bottom:16px}
 .seccionTematicas h3{ height: 88px; margin:8px 0 0 0; font-family:'Fira Sans',"fira_sansextralight", sans-serif; font-size:1.1em}
@@ -147,3 +147,4 @@ margin-bottom:25px}
 .ficha a.cita_bt{background-image:url("/greenstone/web/images/cita_bt.gif"); font-size:24px; background-repeat:no-repeat}
 .ficha .iconos a:hover{background-position: top right}
 .ficha .iconos a:active{background-position:top left}
+#msj{margin-left:25px; font-size:14px; color:#f00 }

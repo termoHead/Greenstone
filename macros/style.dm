@@ -304,6 +304,7 @@ _htmlfooter_ {
     <script src="_httpscript_/jquery.js" ></script> 
     <script src="_httpscript_/bootstrap.js" ></script>
     <script src="_httpscript_/undav.js" ></script>
+	
 </body>
 </html>
 }

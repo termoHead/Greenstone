@@ -846,7 +846,7 @@ sub dameNovedad
 		$str =~ s/$find/$replace/g;
 		print '<meta title="'.$as.'">'.$str.'</meta>';
 	}
-	print "</doc>";    
+	print "</doc>";
 	return "convertido";
 }
 

@@ -14,4 +14,10 @@
 	<tematica id="tema11" img="/greenstone/web/images/carrousel/12.jpg" color="a5c1dd" titulo="Actividad Física y Deportes" thum="/greenstone/web/images/tema_actiFisica.gif"></tematica>
 	<tematica id="tema12" img="/greenstone/web/images/carrousel/13.jpg" color="edcc49" titulo="Ciencias de la Salud" thum="/greenstone/web/images/tema_salud.gif"></tematica>
 	<tematica id="tema13" img="/greenstone/web/images/carrousel/14.jpg" color="c9b64c" titulo="Historia" thum="/greenstone/web/images/tema_historia.gif"></tematica>
+	<depto titulo="Ciencias Ambientales" id="dt0" />
+	<depto titulo="Producción y Trabajo" id="dt1" />
+	<depto titulo="Cultura y Arte" id="dt2" />
+	<depto titulo="Salud y Desarrollo Comunitario" id="dt3" />
+	<depto titulo="Actividad Física, Deporte y Recreación" id="dt4" />
+	<depto titulo="Comunicación y Tecnologías de la Información" id="dt5" />
 </tematicas>
