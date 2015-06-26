@@ -8,7 +8,7 @@ _content_ {
     </div>
     <div class="row">
 		<div class="col-md-4 col-sm-5" >			
-			<h3><span>Departamento de</span><a id="dt0" href="?p=depto&area=Ciencias+Ambientales">Ciencias Ambientales</a></h3>
+			<h3><span>Departamento de</span><a id="dt0" href="?p=depto&area=Departamento+de+Ciencias+Ambientales">Ciencias Ambientales</a></h3>
 		</div>
 		<div class="col-md-7 col-sm-5">
 	        <div class="wrapp">
@@ -21,7 +21,7 @@ _content_ {
     </div>
 	<div class="row">
 		<div class="col-md-4 col-sm-5" >			
-			<h3><span>Departamento de</span><a id="dt1" href="?p=depto&area=Producción+y+Trabajo">Producción y Trabajo</a></h3>
+			<h3><span>Departamento de</span><a id="dt1" href="?p=depto&area=Departamento+de+Producción+y+Trabajo">Producción y Trabajo</a></h3>
 		</div>
 		<div class="col-md-7 col-sm-5">
 	        <div class="wrapp">
@@ -39,7 +39,7 @@ Tecnicatura Universitaria en Mantenimiento Industrial del Sector Automotriz</p>
     
 	<div class="row">
 		<div class="col-md-4 col-sm-5" >			
-			<h3><span>Departamento de</span><a id="dt2" href="?p=depto&area=Cultura+y+Arte">Cultura y Arte</a></h3>
+			<h3><span>Departamento de</span><a id="dt2" href="?p=depto&area=Departamento+de+Cultura+y+Arte">Cultura y Arte</a></h3>
 		</div>
 		<div class="col-md-7 col-sm-5">
 	        <div class="wrapp">
@@ -55,7 +55,7 @@ Tecnicatura en Dirección de Orquestas y Coros Infantiles y Juveniles</p>
     </div>
 	<div class="row">
 		<div class="col-md-4 col-sm-5" >			
-			<h3><span>Departamento de</span><a id="dt3" href="?p=depto&area=Salud+y+Desarrollo+Comunitario">Salud y<br/> Desarrollo Comunitario</a></h3>
+			<h3><span>Departamento Transversal de </span><a id="dt3" href="?p=depto&area=Departamento+Transversal+de+Salud+y+Desarrollo+Comunitario">Salud y<br/> Desarrollo Comunitario</a></h3>
 		</div>
 		<div class="col-md-7 col-sm-5">
 	        <div class="wrapp">
@@ -83,7 +83,7 @@ Abogacía</p>
 		
 	<div class="row">
 		<div class="col-md-4 col-sm-5" >			
-			<h3><span>Departamento de</span><a id="dt5" href="?p=depto&area=Comunicación+Tecnologías+de+la+Información">Comunicación y<br/> Tecnologías de la Información</a></h3>
+			<h3><span>Departamento Transversal</span><a id="dt5" href="?p=depto&area=Departamento+Transversal+Comunicación+Tecnologías+de+la+Información">Comunicación y<br/> Tecnologías de la Información</a></h3>
 		</div>
 		<div class="col-md-7 col-sm-5">
 	        <div class="wrapp">

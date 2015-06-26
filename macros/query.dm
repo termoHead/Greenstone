@@ -766,8 +766,14 @@ _htmlhead_(onLoad="initialize();")_pagebanner_
 
 _pagetitle_ {_If_(_cgiargq_,_textquerytitle_,_textnoquerytitle_)}
 
+_content_{
 
-_content_ {
+	<input id="resultadoQ" type="text" value="_resultline_" />
+	_resultline_
+}
+_footer_{</body></html>}
+_header_{<html><head></head><body>}
+_contentA_ {
 
 _optnavigationbar_
 <div class="document">
@@ -787,8 +793,9 @@ _If_(_searchhistorylist_,<center>_searchhistorybar_</center><br>
 _searchhistorylist_
 </center>)
 _If_(_cgiargq_,_queryresultsbar_
+<input id="resultadoQ" type="text" value="_resultline_">
 <small>_freqmsg__textpostprocess__If_(_stopwordsmsg_,(_stopwordsmsg_))</small><br />
-_resultline_
+<div id="searchResult">_resultline_</div>
 ,<div class="divbar">&nbsp;</div>)
  
 }

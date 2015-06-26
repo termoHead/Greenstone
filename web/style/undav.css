@@ -153,5 +153,12 @@ margin-bottom:25px}
 
 .tooltipFail + .tooltip > .tooltip-inner {background-color: #645c56;}
 .tooltipFail + .tooltip > .tooltip-arrow { border-bottom-color:#645c56; }
-#btColec a{display:block; color:white; font-family:"fira_sansextralight"}
-#btColec a.selected{background-color: #8a88e0; font-size:1em; border-bottom-color:#8a88e0;}
+#btColec a,#btTemas a{display:block; color:white; font-family:"fira_sansextralight"}
+#btColec a.selected,#btTemas a.selected{background-color: #8a88e0; font-size:1em; border-bottom-color:#8a88e0;}
+#spinner {
+    width:15px;
+    height:15px;	
+	float:left;
+	margin-right:0.5em;
+    background-image: url('/greenstone/web/images/Rclk1Sf.png');
+}
