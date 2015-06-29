@@ -766,14 +766,13 @@ _htmlhead_(onLoad="initialize();")_pagebanner_
 
 _pagetitle_ {_If_(_cgiargq_,_textquerytitle_,_textnoquerytitle_)}
 
-_content_{
-
+_contentA_{
 	<input id="resultadoQ" type="text" value="_resultline_" />
 	_resultline_
 }
 _footer_{</body></html>}
 _header_{<html><head></head><body>}
-_contentA_ {
+_content_ {
 
 _optnavigationbar_
 <div class="document">

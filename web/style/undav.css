@@ -125,13 +125,13 @@ margin-bottom: 25px;}
 .seccionTematicas .colCell{box-sizing: content-box !important;}
 #grillado{position: relative;}
 .aboutDepto #toolbox{ background-color:#4c9bd9; color:white; padding:20px;}
-#resultados{margin-top:25px}
+#resultados{margin-top:25px; padding-left:20px;}
 .ficha {border:1px solid #e3e3e3; 
 font-family: "Fira Sans","fira_sansextralight",Tahoma, Geneva, sans-serif;
 -webkit-box-shadow: 6px 6px 9px 0px rgba(0, 0, 0, 0.2);
 -moz-box-shadow: 6px 6px 9px 0px rgba(0, 0, 0, 0.2);
 box-shadow: 6px 6px 9px 0px rgba(0, 0, 0, 0.2);
-margin-bottom:25px}
+margin-bottom:25px;}
 .ficha h4 a:link{color:#293f66 !important; font-size:1em}
 .ficha .wraper{padding:0 0.3em 1em 1.5em}
 .ficha .tipoDoc{color:#7c7c7c}
@@ -147,12 +147,11 @@ margin-bottom:25px}
 .ficha a.cita_bt{background-image:url("/greenstone/web/images/cita_bt.gif"); font-size:24px; background-repeat:no-repeat}
 .ficha .iconos a:hover{background-position: top right}
 .ficha .iconos a:active{background-position:top left}
-#msj{margin-left:25px; font-size:14px; color:#f00 }
+#msj{margin-left:25px; font-size:14px; color:#f00}
 .tooltipOk + .tooltip > .tooltip-inner {background-color: #293f66;}
-.tooltipOk + .tooltip > .tooltip-arrow { border-bottom-color:#293f66; }
-
+.tooltipOk + .tooltip > .tooltip-arrow { border-bottom-color:#293f66;}
 .tooltipFail + .tooltip > .tooltip-inner {background-color: #645c56;}
-.tooltipFail + .tooltip > .tooltip-arrow { border-bottom-color:#645c56; }
+.tooltipFail + .tooltip > .tooltip-arrow { border-bottom-color:#645c56;}
 #btColec a,#btTemas a{display:block; color:white; font-family:"fira_sansextralight"}
 #btColec a.selected,#btTemas a.selected{background-color: #8a88e0; font-size:1em; border-bottom-color:#8a88e0;}
 #spinner {
@@ -162,3 +161,6 @@ margin-bottom:25px}
 	margin-right:0.5em;
     background-image: url('/greenstone/web/images/Rclk1Sf.png');
 }
+.cita{ background-color:#999; padding:8px; color:#eee; text-align:left;clear:both; float:left;margin-bottom: 20px;}
+.iconos .selected{ background-color:#999;}
+#myModalLabel{text-align:left !important}

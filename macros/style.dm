@@ -56,7 +56,7 @@ _collectionspecificscript_ {}
 # by the style sheet.
 
 _header_ {_cgihead_
-_htmlhead_(class="glyphicon-home")_startspacer__pagebanner_
+_htmlhead_(class="glyphicon-home")_startspacer_ _pagebanner_
 }
 
 _header_[v=1] {_cgihead_
@@ -308,9 +308,11 @@ _htmlfooter_ {
 		<a href="http://creativecommons.org/licenses/by-nc-nd/2.5/ar/" target="_blank"><img src="_httpprefix_/web/images/SOMERIGHTSRESERVED.gif"></a>
 		<a href="http://www.openarchives.org/" target="_blank"><img src="_httpprefix_/web/images/Logo-Open-Archives.jpg"></a>
 	</div>
+
     <script src="_httpscript_/jquery.js" ></script> 
     <script src="_httpscript_/bootstrap.js" ></script>
     <script src="_httpscript_/undav.js" ></script>
+	
 	
 </body>
 </html>

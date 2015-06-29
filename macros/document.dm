@@ -13,6 +13,10 @@ _pagetitle_ {}
 _phindclassifier_ {}
 _collageclassifier_ {}
 
+
+_header_{_style:htmlhead_ <div class="container"> _style:pagebanner_ }
+_footer_{</article>_style:footer_<div>}
+_content_ {_optnavigationbar_ <article class="row">}
 # custom header for individual document
 _documentheader_ {} 
 
@@ -38,7 +42,9 @@ _nextsearchresult_ {_If_("_cgiargsrn_" ne "0",<li id="nextresult"><a href="_http
 
 _prevsearchresult_ {_If_("_cgiargsrp_" ne "0",<li id="prevresult"><a href="_httpquery_&amp;ifl=1&amp;ifln=_cgiargsrp_">_textprevsearchresult_</a></li>)}
 
-_content_ {
+
+
+_contentA_ {
 _optnavigationbar_
 
 _If_(_phindclassifier__collageclassifier_,
@@ -381,7 +387,7 @@ function tabshow(divid) \{
     return false;
  \}
 
- function hide_toc()\{
+function hide_toc()\{
      var div_nodes = document.getElementsByTagName("div");    
      for (var i=0;i < div_nodes.length ; i++ )\{
           var div_node = div_nodes[i];
@@ -389,13 +395,13 @@ function tabshow(divid) \{
              \{
                style_display_old = div_node.style.display; 
                toc_top = document.getElementById("toc_top"); 
-               if (toc_top)
+               if (toc_top)\{
                 div_node.parentNode.insertBefore(toc_top,div_node);
                 div_node.style.display = "none";
+				\}
              \};
-      \}  
-
- \}  
+      \}   
+\}
 
 
  function show_toc()\{
@@ -406,8 +412,9 @@ function tabshow(divid) \{
           if (div_node.className =="toc")
              \{
                div_node.style.display = style_display_old;
-               if (toc_top)
+               if (toc_top)\{
                   div_node.insertBefore(toc_top,div_node.firstChild);    
+				  \}
               \}; 
       \}
 
@@ -418,13 +425,12 @@ function tabshow(divid) \{
      var toc_link =  document.getElementById("toc_link");
        while (toc_link.hasChildNodes()) \{
        	  toc_link.removeChild(toc_link.firstChild);
-	\}  
+		\}  
     if (show)\{
         toc_link.appendChild(document.createTextNode('_textshowcontents_'));
         show = false;
         hide_toc(); 
-    \}
-  else\{
+    \}else\{
        toc_link.appendChild(document.createTextNode('_texthidecontents_'));
       show = true;
       show_toc();
@@ -494,13 +500,14 @@ function tabshow(divid) \{
     for(i=0; (a = document.getElementsByTagName("link")[i]); i++) \{
       if(a.getAttribute("rel").indexOf("style") != -1
          && a.getAttribute("title")) \{
-        a.disabled = true;
-        if(a.getAttribute("title") == title) a.disabled = false;
-    \}
-   \ }
+			a.disabled = true;
+			if(a.getAttribute("title") == title)\{a.disabled = false;\} 
+		\}
+	\}
   \}
+  
+ }
 
-}
 
 
 #######################################################################
@@ -509,7 +516,8 @@ function tabshow(divid) \{
 
 
 # header overridden for text pages
-_textheader_ {_cgihead_
+_textheaderA_ {}
+_textheaderA_ {_cgihead_
 _htmlhead_
 _startspacer_
 
@@ -519,13 +527,15 @@ _startspacer_
 <p class="bannerlinks">_globallinks_</p>
 <div class="collectimage">_imagecollection_</div>
 }
-
+_textheader_ {
+	_style:htmlhead_ _style:pagebanner_
+}
 _textheader_ [v=1] {_cgihead_
 _htmlhead_
 _globallinks_
 }
 
-_footer_ {
+_footerA_ {
 </div> <!-- document:footer -->
 
 <div class="navarrowsbottom">

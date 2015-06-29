@@ -22,8 +22,9 @@ _content_ {
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-6" id="resultados">
+		<div id="resultados">
 		<span  id="msj">cargando registros...</span></div>
 	<div>
  </article>
+
 }
