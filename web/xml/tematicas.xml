@@ -1,19 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tematicas>
-	<tematica id="tema0" img="/greenstone/web/images/carrousel/1.jpg" color="4599c3" titulo="Arte y Diseño Industrial" thum="/greenstone/web/images/tema_arteIndustrial.gif"></tematica>
-	<tematica id="tema1" img="/greenstone/web/images/carrousel/2.jpg" color="7c6054" titulo="Arte y Cultura" thum="/greenstone/web/images/tema_arte.gif"></tematica>
-	<tematica id="tema2" img="/greenstone/web/images/carrousel/3.jpg" color="873e35" titulo="Ingeniería y Tecnología" thum="/greenstone/web/images/tema_ingel.gif"></tematica>
-	<tematica id="tema3" img="/greenstone/web/images/carrousel/4.jpg" color="d48830" titulo="Arquitectura y Urbanismo" thum="/greenstone/web/images/tema_arq.gif"></tematica>
-	<tematica id="tema4" img="/greenstone/web/images/carrousel/5.jpg" color="687ca1" titulo="Trabajo Social y Comunitario" thum="/greenstone/web/images/tema_trabajo.gif"></tematica>	
-	<tematica id="tema5" img="/greenstone/web/images/carrousel/6.jpg" color="c45c26" titulo="Estado y Sociedad" thum="/greenstone/web/images/tema_estado.gif"></tematica>	
-	<tematica id="tema6" img="/greenstone/web/images/carrousel/7.jpg" color="392626" titulo="Derecho" thum="/greenstone/web/images/tema_derecho.gif"></tematica>
-	<tematica id="tema7" img="/greenstone/web/images/carrousel/8.jpg" color="873e35" titulo="Economía y Gestión" thum="/greenstone/web/images/tema_econo.gif"></tematica>
-	<tematica id="tema8" img="/greenstone/web/images/carrousel/9.jpg" color="809879" titulo="Conservación, Protección y Gestión del Medio Ambiente" thum="/greenstone/web/images/tema_conservacion.gif"></tematica>	
-	<tematica id="tema9" img="/greenstone/web/images/carrousel/10.jpg" color="5b7782" titulo="Turismo y Recreación" thum="/greenstone/web/images/tema_turismo.gif"></tematica>		
-	<tematica id="tema10" img="/greenstone/web/images/carrousel/11.jpg" color="b62529" titulo="Comunicación y Medios" thum="/greenstone/web/images/tema_medios.gif"></tematica>
-	<tematica id="tema11" img="/greenstone/web/images/carrousel/12.jpg" color="a5c1dd" titulo="Actividad Física y Deportes" thum="/greenstone/web/images/tema_actiFisica.gif"></tematica>
-	<tematica id="tema12" img="/greenstone/web/images/carrousel/13.jpg" color="edcc49" titulo="Ciencias de la Salud" thum="/greenstone/web/images/tema_salud.gif"></tematica>
-	<tematica id="tema13" img="/greenstone/web/images/carrousel/14.jpg" color="c9b64c" titulo="Historia" thum="/greenstone/web/images/tema_historia.gif"></tematica>
+	<tematica id="tema0" img="/greenstone/web/images/carrousel/1.jpg" color="4599c3" 
+		titulo="Arte y Diseño Industrial" 
+		corto="Arte y Diseño Industrial"
+		thum="/greenstone/web/images/tema_arteIndustrial.gif"></tematica>
+	<tematica id="tema1" img="/greenstone/web/images/carrousel/2.jpg" color="7c6054" 
+		corto="Arte y Cultura"
+		titulo="Arte y Cultura" thum="/greenstone/web/images/tema_arte.gif"></tematica>
+	<tematica id="tema2" img="/greenstone/web/images/carrousel/3.jpg" color="873e35" 		
+		corto="Ingeniería y Tecnología"
+		titulo="Ingeniería y Tecnología" thum="/greenstone/web/images/tema_ingel.gif"></tematica>
+	<tematica id="tema3" img="/greenstone/web/images/carrousel/4.jpg" color="d48830" 
+		corto="Arquitectura y Urbanismo"
+		titulo="Arquitectura y Urbanismo" thum="/greenstone/web/images/tema_arq.gif"></tematica>
+	<tematica id="tema4" img="/greenstone/web/images/carrousel/5.jpg" color="687ca1" 
+		corto="Trabajo Social"
+		titulo="Trabajo Social y Comunitario" thum="/greenstone/web/images/tema_trabajo.gif"></tematica>	
+	<tematica id="tema5" img="/greenstone/web/images/carrousel/6.jpg" color="c45c26" 
+		corto="Estado y Sociedad"
+		titulo="Estado y Sociedad" thum="/greenstone/web/images/tema_estado.gif"></tematica>	
+	<tematica id="tema6" img="/greenstone/web/images/carrousel/7.jpg" color="392626" 
+		corto="Derecho"
+		titulo="Derecho" thum="/greenstone/web/images/tema_derecho.gif"></tematica>
+	<tematica id="tema7" img="/greenstone/web/images/carrousel/8.jpg" color="873e35" 
+		corto="Economía y Gestión"
+		titulo="Economía y Gestión" thum="/greenstone/web/images/tema_econo.gif"></tematica>
+	<tematica id="tema8" img="/greenstone/web/images/carrousel/9.jpg" color="809879" 
+		corto="Medio Ambiente"
+		titulo="Conservación, Protección y Gestión del Medio Ambiente" thum="/greenstone/web/images/tema_conservacion.gif"></tematica>	
+	<tematica id="tema9" img="/greenstone/web/images/carrousel/10.jpg" color="5b7782" 
+		corto="Turismo y Recreación"
+		titulo="Turismo y Recreación" thum="/greenstone/web/images/tema_turismo.gif"></tematica>		
+	<tematica id="tema10" img="/greenstone/web/images/carrousel/11.jpg" color="b62529" 
+		corto="Comunicación"
+		titulo="Comunicación y Medios" thum="/greenstone/web/images/tema_medios.gif"></tematica>
+	<tematica id="tema11" img="/greenstone/web/images/carrousel/12.jpg" color="a5c1dd" 
+		corto="Actividad Física"
+		titulo="Actividad Física y Deportes" thum="/greenstone/web/images/tema_actiFisica.gif"></tematica>
+	<tematica id="tema12" img="/greenstone/web/images/carrousel/13.jpg" color="edcc49" 
+		corto="Salud"
+		titulo="Ciencias de la Salud" thum="/greenstone/web/images/tema_salud.gif"></tematica>
+	<tematica id="tema13" img="/greenstone/web/images/carrousel/14.jpg" color="c9b64c" 
+		corto="Historia"
+		titulo="Historia" thum="/greenstone/web/images/tema_historia.gif"></tematica>
 	<depto titulo="Departamento de Ciencias Ambientales" id="dt0" />
 	<depto titulo="Departamento de Producción y Trabajo" id="dt1" />
 	<depto titulo="Departamento de Cultura y Arte" id="dt2" />

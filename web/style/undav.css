@@ -103,21 +103,29 @@ margin-bottom: 25px;}
 .seccionTematicas .wrap{padding: 0 1.3em 0 1.3em;;}
 .seccionTematicas .wrap img {margin-left:-1.3em;width:118% }
 .seccionTematicas  .row{padding-left:30px}
-.seccionTematicas .tema_arteIndustrial .wrap{ background-color:#4599c3;}
 
-.seccionTematicas .tema_econo .wrap{ background-color:#873e35}
-.seccionTematicas .tema_conservacion .wrap{ background-color:#809879}
-.seccionTematicas .tema_inge .wrap{ background-color:#873e35}
-.seccionTematicas .tema_trabajo  .wrap{ background-color:#687ca1}
-.seccionTematicas .tema_estado .wrap{ background-color:#c45c26}
-.seccionTematicas .tema_arte .wrap{ background-color:#7c6054}
-.seccionTematicas .tema_actiFisica  .wrap{ background-color:#a5c1dd}
+.seccionTematicas .tema_arteIndustrial .wrap, .tema0{ background-color:#4599c3;}
+.seccionTematicas .tema_econo .wrap,.tema7{ background-color:#873e35}
+.seccionTematicas .tema_conservacion .wrap,.tema8{ background-color:#809879}
+.seccionTematicas .tema_inge .wrap,.tema2{ background-color:#873e35}
+.seccionTematicas .tema_trabajo  .wrap,.tema4{ background-color:#687ca1}
+.seccionTematicas .tema_estado .wrap, .tema5{ background-color:#c45c26}
+.seccionTematicas .tema_arte .wrap, .tema1{ background-color:#7c6054}
+.seccionTematicas .tema_actiFisica  .wrap,.tema11{ background-color:#a5c1dd}
 .seccionTematicas .tema_actiFisica h3 a{color:#3c5c6c}
-.seccionTematicas .tema_arq  .wrap{ background-color:#d48830}
-.seccionTematicas .tema_historia .wrap{ background-color:#c9b64c}
-.seccionTematicas .tema_salud  .wrap{ background-color:#edcc49}
-.seccionTematicas .tema_medios  .wrap{ background-color:#c9b64c}
-.seccionTematicas .tema_turismo  .wrap{ background-color:#5b7782}
+.seccionTematicas .tema_arq  .wrap,.tema3{ background-color:#d48830}
+.seccionTematicas .tema_historia .wrap,.tema13{ background-color:#c9b64c}
+.seccionTematicas .tema_salud  .wrap,.tema12{ background-color:#edcc49}
+.seccionTematicas .tema_medios  .wrap,.tema10{ background-color:#c9b64c}
+.seccionTematicas .tema_turismo  .wrap, .tema9{ background-color:#5b7782}
+.seccionTematicas .tema_derecho  .wrap,.tema6{ background-color:#392626}
+.iconos span{
+color:#fff;
+position: absolute;
+left: 0;
+width: 50%;
+text-align: left;
+padding: 10px 0px 10px 30px;}
 .seccionTematicas .tema_salud h3 a,
 .seccionTematicas .tema_historia h3 a{color:#7f0100}
 .seccionTematicas .tema_medios h3 a{color:#141d28}
@@ -132,16 +140,15 @@ font-family: "Fira Sans","fira_sansextralight",Tahoma, Geneva, sans-serif;
 -moz-box-shadow: 6px 6px 9px 0px rgba(0, 0, 0, 0.2);
 box-shadow: 6px 6px 9px 0px rgba(0, 0, 0, 0.2);
 margin-bottom:25px;}
-.ficha h4 a:link{color:#293f66 !important; font-size:1em}
+.ficha h4 a{color:#293f66 !important; font-size:1em}
 .ficha .wraper{padding:0 0.3em 1em 1.5em}
-.ficha .tipoDoc{color:#7c7c7c}
+.ficha .tipoDoc{color:#7c7c7c;font-size: .9em;}
 .ficha .responsables{color:#3f3f3f;font-size:.9em}
 .ficha .institucional{font-size:.8em}
-.info{font-size:1em; line-height: 1em;}
-
+.info{font-size:1em; line-height: 1em; margin-top:15px}
 .ficha .iconos{height:50px; text-align:right}
 .ficha .iconos a{ margin-right:13px;}
-.ficha .iconos a img{height:38px;}
+.ficha .iconos a img{height:52px;}
 .ficha a.pdf_bt{background-image:url("/greenstone/web/images/pdf_bt.gif"); font-size:24px; background-repeat:no-repeat}
 .ficha a.compartir_bt{background-image:url("/greenstone/web/images/share_bt.gif"); font-size:24px; background-repeat:no-repeat}
 .ficha a.cita_bt{background-image:url("/greenstone/web/images/cita_bt.gif"); font-size:24px; background-repeat:no-repeat}
@@ -161,6 +168,9 @@ margin-bottom:25px;}
 	margin-right:0.5em;
     background-image: url('/greenstone/web/images/Rclk1Sf.png');
 }
-.cita{ background-color:#999; padding:8px; color:#eee; text-align:left;clear:both; float:left;margin-bottom: 20px;}
+.cita{ background-color:#999; padding:8px; color:#eee; text-align:left;clear:both; margin-bottom: 20px;
+position: absolute;width: 100%;left: 0px;padding: 20px;}
 .iconos .selected{ background-color:#999;}
 #myModalLabel{text-align:left !important}
+#CL6 .ficha:nth-child(odd) {margin-left:1em}
+.pageBLista  h4{margin-bottom:2em}
