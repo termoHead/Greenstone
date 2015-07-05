@@ -1,3 +1,17 @@
+var rueLita=["http://localhost:8282/greenstone/cgi-bin/library.cgi?","http://localhost:8282/greenstone/cgi-bin/ibraryQ.cgi?"]
+var rueLitaFlag	=0
+window.fVuelta	=0
+window.cgiNum	=0
+
+/*{coleName:"arti",campos:"CM,TE,ZZ,ZZ"}
+{coleName:"libros",campos:"CM,TE,AU,OT"}
+{coleName:"tesis",campos:"CM,TE,AU,OT"}
+{coleName:"libros",campos:"CM,TE,AU,OT"}
+{coleName:"eventos",campos:"CM,TE,AU,OT"}*/
+
+
+
+
 function PANEL(){	
 	this.tematicas=new Array();	
 	this.deptos=new Array();	
@@ -9,8 +23,9 @@ function PANEL(){
 	this.cls=0;
 	this.seccionActual=""
 	this.botonesList=new Array();
+	this.flager=new Array(0,0)
 	
-	function dameBotonById(idS){
+	this.dameBotonById = function (idS){		
 		for (var elem in this.botonesList)
 		{
 			if (this.botonesList[elem].id == idS){
@@ -63,9 +78,8 @@ function onPanelCargado(ev){
 	var posEnCL		=	window.panel.posEnCl[window.panel.indiceActual]
 	var coleccionINI	= window.panel.colecs[window.panel.indiceActual]
 	
-	var DeptoURL=rutaConLib+'fq=1&a=d&cl=CL6.'+posEnCL+'&c='+coleccionINI;		
-	console.log("____________")
-	console.log(DeptoURL)
+	var DeptoURL=rutaConLib+'fq=1&a=d&cl=CL6.'+posEnCL+'&c='+coleccionINI+'&ajax=1';
+	
 	buscarFichasCL(DeptoURL)
 	
 	//hace las busquedas de los botones que van a crear la navegaciòn local
@@ -77,10 +91,68 @@ function onPanelCargado(ev){
 
 function  panelSetupBotones()
 {
-	//UNDAV_TEMATICAS.urlParams["posEnCL"]
-	console.log("panelSetupBotones")	
+	//UNDAV_TEMATICAS.urlParams["posEnCL"]	
 	var clasificador=UNDAV_TEMATICAS.CLTematicas
-	var resu=new Array();	
+	//var resu=new Array();	
+	generaBotonesCoeccion()
+	generaBotonesTemas()
+}
+function generaBotonesTemas(){
+	buscaBotonesTematicas()
+}
+function buscaBotonesTematicas(){
+	var tmpColLista=window.panel.colecs;
+	var temaList	=	UNDAV_TEMATICAS.dameTemasActivos();
+	var flagColec	=	window.panel.flager[0];
+	var flagTema	=	window.panel.flager[1];	
+	var coleccionA=tmpColLista[flagColec]	;
+	var depto=UNDAV_TEMATICAS.urlParams["area"];	
+	var temaA=temaList[flagTema];
+	var DeptoURL=rueLita[window.cgiNum];
+	var nD={c:coleccionA,a:"q",j:"to",t:"0",r:"1",hs:"1",qt:"1",fqa:"0",fqv:depto+","+temaA.titulo.replace(/ /g, '+')+",,",fqf:"CM,TE,AU,OT",ajax:1}
+	var jqxhr = $.get(DeptoURL.substr(0,DeptoURL.length-1),nD)
+		  .done(function(my_var){
+				window.fVuelta--
+				var html = $(document.createElement("div")).append($.parseHTML(my_var));
+				var result=$("#resultadoQ",html).val().replace(/\D/g,"");
+				if(result>0){				
+					var idO=generaID()					
+					UNDAV_TEMATICAS.btns.push({tipo:"enlace",params:nD,id:idO,texto:temaA.titulo})
+				}
+				managConsulta();
+		  })
+		  .fail(function(e) {
+				console.log( "error" );
+		  })
+	//managConsulta()
+}
+
+function managConsulta()
+{	
+	var tmpColLista=window.panel.colecs;
+	var temaList=UNDAV_TEMATICAS.dameTemasActivos()
+	window.panel.flager[1]+=1;
+	if(window.panel.flager[1]==temaList.length)
+	{
+		window.panel.flager[1]=0		
+			window.nuevoBoton=false;					
+			clearInterval(intervalSpinner);	
+			$("h6 #spinner").hide("slow", function() {
+				$(this).remove()
+			  });
+			muestraBotones()
+			return false			
+	}	
+	if (window.fVuelta>1 || window.nuevoBoton==false){return false}
+	window.fVuelta++;
+	if(window.cgiNum==10){window.cgiNum=1}else{window.cgiNum=0;}	
+	buscaBotonesTematicas()
+}
+
+
+
+
+function generaBotonesCoeccion(){
 	for(var ind in window.panel.colecs){
 		var elemID="btC_"+ind
 		var link=$(document.createElement("a"))		
@@ -104,20 +176,30 @@ function  panelSetupBotones()
 		}
 		link.text(indiceColecciones[indiceColecciones.indexOf(window.panel.colecs[ind])+1])		
 		$(link).on("click", function (e) {
+			
 			var href = $(this).attr("href");
 			history.pushState(null, null, href);
 			var showForId = $(this).prop('id');
+			e.preventDefault();
 			/*$('a[id="' + showForId + '"').tab('show');
 			$('.tab-pane').removeClass('active');
 			$('.tab-pane[id="' + showForId + '"]').addClass('active');*/
-			updateDeptoColeccion()
-			e.preventDefault();
+			updateDeptoColeccion($(this).attr('id'))
 		});
-		
 		$("#toolbox #btColec").append(link)	
 	}
 }
-
+function updateDeptoColeccion(id){	
+	var bot = window.panel.dameBotonById(id)	
+	$("#resultados").text(" ");
+	var coleccionINI=bot.listCol.split(",")[bot.sel]
+	var posXD=bot.posEnCL.split(",")[bot.sel]
+	var DeptoURL=rutaConLib+'fq=1&a=d&cl=CL6.'+posXD+'&c='+coleccionINI+'&ajax=1';
+	
+	buscarFichasCL(DeptoURL)
+	// buscarFichasCL(url)
+	
+}
 
 
 //cargo los datos de los Clasificadores

@@ -51,7 +51,7 @@ UNDAV_TEMATICAS.imgLoaded   = 0;
 UNDAV_TEMATICAS.sliderLock  = false;
 UNDAV_TEMATICAS.actualSlide = 0;
 UNDAV_TEMATICAS.urlParams   = new Object()
-UNDAV_TEMATICAS.flager=new Array(0,0)
+
 //cuando creo enlaces ajaxs los almaceno
 //con sus parametros
 UNDAV_TEMATICAS.btns=new Array()
@@ -79,8 +79,12 @@ UNDAV_TEMATICAS.dameColorTematica=function(tematica){
     return ""
 }
 UNDAV_TEMATICAS.dameTituCortoByTema=function(tematica){
+	
 	for(var a=0; a<UNDAV_TEMATICAS.listaTemas.length;a++){
-		if (UNDAV_TEMATICAS.listaTemas[a]["titulo"].toLowerCase()==tematica.toLowerCase()){
+		var titAc=UNDAV_TEMATICAS.listaTemas[a]["titulo"].toLowerCase() 
+		var temaC=tematica.toLowerCase()
+		if (temaC=="actividad física y deporte"){temaC="actividad física y deportes";}		
+		if (titAc==temaC){
 			return UNDAV_TEMATICAS.listaTemas[a]["tituCorto"]
 		}
 	}
@@ -96,7 +100,11 @@ UNDAV_TEMATICAS.dameImagTematica=function(tematica){
 }
 UNDAV_TEMATICAS.dameIdTematica=function(tematica){
 	for(var a=0; a<UNDAV_TEMATICAS.listaTemas.length;a++){		
-		if (UNDAV_TEMATICAS.listaTemas[a]["titulo"].toLowerCase()==tematica.toLowerCase()){
+		var titAc=UNDAV_TEMATICAS.listaTemas[a]["titulo"].toLowerCase() 
+		var temaC=tematica.toLowerCase()
+		if (temaC=="actividad física y deporte"){temaC="actividad física y deportes";}
+		if (titAc == temaC){
+		//if (UNDAV_TEMATICAS.listaTemas[a]["titulo"].toLowerCase()==tematica.toLowerCase()){
 			return UNDAV_TEMATICAS.listaTemas[a]["id"]
 		}
 	}
@@ -146,7 +154,7 @@ UNDAV_TEMATICAS.dameDeptosActivos=function(){
     return result
 }
 UNDAV_TEMATICAS.cargaColecEnTematica=function(tema,colecA,posCL){		
-console.log(posCL+">")
+
 	for(var a=0; a<UNDAV_TEMATICAS.listaTemas.length;a++){
 		if (UNDAV_TEMATICAS.listaTemas[a]["titulo"].toLowerCase()==tema.toLowerCase()){			
 			if($.inArray(UNDAV_TEMATICAS.listaTemas[a].colec,colecA)<0){
@@ -154,7 +162,7 @@ console.log(posCL+">")
 				UNDAV_TEMATICAS.listaTemas[a].posEnCL.push(posCL);
 			}else{
 				console.log("ya estaba!");
-			}			
+			}
 		}
 	}
     return "";
@@ -340,7 +348,7 @@ function parseTemasXML(xml)
 function parseDeptos(xml)
 {
 	var colec=$(xml)	
-		colec.find('depto').each(function(){
+	colec.find('depto').each(function(){
 		var dp=new DEPTO();
 		dp.nombre=$(this).attr("titulo");
 		dp.clase=$(this).attr("titulo").replace(/[^a-z0-9]/gi,'').toLowerCase()
@@ -521,36 +529,39 @@ function aboutDepto(){
 }
 
 
-
+//MANI BUSCA Y RENDER FICHAS
 function buscarFichasCL(DeptoURL)
 {
 	var fftmp=0;
-
+	
 	$.get(DeptoURL, function( my_var ) {
 		if($("#CL6 .ficha",my_var).length==0){			
 			$('#resultados').append('<h3 id="msj">No se encontraron registros para esta colección, elija otra desde\
 			la barra de filtros</h3>')
 			return false;
 		}
+		
 		$($(".ficha",my_var).get().reverse()).each(function (a){
 			fftmp++
-			var temaOBJ=$(".iconos span",$(this))
-			var tema = temaOBJ.text()
-			var temaId= UNDAV_TEMATICAS.dameIdTematica(tema)				
+			var temaOBJ=$(".iconos span.pull-left",$(this));			
+			var tema = temaOBJ.text();
+			var temaId= UNDAV_TEMATICAS.dameIdTematica(tema);
+			
 			//cambio el tema a titulo corto
-			temaOBJ.text(UNDAV_TEMATICAS.dameTituCortoByTema(tema))
-			temaOBJ.attr("class","pull-left  "+temaId	)
-			if(fftmp%2>0){				
+			temaOBJ.text(UNDAV_TEMATICAS.dameTituCortoByTema(tema));
+			temaOBJ.attr("class","pull-left col-md-3 "+temaId);
+			if(fftmp%2>0){	
 				$(this).attr("class","ficha col-md-5  col-sm-5 ")	
 			}else{
 				$(this).attr("class","ficha col-md-5  col-sm-5 col-md-offset-1 ")	
 			}	
+			
 			$("#resultados").append(this)
 		})
 		
 		$("#msj").remove();
 		
-		$(".ficha .iconos a").each(function(e){		
+		$(".ficha .iconos a").each(function(e){
 			$(this).click(function(){				
 				if($(this).attr("class")=="cita_bt collapsed" || $(this).attr("class")=="cita_bt") {
 					$(this).attr("class","cita_bt selected")
@@ -563,75 +574,17 @@ function buscarFichasCL(DeptoURL)
 	}, 'html');
 }
 
-function updateDeptoColeccion(){
-	console.log("hicimos clik")
-}
-
 
 var itervalo="";
 window.start = 0;
 window.end = 0;
 
 function parceTemaDCO(xml){	
+console.log("parceTemaDCO")
 	parseTematicaCL(xml);
-	buscaBotonesTematicas(0)	
-}
-var rueLita=["http://localhost:8282/greenstone/cgi-bin/library.cgi?","http://localhost:8282/greenstone/cgi-bin/ibraryQ.cgi?"]
-var rueLitaFlag	=0
-window.fVuelta	=0
-window.cgiNum	=0
-
-function buscaBotonesTematicas(){
-	var tmpColLista=UNDAV_TEMATICAS.urlParams["listCol"].split("+")	;
-	var temaList=UNDAV_TEMATICAS.dameTemasActivos()	
-	var flagColec=UNDAV_TEMATICAS.flager[0]
-	var flagTema =UNDAV_TEMATICAS.flager[1]	
-	var coleccionA=tmpColLista[flagColec]	
-	var depto=UNDAV_TEMATICAS.urlParams["area"];	
-	var temaA=temaList[flagTema]	
-	//var DeptoURL=rutaConLib;
-	var DeptoURL=rueLita[window.cgiNum];	
-	var nD={c:coleccionA,a:"q",j:"to",t:"0",r:"1",hs:"1",qt:"1",fqa:"0",fqv:depto+","+temaA.titulo.replace(/ /g, '+')+",,",fqf:"CM,TE,AU,OT"}
-	var jqxhr = $.get(DeptoURL.substr(0,DeptoURL.length-1),nD)
-		  .done(function(my_var){
-				window.fVuelta--
-				var html = $(document.createElement("div")).append($.parseHTML(my_var));
-				var result=$("#resultadoQ",html).val().replace(/\D/g,"");
-				if(result>0){				
-					var idO=generaID()					
-					UNDAV_TEMATICAS.btns.push({tipo:"enlace",params:nD,id:idO,texto:temaA.titulo})
-				}
-				managConsulta()
-		  })
-		  .fail(function(e) {
-				console.log( "error" );
-		  })
-	managConsulta()
+	buscaBotonesTematicas()	
 }
 
-
-
-function managConsulta()
-{	
-	var tmpColLista=UNDAV_TEMATICAS.urlParams["listCol"].split("+")	;
-	var temaList=UNDAV_TEMATICAS.dameTemasActivos()	
-	UNDAV_TEMATICAS.flager[1]+=1;
-	if(UNDAV_TEMATICAS.flager[1]==temaList.length)
-	{
-		UNDAV_TEMATICAS.flager[1]=0		
-			window.nuevoBoton=false;					
-			clearInterval(intervalSpinner);	
-			$("h6 #spinner").hide("slow", function() {
-				$(this).remove()
-			  });
-			muestraBotones()
-			return false			
-	}	
-	if (window.fVuelta>1 || window.nuevoBoton==false){return false}
-	window.fVuelta++;
-	if(window.cgiNum==10){window.cgiNum=1}else{window.cgiNum=0;}	
-	buscaBotonesTematicas()
-}
 
 function muestraBotones(){	
 	for(var a in UNDAV_TEMATICAS.btns){

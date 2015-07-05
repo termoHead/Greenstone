@@ -174,3 +174,4 @@ position: absolute;width: 100%;left: 0px;padding: 20px;}
 #myModalLabel{text-align:left !important}
 #CL6 .ficha:nth-child(odd) {margin-left:1em}
 .pageBLista  h4{margin-bottom:2em}
+.embargado{ background-color:#999; color:white; margin-top;15px; padding:0.2em ; display:block; font-size:0.8em }
