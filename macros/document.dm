@@ -13,10 +13,6 @@ _pagetitle_ {}
 _phindclassifier_ {}
 _collageclassifier_ {}
 
-
-_header_{_style:htmlhead_ <div class="container"> _style:pagebanner_ }
-_footer_{</article>_style:footer_<div>}
-_content_ {_optnavigationbar_ <article class="row">}
 # custom header for individual document
 _documentheader_ {} 
 
@@ -42,27 +38,21 @@ _nextsearchresult_ {_If_("_cgiargsrn_" ne "0",<li id="nextresult"><a href="_http
 
 _prevsearchresult_ {_If_("_cgiargsrp_" ne "0",<li id="prevresult"><a href="_httpquery_&amp;ifl=1&amp;ifln=_cgiargsrp_">_textprevsearchresult_</a></li>)}
 
+_content_ {
+	_optnavigationbar_
+	_If_(_phindclassifier__collageclassifier_,
+	<p style="text-align: center;">
+	_phindclassifier_
+	_collageclassifier_
+	</p>
+	)
+	_If_("_cgiargcl_" eq "search",
+	<ul id="searchresults">
+		_prevsearchresult_
+		_nextsearchresult_
+	</ul>)
 
-
-_contentA_ {
-_optnavigationbar_
-
-_If_(_phindclassifier__collageclassifier_,
-<p style="text-align: center;">
-_phindclassifier_
-_collageclassifier_
-</p>
-)
-
-_If_("_cgiargcl_" eq "search",
-<ul id="searchresults">
-_prevsearchresult_
-_nextsearchresult_
-</ul>)
-
-<div class="document">
-
-
+	<div class="document">
 }
 
 # Dublin Core Metadata Element Set, Version 1.1
@@ -124,6 +114,176 @@ _navarrows_ [v=1] {<p>
 _prevarrow_<br>
 _nextarrow_
 }
+
+#######################################################################
+# section for adding user comments: consists of form and its javascript
+#######################################################################
+
+# The div that loads the user comments that were already submitted
+# associated javascript function loadUserComments is in style.dm's _globalscripts_ macro
+_usercomments_ {
+_If_(_cgiargd_,
+<div id="usercomments"></div>
+)
+}
+
+# Display the add-user-comment form on actual document pages and not when browsing/searching
+# This means the form should only be displayed on pages where the _cgiargd_ (the docid) is set
+
+# If the user's logged in, show the comment form, else show the link to the login page
+_addusercomment_ {
+_If_(_cgiargd_,
+_If_(_cgiargun_,_usercommentform_,_loginlink_)
+)
+}
+
+_doc-url_ {_gwcgi_?e=_compressedoptions_&amp;a=_cgiarga_&amp;c=_cgiargc_&amp;cl=_cgiargcl_&amp;d=_cgiargd_}
+
+_loginlink_ {
+<div id="usercommentlink"><a href="_doc-url_&amp;uan=1">_textaddusercomment_</a></div>
+}
+
+# For getting the submitbutton to make Ajax calls, see
+# http://stackoverflow.com/questions/4264091/input-type-submit-instead-of-input-type-button-with-ajax
+# http://stackoverflow.com/questions/8869341/ajax-form-submit-with-submit-button
+
+_usercommentform_ {
+<form name="AddUserCommentForm" id="usercommentform">
+<!--<p>_textcommentusername_ <input type="text" name="username"></p>-->
+<input type=hidden name="username" value="_cgiargun_">
+<p>
+_textaddusercomment_
+<textarea name="comment" rows="10" cols="70"></textarea>
+<input type=hidden name="d" value="_cgiargd_">
+</p>
+
+<input type="submit" value="_textaddcomment_" onclick="addUserComment(document.AddUserCommentForm.username.value, document.AddUserCommentForm.comment.value, document.AddUserCommentForm.d.value, document); return false;">
+<label id="usercommentfeedback"></label>
+
+<div id="usercommentlogoutlink"><a href="_doc-url_&amp;un=">_textusercommentlogout_</a></div>
+</form>
+
+
+<script type="text/javascript">  
+
+	// Unused. Replaced in favour of call to escape() in setMetaArray function that calls urlPostSync
+	// http://stackoverflow.com/questions/6020714/escape-html-using-jquery
+	function safeHTML(str) \{
+		 return str.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"',"&quot;").replace("'","&#x27;").replace("/", "&#x2F;"); //"\\""
+	\} 
+
+
+	function addUserComment(_username, _comment, _docid, doc) \{
+
+		// don't add empty strings for name/comment		
+
+		// http://stackoverflow.com/questions/498970/how-do-i-trim-a-string-in-javascript
+		//var trimmed_username=_username.replace(/^\s+|\s+$/g, '');
+		var trimmed_comment = _comment.replace(/^\s+|\s+$/g, '');
+		
+		if(!trimmed_comment) \{ // || !trimmed_username
+		      doc.AddUserCommentForm.comment.value = "";		      
+		      //doc.AddUserCommentForm.username.value = "";
+		      doc.getElementById("usercommentfeedback").innerHTML = "_textisempty_";
+		      return;
+		\}
+
+		// Need to the add user comment meta of username, timestamp and comment to the
+		// topmost section of the document. So only get the docId up to any period mark:
+		var period = _docid.indexOf(".");
+		if(period != -1) \{
+		    _docid = _docid.substring(0, period);
+		\}
+
+
+		// Want to store username, timestamp and comment in import/metadata.xml, archives/doc.xml
+		// and index/col.gdb.
+
+		// For getting the current time, see
+		// http://stackoverflow.com/questions/3830244/get-current-date-time-in-seconds
+		var _timestamp = new Date().getTime(); // div by 1000 to get seconds. valueOf() may return string
+
+		//alert("username:" + _username
+		//+ "\\ncomment: " + _comment
+		//+ "\\ncollection: " + collection 
+		//+ "\\ndocid: " + _docid
+		//+ "\\ntimestamp: " + _timestamp); 
+
+
+		// Entity encode the values before storing (at least <, >, /. And single and double quote, ampersand)
+		// http://stackoverflow.com/questions/6020714/escape-html-using-jquery
+		// setMetadataArray escapes the entire JSON, is that better than escaping individually here?
+		//_docid = escape(_docid);
+		//_timestamp = escape(_timestamp);
+		//_username = escape(_username); //safeHTML(_username);
+		//_comment = escape(_comment); //safeHTML(_comment);
+
+		// Use this if making individual api calls to set username meta, then timestamp then comment meta
+		// GSAPI already knows the collection
+		//gsapi.setMetadata(_docid, "username", null, _username, "accumulate", "import|archives|index");
+ 		//gsapi.setMetadata(_docid, "usertimestamp", null, _timestamp, "accumulate", "import|archives|index");
+		//gsapi.setMetadata(_docid, "usercomment", null, _comment, "accumulate", "import|archives|index");
+
+
+		// Use the new JSON metatable format to set username, timestamp and comment meta for docid in one go
+
+		// For creating the JSON object that gets turned into a string, see
+		// http://msdn.microsoft.com/en-us/library/ie/cc836459%28v=vs.94%29.aspx
+		// http://jsfiddle.net/qmacro/W54hy/
+		
+		var username_rec = \{
+		    metaname: "username",
+		    metavals: [_username]
+		\};
+
+		var timestamp_rec = \{
+		    metaname: "usertimestamp",
+		    metavals: [_timestamp]
+		\};
+
+		var comment_rec = \{
+		    metaname: "usercomment",
+		    metavals: [_comment]
+		\};
+
+		var doc_rec = \{
+		    docid: _docid,
+		    metatable: [username_rec, timestamp_rec, comment_rec],
+		    metamode: "accumulate"
+		\};
+
+		var docArray = [doc_rec];
+
+		//alert(JSON.stringify(docArray));
+
+		// GSAPI already knows the collection
+		var result = gsapi.setMetadataArray(docArray, "accumulate", "import|archives|index");
+
+		// clear the comment field as it has now been submitted, but not the username field
+		// as the user is logged in, so they should be able to commit again under their username.
+		doc.AddUserCommentForm.comment.value = ""; 
+
+		// check for locked collection error
+		var errorIndex = result.indexOf("ERROR");
+		if(errorIndex != -1) \{
+		   var endIndex = result.indexOf("\\n");
+		   var error = result.substring(errorIndex,endIndex);
+		   errormessage="Unable to add comment. " + error;
+		   doc.getElementById("usercommentfeedback").innerHTML = errormessage;
+   		   //alert("Result: " + result);
+		\} else \{
+		   doc.getElementById("usercommentfeedback").innerHTML = "_textcommentsubmitted_";		
+
+		   // update display of existing user comments to show the newly added comment
+		   var usercommentdiv = document.getElementById("usercomments");
+		   if(usercommentdiv != undefined) \{
+		     displayInUserCommentList(usercommentdiv, _username, _timestamp, _comment);
+	     	   \}
+		\}     
+	\}
+</script>
+}
+
 
 #######################################################################
 # the goto form
@@ -352,24 +512,6 @@ _imagecont_ {_docbutton_(_httpcurrentdocument_&amp;gt=2,_textCONTINUE_,_texticon
 
 _pagescriptextra_{
 
-function tabshow(divid) \{
-    var lista = new Array("capa1","capa2","capa3");
-    var elid, elidObj;
-
-    for (elid in lista) \{
-        elidObj = document.getElementById(lista[elid]);
-        tabidObj = document.getElementById("tab" + lista[elid]);
-        if (elidObj) \{
-            elidObj.style.display = 'none';
-            tabidObj.className = 'abstracttab';
-        \}
-        if (lista[elid] == divid) \{
-            elidObj.style.display = 'block';
-            tabidObj.className = 'currentabstracttab'
-        \}
-    \}
-\}
-
  var style_display_old;
  var show = true;
  var toc_top;
@@ -387,7 +529,7 @@ function tabshow(divid) \{
     return false;
  \}
 
-function hide_toc()\{
+ function hide_toc()\{
      var div_nodes = document.getElementsByTagName("div");    
      for (var i=0;i < div_nodes.length ; i++ )\{
           var div_node = div_nodes[i];
@@ -395,13 +537,13 @@ function hide_toc()\{
              \{
                style_display_old = div_node.style.display; 
                toc_top = document.getElementById("toc_top"); 
-               if (toc_top)\{
+               if (toc_top)
                 div_node.parentNode.insertBefore(toc_top,div_node);
                 div_node.style.display = "none";
-				\}
              \};
-      \}   
-\}
+      \}  
+
+ \}  
 
 
  function show_toc()\{
@@ -412,9 +554,8 @@ function hide_toc()\{
           if (div_node.className =="toc")
              \{
                div_node.style.display = style_display_old;
-               if (toc_top)\{
+               if (toc_top)
                   div_node.insertBefore(toc_top,div_node.firstChild);    
-				  \}
               \}; 
       \}
 
@@ -425,12 +566,13 @@ function hide_toc()\{
      var toc_link =  document.getElementById("toc_link");
        while (toc_link.hasChildNodes()) \{
        	  toc_link.removeChild(toc_link.firstChild);
-		\}  
+	\}  
     if (show)\{
         toc_link.appendChild(document.createTextNode('_textshowcontents_'));
         show = false;
         hide_toc(); 
-    \}else\{
+    \}
+  else\{
        toc_link.appendChild(document.createTextNode('_texthidecontents_'));
       show = true;
       show_toc();
@@ -500,47 +642,65 @@ function hide_toc()\{
     for(i=0; (a = document.getElementsByTagName("link")[i]); i++) \{
       if(a.getAttribute("rel").indexOf("style") != -1
          && a.getAttribute("title")) \{
-			a.disabled = true;
-			if(a.getAttribute("title") == title)\{a.disabled = false;\} 
-		\}
-	\}
+        a.disabled = true;
+        if(a.getAttribute("title") == title) a.disabled = false;
+    \}
+   \}
   \}
-  
- }
 
+}
 
 
 #######################################################################
 # headers/footers
 #######################################################################
 
-
 # header overridden for text pages
-_textheaderA_ {}
-_textheaderA_ {_cgihead_
-_htmlhead_
-_startspacer_
+#encabezado del documento cuando muestra un documento 
+#en partuicular
+_htmlhead_{
+	_style:csslink_
+}
+_textheader_{
+	aaaa
+}
+_textheaderA_ {
+	_cgihead_
+	_htmlhead_
+	_startspacer_
+	<!-- document:textheader -->
+		<div id="banner">
+			<div class="pageinfo"><p class="bannerlinks">_globallinks_</p></div>
+			<div class="collectimage">_imagecollection_</div>
+		</div>
+		<div class="bannerextra">_pagebannerextra_</div>
+}
 
-<!-- document:textheader -->
-<div id="header">
-<h1>Repositorio de la Universidad Nacional de REEMPLAZAR POR NOMBRE</h1></div>
-<p class="bannerlinks">_globallinks_</p>
-<div class="collectimage">_imagecollection_</div>
-}
-_textheader_ {
-	_style:htmlhead_ _style:pagebanner_
-}
-_textheader_ [v=1] {_cgihead_
+_textheader_ [v=1] {
+_cgihead_
 _htmlhead_
 _globallinks_
 }
 
-_footerA_ {
+_footer_ {
 </div> <!-- document:footer -->
+
+_If_("_document:allowusercomments_" eq "1",
+<center>
+<table width=_pagewidth_ cellpadding=0 cellspacing=0 border=0>
+<tr><td align=left valign=top>
+<div class="commentssection">
+_usercomments_
+_addusercomment_
+</div>
+</td></tr></table>
+</center>)
 
 <div class="navarrowsbottom">
 _navarrowsbottom_
 </div>
+
+
 _endspacer__htmlfooter_
 }
 
@@ -601,10 +761,11 @@ _shareme_ {
 }
 
 _sharemesmall_ {
+
 <span style=\'padding-left:8px;\' class=\'a2a_kit a2a_default_style\'>
-_sharemescript_(_1_,_2_)
-<a class=\'a2a_dd\' href=\'http://www.addtoany.com/share_save\'><img src="_httpprefix_/web/images/mas.jpg"></a>
-<script type=\"text/javascript\" src=\"http://static.addtoany.com/menu/page.js\"></script>
+  _sharemescript_(_1_,_2_)
+    <a class=\'a2a_dd\' href=\'http://www.addtoany.com/share_save\'>Share</a>
+  <script type=\"text/javascript\" src=\"http://static.addtoany.com/menu/page.js\"></script>
 </span>
 
 }

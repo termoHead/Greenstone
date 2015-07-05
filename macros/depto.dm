@@ -1,6 +1,8 @@
 package depto
 #Vista de un depto
 
+
+
 _content_ {
 <article class="aboutDepto" id="baseDepto">
 	<div class="row">

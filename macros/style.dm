@@ -74,8 +74,7 @@ _cgihead_{}
 # declarations containing images are done here so the path is correct
 # at runtime.
 
-_csslink_{
-  
+_csslink_{ 
   <link rel="stylesheet" href="_cssfilelink_" type="text/css" 
    title="Greenstone Style" charset="UTF-8" _linktagend_
   <link rel="alternate stylesheet" href="_httpstyle_/style-print.css"
@@ -85,12 +84,19 @@ _csslink_{
   <link href='http://fonts.googleapis.com/css?family=Fira+Sans:400,300' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="_httpstyle_/bootstrap-theme.min.css" _linktagend_
   <link href="_httpstyle_/undav.css" rel="stylesheet" type="text/css" _linktagend_
-  <link href="_httpstyle_/bootstrap.css" rel="stylesheet" type="text/css" _linktagend_   
+  <link href="_httpstyle_/bootstrap.css" rel="stylesheet" type="text/css" _linktagend_
+  
+  <script language="javascript" type="text/javascript"_linktagend_
+		var rutaConLib="_gwcgi_?";
+		var rutaIMG="_httpimages_/";
+		var rutaXML="_httpxml_/";
+	</script _linktagend_
 }
 
 _cssheader_ {
 _csslink_
 _collectionspecificstyle_
+
 
 }
 
@@ -109,6 +115,7 @@ _htmlextra_ [l=prs] { dir=rtl }
 # _1_ - extra parameters for the body tag
 # _pagetitle_
 # _globalscripts_
+#_document:documentheader_
 _htmlhead_ {<!doctype html>
     <html>
     <head>
@@ -118,14 +125,7 @@ _htmlhead_ {<!doctype html>
     
     <meta name="Greenstone_version_number" content="_versionnum_" _metatagend_
     _globalscripts_
-    _cssheader_
-    _document:documentheader_
-	<script language="javascript" type="text/javascript">
-		var rutaConLib="_gwcgi_?";
-		var rutaIMG="_httpimages_/";
-		var rutaXML="_httpxml_/";
-	</script>
-	
+    _cssheader_	
     </head>
 
     <body _1_>
@@ -310,9 +310,9 @@ _htmlfooter_ {
 	</div>
 
     <script src="_httpscript_/jquery.js" ></script> 
-    <script src="_httpscript_/bootstrap.js" ></script>
-    <script src="_httpscript_/undav.js" ></script>
-	
+    <script src="_httpscript_/bootstrap.js" ></script>		
+    <script src="_httpscript_/undav.js" ></script>	
+	<script src="_httpscript_/panel.js" ></script>	
 	
 </body>
 </html>
