@@ -56,7 +56,11 @@ _collectionspecificscript_ {}
 # by the style sheet.
 
 _header_ {_cgihead_
-_htmlhead_(class="glyphicon-home")_startspacer_ _pagebanner_
+_htmlhead_(class="glyphicon-home") _startspacer_ _pagebanner_
+}
+
+_headerInterna_ {_cgihead_
+_htmlhead_(class="glyphicon-interna") _startspacer_ _pagebanner_
 }
 
 _header_[v=1] {_cgihead_

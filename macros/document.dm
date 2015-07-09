@@ -52,7 +52,7 @@ _content_ {
 		_nextsearchresult_
 	</ul>)
 
-	<div class="document">
+	<article class="document container">
 }
 
 # Dublin Core Metadata Element Set, Version 1.1
@@ -662,7 +662,13 @@ _htmlhead_{
 	_style:csslink_
 }
 _textheader_{
-	aaaa
+	_style:headerInterna_	
+		<ol class="breadcrumb">
+				<li><a href="#">Colecciones</a></li>
+				<li>_imagecollection_</li>
+				<li class="active"></li>
+			</ol>
+			
 }
 _textheaderA_ {
 	_cgihead_
@@ -670,8 +676,11 @@ _textheaderA_ {
 	_startspacer_
 	<!-- document:textheader -->
 		<div id="banner">
-			<div class="pageinfo"><p class="bannerlinks">_globallinks_</p></div>
-			<div class="collectimage">_imagecollection_</div>
+			<!-- div class="pageinfo"><p class="bannerlinks">globallinks_</p></div -->
+			<ol class="breadcrumb">
+				<li><a href="#">Colecciones</a></li>
+				<li class="active">_imagecollection_</li>
+			</ol>
 		</div>
 		<div class="bannerextra">_pagebannerextra_</div>
 }
@@ -683,7 +692,7 @@ _globallinks_
 }
 
 _footer_ {
-</div> <!-- document:footer -->
+</article> <!-- document:footer -->
 
 _If_("_document:allowusercomments_" eq "1",
 <center>

@@ -530,12 +530,14 @@ function aboutDepto(){
 
 
 //MANI BUSCA Y RENDER FICHAS
-function buscarFichasCL(DeptoURL)
+function buscarFichasCL(DeptoURL,objParam)
 {
 	var fftmp=0;
+	 var jqxhr = $.get(DeptoURL,objParam)
+		.done(function(my_var){
+
 	
-	$.get(DeptoURL, function( my_var ) {
-		if($("#CL6 .ficha",my_var).length==0){			
+		if($(".ficha",my_var).length==0){			
 			$('#resultados').append('<h3 id="msj">No se encontraron registros para esta colección, elija otra desde\
 			la barra de filtros</h3>')
 			return false;
@@ -571,7 +573,9 @@ function buscarFichasCL(DeptoURL)
 			})
 			
 		})
-	}, 'html');
+		})
+		.fail(function(){console.log("error")})
+	
 }
 
 
@@ -599,17 +603,10 @@ function muestraBotones(){
 	}
 }
 function busca(clkEvt){
-	var tmpB=UNDAV_TEMATICAS.dameBotonById($(this).attr("id"));
+	var tmpB=UNDAV_TEMATICAS.dameBotonById($(this).attr("id"));	
 	var nD=tmpB.params	;
-	var jqxhr = $.get(rutaQuery,nD)
-	  .done(function(my_var) {
-			var tempDom = $(document.createElement("div")).append($.parseHTML(my_var));
-			$(".contenido",tempDom).each(function(){console.log(this);})
-	  })
-	  .fail(function(e) {
-		console.log( "error" );
-	  })
-	  return false;
+	buscarFichasCL(rutaQuery,nD)	
+	 return false;
 }
 
 function analiza(xml){}

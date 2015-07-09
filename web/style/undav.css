@@ -12,6 +12,19 @@
 	 -webkit-font-smoothing: antialiased;
 
 }
+@font-face {
+    font-family: 'fira_sansregular';
+    src:  url('/greenstone/web/fonts/firasans-regular-webfont.woff') format('woff');
+    src: url('/greenstone/web/fonts/firasans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/greenstone/web/fonts/firasans-regular-webfont.woff2') format('woff2'),
+         url('/greenstone/web/fonts/firasans-regular-webfont.woff') format('woff'),
+         url('/greenstone/web/fonts/firasans-regular-webfont.ttf') format('truetype'),
+		 url('/greenstone/web/fonts/firasans-regular-webfont.eot') format('eot'),
+         url('/greenstone/web/fonts/firasans-regular-webfont.svg#fira_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
 body{ color: #333}
 .sloganP1, .sloganP2{font-size:28px; line-height:28px}
 .sloganP1{color:#1c3259}
@@ -175,3 +188,43 @@ position: absolute;width: 100%;left: 0px;padding: 20px;}
 #CL6 .ficha:nth-child(odd) {margin-left:1em}
 .pageBLista  h4{margin-bottom:2em}
 .embargado{ background-color:#999; color:white; margin-top;15px; padding:0.2em ; display:block; font-size:0.8em }
+.breadcrumb > li + li:before {
+     content: url("/greenstone/web/images/breadSeparator.gif") !important;
+     color: #aaa !important;
+}
+.breadcrumb{clear:both; margin-top:10px; background: transparent }
+article.document{font-family: 'fira_sansregular' !important; color:#858585 }
+article.document .docHeader{margin-bottom: 20px; clear:both}
+article.document .docHeader .mainHeader h1 span{color: #294167 !important; font-size:28px;}
+article.document .docHeader .mainHeader h1{margin-top: 0;}
+article.document .mainHeader p {font-size:18px;margin-bottom: 0 !important;}
+article.document .docHeader{min-height:86px}
+article.document .docHeader .pdf{height: 86px;width: 50px;}
+article.document .docHeader .pdf,
+article.document .docHeader .mainHeader {float:left; }
+article.document .docHeader .mainHeader {width:85%;padding-left: 12px;}
+article.document  .referencia,
+article.document  .descrip,
+article.document  .currentabstractta,
+article.document  .abstracttab,
+article.document #capa1,article.document #capa2,
+article.document #capa3{padding-left:62px; clear: both; font-size:0.78em}
+article.document h4{ margin-top:2em}
+article.document  .cita{font-size:0.78em;color: #333; position:relative;margin-bottom:15px; margin-top:15px;
+	padding: 10px 10px 10px 62px; background:url("/greenstone/web/images/undav_citaDoc.gif") no-repeat 1% 25% #e4e6be;}
+article.document  .pdfOk{background:url("/greenstone/web/images/pdf_gris_doc.gif") no-repeat top left transparent;}
+article.document  .pdfOk .pdf img{ width:40px;}
+.clr{clear:both; line-height:1px; font-size:1px}
+article.document .gray_label{    display: inline;
+    padding: 0.2em 0.6em 0.3em;
+    font-size: .6em;
+    font-weight: bold;
+    line-height: 1;
+    color: #FFF;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border-radius: 0.25em;
+	background-color: #777;
+	margin-right:0.5em
+}

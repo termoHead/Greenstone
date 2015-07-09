@@ -78,9 +78,9 @@ function onPanelCargado(ev){
 	var posEnCL		=	window.panel.posEnCl[window.panel.indiceActual]
 	var coleccionINI	= window.panel.colecs[window.panel.indiceActual]
 	
-	var DeptoURL=rutaConLib+'fq=1&a=d&cl=CL6.'+posEnCL+'&c='+coleccionINI+'&ajax=1';
+	var objParam={fq:'1',a:'d',cl:'CL6.'+posEnCL,c:coleccionINI,ajax:'1'}
 	
-	buscarFichasCL(DeptoURL)
+	buscarFichasCL(rutaConLib,objParam)
 	
 	//hace las busquedas de los botones que van a crear la navegaciòn local
 	panelSetupBotones()
@@ -105,10 +105,10 @@ function buscaBotonesTematicas(){
 	var temaList	=	UNDAV_TEMATICAS.dameTemasActivos();
 	var flagColec	=	window.panel.flager[0];
 	var flagTema	=	window.panel.flager[1];	
-	var coleccionA=tmpColLista[flagColec]	;
-	var depto=UNDAV_TEMATICAS.urlParams["area"];	
-	var temaA=temaList[flagTema];
-	var DeptoURL=rueLita[window.cgiNum];
+	var coleccionA=	tmpColLista[flagColec]	;
+	var depto			=	UNDAV_TEMATICAS.urlParams["area"];	
+	var temaA		=	temaList[flagTema];
+	var DeptoURL	=	rueLita[window.cgiNum];
 	var nD={c:coleccionA,a:"q",j:"to",t:"0",r:"1",hs:"1",qt:"1",fqa:"0",fqv:depto+","+temaA.titulo.replace(/ /g, '+')+",,",fqf:"CM,TE,AU,OT",ajax:1}
 	var jqxhr = $.get(DeptoURL.substr(0,DeptoURL.length-1),nD)
 		  .done(function(my_var){
@@ -175,8 +175,7 @@ function generaBotonesCoeccion(){
 			link.attr("class","btn-xs")
 		}
 		link.text(indiceColecciones[indiceColecciones.indexOf(window.panel.colecs[ind])+1])		
-		$(link).on("click", function (e) {
-			
+		$(link).on("click", function (e) {			
 			var href = $(this).attr("href");
 			history.pushState(null, null, href);
 			var showForId = $(this).prop('id');
@@ -194,11 +193,8 @@ function updateDeptoColeccion(id){
 	$("#resultados").text(" ");
 	var coleccionINI=bot.listCol.split(",")[bot.sel]
 	var posXD=bot.posEnCL.split(",")[bot.sel]
-	var DeptoURL=rutaConLib+'fq=1&a=d&cl=CL6.'+posXD+'&c='+coleccionINI+'&ajax=1';
-	
-	buscarFichasCL(DeptoURL)
-	// buscarFichasCL(url)
-	
+	var paramObj={fq:'1',a:'d',cl:'CL6.'+posXD,c:coleccionINI,ajax:'1'}	
+	buscarFichasCL(rutaConLib,paramObj)	
 }
 
 

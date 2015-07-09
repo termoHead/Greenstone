@@ -27,9 +27,9 @@ _htmlextra_ {}
 _content_ {<p><h2>oops</h2>
 _textdefaultcontent_}
 _pagetitle_ {_textdefaulttitle_}
-_imagethispage_ {}
-_iconcollection_ {}
-_collectionname_ {}
+_imagethispage	_ {}
+_iconcollection	_ {}
+_collectionname	_ {}
 
 
 package Global
@@ -39,7 +39,7 @@ _imagecollection_ {_If_("_iconcollection_" ne "",
 <a href="_httppageabout_"><img class="icon" src="_iconcollection_" alt="_collectionname_" title="_collectionname_"></a>,
 _imagecollectionv_)}
 _imagecollection_ [v=1] {_imagecollectionv_}
-_imagecollectionv_ {_If_(_collectionname_,<p class="collectiontitle"><a class="collectiontitle" href="_httppageabout_">_collectionname_</a></p>)}
+_imagecollectionv_ {_If_(_collectionname_,<a class="collectiontitle" href="_httppageabout_">_collectionname_</a>)}
 
 #######################################################################
 # these width macros are read in by the server when calculating 
