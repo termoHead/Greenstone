@@ -132,6 +132,8 @@ margin-bottom: 25px;}
 .seccionTematicas .tema_medios  .wrap,.tema10{ background-color:#c9b64c}
 .seccionTematicas .tema_turismo  .wrap, .tema9{ background-color:#5b7782}
 .seccionTematicas .tema_derecho  .wrap,.tema6{ background-color:#392626}
+#baseTema .tema7{color:white;}
+#baseTema #toolbox{min-height:80px}
 .iconos span{
 color:#fff;
 position: absolute;

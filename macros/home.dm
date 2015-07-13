@@ -53,7 +53,7 @@ _content_ {
 		<!-- seccion novedades -->
 		
 	</div>
-	<div id="content">
+	<!--div id="content">
 		<p>Es posible navegar los documentos de este repositorio en las siguientes colecciones:</p>
 		<div class="bloqueLinks">
 			<div class=\"collectiontitle\"><a href="_gwcgi_?site=localhost&a=p&p=about&c=arti&l=es&w=utf-8">Art&iacute;culos de revistas</a></div>
@@ -70,5 +70,5 @@ _content_ {
 			<li><a href="#">Licencias de Uso</a></li>
 			<li><a href="_httpprefix_/cgi-bin/oaiserver.cgi?verb=Identify" target="_blank">Servidor OAI para cosecha de metadatos</a></li>
 		</ul>
-	</div>
+	</div -->
 }

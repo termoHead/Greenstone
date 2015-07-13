@@ -188,10 +188,12 @@ _pagebanner_ {
 
 
 
-<!--p class="bannerlinks">_globallinks_</p-->
+<!-- p class="bannerlinks">_globallinks_</p -->
 
+
+<!-- 
 _If_(_imagecollection_,<div class="collectimage">_imagecollection_</div>)
-<!-- end of page banner -->
+end of page banner -->
 _If_("_activateweb20_" eq "2",
   _If_("_activatetalkback_" eq "1",_talkback:uploadForm_)
 )

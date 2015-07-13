@@ -664,11 +664,9 @@ _htmlhead_{
 _textheader_{
 	_style:headerInterna_	
 		<ol class="breadcrumb">
-				<li><a href="#">Colecciones</a></li>
-				<li>_imagecollection_</li>
-				<li class="active"></li>
-			</ol>
-			
+			<li><a href="#">Colecciones</a></li>
+			<li>_imagecollection_</li>			
+		</ol>
 }
 _textheaderA_ {
 	_cgihead_

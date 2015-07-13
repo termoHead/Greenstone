@@ -32,9 +32,8 @@ function PANEL(){
 				return this.botonesList[elem]
 			}
 		}
-		
 	}
-};
+}
 
 UNDAV_TEMATICAS.evtCargaPanel = document.createEvent('Event');
 UNDAV_TEMATICAS.evtCargaPanel.initEvent('onPanelCargado', true, true);	
@@ -47,21 +46,33 @@ function initPanel(seccionActual){
 	window.panel.seccionActual=seccionActual
 	loadXML(clasificador, panelDepto)	
 }
-function onPanelCargado(ev){	
+
+function onPanelCargado(ev){
+	console.log("onPanelCargado")
 	document.removeEventListener('onPanelCargado',onPanelCargado)
 	var depto=""
+
 	if(window.panel.seccionActual=="departamento"){
-		depto=UNDAV_TEMATICAS.urlParams["area"]	
+		depto=UNDAV_TEMATICAS.urlParams["area"]
+		 onPanelINIT(damePanelColeccionesParaDepto(depto.replace(/\+/g," "),depto)	)
+	}else if (window.panel.seccionActual=="tematicas"){
+		depto=UNDAV_TEMATICAS.urlParams["t"]
+		var idSelect=UNDAV_TEMATICAS.urlParams["idT"]
+		onPanelINIT(damePanelColeccionesParaTematica(idSelect),depto)
 	}
 	
+}
+
+function onPanelINIT(tmpRArr,depto)
+{
+	var objParam="";	
 	if(!UNDAV_TEMATICAS.urlParams["sel"]){
 		window.panel.indiceActual =0
 	}else{
 		window.panel.indiceActual=Math.ceil(UNDAV_TEMATICAS.urlParams["sel"])
-	}
-	
+	}	
 	if(!UNDAV_TEMATICAS.urlParams["listCol"]){		
-		var tmpRArr=damePanelColeccionesParaDepto(depto.replace(/\+/g," "))			
+		//var tmpRArr=		
 		window.panel.colecs=tmpRArr["col"]
 		window.panel.posEnCl=tmpRArr["pos"]
 	}else{		
@@ -72,36 +83,84 @@ function onPanelCargado(ev){
 			window.panel.colecs=UNDAV_TEMATICAS.urlParams["listCol"].split("+")
 			window.panel.posEnCl=UNDAV_TEMATICAS.urlParams["posEnCL"].split("+")
 		}
-		
 	}
-	
 	var posEnCL		=	window.panel.posEnCl[window.panel.indiceActual]
 	var coleccionINI	= window.panel.colecs[window.panel.indiceActual]
 	
-	var objParam={fq:'1',a:'d',cl:'CL6.'+posEnCL,c:coleccionINI,ajax:'1'}
+	if(window.panel.seccionActual=="departamento"){
+		 objParam={fq:'1',a:'d',cl:'CL6.'+posEnCL,c:coleccionINI,ajax:'1'}	
+	}else{
+		objParam={fq:'1',a:'d',cl:'CL3.'+posEnCL,c:coleccionINI,ajax:'1'}	
+	}
 	
 	buscarFichasCL(rutaConLib,objParam)
-	
 	//hace las busquedas de los botones que van a crear la navegaciòn local
-	panelSetupBotones()
+	configuraBotones()
 }
 
-
-
-
-function  panelSetupBotones()
-{
+function  configuraBotones(){
 	//UNDAV_TEMATICAS.urlParams["posEnCL"]	
 	var clasificador=UNDAV_TEMATICAS.CLTematicas
 	//var resu=new Array();	
-	generaBotonesCoeccion()
-	generaBotonesTemas()
+	if(window.panel.seccionActual=="departamento"){
+		generaBotonesCoeccion()
+		generaBotonesTemas()
+	}else if(window.panel.seccionActual=="tematicas"){
+		generaBotonesCoeccion()
+		buscaBotonesDeptos()
+	}
 }
+
+function buscaBotonesDeptos()
+{
+	var deptoList = UNDAV_TEMATICAS.dameDeptosActivos();	
+	var flagColec	=	window.panel.flager[0] ;
+	var flagTema 	=	window.panel.flager[1] ;
+	var coleccionA=	window.panel.colecs[flagColec];		
+	var depto			=	deptoList[flagTema];
+	var temaA		=	UNDAV_TEMATICAS.urlParams["t"];
+	
+	var DeptoURL	=	rueLita[window.cgiNum];
+	var nD={c:coleccionA,
+				a:"q",
+				j:"to",
+				t:"0",
+				r:"1",
+				hs:"1",
+				qt:"1",
+				fqa:"0",
+				fqv:depto.nombre+","+temaA+",,",
+				fqf:"CM,TE,AU,OT",
+				ajax:1}
+
+	//managConsulta()
+	var jqxhr = $.get(DeptoURL.substr(0,DeptoURL.length-1),nD)
+		  .done(function(my_var){
+				window.fVuelta--				
+				var html = $(document.createElement("div")).append($.parseHTML(my_var));
+				var result=$("#resultadoQ",html).val().replace(/\D/g,"");
+				
+				if(parseInt(result)>0){
+					var idO=generaID()					
+					UNDAV_TEMATICAS.btns.push({tipo:"enlace",params:nD,id:idO,texto:depto.nombre})
+				}
+				managConsulta();
+		  })
+		  .fail(function(e) {
+				console.log( "error" );
+		  })
+	//managConsulta()
+}
+
+
+
 function generaBotonesTemas(){
 	buscaBotonesTematicas()
 }
-function buscaBotonesTematicas(){
-	var tmpColLista=window.panel.colecs;
+
+function buscaBotonesTematicas()
+{
+	var tmpColLista=window.panel.colecs;	
 	var temaList	=	UNDAV_TEMATICAS.dameTemasActivos();
 	var flagColec	=	window.panel.flager[0];
 	var flagTema	=	window.panel.flager[1];	
@@ -115,9 +174,9 @@ function buscaBotonesTematicas(){
 				window.fVuelta--
 				var html = $(document.createElement("div")).append($.parseHTML(my_var));
 				var result=$("#resultadoQ",html).val().replace(/\D/g,"");
-				if(result>0){				
+				if(result>0){
 					var idO=generaID()					
-					UNDAV_TEMATICAS.btns.push({tipo:"enlace",params:nD,id:idO,texto:temaA.titulo})
+					UNDAV_TEMATICAS.btns.push({tipo:"enlace",params:nD,id:idO,texto:depto})
 				}
 				managConsulta();
 		  })
@@ -141,31 +200,68 @@ function managConsulta()
 				$(this).remove()
 			  });
 			muestraBotones()
-			return false			
+			return false
 	}	
 	if (window.fVuelta>1 || window.nuevoBoton==false){return false}
 	window.fVuelta++;
 	if(window.cgiNum==10){window.cgiNum=1}else{window.cgiNum=0;}	
-	buscaBotonesTematicas()
+	if(window.panel.seccionActual=="departamento"){
+		buscaBotonesTematicas()
+	}else if(window.panel.seccionActual=="tematicas"){
+		buscaBotonesDeptos()
+	}	
+}
+
+
+function muestraBotones(){	
+	for(var a in UNDAV_TEMATICAS.btns){
+		var llk=$(document.createElement("a"));
+		llk.attr("href","#");
+		llk.attr("class","btn-xs");
+		llk.attr("class","btn-xs");
+		llk.attr("id",UNDAV_TEMATICAS.btns[a].id);			
+		llk.text(UNDAV_TEMATICAS.btns[a].texto);
+		llk.click(busca);
+		$("#btTemas").append(llk);
+	}
+}
+function busca(clkEvt){	
+	var tmpB=UNDAV_TEMATICAS.dameBotonById($(this).attr("id"));	
+	var nD=tmpB.params	;
+	buscarFichasCL(rutaQuery,nD)	
+	$("#resultados").empty() 
+	return false;
 }
 
 
 
-
-function generaBotonesCoeccion(){
+function generaBotonesCoeccion()
+{	
 	for(var ind in window.panel.colecs){
-		var elemID="btC_"+ind
-		var link=$(document.createElement("a"))		
-		var rAObj={p:"depto",
-			area:	UNDAV_TEMATICAS.urlParams["area"],
-			listCol:window.panel.colecs.toString(),
-			sel:ind,
-			posEnCL:window.panel.posEnCl.toString(),
-			id:elemID
+		var rAObj=""
+		var elemID="btC_"+ind;
+		var link=$(document.createElement("a"));
+		if(window.panel.seccionActual=="departamento"){
+			 rAObj={p:"depto",
+				area:	UNDAV_TEMATICAS.urlParams["area"],
+				listCol:window.panel.colecs.toString(),
+				sel:ind,
+				posEnCL:window.panel.posEnCl.toString(),
+				id:elemID
+			}
+			rA=rutaConLib+"p=depto&area="+UNDAV_TEMATICAS.urlParams["area"]+"&listCol="+window.panel.colecs.toString()+"&sel="+ind+"&posEnCL="+window.panel.posEnCl.toString();
+		}else if(window.panel.seccionActual=="tematicas"){
+			rAObj={p:"tema",
+				area:	UNDAV_TEMATICAS.urlParams["t"],
+				listCol:window.panel.colecs.toString(),
+				sel:ind,
+				posEnCL:window.panel.posEnCl.toString(),
+				id:elemID
+			}
+			rA=rutaConLib+"p=tema&idT="+UNDAV_TEMATICAS.urlParams["idT"]+"&t="+UNDAV_TEMATICAS.urlParams["t"]+"&listCol="+window.panel.colecs.toString()+"&sel="+ind+"&posEnCL="+window.panel.posEnCl.toString();
 		}
+		
 		window.panel.botonesList.push(rAObj)
-		//var rAUlr=rutaConLib
-		rA=rutaConLib+"p=depto&area="+UNDAV_TEMATICAS.urlParams["area"]+"&listCol="+window.panel.colecs.toString()+"&sel="+ind+"&posEnCL="+window.panel.posEnCl.toString();
 		link.attr("href",rA)
 		link.attr("class","btn-xs")
 		link.attr("id",elemID)
@@ -175,7 +271,7 @@ function generaBotonesCoeccion(){
 			link.attr("class","btn-xs")
 		}
 		link.text(indiceColecciones[indiceColecciones.indexOf(window.panel.colecs[ind])+1])		
-		$(link).on("click", function (e) {			
+		$(link).on("click", function (e) {				
 			var href = $(this).attr("href");
 			history.pushState(null, null, href);
 			var showForId = $(this).prop('id');
@@ -183,28 +279,38 @@ function generaBotonesCoeccion(){
 			/*$('a[id="' + showForId + '"').tab('show');
 			$('.tab-pane').removeClass('active');
 			$('.tab-pane[id="' + showForId + '"]').addClass('active');*/
+			
 			updateDeptoColeccion($(this).attr('id'))
 		});
 		$("#toolbox #btColec").append(link)	
 	}
 }
-function updateDeptoColeccion(id){	
+
+function updateDeptoColeccion(id)
+{
+console.log(id)
 	var bot = window.panel.dameBotonById(id)	
 	$("#resultados").text(" ");
 	var coleccionINI=bot.listCol.split(",")[bot.sel]
 	var posXD=bot.posEnCL.split(",")[bot.sel]
-	var paramObj={fq:'1',a:'d',cl:'CL6.'+posXD,c:coleccionINI,ajax:'1'}	
+	if(window.panel.seccionActual=="departamento"){
+		var paramObj={fq:'1',a:'d',cl:'CL6.'+posXD,c:coleccionINI,ajax:'1'}	
+	}else if(window.panel.seccionActual=="tematicas"){
+		var paramObj={fq:'1',a:'d',cl:'CL3.'+posXD,c:coleccionINI,ajax:'1'}	
+	}
+	$("#resultados").empty() 
 	buscarFichasCL(rutaConLib,paramObj)	
 }
 
-
 //cargo los datos de los Clasificadores
-function panelDepto(xmlDeptos){	
+function panelDepto(xmlDeptos)
+{
 	var clasificador=UNDAV_TEMATICAS.CLTematicas
 	parseDeptosCL(xmlDeptos)
 	loadXML(clasificador, panelTemas)
 }
-function panelTemas(xmlTemas){
+function panelTemas(xmlTemas)
+{
 	var clasificador=UNDAV_TEMATICAS.CLTematicas
 	parseTematicaCL(xmlTemas)
 	document.dispatchEvent(UNDAV_TEMATICAS.evtCargaPanel);
