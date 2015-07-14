@@ -133,7 +133,7 @@ margin-bottom: 25px;}
 .seccionTematicas .tema_turismo  .wrap, .tema9{ background-color:#5b7782}
 .seccionTematicas .tema_derecho  .wrap,.tema6{ background-color:#392626}
 #baseTema .tema7{color:white;}
-#baseTema #toolbox{min-height:80px}
+#baseTema #toolbox{min-height:143px}
 .iconos span{
 color:#fff;
 position: absolute;
@@ -147,7 +147,9 @@ padding: 10px 0px 10px 30px;}
 .seccionTematicas .colCell{width: auto; margin: .5em; height:217px; overflow:hidden;}
 .seccionTematicas .colCell{box-sizing: content-box !important;}
 #grillado{position: relative;}
-.aboutDepto #toolbox{ background-color:#4c9bd9; color:white; padding:20px;}
+#toolboxAbout , .aboutDepto #toolbox{ background-color:#4c9bd9; color:white; padding:20px; margin-bottom:2em;margin-left: 15px;
+margin-right: 15px;}
+
 #resultados{margin-top:25px; padding-left:20px;}
 .ficha {border:1px solid #e3e3e3; 
 font-family: "Fira Sans","fira_sansextralight",Tahoma, Geneva, sans-serif;
@@ -194,7 +196,8 @@ position: absolute;width: 100%;left: 0px;padding: 20px;}
      content: url("/greenstone/web/images/breadSeparator.gif") !important;
      color: #aaa !important;
 }
-.breadcrumb{clear:both; margin-top:10px; background: transparent }
+.breadcrumb{clear:both; margin-top:10px; background: transparent !important; font-size:30px}
+.breadcrumb li a{font-family: 'fira_sansextralight' !important; font-weight:bold; color:#4c9bd9 !important}
 article.document{font-family: 'fira_sansregular' !important; color:#858585 }
 article.document .docHeader{margin-bottom: 20px; clear:both}
 article.document .docHeader .mainHeader h1 span{color: #294167 !important; font-size:28px;}

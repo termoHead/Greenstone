@@ -23,8 +23,8 @@ function PANEL(){
 	this.cls=0;
 	this.seccionActual=""
 	this.botonesList=new Array();
-	this.flager=new Array(0,0)
-	
+	this.flager=new Array(0,0) ;
+	this.botoActivoA="";
 	this.dameBotonById = function (idS){		
 		for (var elem in this.botonesList)
 		{
@@ -271,10 +271,14 @@ function generaBotonesCoeccion()
 			link.attr("class","btn-xs")
 		}
 		link.text(indiceColecciones[indiceColecciones.indexOf(window.panel.colecs[ind])+1])		
-		$(link).on("click", function (e) {				
+		$(link).on("click", function (e) {
 			var href = $(this).attr("href");
 			history.pushState(null, null, href);
 			var showForId = $(this).prop('id');
+			$("a[class='btn-xs selected']").attr("class","btn-xs")
+			$(this).attr("class","btn-xs selected")
+			
+			
 			e.preventDefault();
 			/*$('a[id="' + showForId + '"').tab('show');
 			$('.tab-pane').removeClass('active');

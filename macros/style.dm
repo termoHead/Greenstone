@@ -130,6 +130,8 @@ _htmlhead_ {<!doctype html>
     <meta name="Greenstone_version_number" content="_versionnum_" _metatagend_
     _globalscripts_
     _cssheader_	
+	
+	<script src="_httpscript_/jquery.js"  _metatagend_</script _metatagend_
     </head>
 
     <body _1_>
@@ -315,7 +317,7 @@ _htmlfooter_ {
 		<a href="http://www.openarchives.org/" target="_blank"><img src="_httpprefix_/web/images/Logo-Open-Archives.jpg"></a>
 	</div>
 
-    <script src="_httpscript_/jquery.js" ></script> 
+    
     <script src="_httpscript_/bootstrap.js" ></script>		
     <script src="_httpscript_/undav.js" ></script>	
 	<script src="_httpscript_/panel.js" ></script>	

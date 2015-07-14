@@ -75,10 +75,15 @@ function addDomainToRSSAnchor (imgtag)
 # appear in the standard place, and then specify _navigationbar_ elsewhere
 # in a collection specific macro file(s) to be where you do want it.
 _optnavigationbar_{
+<div id="toolboxAbout" class="row">
+	_navigationbar_
+</div>
+}
+_Aoptnavigationbar_{
 <div class="navbar">
 <p class="navbar">
 
-_navigationbar_
+
 
 </p>
 </div>
@@ -104,7 +109,17 @@ _navtablogoutorig_ {<a _If_("_3_" eq "selected",class="navlink_sel postit">_1_,c
 # 1. The url to go to when clicked
 # 2. The metadata name - this gets used to determine the title and alt text
 # 3. optional "selected" if it is the current tab
-_navtab_ {<a _If_("_3_" eq "selected",class="navlink_sel">_navlinktitle_(_2_),class="navlink" href="_1_" title="_navlinkalt_(_2_)">_navlinktitle_(_2_))</a>}
+
+
+_navtab_ {<a _If_("_3_" eq "selected",
+	class="btn-xs ">_navlinktitle_(_2_),
+	class="btn-xs selected" href="_1_" 
+	title="_navlinkalt_(_2_)">_navlinktitle_(_2_))</a>}
+	
+_Znavtab_ {<a _If_("_3_" eq "selected",
+	class="navlink_sel">_navlinktitle_(_2_),
+	class="navlink" href="_1_" 
+	title="_navlinkalt_(_2_)">_navlinktitle_(_2_))</a>}
 
 
 #######################################################################

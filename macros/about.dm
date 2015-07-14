@@ -19,7 +19,10 @@ _imagecollectionv_ {<p class="collectiontitle">_collectionname_</p>}
 _pagetitle_ {_collectionname_}
 
 _content_ {
-_optnavigationbar_
+	<div class="row" id="toolboxAbout">		
+		_optnavigationbar_
+	</div>
+	
 
 	<div class="document">
 
