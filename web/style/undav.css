@@ -150,6 +150,7 @@ padding: 10px 0px 10px 30px;}
 #toolboxAbout , .aboutDepto #toolbox{ background-color:#4c9bd9; color:white; padding:20px; margin-bottom:2em;margin-left: 15px;
 margin-right: 15px;}
 
+#toolboxAbout
 #resultados{margin-top:25px; padding-left:20px;}
 .ficha {border:1px solid #e3e3e3; 
 font-family: "Fira Sans","fira_sansextralight",Tahoma, Geneva, sans-serif;
@@ -176,8 +177,13 @@ margin-bottom:25px;}
 .tooltipOk + .tooltip > .tooltip-arrow { border-bottom-color:#293f66;}
 .tooltipFail + .tooltip > .tooltip-inner {background-color: #645c56;}
 .tooltipFail + .tooltip > .tooltip-arrow { border-bottom-color:#645c56;}
-#btColec a,#btTemas a{display:block; color:white; font-family:"fira_sansextralight"}
-#btColec a.selected,#btTemas a.selected{background-color: #8a88e0; font-size:1em; border-bottom-color:#8a88e0;}
+#btColec a, 
+#btTemas a,
+#toolboxAbout a.btn-xs  {text-transform:capitalize;display:block; color:white; font-family:"fira_sansregular";}
+#btColec a.selected,
+#btTemas a.selected,
+#toolboxAbout a.selected {background-color: #8a88e0; font-size:1em; border-bottom-color:#8a88e0;}
+#toolboxAbout h6{padding-left:35px}
 #spinner {
     width:15px;
     height:15px;	
@@ -191,6 +197,7 @@ position: absolute;width: 100%;left: 0px;padding: 20px;}
 #myModalLabel{text-align:left !important}
 #CL6 .ficha:nth-child(odd) {margin-left:1em}
 .pageBLista  h4{margin-bottom:2em}
+.pageBLista{clear:both}
 .embargado{ background-color:#999; color:white; margin-top;15px; padding:0.2em ; display:block; font-size:0.8em }
 .breadcrumb > li + li:before {
      content: url("/greenstone/web/images/breadSeparator.gif") !important;

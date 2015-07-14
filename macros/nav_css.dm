@@ -112,8 +112,8 @@ _navtablogoutorig_ {<a _If_("_3_" eq "selected",class="navlink_sel postit">_1_,c
 
 
 _navtab_ {<a _If_("_3_" eq "selected",
-	class="btn-xs ">_navlinktitle_(_2_),
-	class="btn-xs selected" href="_1_" 
+	class="btn-xs selected">_navlinktitle_(_2_),
+	class="btn-xs" href="_1_" 
 	title="_navlinkalt_(_2_)">_navlinktitle_(_2_))</a>}
 	
 _Znavtab_ {<a _If_("_3_" eq "selected",

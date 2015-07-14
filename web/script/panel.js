@@ -92,7 +92,7 @@ function onPanelINIT(tmpRArr,depto)
 	}else{
 		objParam={fq:'1',a:'d',cl:'CL3.'+posEnCL,c:coleccionINI,ajax:'1'}	
 	}
-	
+	limpiaResultados();
 	buscarFichasCL(rutaConLib,objParam)
 	//hace las busquedas de los botones que van a crear la navegaciòn local
 	configuraBotones()
@@ -225,16 +225,20 @@ function muestraBotones(){
 		$("#btTemas").append(llk);
 	}
 }
-function busca(clkEvt){	
+function busca(clkEvt){
 	var tmpB=UNDAV_TEMATICAS.dameBotonById($(this).attr("id"));	
 	var nD=tmpB.params	;
-	buscarFichasCL(rutaQuery,nD)	
-	$("#resultados").empty() 
+	buscarFichasCL(rutaQuery,nD);
+	limpiaResultados();
 	return false;
 }
 
-
-
+function limpiaResultados()
+{
+	var spinst=$('<span  id="msj">cargando registros...</span>')
+	$("#resultados").empty() ;
+	$("#resultados").append(spinst);
+}
 function generaBotonesCoeccion()
 {	
 	for(var ind in window.panel.colecs){
@@ -272,6 +276,7 @@ function generaBotonesCoeccion()
 		}
 		link.text(indiceColecciones[indiceColecciones.indexOf(window.panel.colecs[ind])+1])		
 		$(link).on("click", function (e) {
+			
 			var href = $(this).attr("href");
 			history.pushState(null, null, href);
 			var showForId = $(this).prop('id');
@@ -292,7 +297,6 @@ function generaBotonesCoeccion()
 
 function updateDeptoColeccion(id)
 {
-console.log(id)
 	var bot = window.panel.dameBotonById(id)	
 	$("#resultados").text(" ");
 	var coleccionINI=bot.listCol.split(",")[bot.sel]
@@ -302,7 +306,7 @@ console.log(id)
 	}else if(window.panel.seccionActual=="tematicas"){
 		var paramObj={fq:'1',a:'d',cl:'CL3.'+posXD,c:coleccionINI,ajax:'1'}	
 	}
-	$("#resultados").empty() 
+	limpiaResultados()
 	buscarFichasCL(rutaConLib,paramObj)	
 }
 

@@ -39,12 +39,12 @@ _nextsearchresult_ {_If_("_cgiargsrn_" ne "0",<li id="nextresult"><a href="_http
 _prevsearchresult_ {_If_("_cgiargsrp_" ne "0",<li id="prevresult"><a href="_httpquery_&amp;ifl=1&amp;ifln=_cgiargsrp_">_textprevsearchresult_</a></li>)}
 
 _content_ {
-	_If_(_cgiarge_,
-		<ol class="breadcrumb">
+	
+	<ol class="breadcrumb">
 				<li><a href="#">Colecciones</a></li>
 				<li class="active">_imagecollection_</li>
-			</ol>,
-	)
+			</ol>
+			
 	_optnavigationbar_
 	_If_(_phindclassifier__collageclassifier_,
 	<p style="text-align: center;">
@@ -60,7 +60,7 @@ _content_ {
 	
 	_If_(_cgiarge_,
 		<article class="docQ container">,
-		<article class="document container">
+		<article class="docQPlain container">
 	)
 	
 }

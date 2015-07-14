@@ -35,6 +35,9 @@ function TEMA(){
 	this.clase=""
 	this.colec=new Array();
 	this.posEnCL=new Array(); 
+	this.ilustraTitulo="";
+	this.ilustraNombre="";
+	this.ilustraTipo="";
 };
 
 var UNDAV_TEMATICAS = UNDAV_TEMATICAS || {};
@@ -113,6 +116,16 @@ UNDAV_TEMATICAS.dameThumbTematicaByID=function(idT){
 	for(var a=0; a<UNDAV_TEMATICAS.listaTemas.length;a++){        
 		if (UNDAV_TEMATICAS.listaTemas[a]["id"].toLowerCase() == idT.toLowerCase()){
 			return UNDAV_TEMATICAS.listaTemas[a]["thumb"]
+		}
+	}
+	return "" 
+}
+UNDAV_TEMATICAS.dameArtistaTematicaByID=function(idT){
+	for(var a=0; a<UNDAV_TEMATICAS.listaTemas.length;a++){        
+		if (UNDAV_TEMATICAS.listaTemas[a]["id"].toLowerCase() == idT.toLowerCase()){
+			return [UNDAV_TEMATICAS.listaTemas[a]["ilustraNombre"],
+			UNDAV_TEMATICAS.listaTemas[a]["ilustraTitulo"],
+			UNDAV_TEMATICAS.listaTemas[a]["ilustraTipo"]]
 		}
 	}
 	return "" 
@@ -358,6 +371,9 @@ function parseTemasXML(xml)
 		tem.id= $(this).attr("id");
 		tem.thumb= $(this).attr("thum");
 		tem.clase=$(this).attr("titulo").replace(/[^a-z0-9]/gi,'').toLowerCase()
+		tem.ilustraNombre=$(this).attr("ilustraNombre");
+		tem.ilustraTitulo=$(this).attr("ilustraTitulo");
+		tem.ilustraTipo=$(this).attr("ilustraTipo");
 		UNDAV_TEMATICAS.listaTemas.push(tem);		
 	});		
 	UNDAV_TEMATICAS.xml=xml
@@ -600,7 +616,7 @@ function buscarFichasCL(DeptoURL,objParam)
 			
 		})
 		
-		$("#msj").remove();
+		$("#msj").empty();
 		
 		$(".ficha .iconos a").each(function(e){
 			$(this).click(function(){				
@@ -623,7 +639,6 @@ window.start = 0;
 window.end = 0;
 
 function parceTemaDCO(xml){	
-console.log("parceTemaDCO")
 	parseTematicaCL(xml);
 	buscaBotonesTematicas()	
 }
@@ -652,17 +667,32 @@ function  iniciaPagina()
 		 //var clasificador=UNDAV_TEMATICAS.CLDeptos
 		 //loadXML(clasificador, renderDeptosPage)
 		 initPanel()
-	}else if($("#baseTema").length>0){		
+	}else if($("#baseTema").length>0){	    
 		var imgSRC=UNDAV_TEMATICAS.dameThumbTematicaByID(UNDAV_TEMATICAS.urlParams["idT"])
-		 var styles = {
+		var artista=UNDAV_TEMATICAS.dameArtistaTematicaByID(UNDAV_TEMATICAS.urlParams["idT"])
+    	var styles = {
 			backgroundImage : 'url("'+imgSRC+'")',
 			backgroundRepeat: "no-repeat"
 		}
+		$('#autorData').width(120)
+		$('#autorData').attr("alt",artista[0]+": "+artista[1]+","+artista[2])
 		$('#toolbox').css(styles)
 		aboutTema();
 		//$("#toolbox").attr("style","background-color:#"+UNDAV_TEMATICAS.dameColorTematica(UNDAV_TEMATICAS.urlParams["t"].replace(/\+/g, " ")))
-	}else if($(".docQ").length>0){
+	}else if($(".docQ").length>0 || $(".docQPlain").length>0){		
 		var fftmpT=0
+		acomodaToolbar();
+		acomodaFichas();
+		
+	}
+}
+function acomodaToolbar(){	
+	var miT=$('<h6 class="row">Navegar por:</h6>');
+	$(".btn-xs").first().before(miT)
+	$(".btn-xs").slice(0, 4).wrapAll('<div class="col-md-3 col-sm-4" />')
+	$(".btn-xs").slice(4, 10).wrapAll('<div class="col-md-3 col-sm-4" />')
+}
+function acomodaFichas(){
 		$(".ficha").each(function (a){
 			fftmpT++;
 			if(fftmpT%2>0){
@@ -677,9 +707,8 @@ function  iniciaPagina()
 				$(this).css("min-height",max+5);
 			}
 		})
-	}
+		
 }
-
 function setup()
 {
 	cargaUrlParametros();
