@@ -25,6 +25,7 @@ function PANEL(){
 	this.botonesList=new Array();
 	this.flager=new Array(0,0) ;
 	this.botoActivoA="";
+	
 	this.dameBotonById = function (idS){		
 		for (var elem in this.botonesList)
 		{
