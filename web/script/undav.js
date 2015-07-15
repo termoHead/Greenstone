@@ -433,6 +433,8 @@ function filtraNovedades(xml)
 					"paginacion":$(this).find("meta[title='pr.paginacion']"),
 					"tematicas":$(this).find("meta[title='ma.tematica']").text().split(","),
 					"area":$(this).find("meta[title='ma.comunidad']").text().split(","),
+					"id":$(this).find("meta[title='ma.identificador']").text().split(","),
+					
 				});
 				if(flagC>2){return false;}
 			})
@@ -455,7 +457,8 @@ function creaHTMLTarjeta(dato)
 	//para hacer el class de estilo de la temática
 	var classCC=dato["tematicas"][0].replace(/[^a-z0-9]/gi,'').toLowerCase();
 	
-	var colcLink = ruta.substr(0,ruta.lastIndexOf('/')+1)+ "&a=p&p=about&l=es&w=utf-8&c="+dato["coleccion"];		
+	var colcLink=rutaConLib+ "a=d&cl=CL5&c="+dato["coleccion"];		
+	var docuLink=rutaConLib+"a=d&c="+dato["coleccion"]+"&d="+dato["id"]
 	var inte=$(document.createElement('div'))
 	if(classCC==""){classCC="general";}
 	inte.attr('class','col-md-3 col-sm-6 '+classCC)		
@@ -468,8 +471,11 @@ function creaHTMLTarjeta(dato)
 	}
 	var ICO=$(document.createElement('div'))
 	
+	var HHT=$(document.createElement('a'))
+	HHT.attr("href",docuLink);
+	HHT.append(dato["titulo"])
 	var HH=$(document.createElement('h3'))
-	HH.append(dato["titulo"])
+	HH.append(HHT)
 	var PA=$(document.createElement('p'))
 	PA.attr("class","autor")
 	PA.append(dato["autor"])
@@ -518,7 +524,12 @@ function creaHTMLFicha(dato)
 	PT.append(dato["tematicas"].toString())
 	PT.attr("class","labelA")
 	var HH=$(document.createElement('h3'))
-	HH.append(dato["titulo"])
+	var HHT=$(document.createElement('a'));
+	HHT.append(dato["titulo"])
+	
+	
+	HH.append(HHT)
+	
 	var PA=$(document.createElement('p'))
 	PA.attr("class","autor")
 	PA.append(dato["autor"])

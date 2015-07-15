@@ -30,13 +30,15 @@ body{ color: #333}
 .sloganP1{color:#1c3259}
 .sloganP2{color:#8cbade}
 header{clear:both; height:130px}
-
+input.form-control{background: url("/greenstone/web/images/lupa_home.gif") no-repeat 5px 8px #ededed; border:none;
+width:280px !important;
+    text-indent: 20px;}
 .carousel-inner{overflow:visible !important; }
 .navbar-brand{padding-top:0;}
-.navbar-nav{margin-top: 36px !important}
+.navbar-nav{margin-top: 46px !important;margin-left: 10px !important;}
 ul.navbar-right a{border-radius: 0!important;border: 0!important; background:transparent !important; color:#999 !important}
 .navbar-nav a{border-radius: 10px;border: 2px solid #8abae0}
-.navbar-nav a{border-radius: 10px;border: 2px solid #8abae0;  background:#8abae0; color:#fff !important; font-weight: 700;margin-right: 0.5em;}
+.navbar-nav a{border-radius:5px;border: 2px solid #8abae0;  background:#8abae0; color:#fff !important; font-weight: 700;margin-right: 0.5em !important;}
 .navbar-nav a:hover{color:#8abae0 !important}
 .navbar-nav > li > a { padding:4px !important; margin:0}
 .navbar-default{background-image: none !important;	border-radius: 0;box-shadow: none !important;	background-color: transparent !important;	border-color: transparent  !important}
@@ -94,18 +96,22 @@ margin-bottom: 25px;}
 .pieBajo ul.instit {border-left:0; padding-left:35px; padding-left: 48px; color: #1b3d83; font-size:16px}
 .pieAlto .contactos{text-align: right}
 .pieAlto .telefonos{ padding-right:52px}
-.colecciones a,.colecciones p,
+.colecciones a,.colecciones p,.seccionTematicas h1,
 .colecciones h1,.colecciones h3,
 .seccionDeptos .seccionDeptos a,.seccionDeptos h1,
 .seccionDeptos h3, .seccionDeptos p{font-family:'fira_sansextralight', 'Fira Sans', sans-serif !important;}
+
+ol.breadcrumb{font-family:'fira_sansextralight', 'Fira Sans', sans-serif !important; color:#4c9bd9 !important}
+ol.breadcrumb a{color:#4c9bd9 !important}
+ol.breadcrumb{padding-left:0;margin-left: 30px;}
+
 .colecciones h1 {padding-left:28px;}
 .seccionDeptos h3 span{display:block; font-size:12px; color:#999}
 .seccionDeptos .row{ margin-bottom:15px}
 .seccionDeptos h3{margin-top:23px;    padding-left: 16px;}
 .seccionDeptos h6{margin-top:15px;}
 .colecciones  h1,.aboutDepto h1 ,
-.seccionDeptos h1,
-.seccionTematicas h1{ color:#4c9ad8; font-size:34px}
+.seccionDeptos h1,.seccionTematicas h1{ color:#4c9ad8; font-size:34px}
 .seccionDeptos h1{padding-left: 30px;}
 .seccionTematicas h1{padding-left: 0;}
 .seccionDeptos p.descripcion{padding-left:20px; border-left:2px solid #99ccff;}
@@ -179,7 +185,7 @@ margin-bottom:25px;}
 .tooltipFail + .tooltip > .tooltip-arrow { border-bottom-color:#645c56;}
 #btColec a, 
 #btTemas a,
-#toolboxAbout a.btn-xs  {text-transform:capitalize;display:block; color:white; font-family:"fira_sansregular";}
+#toolboxAbout a.btn-xs  {text-transform:capitalize; display:block; color:white; font-family:"fira_sansregular";}
 #btColec a.selected,
 #btTemas a.selected,
 #toolboxAbout a.selected {background-color: #8a88e0; font-size:1em; border-bottom-color:#8a88e0;}
@@ -204,7 +210,7 @@ position: absolute;width: 100%;left: 0px;padding: 20px;}
      color: #aaa !important;
 }
 .breadcrumb{clear:both; margin-top:10px; background: transparent !important; font-size:30px}
-.breadcrumb li a{font-family: 'fira_sansextralight' !important; font-weight:bold; color:#4c9bd9 !important}
+
 article.document{font-family: 'fira_sansregular' !important; color:#858585 }
 article.document .docHeader{margin-bottom: 20px; clear:both}
 article.document .docHeader .mainHeader h1 span{color: #294167 !important; font-size:28px;}
@@ -240,3 +246,4 @@ article.document .gray_label{    display: inline;
 	background-color: #777;
 	margin-right:0.5em
 }
+.textoHome{padding:35px}

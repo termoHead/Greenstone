@@ -9,11 +9,11 @@ _content_ {
     <div class="row slogan">
         <div class="col-md-4"><img src="_httpimages_/textoHome.gif" width="485" height="63" alt="Institución"></div>
         <div class="col-md-4 col-xs-offset-4">
-        <form class="navbar-form navbar-left" role="search">
+        <form class="navbar-form navbar-right" role="search">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
+            <input type="text" class="form-control" placeholder="buscar en las colecciones...">
           </div>
-          <button type="submit" class="btn btn-default">Submit</button>
+         
         </form>
         </div>
     </div>
@@ -51,6 +51,14 @@ _content_ {
 	</div>
 	<div class="row nuevas">
 		<!-- seccion novedades -->
+		
+	</div>
+	<div class="row envioTrabajos">
+		<!-- seccion envio trabajos -->
+		<p class="tituloCentrado">¿Interesado en colaborar con material?</p>		
+		<p calss="col-md-7 col-sm-9 textoHome" >Am ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur eleifend nulla, quis pellentesque leo pulvinar eget. Etiam eu sagittis elit, in viverra sapien. Pellentesque condimentum, magna eget dignissim ultricies, felis lacus gravida nulla, in rutrum enim lorem dictum sem. Ut vitae ex lobortis, imperdiet augue a, vestibulum justo. Aenean et eros nec tellus porta rhoncus. Donec tristique libero nec ante dictum, eget pretium neque porttitor. Donec sed tellus id sem tristique ornare eget vel eros. Nullam non egestas felis, id consectetur erat. Pellentesque iaculis viverra mauris, vel consequat felis tristique in. Mauris quis placerat velit. Proin ut ultrices nibh. Donec imperdiet nisi mi, in accumsan quam efficitur id. Integer aliquet arcu eget velit finibus, non auctor eros pharetra. Curabitur a lacus in lectus elementum efficitur. Cras euismod erat quis egestas molestie.
+
+Sed mattis felis massa, ut ullamcorper magna malesuada sed. Praesent suscipit id elit a tempor. Duis maximus blandit eros, vel porttitor justo iaculis ut. Aenean tempor, tellus non fermentum malesuada, nisl leo sagittis turpis, vel mattis mauris eros at ligula. Cras hendrerit blandit velit quis commodo. Cras placerat, augue eu ultricies rhoncus, tellus purus tincidunt velit, ut cursus erat enim id diam. Vestibulum at risus egestas, hendrerit justo quis, ultrices arcu. Curabitur massa orci, dictum nec venenatis id, maximus at purus. Proin sollicitudin risu</p>
 		
 	</div>
 	<!--div id="content">
