@@ -140,6 +140,9 @@ ol.breadcrumb{padding-left:0;margin-left: 30px;}
 .seccionTematicas .tema_derecho  .wrap,.tema6{ background-color:#392626}
 #baseTema .tema7{color:white;}
 #baseTema #toolbox{min-height:143px}
+#toolbox{margin-left:17px;margin-right:10px; margin-bottom:2em}
+#resultados{padding-left:31px}
+#CL1,#CL2,#CL3,#CL4,#CL5,#CL6,#CL7{ padding-left:5px}
 .iconos span{
 color:#fff;
 position: absolute;
@@ -153,7 +156,7 @@ padding: 10px 0px 10px 30px;}
 .seccionTematicas .colCell{width: auto; margin: .5em; height:217px; overflow:hidden;}
 .seccionTematicas .colCell{box-sizing: content-box !important;}
 #grillado{position: relative;}
-#toolboxAbout , .aboutDepto #toolbox{ background-color:#4c9bd9; color:white; padding:20px; margin-bottom:2em;margin-left: 15px;
+#toolboxAbout , .aboutDepto #toolbox{ background-color:#4c9bd9; color:white; padding:8px; margin-bottom:2em;margin-left: 15px;
 margin-right: 15px;}
 
 #toolboxAbout
