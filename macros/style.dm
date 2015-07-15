@@ -125,12 +125,10 @@ _htmlhead_ {<!doctype html>
     <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" _metatagend_
     <title>Respositorio Institucional UNDAV</title>
-    <meta charset="utf-8"  _metatagend_
-    
+    <meta charset="utf-8"  _metatagend_    
     <meta name="Greenstone_version_number" content="_versionnum_" _metatagend_
-    _globalscripts_
-    _cssheader_	
-	
+		_globalscripts_
+		_cssheader_
 	<script src="_httpscript_/jquery.js"  _metatagend_</script _metatagend_
     </head>
 

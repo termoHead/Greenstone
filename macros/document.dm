@@ -39,12 +39,7 @@ _nextsearchresult_ {_If_("_cgiargsrn_" ne "0",<li id="nextresult"><a href="_http
 _prevsearchresult_ {_If_("_cgiargsrp_" ne "0",<li id="prevresult"><a href="_httpquery_&amp;ifl=1&amp;ifln=_cgiargsrp_">_textprevsearchresult_</a></li>)}
 
 _content_ {
-	<div class=\"row\">
-	<ol class="breadcrumb">
-				<li><a href="#">Colecciones</a></li>
-				<li class="active">_imagecollection_</li>
-			</ol>
-	</div>		
+	
 	_optnavigationbar_
 	_If_(_phindclassifier__collageclassifier_,
 	<p style="text-align: center;">
@@ -673,14 +668,19 @@ _htmlhead_
 	_style:csslink_
 }
 
-_header_{_style:headerInterna_	}
+_header_{_style:headerInterna_	
+	<ol class="breadcrumb">		
+		<li><a href="#">Colecciones</a></li>
+		<li>_imagecollection_</li>			
+	</ol>
+}
 
 _textheader_{
 	_style:headerInterna_	
-		<ol class="breadcrumb">
-			<li><a href="#">Colecciones</a></li>
-			<li>_imagecollection_</li>			
-		</ol>
+	<ol class="breadcrumb">		
+		<li><a href="#">Colecciones</a></li>
+		<li>_imagecollection_</li>			
+	</ol>
 }
 _textheaderA_ {
 	_cgihead_
@@ -689,7 +689,7 @@ _textheaderA_ {
 	<!-- document:textheader -->
 		<div id="banner">
 			<!-- div class="pageinfo"><p class="bannerlinks">globallinks_</p></div -->
-			<ol class="breadcrumb">
+			<ol class="breadcrumb">				
 				<li><a href="#">Colecciones</a></li>
 				<li class="active">_imagecollection_</li>
 			</ol>

@@ -887,18 +887,16 @@ function eraseCookie(name) {
 function tabshow(id){
 	if(id!=UNDAV_TEMATICAS.tabResumen){
 		$("#"+UNDAV_TEMATICAS.tabResumen).hide("fast")
-		 $("#"+id).show()
-		 console.log(id)
-		 if(id=="capa1"){
+		$("#"+id).show()		 
+		if(id=="capa1"){
 			$("#tabcapa1") .attr("class","currentabstracttab")
 			$("#tabcapa2") .attr("class","abstracttab")
 			$("#tabcapa3") .attr("class","abstracttab")
-		 }else{
-			 $("#tabcapa1") .attr("class","abstracttab")
+		}else{
+			$("#tabcapa1") .attr("class","abstracttab")
 			$("#tabcapa2") .attr("class","currentabstracttab")
 			$("#tabcapa3") .attr("class","abstracttab")
-		 }
+		}
 		UNDAV_TEMATICAS.tabResumen=id		
-		
 	}
 }
