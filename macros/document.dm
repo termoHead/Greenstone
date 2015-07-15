@@ -40,7 +40,6 @@ _prevsearchresult_ {_If_("_cgiargsrp_" ne "0",<li id="prevresult"><a href="_http
 
 _content_ {
 	
-	_optnavigationbar_
 	_If_(_phindclassifier__collageclassifier_,
 	<p style="text-align: center;">
 	_phindclassifier_
@@ -54,7 +53,8 @@ _content_ {
 	</ul>)
 	
 	_If_(_cgiarge_,
-		<article class="docQ container">,
+		_optnavigationbar_
+		<article class="docQ container">,		
 		<article class="docQPlain container">
 	)
 	
