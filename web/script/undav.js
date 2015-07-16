@@ -344,6 +344,7 @@ function loadImg(url,urlA)
 			var lik=$(document.createElement("a"))			
 			lik.append(img)
 			lik.attr("href",rutaE)
+			lik.attr("alt"," ")
 			$(itm1).append(lik);
 			$("#miSlider .slider-inner").append(itm1)			
 			UNDAV_TEMATICAS.imgLoaded+=1;
@@ -836,17 +837,21 @@ function initSpinner (){
 //SLIDE HOME
 function botonPrev(e)
 {
-	if(UNDAV_TEMATICAS.actualSlide>(0-(UNDAV_TEMATICAS.listaTemas.length-2)) 
+	e.preventDefault();
+	if(UNDAV_TEMATICAS.actualSlide>(0-(UNDAV_TEMATICAS.dameTemasActivos().length)+2) 
 	&& !UNDAV_TEMATICAS.sliderLock){
 		var obj = $(".slider-inner");
 		var posi= obj.position();	
 		animaSlider(posi.left-imgLargo)
+		console.log(UNDAV_TEMATICAS.actualSlide)
 		UNDAV_TEMATICAS.actualSlide--
 	}
+	
 }
 
 function botonSig(e)
 {
+	e.preventDefault();
 	if(UNDAV_TEMATICAS.actualSlide<0 && !UNDAV_TEMATICAS.sliderLock){
 		var obj = $(".slider-inner");
 		var posi= obj.position();	
