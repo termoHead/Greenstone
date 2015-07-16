@@ -46,17 +46,15 @@ _content_ {
 	_collageclassifier_
 	</p>
 	)
+	
 	_If_("_cgiargcl_" eq "search",
 	<ul id="searchresults">
 		_prevsearchresult_
 		_nextsearchresult_
 	</ul>)
-	
-	_If_(_cgiarge_,
-		_optnavigationbar_
-		<article class="docQ container">,		
-		<article class="docQPlain container">
-	)
+
+	_If_( "_cgiargd_" ne  "",,_optnavigationbar_  )
+	_If_(_cgiarge_,<article class="docQ container">,<article class="docQPlain container">)
 	
 }
 

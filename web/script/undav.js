@@ -217,6 +217,7 @@ UNDAV_TEMATICAS.cargaColecEnDepto=function(depto,colecA,posEnCL){
 function iniTemasHome(xml)
 { 
 	parseTematicaCL(xml)
+	
 	loadImg(UNDAV_TEMATICAS.dameTemasActivos()[0].img); 
 	dameNovedades();
 }
@@ -325,18 +326,25 @@ function renderDeptosPage(xml)
 	})
 }
 
-function loadImg(url)
+function loadImg(url,urlA)
 {
 	var itm=$('<div class="item active" />')
 	var itm1=$(itm).append('<div class="carousel-caption">que va a aca</div>')	
     var tAct=UNDAV_TEMATICAS.dameTemasActivos()
+	var tem=tAct[UNDAV_TEMATICAS.imgLoaded].id
+	var titutem=tAct[UNDAV_TEMATICAS.imgLoaded].titulo
+	var rutaE= rutaConLib+'idT='+tem+'&p=tema&t='+titutem
+	
 	var img = $("<img />").attr('src', url)	
 		.load(function() {
 		if (!this.complete || typeof this.naturalWidth == "undefined" || 
 			this.naturalWidth == 0) 		{
 			//imagen rota
 		} else {
-			$(itm1).append(img);
+			var lik=$(document.createElement("a"))			
+			lik.append(img)
+			lik.attr("href",rutaE)
+			$(itm1).append(lik);
 			$("#miSlider .slider-inner").append(itm1)			
 			UNDAV_TEMATICAS.imgLoaded+=1;
 			var totalCargado=(UNDAV_TEMATICAS.imgLoaded/tAct.length)*100

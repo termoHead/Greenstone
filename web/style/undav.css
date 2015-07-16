@@ -206,6 +206,7 @@ position: absolute;width: 100%;left: 0px;padding: 20px;box-shadow: 1px 2px 8px #
 #myModalLabel{text-align:left !important}
 #CL6 .ficha:nth-child(odd) {margin-left:1em}
 .pageBLista  h4{margin-bottom:2em}
+.pageBLista .label{margin-left:15px}
 .pageBLista{clear:both}
 .embargado{ background-color:#999; color:white; margin-top;15px; padding:0.2em ; display:block; font-size:0.8em }
 .breadcrumb > li + li:before {
@@ -245,3 +246,19 @@ padding-left: 60px;}
 .resumenNav .botResumen{ width:150px; font-family: 'fira_sansregular' }
 .resumenNav .abstracttab{font-style: none}
 .resumenNav .currentabstracttab{font-weight: bold}
+.h_list span a{font-size:15px}
+.h_list{height:25px; padding-top:3px; padding-left:15px; font-size:1em}
+#group_top{margin-top:25px}
+.h_item_current{display: inline;
+padding: 0.2em 0.6em 0.3em;
+font-size: 1.2em;
+font-weight: 700;
+line-height: 1;
+color: #FFF;
+text-align: center;
+white-space: nowrap;
+vertical-align: baseline;
+border-radius: 0.25em;
+    background-color: #4C9BD9;
+}
+.v_list{ margin-top:15px}
