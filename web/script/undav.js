@@ -746,6 +746,29 @@ function setup()
 	cargaUrlParametros();
 	initEscuchadores();
 	loadXML(ruataAlXML+"tematicas.xml",parseTemasXML);
+	
+	
+	
+	$("#QueryForm").submit(
+		function () {
+			var estanActivos=false
+			var queryText = $.trim($('input.form-control').val());
+			if (queryText  === '') {
+				alert('Debe ingresar un texto en la busqueda.');
+				$('input.form-control').focus();
+				return false;
+			}	
+			
+			$(":checkbox").each(function(e){
+				if($(this).is( ":checked" )==true){
+					estanActivos=true
+				}
+			})	
+			if(estanActivos==false){
+				alert('No ha seleccionado ninguna colección.');
+				return false;
+			}
+	})
 }
 
 
@@ -777,7 +800,6 @@ function initEscuchadores()
 	// defino el nombre `onCargado`
 	UNDAV_TEMATICAS.evtParseT.initEvent('onParseTemas', true, true);	
 	UNDAV_TEMATICAS.evtParseD.initEvent('onParseDepto', true, true);	
-	
 	
 	// seteo el escuchador	
 	if (document.addEventListener) {                // For all major browsers, except IE 8 and earlier
@@ -912,4 +934,54 @@ function tabshow(id){
 		}
 		UNDAV_TEMATICAS.tabResumen=id		
 	}
+}
+
+/*ACCIONES PARA EL FORMULARIO DE BUSQUEDA*/
+function setValorForm(id,valor,botPres){
+	var abuelo=$(botPres).parent().parent()
+	var activo=$("li[class^='selected']",$(abuelo))
+	var 	titulo=$(".titulo",$(abuelo).parent())
+	$(activo).removeAttr("class")	
+	$("#"+id).val(valor)
+	$(titulo).text($(botPres).text())
+}
+function actC(boton){
+	var btid=$(boton).attr("id").substr(1,100);	
+	if($("input#"+btid).is( ":checked" )==true){		
+		$( "input#"+btid ).prop( "checked", false );
+		$("input#"+btid).removeAttr("class")		
+		$(boton).attr("class","btn btn-default")
+		$("button#_todas").attr("class","btn btn-default")
+	}else{
+		$("input#"+btid ).prop( "checked", true );
+		$("input#"+btid).attr("calss","selected")		
+		$(boton).attr("class","btn label-info")
+	}
+}
+function activaAV(){	
+	if($("#avForm").is(":visible")){
+		$("#avForm").hide()
+	}else{
+		$("#avForm").show()
+	}
+}
+
+function todosAV(){	
+	var estanActivos=false
+	$(":checkbox").each(function(e){
+		if($(this).is( ":checked" )==true){
+			estanActivos=true
+		}
+	})	
+	$(":checkbox").each(function(e){
+		$(this).prop( "checked" ,!estanActivos)		
+	})
+	
+	if(!estanActivos==true){
+		$(".chkCc button").each(function(){$(this).attr("class","btn label-info")})
+	}else{
+		$(".chkCc button").each(function(){$(this).attr("class","btn btn-default")})
+	}
+	
+	
 }

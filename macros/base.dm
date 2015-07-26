@@ -27,9 +27,9 @@ _htmlextra_ {}
 _content_ {<p><h2>oops</h2>
 _textdefaultcontent_}
 _pagetitle_ {_textdefaulttitle_}
-_imagethispage	_ {}
-_iconcollection	_ {}
-_collectionname	_ {}
+_imagethispage_ {}
+_iconcollection_ {}
+_collectionname_ {}
 
 
 package Global

@@ -767,35 +767,166 @@ _htmlhead_(onLoad="initialize();")_pagebanner_
 _pagetitle_ {_If_(_cgiargq_,_textquerytitle_,_textnoquerytitle_)}
 
 _contentB_ {
-	<input type="text" id="resultadoQ" value="_resultline_">
+	<input type="text" id="resultadoQ" value="_resultline_">	
 }
 
 _contentA_ {
 
-_optnavigationbar_
-<div class="document">
-<div class="queryform">
+	_If_(_cgiargcc_,
+		<ol class="breadcrumb">					
+			<li>Búsqueda en todas las colecciones</li>			
+		</ol>
+		,_optnavigationbar_
+		)
+	
+	
+	<div class="document">
+		<div class="queryform">
+			_If_("_cgiarga_" eq "sqlq",
+			  _If_("_cgiargqt_" eq "2",_sqlfieldqueryform_,_sqlqueryform_)	, 
+			  _If_(_cgiargct_,_selectqueryform_,_queryform_)
+			)
+		</div>
 
-	_If_("_cgiarga_" eq "sqlq",
+		_If_(_searchhistorylist_,<center>_searchhistorybar_</center><br>
+		<center>
+		_searchhistorylist_
+		</center>)
+		_If_(_cgiargq_,_queryresultsbar_
+		<small>
+		_freqmsg_
+		_textpostprocess_
+		_If_(_stopwordsmsg_,(_stopwordsmsg_))</small><br />
+		_resultline_
+		,<div class="divbar">&nbsp;</div>)
+}
 
-	  _If_("_cgiargqt_" eq "2",_sqlfieldqueryform_,_sqlqueryform_)
-	, 
-	  _If_(_cgiargct_,_selectqueryform_,_queryform_)
-	)
 
-</div>
+_formCross_{
+<!-- query form (_query:plainqueryform_) -->
+<div class="form-group">
+	<form name="QueryForm" id="QueryForm"  method="get" action="_gwcgi_">
+	<input type="hidden" name="a" value="q">
+	<input type="hidden" name="r" value="1">
+	<input type="hidden" name="hs" value="1">
+	<input type="hidden" value="1" name="css">
+	<input type="hidden" value="all" name="c">		
+	
+	
+	<input type="text" class="form-control" value="" name="q">
+	<a href="#" class="btnAvForm" onclick="javascript:activaAV()" rel="avForm">búsqueda avanzada</a>
+		<input type="checkbox" name="cc" id="arti" value="arti">
+		<input type="checkbox" name="cc" id="eventos" value="eventos">
+		<input type="checkbox" name="cc" id="informes" value="informes">
+		<input type="checkbox" name="cc" id="proy" value="proy">
+		<input type="checkbox" name="cc" id="libros" value="libros">
+		<input type="checkbox" name="cc" id="tesis" value="tesis">
+	<div class="advanceToolbox" id="avForm" >
+		<div class="col-md-5 colIzq">		
+			<div class="flabel" >Filtros sobre la búsqueda</div>
+			<div class="dropdown">		
+				<button class="btn btn-default dropdown-toggle" 
+					type="button" 
+					id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					<span class="titulo">Términos</span>
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+					<li  class="slected"><a href="#"  onclick="javascript:setValorForm('hT',0,this)">término exacto</a></li>
+					<li><a href="#" onclick="javascript:setValorForm('hT',1,this)">cualquier termino</a></li>    
+			   </ul>	
+				<input type="hidden" value="0" name="t" id="hT">   
+			</div>
+		
+			<div class="dropdown">
+			  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					<span class="titulo">Filtrar por campos</span>
+				<span class="caret"></span>
+			  </button>
+			  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+				<li  class="slected"><a href="#"  onclick="javascript:setValorForm('fqf','ZZ',this)">todos los campos</a></li>
+				<li><a href="#"  onclick="javascript:setValorForm('fqf','TX',this)">Texto completo</a></li>
+				<li><a href="#"  onclick="javascript:setValorForm('fqf','AU',this)">Personas</a></li>
+				<li><a href="#"  onclick="javascript:setValorForm('fqf','AU',this)">Título</a></li>
+				<li><a href="#"  onclick="javascript:setValorForm('fqf','AB',this)">Palabras claves</a></li>
+				<li><a href="#"  onclick="javascript:setValorForm('fqf','CM',this)">Departamento</a></li>
+				<li><a href="#"  onclick="javascript:setValorForm('fqf','TE',this)">Temática</a></li>
+			  </ul>
+			  <input type="hidden" value="ZZ" name="fqf" id="fqf">   
+			</div>
 
-_If_(_searchhistorylist_,<center>_searchhistorybar_</center><br>
-<center>
-_searchhistorylist_
-</center>)
-_If_(_cgiargq_,_queryresultsbar_
-<small>
-_freqmsg_
-_textpostprocess_
-_If_(_stopwordsmsg_,(_stopwordsmsg_))</small><br />
-_resultline_
-,<div class="divbar">&nbsp;</div>)
+			<div class="dropdown">
+			  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					<span class="titulo">Ordenar por</span>
+				<span class="caret"></span>
+			  </button>
+			  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+				<li  class="slected"><a href="#"  onclick="javascript:setValorForm('sf','byAU',this)">Relevancia</a></li>
+				<li><a href="#"  onclick="javascript:setValorForm('sf','byOT',this)">Personas/Instituciones</a></li>
+				<li><a href="#"  onclick="javascript:setValorForm('sf','byAB',this)">Palabras claves</a></li>
+				<li><a href="#"  onclick="javascript:setValorForm('sf','byCM',this)">Departamento</a></li>
+				<li><a href="#"  onclick="javascript:setValorForm('sf','byTE',this)">Temática</a></li>
+				</ul>
+			  <input type="hidden" value="byAU" name="sf" id="sf">   
+			</div>
+
+			<div class="dropdown">
+			  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					<span class="titulo">Todos los registros</span>
+				<span class="caret"></span>
+			  </button>
+			  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+				<li  class="slected"><a href="#"  onclick="javascript:setValorForm('j','to',this)">Todos lo registros</a></li>
+				<li><a href="#"  onclick="javascript:setValorForm('j','ff',this)">Solo texto completo</a></li>
+				</ul>
+			  <input type="hidden" value="to" name="j" id="j">   
+			</div>
+
+		</div>
+		
+		<div class="chkCc col-md-7">	
+			<div class="flabel">Filtrar colecciones 
+				<button onclick="javascript:todosAV()" id="_todas" type="button" type="button" class="btn btn-default">
+				<span></span>Todas
+			</button>
+			</div>
+			
+			<button onClick="javascript:actC(this)" id="_arti"type="button" type="button" class="btn btn-default">
+				<span></span>Articulos
+			</button>
+			<button onClick="javascript:actC(this)" id="_eventos" type="button" class="btn btn-default">
+				<span></span>Eventos
+			</button>
+			<button  onClick="javascript:actC(this)" id="_informes" type="button" class="btn btn-default">
+				<span></span>Informes
+			</button>
+			<button  onClick="javascript:actC(this)" id="_proy" type="button" class="btn btn-default">
+				<span></span>Proyectos de investigación
+			</button>
+			<button  onClick="javascript:actC(this)" id="_libros" type="button" class="btn btn-default">
+				<span></span>Libros y capítulos de libros
+			</button>
+			<button  onClick="javascript:actC(this)" id="_tesis" type="button" class="btn btn-default">
+				<span></span>Tesis de grado y posgrado
+			</button>
+			
+		</div>
+	<input type="submit" id="submit" class="btn btn-default" value="Buscar">
+	</div>
+	
+	  
+	<!-- end of query form -->
+	
+	</form>
+
+	
+	
+	
+	
+	
+	
+	
+	</div>
 }
 
 _selectqueryform_{_If_("_cgiargqt_" ge "1",_fieldqueryform_,_queryform_)}
@@ -1197,9 +1328,11 @@ _header_{
 	_If_("_cgiargajax_" eq "1",<html><head></head><body>,_headerA_
 	)
 }
-_footer_{_If_("_cgiargajax_" eq "1",</body></html>,_style:footer_	
+	_footer_{_If_("_cgiargajax_" eq "1",</body></html>,_style:footer_
 )}
+
 _content_{	_If_("_cgiargajax_" eq "1",
+	
 		_contentB_,	
 		_contentA_
 		

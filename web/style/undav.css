@@ -86,7 +86,7 @@ ul.navbar-right a{border-radius: 0!important;border: 0!important; background:tra
 .nuevas .tarjeta a{color:#757575;font-size:12px}
 .nuevas .tarjeta{ box-shadow: 1px 1px 10px 1px #dadada;min-height: 280px;
 margin-bottom: 25px;}
-.pie{background-color:#f4f4f4; margin-top35px; border-top:8px solid #1a3c69;font-size:12px ;font-family:'fira_sansextralight', 'Fira Sans', sans-serif !important;margin-top: 31px;}
+.pie{clear: both;background-color:#f4f4f4; margin-top35px; border-top:8px solid #1a3c69;font-size:12px ;font-family:'fira_sansextralight', 'Fira Sans', sans-serif !important;margin-top: 31px;}
 .pie .pieAlto ul{ float: left;width: 50%;padding-top: 30px;}
 .pie .pieAlto a{color:#62708b; font-size:14px}
 .pie li{list-style: none}
@@ -262,3 +262,15 @@ border-radius: 0.25em;
     background-color: #4C9BD9;
 }
 .v_list{ margin-top:15px}
+.advanceToolbox{position:absolute;font-size:0.7em; background-color:white; padding-top:1em; z-index:10; margin-top:0.2em}
+.advanceToolbox .selected{background-color:#999}
+.advanceToolbox .btn{ padding: 4px 8px;font-size:11px; text-align:left}
+.advanceToolbox .dropdown li{font-size: 11px;}
+.advanceToolbox .dropdown{ margin-left:5px; width:45%; margin-top:0.5em}
+.advanceToolbox  .colIzq{margin-left:0 !important; padding-left:0}
+.ocultaCampos{ width:1px ; height:1px; overflow:hidden}
+.advanceToolbox .flabel{margin-bottom:5px; line-height:22px}
+.chkCc button,#submit{margin-top: 0.5em;}
+#submit{margin-left:5px; margin-bottom:10px}
+.flabel button{margin:0; float: right;}
+#_proy, #_libros,#_tesis{width: 183px; text-align:center}

@@ -131,9 +131,7 @@ _htmlhead_ {<!doctype html>
 		_cssheader_
 	<script src="_httpscript_/jquery.js"  _metatagend_</script _metatagend_
     </head>
-
     <body _1_>
-	
 	
 }
 # Link and meta tags must be closed differently for HTML/XHTML validation
@@ -157,80 +155,76 @@ _optgloballinks_ {_globallinks_}
 # a banner image
 _pagebanner_ {
 <!-- page banner (\_style:pagebanner\_) -->
-  <header class="row">
+	<header class="row">
     <nav class="navbar navbar-default">
       <div class="container-fluid"> 
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
           <a class="navbar-brand" href="http://www.undav.edu.ar/"><img src="_httpimages_/logoUndav.gif" width="87" height="80" alt="Universidad Nacional de Avellaneda"></a> 
-		  <a class="navbar-brand" href="/greenstone/cgi-bin/library.cgi"><img src="_httpimages_/logoRepositorio.gif" alt="Logo Repositorio Documental y de Datos"></a> </div>
+		  <a class="navbar-brand" href="/greenstone/cgi-bin/library.cgi"><img src="_httpimages_/logoRepositorio.gif" alt="Logo Repositorio Documental y de Datos"></a> 
+	  </div>
         
-        <!-- Collect the nav links, forms, and other content for toggling -->
+		<!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul id="mainNav" class="nav navbar-nav">
-		  <li><a href="?p=colecciones">colecciones</a></li>
-           <li><a href="?p=tematicas">temáticas<span class="sr-only">(current)</span></a></li>            
-           <li><a href="?p=departamentos">departamentos</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">responsables</a></li>
-			<li><a href="#">política de uso</a></li>            
-          </ul>
-        </div>
+			<ul id="mainNav" class="nav navbar-nav">
+				<li><a href="?p=colecciones">colecciones</a></li>
+				<li><a href="?p=tematicas">temáticas<span class="sr-only">(current)</span></a></li>            
+				<li><a href="?p=departamentos">departamentos</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#">responsables</a></li>
+				<li><a href="#">política de uso</a></li>            
+			</ul>
+		</div>
+		
         <!-- /.navbar-collapse --> 
-      </div>
-      <!-- /.container-fluid --> 
-    </nav>
-  </header>
-
-
-
-
-
-<!-- p class="bannerlinks">_globallinks_</p -->
-
-
-<!-- 
-_If_(_imagecollection_,<div class="collectimage">_imagecollection_</div>)
-end of page banner -->
-_If_("_activateweb20_" eq "2",
-  _If_("_activatetalkback_" eq "1",_talkback:uploadForm_)
-)
+		</div>
+		<!-- /.container-fluid --> 
+	</nav>
+	</header>
+	<!-- p class="bannerlinks">_globallinks_</p -->
+	<!-- 
+		_If_(_imagecollection_,<div class="collectimage">_imagecollection_</div>)
+		end of page banner 
+	-->
+	_If_("_activateweb20_" eq "2",
+	  _If_("_activatetalkback_" eq "1",_talkback:uploadForm_)
+	)
 }
 
 _pagebanner_[v=1] {
-<!-- page banner - text version [v=1] (\_style:pagebanner\_) -->
-<center><h2><b><u>_imagecollection_</u></b></h2></center><p>
-_optgloballinks_
-_pagebannerextra_
-<p>
-<!-- end of page banner -->
-_If_("_activateweb20_" eq "2",
-  _If_("_activatetalkback_" eq "1",_talkback:uploadForm_)
-)
+	<!-- page banner - text version [v=1] (\_style:pagebanner\_) -->
+	<center><h2><b><u>_imagecollection_</u></b></h2></center>
+	<p>
+	_optgloballinks_
+	_pagebannerextra_
+	<p>
+	<!-- end of page banner -->
+	_If_("_activateweb20_" eq "2",
+	  _If_("_activatetalkback_" eq "1",_talkback:uploadForm_)
+	)
 }
 
 # note we no longer close off one of the startspacer tables here!!
 _footer_ {
-_If_("_cgiargtalkback_" eq "1",_talkback:monitorUpload_)
-<!-- page footer (\_style:footer\_) -->
-_pagefooterextra__endspacer__htmlfooter_
+	_If_("_cgiargtalkback_" eq "1",_talkback:monitorUpload_)
+	<!-- page footer (\_style:footer\_) -->
+		_pagefooterextra__endspacer__htmlfooter_
 }
 
 # v=1 footer: not using startspacer in the header, so dont put it in the footer
 _footer_ [v=1]{
-_If_("_cgiargtalkback_" eq "1",_talkback:monitorUpload_)
-<!-- page footer [v=1] (\_style:footer\_) -->
-_pagefooterextra_
-_htmlfooter_
+	_If_("_cgiargtalkback_" eq "1",_talkback:monitorUpload_)
+	<!-- page footer [v=1] (\_style:footer\_) -->
+	_pagefooterextra_
+	_htmlfooter_
 }
 
 # close off anything opened by startspacer
 _endspacer_ {	
-</div> <!-- id=page -->
+	</div> <!-- id=page -->
 }	
-
 
 _htmlfooter_ {
 <footer class="row-fluid pie">
@@ -242,14 +236,14 @@ _htmlfooter_ {
 	</div>
   	<div class="col-md-4">
 	   <ul>       
-       <li class=""><a href="?p=colecciones">colecciones</a></li>
-       <li class=""><a href="?p=tematicas">temáticas</a></li>
-       <li class=""><a href="?p=departamentos">departamentos</a></li>       
+		   <li class=""><a href="?p=colecciones">colecciones</a></li>
+		   <li class=""><a href="?p=tematicas">temáticas</a></li>
+		   <li class=""><a href="?p=departamentos">departamentos</a></li>       
        </ul>
        <ul>       
-       <li class=""><a href="">responsables</a></li>
-       <li class=""><a href="">contactos</a></li>
-       <li class=""><a href="">políticas de uso</a></li>       
+		   <li class=""><a href="">responsables</a></li>
+		   <li class=""><a href="">contactos</a></li>
+		   <li class=""><a href="">políticas de uso</a></li>       
        </ul>
 	</div>
     <div class="col-md-4">
@@ -286,9 +280,8 @@ _htmlfooter_ {
 				<li><a href="http://undav.edu.ar/index.php?idcateg=50">Vicerrectoría</a></li>
 				<li><a href="http://undav.edu.ar/index.php?idcateg=73">Secretaría General</a></li> 
 				<li><a href="http://undav.edu.ar/index.php?idcateg=6">Investigación</a></li>
-							<li><a href="http://undav.edu.ar/index.php?idcateg=7">Extensión Universitaria</a></li>
-
-					</ul>
+				<li><a href="http://undav.edu.ar/index.php?idcateg=7">Extensión Universitaria</a></li>
+			</ul>
 			<ul class="col-md-2" >
 				<li><a href="http://undav.edu.ar/index.php?idcateg=70">Secretaría Académica</a></li>
 				<li><a href="http://undav.edu.ar/index.php?idcateg=102">EAD</a></li>

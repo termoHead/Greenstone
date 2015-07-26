@@ -16,21 +16,18 @@ function PANEL(){
 	this.tematicas=new Array();	
 	this.deptos=new Array();	
 	this.colecs=new Array();
-	this.posEnCl=new Array()
-	
+	this.posEnCl=new Array();	
 	//indice actual
 	this.indiceActual=0;	
 	this.cls=0;
 	this.seccionActual=""
 	this.botonesList=new Array();
 	this.flager=new Array(0,0) ;
-	this.botoActivoA="";
-	
+	this.botoActivoA="";	
 	this.dameBotonById = function (idS){		
-		for (var elem in this.botonesList)
-		{
+		for (var elem in this.botonesList){
 			if (this.botonesList[elem].id == idS){
-				return this.botonesList[elem]
+				return this.botonesList[elem];
 			}
 		}
 	}

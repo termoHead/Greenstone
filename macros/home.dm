@@ -8,13 +8,8 @@ _content_ {
 	<!--intermedio -->
     <div class="row slogan">
         <div class="col-md-4"><img src="_httpimages_/textoHome.gif" width="485" height="63" alt="Institución"></div>
-        <div class="col-md-4 col-xs-offset-4">
-        <form class="navbar-form navbar-right" role="search">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="buscar en las colecciones...">
-          </div>
-         
-        </form>
+        <div class="col-md-4 col-xs-offset-4">   
+			_query:formCross_          
         </div>
     </div>
     <!--fin intermedio -->
