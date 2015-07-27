@@ -746,9 +746,6 @@ function setup()
 	cargaUrlParametros();
 	initEscuchadores();
 	loadXML(ruataAlXML+"tematicas.xml",parseTemasXML);
-	
-	
-	
 	$("#QueryForm").submit(
 		function () {
 			var estanActivos=false

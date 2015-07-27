@@ -262,15 +262,30 @@ border-radius: 0.25em;
     background-color: #4C9BD9;
 }
 .v_list{ margin-top:15px}
-.advanceToolbox{position:absolute;font-size:0.7em; background-color:white; padding-top:1em; z-index:10; margin-top:0.2em}
+.advanceToolbox{width: 400px;
+left: -25px;box-shadow: 1px 2px 8px #999;padding-left: 
+5px;position:absolute;font-size:0.7em; background-color:white; 
+padding-top:1em; z-index:10; margin-top:2em}
 .advanceToolbox .selected{background-color:#999}
 .advanceToolbox .btn{ padding: 4px 8px;font-size:11px; text-align:left}
 .advanceToolbox .dropdown li{font-size: 11px;}
 .advanceToolbox .dropdown{ margin-left:5px; width:45%; margin-top:0.5em}
-.advanceToolbox  .colIzq{margin-left:0 !important; padding-left:0}
+.advanceToolbox  .colIzq{margin-left:0 !important; padding-left:0;margin-right: -10px;}
 .ocultaCampos{ width:1px ; height:1px; overflow:hidden}
-.advanceToolbox .flabel{margin-bottom:5px; line-height:22px}
+.advanceToolbox .flabel{margin-bottom:5px; line-height:22px;color: #293f66;}
+.chkCc{ width: 230px;}
 .chkCc button,#submit{margin-top: 0.5em;}
-#submit{margin-left:5px; margin-bottom:10px}
+.chkCc .flabel{padding-left:15px}
+#QueryForm  input[type="checkbox"]{ visibility: hidden;}
+#submit{margin-left:5px; margin-bottom:10px;background-color: #8abae0;
+margin-left: 20px;
+margin-top: 1em;
+color: white;
+font-size: 1.2em;width: 88%;
+text-align: center;}
 .flabel button{margin:0; float: right;}
 #_proy, #_libros,#_tesis{width: 183px; text-align:center}
+.botWrapper {
+    border-left: 1px solid rgb(238, 238, 238);
+    padding-left: 15px;
+}

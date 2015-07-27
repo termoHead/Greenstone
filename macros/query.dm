@@ -813,15 +813,15 @@ _formCross_{
 	<input type="hidden" value="all" name="c">		
 	
 	
-	<input type="text" class="form-control" value="" name="q">
-	<a href="#" class="btnAvForm" onclick="javascript:activaAV()" rel="avForm">búsqueda avanzada</a>
-		<input type="checkbox" name="cc" id="arti" value="arti">
-		<input type="checkbox" name="cc" id="eventos" value="eventos">
-		<input type="checkbox" name="cc" id="informes" value="informes">
-		<input type="checkbox" name="cc" id="proy" value="proy">
-		<input type="checkbox" name="cc" id="libros" value="libros">
-		<input type="checkbox" name="cc" id="tesis" value="tesis">
-	<div class="advanceToolbox" id="avForm" >
+	<input type="text" class="form-control pull-right" value="" name="q">
+	<a href="#" class="btnAvForm pull-right" onclick="javascript:activaAV()" rel="avForm">búsqueda avanzada</a>
+		<input type="checkbox" name="cc" checked="checked" id="arti" value="arti">
+		<input type="checkbox" name="cc"  checked="checked" id="eventos" value="eventos">
+		<input type="checkbox" name="cc" checked="checked" id="informes" value="informes">
+		<input type="checkbox" name="cc" checked="checked" id="proy" value="proy">
+		<input type="checkbox" name="cc" checked="checked" id="libros" value="libros">
+		<input type="checkbox" name="cc" checked="checked" id="tesis" value="tesis">
+	<div class="advanceToolbox" id="avForm" style="display:none">
 		<div class="col-md-5 colIzq">		
 			<div class="flabel" >Filtros sobre la búsqueda</div>
 			<div class="dropdown">		
@@ -886,30 +886,30 @@ _formCross_{
 		
 		<div class="chkCc col-md-7">	
 			<div class="flabel">Filtrar colecciones 
-				<button onclick="javascript:todosAV()" id="_todas" type="button" type="button" class="btn btn-default">
+				<button onclick="javascript:todosAV()" id="_todas" type="button" type="button" class="btn label-info">
 				<span></span>Todas
 			</button>
 			</div>
-			
-			<button onClick="javascript:actC(this)" id="_arti"type="button" type="button" class="btn btn-default">
-				<span></span>Articulos
-			</button>
-			<button onClick="javascript:actC(this)" id="_eventos" type="button" class="btn btn-default">
-				<span></span>Eventos
-			</button>
-			<button  onClick="javascript:actC(this)" id="_informes" type="button" class="btn btn-default">
-				<span></span>Informes
-			</button>
-			<button  onClick="javascript:actC(this)" id="_proy" type="button" class="btn btn-default">
-				<span></span>Proyectos de investigación
-			</button>
-			<button  onClick="javascript:actC(this)" id="_libros" type="button" class="btn btn-default">
-				<span></span>Libros y capítulos de libros
-			</button>
-			<button  onClick="javascript:actC(this)" id="_tesis" type="button" class="btn btn-default">
-				<span></span>Tesis de grado y posgrado
-			</button>
-			
+			<div class="botWrapper">
+				<button onClick="javascript:actC(this)" id="_arti"type="button" type="button" class="btn label-info">
+					<span></span>Articulos
+				</button>
+				<button onClick="javascript:actC(this)" id="_eventos" type="button" class="btn label-info">
+					<span></span>Eventos
+				</button>
+				<button  onClick="javascript:actC(this)" id="_informes" type="button" class="btn label-info">
+					<span></span>Informes
+				</button>
+				<button  onClick="javascript:actC(this)" id="_proy" type="button" class="btn label-info">
+					<span></span>Proyectos de investigación
+				</button>
+				<button  onClick="javascript:actC(this)" id="_libros" type="button" class="btn label-info">
+					<span></span>Libros y capítulos de libros
+				</button>
+				<button  onClick="javascript:actC(this)" id="_tesis" type="button" class="btn label-info">
+					<span></span>Tesis de grado y posgrado
+				</button>
+			</div>
 		</div>
 	<input type="submit" id="submit" class="btn btn-default" value="Buscar">
 	</div>
