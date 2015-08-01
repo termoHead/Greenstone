@@ -31,13 +31,13 @@ _sqlregformlist_ {}
 #######################################################################
 
 _queryresultsbar_ {
-<div class="divbar">
-<p class="navbar">_texthresults_</p>
+<div class="resultF">
+	<p class="navbar"><span>_texthresults_ </span>de la búsqueda</p>
 </div>
 }
 
 _searchhistorybar_ {
-<div class="divbar">
+<div class="resultF">
 <p class="navbar">_texticonsearchhistorybar_</p>
 </div>
 }
@@ -771,33 +771,32 @@ _contentB_ {
 }
 
 _contentA_ {
-
 	_If_(_cgiargcc_,
-		<ol class="breadcrumb">					
-			<li>Búsqueda en todas las colecciones</li>			
-		</ol>
-		,_optnavigationbar_
-		)
+		<div class="document crossSearch">
+		,
+		_optnavigationbar_
+		<div class="document">
+	)	
 	
 	
-	<div class="document">
-		<div class="queryform">
+		<div class="queryform row">		
 			_If_("_cgiarga_" eq "sqlq",
 			  _If_("_cgiargqt_" eq "2",_sqlfieldqueryform_,_sqlqueryform_)	, 
 			  _If_(_cgiargct_,_selectqueryform_,_queryform_)
 			)
 		</div>
 
-		_If_(_searchhistorylist_,<center>_searchhistorybar_</center><br>
-		<center>
-		_searchhistorylist_
-		</center>)
+		_If_(_searchhistorylist_,<div class="resultF">_searchhistorybar_</div><br>
+					<div class="resultF">
+					_searchhistorylist_
+					</div>)
+
 		_If_(_cgiargq_,_queryresultsbar_
-		<small>
-		_freqmsg_
+		<div class="resultSmall">
+		<p>_freqmsg_
 		_textpostprocess_
-		_If_(_stopwordsmsg_,(_stopwordsmsg_))</small><br />
-		_resultline_
+		_If_(_stopwordsmsg_,(_stopwordsmsg_))</p>
+		<p>_resultline_</p></div>
 		,<div class="divbar">&nbsp;</div>)
 }
 
@@ -816,7 +815,7 @@ _formCross_{
 	<input type="text" class="form-control pull-right" value="" name="q">
 	<a href="#" class="btnAvForm pull-right" onclick="javascript:activaAV()" rel="avForm">búsqueda avanzada</a>
 		<input type="checkbox" name="cc" checked="checked" id="arti" value="arti">
-		<input type="checkbox" name="cc"  checked="checked" id="eventos" value="eventos">
+		<input type="checkbox" name="cc" checked="checked" id="eventos" value="eventos">
 		<input type="checkbox" name="cc" checked="checked" id="informes" value="informes">
 		<input type="checkbox" name="cc" checked="checked" id="proy" value="proy">
 		<input type="checkbox" name="cc" checked="checked" id="libros" value="libros">
@@ -885,31 +884,7 @@ _formCross_{
 		</div>
 		
 		<div class="chkCc col-md-7">	
-			<div class="flabel">Filtrar colecciones 
-				<button onclick="javascript:todosAV()" id="_todas" type="button" type="button" class="btn label-info">
-				<span></span>Todas
-			</button>
-			</div>
-			<div class="botWrapper">
-				<button onClick="javascript:actC(this)" id="_arti"type="button" type="button" class="btn label-info">
-					<span></span>Articulos
-				</button>
-				<button onClick="javascript:actC(this)" id="_eventos" type="button" class="btn label-info">
-					<span></span>Eventos
-				</button>
-				<button  onClick="javascript:actC(this)" id="_informes" type="button" class="btn label-info">
-					<span></span>Informes
-				</button>
-				<button  onClick="javascript:actC(this)" id="_proy" type="button" class="btn label-info">
-					<span></span>Proyectos de investigación
-				</button>
-				<button  onClick="javascript:actC(this)" id="_libros" type="button" class="btn label-info">
-					<span></span>Libros y capítulos de libros
-				</button>
-				<button  onClick="javascript:actC(this)" id="_tesis" type="button" class="btn label-info">
-					<span></span>Tesis de grado y posgrado
-				</button>
-			</div>
+			_chkboxcolecciones_
 		</div>
 	<input type="submit" id="submit" class="btn btn-default" value="Buscar">
 	</div>
@@ -928,20 +903,102 @@ _formCross_{
 	
 	</div>
 }
+_chkboxcoleccionesA_{
+			<div class="flabel col-md-12">
+				<label>Filtrar colecciones</label> 
+				<input value="Todas las colecciones" onclick="javascript:todosAV()" id="_todas" type="button" >
+			</div>
+			<div class="botWrapper">
+				<div class="col-md-3">
+				<p>
+					<input type="checkbox" name="cc" checked="checked" id="arti" value="arti"><label>Artículos de Revistas</label>
+				</p>
+				<p>
+					<input type="checkbox" name="cc"  checked="checked" id="eventos" value="eventos">
+					<label>Ponencias</label>
+				</p>
+				<input type="submit" value="_textbeginsearch_" id="fSubmit">
 
+				</div>
+				<div class="col-md-3">
+					<p>
+					<input type="checkbox" name="cc" checked="checked" id="informes" value="informes">
+					<label>Informes</label>
+					</p>
+					<p>
+						<input type="checkbox" name="cc" checked="checked" id="proy" value="proy">
+						<label>Proyectos de investigación</label>
+					</p>
+				</div>
+				<div class="col-md-3">
+					<p>
+						<input type="checkbox" name="cc" checked="checked" id="libros" value="libros">
+						<label>Libros y capítulos de libros</label>
+					</p>
+					<p>
+						<input type="checkbox" name="cc" checked="checked" id="tesis" value="tesis">
+						<label>Tesis de grado y posgrado</label>
+					</p>
+				</div>
+				<div class="col-md-3">
+					<label>Tipo de contenido: </label>			
+					<select name="j" id="j">
+						<option value="ff" selected="">Recursos digitales full-text</option>
+						<option value="to">toda la colección</option>
+					</select>
+					<label>Ordenado por: </label>
+					<select name="sf" id="sf">
+						<option value="" selected="">rango de relevancia</option>
+						<option value="byAU">Personas/Instituciones</option>
+						<option value="byOT">Título</option>
+						<option value="byAB">Palabras claves</option>
+						<option value="byCM">Departamento</option>
+						<option value="byTE">Temática</option>
+					</select>
+				</div>
+			</div>
+
+}
+_chkboxcolecciones_{
+			<div class="flabel">Filtrar colecciones 
+				<button onclick="javascript:todosAV()" id="_todas" type="button" type="button" class="btn label-info">
+				<span></span>Todas
+			</button>
+			</div>
+			<div class="botWrapper">
+				<button onClick="javascript:actC(this)" id="_arti" type="button" class="btn label-info">
+					<span></span>Articulos
+				</button>
+				<button onClick="javascript:actC(this)" id="_eventos" type="button" class="btn label-info">
+					<span></span>Eventos
+				</button>
+				<button  onClick="javascript:actC(this)" id="_informes" type="button" class="btn label-info">
+					<span></span>Informes
+				</button>
+				<button  onClick="javascript:actC(this)" id="_proy" type="button" class="btn label-info">
+					<span></span>Proyectos de investigación
+				</button>
+				<button  onClick="javascript:actC(this)" id="_libros" type="button" class="btn label-info">
+					<span></span>Libros y capítulos de libros
+				</button>
+				<button  onClick="javascript:actC(this)" id="_tesis" type="button" class="btn label-info">
+					<span></span>Tesis de grado y posgrado
+				</button>
+			</div>
+
+}
 _selectqueryform_{_If_("_cgiargqt_" ge "1",_fieldqueryform_,_queryform_)}
 
 _queryform_ {
 <!-- query form (\_query:plainqueryform\_) -->
 <form name="QueryForm" method="get" action="_gwcgi_">
-<p>
-<input type="hidden" name="a" value="q">
-<input type="hidden" name="r" value="1">
-<input type="hidden" name="hs" value="1">
+<div class="col-md-12">
+<input type="hidden" name="a" value="q"><input type="hidden" name="r" value="1"><input type="hidden" name="hs" value="1">
 <input type="hidden" name="e" value="_decodedcompressedoptions_">
-_queryformcontent_
-_optdatesearch_
-</p>
+	_queryformcontent_
+	_optdatesearch_
+</div>
+
 </form>
 <!-- end of query form -->
 }
@@ -970,14 +1027,13 @@ _useifeellucky_ { }  # Set this to _ifeellucky_ if you want this functionality a
 _allowformbreak_{</span>  <span class="textselect">}
 
 _queryformcontent_{
-<span class="textselect">
-_textselect_
-</span>
+	<span class="textselect">_textselect_</span>
+	<span class="querybox">
+		_If_(_cgiargqb_,_largequerybox_,_smallquerybox_)
+		_useifeellucky_
+	</span>
+	<div class="noAvanzada row">_chkboxcoleccionesA_</div>
 
-<span class="querybox">
-_If_(_cgiargqb_,_largequerybox_,_smallquerybox_)
-_useifeellucky_
-</span>
 }
 
 
@@ -1017,7 +1073,7 @@ _textexplaineras_
 </center>
 }
 
-_smallquerybox_ {<nobr><input type="text" name="q" value="_cgiargq_" size="50">&nbsp;<input type="submit" value="_textbeginsearch_"></nobr>}
+_smallquerybox_ {<input id="searchInput" type="text" name="q" value="_cgiargq_" size="50">}
 
 _largequerybox_ {
 <tr><td><textarea name="q" cols="63" rows="10">
@@ -1036,7 +1092,6 @@ _fieldqueryform_ {
 <form name="QueryForm" method="get" action="_gwcgi_">
 
 <table><tr><td align="left">
-
 _textformselect_
 </td></tr>
 <tr><td>
@@ -1088,17 +1143,17 @@ _advformlist_
 }
 
 _sqladvancedforms_{
-<table border="0" cellspacing="0" cellpadding="0" width="90%">
-    _sqladvformlist_
-  <tr>
-    <td colspan="2" align="left">
-      <input type="button" value="_textclearform_" onClick="clearForm();">
-    </td>
-    <td colspan="3" align="right">
-      <input type="button" value="_textbeginsearch_" onClick="beginSearch();">
-    </td>
-  </tr>
-</table>
+	<table border="0" cellspacing="0" cellpadding="0" width="90%">
+		_sqladvformlist_
+	  <tr>
+		<td colspan="2" align="left">
+		  <input type="button" value="_textclearform_" onClick="clearForm();">
+		</td>
+		<td colspan="3" align="right">
+		  <input type="button" value="_textbeginsearch_" onClick="beginSearch();">
+		</td>
+	  </tr>
+	</table>
 }
 
 
@@ -1175,11 +1230,12 @@ _stemcaseboxes_
 
 
 _fqcselection_ {
-<select name="fqc" onChange="updatefqc();">
-<option value="and">_textand_
-<option value="or">_textor_
-<option value="not">_textandnot_
-</select>}
+	<select name="fqc" onChange="updatefqc();">
+	<option value="and">_textand_
+	<option value="or">_textor_
+	<option value="not">_textandnot_
+	</select>
+}
 
 
 _andorfqcselection_ {

@@ -265,7 +265,8 @@ border-radius: 0.25em;
 .advanceToolbox{width: 400px;
 left: -25px;box-shadow: 1px 2px 8px #999;padding-left: 
 5px;position:absolute;font-size:0.7em; background-color:white; 
-padding-top:1em; z-index:10; margin-top:2em}
+padding-top:1em; z-index:10; margin-top:2em;    background-color: #ededed;
+}
 .advanceToolbox .selected{background-color:#999}
 .advanceToolbox .btn{ padding: 4px 8px;font-size:11px; text-align:left}
 .advanceToolbox .dropdown li{font-size: 11px;}
@@ -289,3 +290,31 @@ text-align: center;}
     border-left: 1px solid rgb(238, 238, 238);
     padding-left: 15px;
 }
+.queryform {
+    background-color: #EDEDED;
+    padding: 20px;
+}
+.resultF .navbar {
+    text-align: left;
+    font-size: 32px;
+    color: #1d335a;
+    padding-top: 0.5em;
+    font-family: "fira_sansextralight";
+}
+.resultF .navbar span{text-transform: capitalize;}
+.resultSmall {
+    font-family: "fira_sansregular" !important;
+    color: #9aa7b7;
+    font-size: 1.2em;
+    line-height: .8em;
+    padding-top: .6em;
+}
+.crossSearch form{font-size:.75em}
+.crossSearch .querybox input{ width:300px}
+#j,#sf,#fSubmit{width:160px}
+.noAvanzada  p{line-height:0.5em; margin-bottom:1px}
+.noAvanzada   #_todas{margin-top:1em}
+.flabel{padding-top:5px !important; margin-bottom:10px}
+#fSubmit {margin-top:15px;}
+.noAvanzada  p{line-height:0.5em; margin-bottom:1px}
+.noAvanzada  .botWrapper{padding-left:0 !important}

@@ -701,10 +701,10 @@ function  iniciaPagina()
 		aboutTema();
 		//$("#toolbox").attr("style","background-color:#"+UNDAV_TEMATICAS.dameColorTematica(UNDAV_TEMATICAS.urlParams["t"].replace(/\+/g, " ")))
 	}else if($(".docQ").length>0 || $(".docQPlain").length>0){		
-		
 		acomodaToolbar();
 		acomodaFichas();
-		
+	}if($(".crossSearch").length>0){
+		acomodaFichas();
 	}
 }
 function acomodaToolbar(){	
