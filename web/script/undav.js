@@ -679,7 +679,7 @@ function  iniciaPagina()
 		var clasificador=UNDAV_TEMATICAS.CLTematicas
 		loadXML(clasificador,iniTemasHome)
 	}else if($("article.aboutDepto").children().length>0){
-		$("h1").text(UNDAV_TEMATICAS.urlParams["area"].replace(/\+/g, ' '))
+		$("ol li span").text(UNDAV_TEMATICAS.urlParams["area"].replace(/\+/g, ' '))
 		aboutDepto();
 	}else if($(".seccionTematicas").length>0){
 		var clasificador=UNDAV_TEMATICAS.CLTematicas

@@ -6,7 +6,11 @@ package depto
 _content_ {
 <article class="aboutDepto" id="baseDepto">
 	<div class="row">
-		<h1 class="col-md-12">Departamento de <span> </span></h1>
+		<ol class="breadcrumb">		
+			<li><a href="_gwcgi_?p=departamentos">Departamentos</a></li>
+			<li><span> </span></li>			
+		</ol>
+		
     </div>
 	<div class="row" id="toolbox">
 		<div class="col-md-4">

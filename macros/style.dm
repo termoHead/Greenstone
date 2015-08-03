@@ -172,10 +172,8 @@ _pagebanner_ {
 				<li><a href="?p=tematicas">temáticas<span class="sr-only">(current)</span></a></li>            
 				<li><a href="?p=departamentos">departamentos</a></li>
 			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#">responsables</a></li>
-				<li><a href="#">política de uso</a></li>            
-			</ul>
+			_optionalNavDer_
+		
 		</div>
 		
         <!-- /.navbar-collapse --> 
@@ -189,13 +187,47 @@ _pagebanner_ {
 		end of page banner 
 	-->
 	_If_("_activateweb20_" eq "2",
-	  _If_("_activatetalkback_" eq "1",_talkback:uploadForm_)
+	  _If_("_activatetalkback_" eq "1", _talkback:uploadForm_ )
 	)
 }
 
+
+_optionalNavDer_{
+	_If_( "_cgiargp_" eq "colecciones" ,
+		_formminimo_,
+		_If_( "_cgiargp_" eq "tematicas", 
+		_formminimo_,
+			_If_( "_cgiargp_" eq "departamentos", 
+				_formminimo_,
+				_If_( "_cgiarga_" eq "d", 
+					_formminimo_ ,
+						_If_( "_cgiargp_" eq "tema", 
+							_formminimo_ ,
+							_If_( "_cgiargp_" eq "depto", 
+								_formminimo_ ,								
+								_navDereha_),
+						_navDereha_),
+					_navDereha_),
+				_navDereha_),
+			_navDereha_),
+		_navDereha_)
+}
+_formminimo_{
+<div id="searchTop" class="nav navbar-nav navbar-right">
+_query:formCross_
+</div>
+}
+_navDereha_{
+	<ul class="nav navbar-nav navbar-right">
+		<li><a href="#">responsables</a></li>
+		<li><a href="#">política de uso</a></li>            
+	</ul>
+}
 _pagebanner_[v=1] {
 	<!-- page banner - text version [v=1] (\_style:pagebanner\_) -->
-	<center><h2><b><u>_imagecollection_</u></b></h2></center>
+	<center><h2><b>
+		<u>_imagecollection_</u></b></h2>
+	</center>
 	<p>
 	_optgloballinks_
 	_pagebannerextra_

@@ -673,7 +673,7 @@ _htmlhead_
 
 _header_{_style:headerInterna_	
 	<ol class="breadcrumb">		
-		<li><a href="#">Colecciones</a></li>
+		<li><a href="_gwcgi_?p=colecciones">Colecciones</a></li>
 		<li>_imagecollection_</li>			
 	</ol>
 }

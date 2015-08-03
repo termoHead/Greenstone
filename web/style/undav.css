@@ -263,9 +263,9 @@ border-radius: 0.25em;
 }
 .v_list{ margin-top:15px}
 .advanceToolbox{width: 400px;
-left: -25px;box-shadow: 1px 2px 8px #999;padding-left: 
+left: -90px;box-shadow: 1px 2px 8px #999;padding-left: 
 5px;position:absolute;font-size:0.7em; background-color:white; 
-padding-top:1em; z-index:10; margin-top:2em;    background-color: #ededed;
+padding-top:1em; z-index:10; margin-top:2em;    background-color: #ededed;top: 55px;
 }
 .advanceToolbox .selected{background-color:#999}
 .advanceToolbox .btn{ padding: 4px 8px;font-size:11px; text-align:left}
@@ -278,6 +278,7 @@ padding-top:1em; z-index:10; margin-top:2em;    background-color: #ededed;
 .chkCc button,#submit{margin-top: 0.5em;}
 .chkCc .flabel{padding-left:15px}
 #QueryForm  input[type="checkbox"]{ visibility: hidden;}
+#QueryForm .btnAvForm {margin-top:8px}
 #submit{margin-left:5px; margin-bottom:10px;background-color: #8abae0;
 margin-left: 20px;
 margin-top: 1em;
@@ -318,3 +319,10 @@ text-align: center;}
 #fSubmit {margin-top:15px;}
 .noAvanzada  p{line-height:0.5em; margin-bottom:1px}
 .noAvanzada  .botWrapper{padding-left:0 !important}
+#searchTop {position:relative}
+#searchTop .form-control{width:143px !important}
+#searchTop  .btnAvForm  {clear:both}
+#searchTop #QueryForm  a.btnAvForm {font-weight: normal;margin-top:8px;border:0 !important; background-color: transparent !important; color:#666 !important}
+#searchTop  .advanceToolbox{left:-150px!important; top:45px !important}
+.breadcrumb sapn{}
+
