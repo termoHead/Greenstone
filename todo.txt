@@ -1,0 +1,18 @@
+LO QUE FALTA DEL PROYECTO
+
+
+Falta de la UNDAV
+  LOS TEXTOS FINALES
+  EL FORMULARIO DE RECEPCION DE MATERIAL
+  
+Falta Pablo
+  Maquetar formulario Material
+  Maquetar una Interna general
+  
+  Selector para cambio de tema,departamento y coleccion cuando se ve una en particular
+  
+  COLECCIONES: Acomodar las recuperaciones
+  TEMAS: Poner nombre de Artistas
+  
+  PAGINADO?
+  
