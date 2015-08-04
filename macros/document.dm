@@ -680,7 +680,7 @@ _header_{_style:headerInterna_
 
 _textheader_{
 	_style:headerInterna_	
-	<ol class="breadcrumb">		
+	<ol class="breadcrumb">
 		<li><a href="#">Colecciones</a></li>
 		<li>_imagecollection_</li>			
 	</ol>
