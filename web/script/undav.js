@@ -696,6 +696,9 @@ function  iniciaPagina()
 			backgroundRepeat: "no-repeat"
 		}
 		$('#autorData').width(120)
+		$(".wrapObra .tipoObra").text(artista[2]+':')
+		$(".wrapObra .tituloObra").text('"'+artista[1]+'"')
+		$(".wrapObra .autorObra").text(artista[0])
 		$('#autorData').attr("alt",artista[0]+": "+artista[1]+","+artista[2])
 		$('#toolbox').css(styles)
 		aboutTema();

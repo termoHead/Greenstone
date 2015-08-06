@@ -207,7 +207,7 @@ position: absolute;width: 100%;left: 0px;padding: 20px;box-shadow: 1px 2px 8px #
 #CL6 .ficha:nth-child(odd) {margin-left:1em}
 .pageBLista  h4{margin-bottom:2em}
 .pageBLista .label{margin-left:15px}
-.pageBLista{clear:both}
+.pageBLista{clear:both; width:100% !important}
 .embargado{ background-color:#999; color:white; margin-top;15px; padding:0.2em ; display:block; font-size:0.8em }
 .breadcrumb > li + li:before {
      content: url("/greenstone/web/images/breadSeparator.gif") !important;
@@ -261,7 +261,7 @@ vertical-align: baseline;
 border-radius: 0.25em;
     background-color: #4C9BD9;
 }
-.v_list{ margin-top:15px}
+.v_list{ margin-top:15px;}
 .advanceToolbox{width: 400px;
 left: -90px;box-shadow: 1px 2px 8px #999;padding-left: 
 5px;position:absolute;font-size:0.7em; background-color:white; 
@@ -325,4 +325,9 @@ text-align: center;}
 #searchTop #QueryForm  a.btnAvForm {font-weight: normal;margin-top:8px;border:0 !important; background-color: transparent !important; color:#666 !important}
 #searchTop  .advanceToolbox{left:-150px!important; top:45px !important}
 .breadcrumb sapn{}
-
+.wrapObra {font-size: 10px; margin-top: 58px; color:#fff}
+.wrapObra .tituloObra{font-size: 1.17em}
+.wrapObra p{ margin:0; padding:0; font-family: "fira_sansregular"; }
+.wrapObra p a{color:#eee; }
+.tema12 .wrapObra,
+.tema12 .wrapObra p a{color:#333}
