@@ -17,7 +17,7 @@ Falta Pablo
   Selector para cambio de tema,departamento y coleccion cuando se ve una en particular
   
   COLECCIONES: Acomodar las recuperaciones
-  TEMAS: Poner nombre de Artistas
+  TEMAS: Poner nombre de Artistas_ LISTO
   
   PAGINADO?
   

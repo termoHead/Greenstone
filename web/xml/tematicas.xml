@@ -1,89 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tematicas>
-	<tematica id="tema0" img="/greenstone/web/images/carrousel/1.jpg" color="4599c3" 
+	<tematica id="tema0" img="carrousel/1.jpg" color="4599c3" 
 		titulo="Arte y Diseño Industrial" 
 		corto="Arte y Diseño Industrial"
-		thum="/greenstone/web/images/tema_arteIndustrial.gif"
+		thum="tema_arteIndustrial.gif"
 		ilustraNombre="Antonio Berni"
 		ilustraTitulo="Juanito con la moto (1970)"
 		ilustraTipo="Collage">		
 		</tematica>
-	<tematica id="tema1" img="/greenstone/web/images/carrousel/2.jpg" color="7c6054" 
+	<tematica id="tema1" img="carrousel/2.jpg" color="7c6054" 
 		corto="Arte y Cultura"
-		titulo="Arte y Cultura" thum="/greenstone/web/images/tema_arte.gif"
+		titulo="Arte y Cultura" thum="tema_arte.gif"
 		ilustraNombre="Adollfo Nigro"
 		ilustraTitulo="El barco (2012)"
 		ilustraTipo="Serigrafía"
 		></tematica>
-	<tematica id="tema2" img="/greenstone/web/images/carrousel/3.jpg" color="873e35" 		
+	<tematica id="tema2" img="carrousel/3.jpg" color="873e35" 		
 		corto="Ingeniería y Tecnología"
-		titulo="Ingeniería y Tecnología" thum="/greenstone/web/images/tema_ingel.gif"
+		titulo="Ingeniería y Tecnología" thum="tema_ingel.gif"
 		ilustraNombre="Daniel Santoro"
 		ilustraTitulo="Pulqui sobrevolando Ciudad Evita (2006)"
 		ilustraTipo="Oleo"></tematica>
-	<tematica id="tema3" img="/greenstone/web/images/carrousel/4.jpg" color="d48830" 
+	<tematica id="tema3" img="carrousel/4.jpg" color="d48830" 
 		corto="Arquitectura y Urbanismo"
-		titulo="Arquitectura y Urbanismo" thum="/greenstone/web/images/tema_arq.gif"
+		titulo="Arquitectura y Urbanismo" thum="tema_arq.gif"
 		ilustraNombre="Xul Solar"
 		ilustraTitulo="Barrio (1953)"
 		ilustraTipo="Témpera"></tematica>
-	<tematica id="tema4" img="/greenstone/web/images/carrousel/5.jpg" color="687ca1" 
+	<tematica id="tema4" img="carrousel/5.jpg" color="687ca1" 
 		corto="Trabajo Social"
-		titulo="Trabajo Social y Comunitario" thum="/greenstone/web/images/tema_trabajo.gif"
+		titulo="Trabajo Social y Comunitario" thum="tema_trabajo.gif"
 		ilustraNombre="Ricardo Carpani"
 		ilustraTitulo="Figuras"
 		ilustraTipo="Mural"></tematica>	
-	<tematica id="tema5" img="/greenstone/web/images/carrousel/6.jpg" color="c45c26" 
+	<tematica id="tema5" img="carrousel/6.jpg" color="c45c26" 
 		corto="Estado y Sociedad"
-		titulo="Estado y Sociedad" thum="/greenstone/web/images/tema_estado.gif"
+		titulo="Estado y Sociedad" thum="tema_estado.gif"
 		ilustraNombre="Felipe Noé"
 		ilustraTitulo="Estamos Bien"
 		ilustraTipo="Pintura"></tematica>	
-	<tematica id="tema6" img="/greenstone/web/images/carrousel/7.jpg" color="392626" 
+	<tematica id="tema6" img="carrousel/7.jpg" color="392626" 
 		corto="Derecho"
-		titulo="Derecho" thum="/greenstone/web/images/tema_derecho.gif"
+		titulo="Derecho" thum="tema_derecho.gif"
 		ilustraNombre="Antonio Berni"
 		ilustraTitulo="Manifestación (1951)"
 		ilustraTipo="Oleo sobre arpillera"></tematica>
-	<tematica id="tema7" img="/greenstone/web/images/carrousel/8.jpg" color="873e35" 
+	<tematica id="tema7" img="carrousel/8.jpg" color="873e35" 
 		corto="Economía y Gestión"
-		titulo="Economía y Gestión" thum="/greenstone/web/images/tema_econo.gif"
+		titulo="Economía y Gestión" thum="tema_econo.gif"
 		ilustraNombre="Juan Manuel Sanchez"
 		ilustraTitulo="Bicentenario (2010)"
 		ilustraTipo="Acrílico sobre tela"></tematica>
-	<tematica id="tema8" img="/greenstone/web/images/carrousel/9.jpg" color="809879" 
+	<tematica id="tema8" img="carrousel/9.jpg" color="809879" 
 		corto="Medio Ambiente"
-		titulo="Conservación, Protección y Gestión del Medio Ambiente" thum="/greenstone/web/images/tema_conservacion.gif"
+		titulo="Conservación, Protección y Gestión del Medio Ambiente" thum="tema_conservacion.gif"
 		ilustraNombre="Ricardo Carpani"
 		ilustraTitulo="Quiénes somos, de dónde venimos y adónde vamos (1991)"
 		ilustraTipo="Boceto"></tematica>	
-	<tematica id="tema9" img="/greenstone/web/images/carrousel/10.jpg" color="5b7782" 
+	<tematica id="tema9" img="carrousel/10.jpg" color="5b7782" 
 		corto="Turismo y Recreación"
-		titulo="Turismo y Recreación" thum="/greenstone/web/images/tema_turismo.gif"
+		titulo="Turismo y Recreación" thum="tema_turismo.gif"
 		ilustraNombre="Daniel Santoro"
 		ilustraTitulo="Verano en la ciudad infantil (2004)"
 		ilustraTipo="Óleo"></tematica>		
-	<tematica id="tema10" img="/greenstone/web/images/carrousel/11.jpg" color="b62529" 
+	<tematica id="tema10" img="carrousel/11.jpg" color="b62529" 
 		corto="Comunicación"
-		titulo="Comunicación y Medios" thum="/greenstone/web/images/tema_medios.gif"
+		titulo="Comunicación y Medios" thum="tema_medios.gif"
 		ilustraNombre="Oswaldo Guayasamín"
 		ilustraTitulo="Cabezas (1960)"
 		ilustraTipo="Óleo sobre tela"></tematica>
-	<tematica id="tema11" img="/greenstone/web/images/carrousel/12.jpg" color="a5c1dd" 
+	<tematica id="tema11" img="carrousel/12.jpg" color="a5c1dd" 
 		corto="Actividad Física"
-		titulo="Actividad Física y Deportes" thum="/greenstone/web/images/tema_actiFisica.gif"
+		titulo="Actividad Física y Deportes" thum="tema_actiFisica.gif"
 		ilustraNombre="Cristina Terzaghi"
 		ilustraTitulo="El equipo de José (?)"
 		ilustraTipo="Mural"></tematica>
-	<tematica id="tema12" img="/greenstone/web/images/carrousel/13.jpg" color="edcc49" 
+	<tematica id="tema12" img="carrousel/13.jpg" color="edcc49" 
 		corto="Salud"
-		titulo="Ciencias de la Salud" thum="/greenstone/web/images/tema_salud.gif"
+		titulo="Ciencias de la Salud" thum="tema_salud.gif"
 		ilustraNombre="Italo Grassi"
 		ilustraTitulo="Origenes (?)"
 		ilustraTipo="Mural"></tematica>
-	<tematica id="tema13" img="/greenstone/web/images/carrousel/14.jpg" color="c9b64c" 
+	<tematica id="tema13" img="carrousel/14.jpg" color="c9b64c" 
 		corto="Historia"
-		titulo="Historia" thum="/greenstone/web/images/tema_historia.gif"
+		titulo="Historia" thum="tema_historia.gif"
 		ilustraNombre="Cristian Del Vitto"
 		ilustraTitulo="Identidad Saltense (2014)"
 		ilustraTipo="Esgrafiado"></tematica>
@@ -96,4 +96,10 @@
 	<depto titulo="Departamento Transversal de Comunicación y Tecnologías de la Información" id="dt5" />
 	<depto titulo="Maestría en Estéticas Contemporáneas Latinoamericanas" id="dt6" />
 	
+	<colec titulo="Artículos de revistas" nombreCarpeta="arti" id="colec0" />
+	<colec titulo="Tesis de grado y de posgrado" nombreCarpeta="tesis" id="colec1" />
+	<colec titulo="Trabajos presentados a eventos" nombreCarpeta="eventos" id="colec2" />
+	<colec titulo="Libros y capítulos de libros" nombreCarpeta="libros" id="colec3" />
+	<colec titulo="Proyectos de investigación" nombreCarpeta="proy" id="colec4" />
+	<colec titulo="Informes" nombreCarpeta="informes" id="colec5" />
 </tematicas>

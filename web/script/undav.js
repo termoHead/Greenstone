@@ -15,6 +15,10 @@ var indiceColecciones=new Array("arti","Artículos de revistas","tesis","Tesis d
 "proy","Proyectos de investigación","informes","Informes")
 
 //Objeto donde se organiza la home
+function COLECCION  (){
+	this.id="";
+	this.nombre=""
+}
 function DEPTO  (){
 	this.id="";
 	this.nombre="";
@@ -51,11 +55,13 @@ UNDAV_TEMATICAS.colsAPI     = new Array()
 UNDAV_TEMATICAS.prop        = {};
 UNDAV_TEMATICAS.listaTemas= new Array();
 UNDAV_TEMATICAS.listaDeptos= new Array();
+UNDAV_TEMATICAS.listaColecciones=new Array();
 UNDAV_TEMATICAS.imgLoaded   = 0;
 UNDAV_TEMATICAS.sliderLock  = false;
 UNDAV_TEMATICAS.actualSlide = 0;
 UNDAV_TEMATICAS.urlParams   = new Object()
 UNDAV_TEMATICAS.tabResumen="capa1";
+
 //cuando creo enlaces ajaxs los almaceno
 //con sus parametros
 UNDAV_TEMATICAS.btns=new Array()
@@ -105,9 +111,10 @@ UNDAV_TEMATICAS.dameTituCortoByTema=function(tematica){
     return ""
 }
 UNDAV_TEMATICAS.dameImagTematica=function(tematica){
+	console.log(tematica)
 	for(var a=0; a<UNDAV_TEMATICAS.listaTemas.length;a++){        
 		if (UNDAV_TEMATICAS.listaTemas[a]["titulo"].toLowerCase() == tematica.toLowerCase()){
-			return UNDAV_TEMATICAS.listaTemas[a]["img"]
+			return ruataAIMG+UNDAV_TEMATICAS.listaTemas[a]["img"]
 		}
 	}
 	return ""    
@@ -115,7 +122,7 @@ UNDAV_TEMATICAS.dameImagTematica=function(tematica){
 UNDAV_TEMATICAS.dameThumbTematicaByID=function(idT){
 	for(var a=0; a<UNDAV_TEMATICAS.listaTemas.length;a++){        
 		if (UNDAV_TEMATICAS.listaTemas[a]["id"].toLowerCase() == idT.toLowerCase()){
-			return UNDAV_TEMATICAS.listaTemas[a]["thumb"]
+			return ruataAIMG+UNDAV_TEMATICAS.listaTemas[a]["thumb"]
 		}
 	}
 	return "" 
@@ -233,7 +240,8 @@ function iniTemasPage(xml)
 
 function parseTematicaCL(xml)
 {
-	var filtraIndiceTitulo="temática";	
+	var filtraIndiceTitulo="temática";
+
 	$(xml).find('base').each(function(indiceA,objt){
 		var flgTT=0;
 		var coleccName=$(objt).attr("name");		
@@ -246,7 +254,15 @@ function parseTematicaCL(xml)
 		})  
 	});	
 }
-
+function parseColecciones(xml){
+	$(this).find('colec').each(function(i,oT){
+			var titulo=$(oT).attr("title");
+			var folderName=$(oT).attr("nombreCarpeta");
+			var id=$(oT).attr("id");
+			
+			UNDAV_TEMATICAS.cargaColecEnTematica(titulo,coleccName,flgTT);
+					})  
+}
 //function filtraDeptos(xml)
 function parseDeptosCL(xml)
 {
@@ -335,7 +351,7 @@ function loadImg(url,urlA)
 	var titutem=tAct[UNDAV_TEMATICAS.imgLoaded].titulo
 	var rutaE= rutaConLib+'idT='+tem+'&p=tema&t='+titutem
 	
-	var img = $("<img />").attr('src', url)	
+	var img = $("<img />").attr('src', ruataAIMG+url)	
 		.load(function() {
 		if (!this.complete || typeof this.naturalWidth == "undefined" || 
 			this.naturalWidth == 0) 		{
@@ -346,12 +362,12 @@ function loadImg(url,urlA)
 			lik.attr("href",rutaE)
 			lik.attr("alt"," ")
 			$(itm1).append(lik);
-			$("#miSlider .slider-inner").append(itm1)			
+			$("#miSlider .slider-inner").append(itm1)
 			UNDAV_TEMATICAS.imgLoaded+=1;
 			var totalCargado=(UNDAV_TEMATICAS.imgLoaded/tAct.length)*100
 			$('.progress .progress-bar').attr("style","width:"+totalCargado+"%")
 			if(totalCargado<100)
-			{//si es menor, sigo con la carga                
+			{//si es menor, sigo con la carga
 				loadImg(tAct[UNDAV_TEMATICAS.imgLoaded].img)
 			}else{
 				//fin de la carga
@@ -360,7 +376,7 @@ function loadImg(url,urlA)
 				//activa Botones
 				$("#miSlider .left").bind("click",botonPrev)
 				$("#miSlider .right").bind("click",botonSig)
-			}			
+			}
         }
     })
 }
@@ -384,7 +400,8 @@ function parseTemasXML(xml)
 		tem.ilustraTitulo=$(this).attr("ilustraTitulo");
 		tem.ilustraTipo=$(this).attr("ilustraTipo");
 		UNDAV_TEMATICAS.listaTemas.push(tem);		
-	});		
+	});
+	
 	UNDAV_TEMATICAS.xml=xml
 	document.dispatchEvent(UNDAV_TEMATICAS.evtParseT);
 }
@@ -703,7 +720,7 @@ function  iniciaPagina()
 		$('#toolbox').css(styles)
 		aboutTema();
 		//$("#toolbox").attr("style","background-color:#"+UNDAV_TEMATICAS.dameColorTematica(UNDAV_TEMATICAS.urlParams["t"].replace(/\+/g, " ")))
-	}else if($(".docQ").length>0 || $(".docQPlain").length>0){		
+	}else if($(".docQ").length>0 || $(".docQPlain").length>0){	
 		acomodaToolbar();
 		acomodaFichas();
 	}if($(".crossSearch").length>0){
@@ -717,15 +734,14 @@ function acomodaToolbar(){
 	$(".btn-xs").slice(4, 10).wrapAll('<div class="col-md-3 col-sm-4" />')
 }
 
-function acomodaFichas(){	
+function acomodaFichas(){
 		var strA="pull-left col-md-3 "
-		var fftmpT=0
+		var fftmpT=0;
 		$(".ficha").each(function (a){
 			fftmpT++;			
 			//if($(".iconos span").attr("class").indexOf("tema")==-1){
 				var temaXTMP=$(".iconos>span",this).text()
-				var temaXID=UNDAV_TEMATICAS.dameIdTematica(temaXTMP)
-					
+				var temaXID=UNDAV_TEMATICAS.dameIdTematica(temaXTMP)					
 				$(".iconos span",this).attr("class",strA+temaXID)
 			//}
 			
@@ -780,7 +796,7 @@ function loadXML(_url,callbak)
 		async:true,
 		url: _url,
 		dataType: "xml",
-		success: function(xml){
+		success: function(xml){			
             callbak(xml);
 		},
 		error: function(objeto, quepaso, otroobj){

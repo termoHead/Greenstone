@@ -22,7 +22,7 @@ function PANEL(){
 	this.cls=0;
 	this.seccionActual=""
 	this.botonesList=new Array();
-	this.flager=new Array(0,0) ;
+	this.flager=new Array(0,0) ;	
 	this.botoActivoA="";	
 	this.dameBotonById = function (idS){		
 		for (var elem in this.botonesList){
@@ -35,21 +35,20 @@ function PANEL(){
 
 UNDAV_TEMATICAS.evtCargaPanel = document.createEvent('Event');
 UNDAV_TEMATICAS.evtCargaPanel.initEvent('onPanelCargado', true, true);	
+
 //PANEL DE NAVEGACION LOCAL
 function initPanel(seccionActual){	
 	var clasificador=UNDAV_TEMATICAS.CLDeptos	
 	if(!window.panel){
-		window.panel = new PANEL();	
-	}	
+		window.panel = new PANEL();
+	}
 	window.panel.seccionActual=seccionActual
-	loadXML(clasificador, panelDepto)	
+	loadXML(clasificador, panelDepto)
 }
 
 function onPanelCargado(ev){
-	console.log("onPanelCargado")
 	document.removeEventListener('onPanelCargado',onPanelCargado)
 	var depto=""
-
 	if(window.panel.seccionActual=="departamento"){
 		depto=UNDAV_TEMATICAS.urlParams["area"]
 		 onPanelINIT(damePanelColeccionesParaDepto(depto.replace(/\+/g," "),depto)	)
@@ -58,7 +57,6 @@ function onPanelCargado(ev){
 		var idSelect=UNDAV_TEMATICAS.urlParams["idT"]
 		onPanelINIT(damePanelColeccionesParaTematica(idSelect),depto)
 	}
-	
 }
 
 function onPanelINIT(tmpRArr,depto)
@@ -223,6 +221,7 @@ function muestraBotones(){
 		$("#btTemas").append(llk);
 	}
 }
+
 function busca(clkEvt){
 	var tmpB=UNDAV_TEMATICAS.dameBotonById($(this).attr("id"));	
 	var nD=tmpB.params	;
@@ -272,16 +271,16 @@ function generaBotonesCoeccion()
 		}else{
 			link.attr("class","btn-xs")
 		}
-		link.text(indiceColecciones[indiceColecciones.indexOf(window.panel.colecs[ind])+1])		
-		$(link).on("click", function (e) {
-			
+		
+		link.text(indiceColecciones[indiceColecciones.indexOf(window.panel.colecs[ind])+1])
+		
+		$(link).on("click", function (e) {			
 			var href = $(this).attr("href");
 			history.pushState(null, null, href);
 			var showForId = $(this).prop('id');
 			$("a[class='btn-xs selected']").attr("class","btn-xs")
 			$(this).attr("class","btn-xs selected")
-			
-			
+
 			e.preventDefault();
 			/*$('a[id="' + showForId + '"').tab('show');
 			$('.tab-pane').removeClass('active');
@@ -315,6 +314,7 @@ function panelDepto(xmlDeptos)
 	parseDeptosCL(xmlDeptos)
 	loadXML(clasificador, panelTemas)
 }
+
 function panelTemas(xmlTemas)
 {
 	var clasificador=UNDAV_TEMATICAS.CLTematicas
