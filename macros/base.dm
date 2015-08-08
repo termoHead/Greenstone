@@ -164,7 +164,7 @@ _httpclearhistory_ {_gwcgi_?e=_compressedoptions_&amp;a=dh}
 
 _httpgreenstone_ {_httppagex_(gsdl)}
 _httpdownload_ {http://www.nzdl.org/download}
-_httppublications_ {_httpdownload_/greenstone/publications}
+_httppublications_ {_httpdownload_/publications}
 
 _httpcurrentdocument_ {_gwcgi_?e=_compressedoptions_&amp;cl=_cgiargcl_&amp;d=_cgiargd_}
 _httpquery_    {_gwcgi_?e=_compressedoptions_&amp;a=_If_("_cgiargqt_" eq "2",sqlq,q)}

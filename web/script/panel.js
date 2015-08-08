@@ -1,4 +1,4 @@
-var rueLita=["http://localhost:8282/greenstone/cgi-bin/library.cgi?","http://localhost:8282/greenstone/cgi-bin/ibraryQ.cgi?"]
+var rueLita=[rutaConLib]
 var rueLitaFlag	=0
 window.fVuelta	=0
 window.cgiNum	=0
@@ -42,7 +42,7 @@ function initPanel(seccionActual){
 	if(!window.panel){
 		window.panel = new PANEL();
 	}
-	window.panel.seccionActual=seccionActual
+	window.panel.seccionActual=seccionActual	
 	loadXML(clasificador, panelDepto)
 }
 
@@ -150,7 +150,7 @@ function buscaBotonesDeptos()
 
 
 
-function generaBotonesTemas(){
+function generaBotonesTemas(){	
 	buscaBotonesTematicas()
 }
 
@@ -222,7 +222,8 @@ function muestraBotones(){
 	}
 }
 
-function busca(clkEvt){
+function busca(clkEvt)
+{	
 	var tmpB=UNDAV_TEMATICAS.dameBotonById($(this).attr("id"));	
 	var nD=tmpB.params	;
 	buscarFichasCL(rutaQuery,nD);

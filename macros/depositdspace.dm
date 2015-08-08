@@ -4,7 +4,7 @@ _imagethispage_ {<a href="_httppagedepositor_">The Depositor</a>}
 
 _httpjavascript_ {_httpprefix_/web/script}
 
-_httpchecksum_ {/greenstone/cgi-bin/checksum.pl}
+_httpchecksum_ {/cgi-bin/checksum.pl}
 
 
 # _pagescriptextra_ will be set to the appropriate _***scriptextra_
@@ -1210,55 +1210,47 @@ _externalscript_
 
 _step4content_ {
 <form name="depositorform" method=post action="_gwcgi_" enctype="multipart/form-data">
-<input type=hidden name="e" value="_decodedcompressedoptions_">
-<input type=hidden name="p" value="step4">
-
-        <center>
-        <table class="submitProgressTable" border="0" cellpadding="0"
- cellspacing="0">
-          <tbody>
-            <tr>
-	      _depositorbar_
-            </tr>
-          </tbody>
-        </table>
-        </center>
+	<input type=hidden name="e" value="_decodedcompressedoptions_">
+	<input type=hidden name="p" value="step4">
+	<center>
+		<table class="submitProgressTable" border="0" cellpadding="0" cellspacing="0">
+		  <tbody>
+			<tr> _depositorbar_ </tr>
+		  </tbody>
+		</table>
+	</center>
 
 
         <h1>Submit: File Uploaded Successfully</h1>
         <p><strong>Your file was successfully uploaded.</strong></p>
-        <p>Here are the details of the file you have uploaded. Please
-check the details before going to the next step.
-       </p>
+        <p>Here are the details of the file you have uploaded. Please check the details before going to the next step.       </p>
         <table class="miscTable" align="center">
           <tbody>
             <tr>
-              <th class="oddRowOddCol">File</th>
-              <th class="oddRowEvenCol">Size</th>
-              <th class="oddRowOddCol">File Format</th>
-	      <th class="oddRowEvenCol">Checksum</th>
+				<th class="oddRowOddCol">File</th>
+				<th class="oddRowEvenCol">Size</th>
+				<th class="oddRowOddCol">File Format</th>
+				<th class="oddRowEvenCol">Checksum</th>
             </tr>
             <tr>
-              <td class="evenRowOddCol"><a
- href="_httptmp_/_cgiargdi1tmp_/_cgiargdi1timestamp_/_di1userfile_"
- target="_blank">_di1userfile_</a></td>
-              <td class="evenRowEvenCol">_di1userfilesize_ bytes</td>
-
-              <td class="evenRowOddCol">
-	        <span id="lookupext"></span>
-		<script type="text/javascript">
-		  var text = lookup_ext("_di1userfile_");
-		  var lookupext = document.getElementById('lookupext');
-		  lookupext.innerHTML = text;
-		</script>
-	      </td>
-              <td  class="evenRowEvenCol">
-  	        <span id="pane1">
- 
-
-                  <a href="javascript:add\_checksum('tmp/_cgiargdi1tmp_/_cgiargdi1timestamp_/_di1userfile_')">calculate ...</a>
-	        </span>
-	      </td>
+				<td class="evenRowOddCol">
+					<a  href="_httptmp_/_cgiargdi1tmp_/_cgiargdi1timestamp_/_di1userfile_" 
+					target="_blank">_di1userfile_</a>
+				</td>
+				<td class="evenRowEvenCol">_di1userfilesize_ bytes</td>
+				<td class="evenRowOddCol">
+					<span id="lookupext"></span>
+					<script type="text/javascript">
+					  var text = lookup_ext("_di1userfile_");
+					  var lookupext = document.getElementById('lookupext');
+					  lookupext.innerHTML = text;
+					</script>
+			  </td>
+			<td  class="evenRowEvenCol">
+				<span id="pane1">
+					<a href="javascript:add\_checksum('tmp/_cgiargdi1tmp_/_cgiargdi1timestamp_/_di1userfile_')">calculate ...</a>
+				</span>
+			</td>
             </tr>
           </tbody>
         </table>

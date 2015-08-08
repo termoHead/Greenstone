@@ -1,12 +1,12 @@
 /* CSS Document */
 @font-face {
     font-family: 'fira_sansextralight';
-    src: url('/greenstone/web/fonts/firasans-extralight-webfont.eot');
-    src: url('/greenstone/web/fonts/firasans-extralight-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/greenstone/web/fonts/firasans-extralight-webfont.woff2') format('woff2'),
-         url('/greenstone/web/fonts/firasans-extralight-webfont.woff') format('woff'),
-         url('/greenstone/web/fonts/firasans-extralight-webfont.ttf') format('truetype'),
-         url('/greenstone/web/fonts/firasans-extralight-webfont.svg#fira_sansextralight') format('svg');
+    src: url('/web/fonts/firasans-extralight-webfont.eot');
+    src: url('/web/fonts/firasans-extralight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/web/fonts/firasans-extralight-webfont.woff2') format('woff2'),
+         url('/web/fonts/firasans-extralight-webfont.woff') format('woff'),
+         url('/web/fonts/firasans-extralight-webfont.ttf') format('truetype'),
+         url('/web/fonts/firasans-extralight-webfont.svg#fira_sansextralight') format('svg');
     font-weight: normal;
     font-style: normal;
 	 -webkit-font-smoothing: antialiased;
@@ -14,13 +14,13 @@
 }
 @font-face {
     font-family: 'fira_sansregular';
-    src:  url('/greenstone/web/fonts/firasans-regular-webfont.woff') format('woff');
-    src: url('/greenstone/web/fonts/firasans-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/greenstone/web/fonts/firasans-regular-webfont.woff2') format('woff2'),
-         url('/greenstone/web/fonts/firasans-regular-webfont.woff') format('woff'),
-         url('/greenstone/web/fonts/firasans-regular-webfont.ttf') format('truetype'),
-		 url('/greenstone/web/fonts/firasans-regular-webfont.eot') format('eot'),
-         url('/greenstone/web/fonts/firasans-regular-webfont.svg#fira_sansregular') format('svg');
+    src:  url('/web/fonts/firasans-regular-webfont.woff') format('woff');
+    src: url('/web/fonts/firasans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/web/fonts/firasans-regular-webfont.woff2') format('woff2'),
+         url('/web/fonts/firasans-regular-webfont.woff') format('woff'),
+         url('/web/fonts/firasans-regular-webfont.ttf') format('truetype'),
+		 url('/web/fonts/firasans-regular-webfont.eot') format('eot'),
+         url('/web/fonts/firasans-regular-webfont.svg#fira_sansregular') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -30,7 +30,7 @@ body{ color: #333}
 .sloganP1{color:#1c3259}
 .sloganP2{color:#8cbade}
 header{clear:both; height:130px}
-input.form-control{background: url("/greenstone/web/images/lupa_home.gif") no-repeat 5px 8px #ededed; border:none;
+input.form-control{background: url("/web/images/lupa_home.gif") no-repeat 5px 8px #ededed; border:none;
 width:280px !important;
     text-indent: 20px;}
 .carousel-inner{overflow:visible !important; }
@@ -176,9 +176,9 @@ margin-bottom:25px;}
 .ficha .iconos{height:50px; text-align:right}
 .ficha .iconos a{ margin-right:13px;}
 .ficha .iconos a img{height:52px;}
-.ficha a.pdf_bt{background-image:url("/greenstone/web/images/pdf_bt.gif"); font-size:24px; background-repeat:no-repeat}
-.ficha a.compartir_bt{background-image:url("/greenstone/web/images/share_bt.gif"); font-size:24px; background-repeat:no-repeat}
-.ficha a.cita_bt{background-image:url("/greenstone/web/images/cita_bt.gif"); font-size:24px; background-repeat:no-repeat}
+.ficha a.pdf_bt{background-image:url("/web/images/pdf_bt.gif"); font-size:24px; background-repeat:no-repeat}
+.ficha a.compartir_bt{background-image:url("/web/images/share_bt.gif"); font-size:24px; background-repeat:no-repeat}
+.ficha a.cita_bt{background-image:url("/web/images/cita_bt.gif"); font-size:24px; background-repeat:no-repeat}
 .ficha .iconos a:hover{background-position: top right}
 .ficha .iconos a:active{background-position:top left}
 #msj{margin-left:25px; font-size:14px; color:#f00}
@@ -198,7 +198,7 @@ margin-bottom:25px;}
     height:15px;	
 	float:left;
 	margin-right:0.5em;
-    background-image: url('/greenstone/web/images/Rclk1Sf.png');
+    background-image: url('/web/images/Rclk1Sf.png');
 }
 .cita{ background-color:#999; padding:8px; color:#eee; text-align:left;clear:both; margin-bottom: 20px;
 position: absolute;width: 100%;left: 0px;padding: 20px;box-shadow: 1px 2px 8px #999;}
@@ -210,7 +210,7 @@ position: absolute;width: 100%;left: 0px;padding: 20px;box-shadow: 1px 2px 8px #
 .pageBLista{clear:both; width:100% !important}
 .embargado{ background-color:#999; color:white; margin-top;15px; padding:0.2em ; display:block; font-size:0.8em }
 .breadcrumb > li + li:before {
-     content: url("/greenstone/web/images/breadSeparator.gif") !important;
+     content: url("/web/images/breadSeparator.gif") !important;
      color: #aaa !important;
 }
 .breadcrumb{clear:both; margin-top:10px; background: transparent !important; font-size:30px}
@@ -231,8 +231,8 @@ article.docQPlain  #capa1,article.docQPlain  #capa2,
 article.docQPlain  #capa3{padding-left:62px; clear: both; font-size:0.78em}
 article.docQPlain  h4{ margin-top:2em}
 article.docQPlain   .cita{font-size:0.78em;color: #333; position:relative;margin-bottom:15px; margin-top:15px;
-	padding: 10px 10px 10px 62px; background:url("/greenstone/web/images/undav_citaDoc.gif") no-repeat 1% 25% #e4e6be;}
-article.docQPlain  .pdfOk{background:url("/greenstone/web/images/pdf_gris_doc.gif") no-repeat top left transparent;}
+	padding: 10px 10px 10px 62px; background:url("/web/images/undav_citaDoc.gif") no-repeat 1% 25% #e4e6be;}
+article.docQPlain  .pdfOk{background:url("/web/images/pdf_gris_doc.gif") no-repeat top left transparent;}
 article.docQPlain   .pdfOk .pdf img{ width:40px;}
 .clr{clear:both; line-height:1px; font-size:1px}
 article.docQPlain  .gray_label{display: inline;padding: 0.2em 0.6em 0.3em;font-size: .6em;font-weight: bold;line-height: 1;color: #FFF;text-align: center;
@@ -331,3 +331,13 @@ text-align: center;}
 .wrapObra p a{color:#eee; }
 .tema12 .wrapObra,
 .tema12 .wrapObra p a{color:#333}
+#dLabel {
+    font-family: "fira_sansextralight","Fira Sans",sans-serif !important;
+    background: transparent none repeat scroll 0% 0%;
+    border: medium none;
+    color: rgb(76, 155, 217);
+    font-size: 1.5em;
+}
+.selectorCambio {
+    margin-top: 27px;
+}
