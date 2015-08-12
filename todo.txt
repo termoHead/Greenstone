@@ -14,9 +14,9 @@ Falta Pablo
   Maquetar formulario Material
   Maquetar una Interna general
   
-  Selector para cambio de tema,departamento y coleccion cuando se ve una en particular
+  Selector para cambio de tema,departamento y coleccion cuando se ve una en particular LISTO
   
-  COLECCIONES: Acomodar las recuperaciones
+  COLECCIONES: Acomodar las recuperaciones LISTO
   TEMAS: Poner nombre de Artistas_ LISTO
   
   PAGINADO?

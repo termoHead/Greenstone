@@ -336,8 +336,11 @@ text-align: center;}
     background: transparent none repeat scroll 0% 0%;
     border: medium none;
     color: rgb(76, 155, 217);
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
-.selectorCambio {
-    margin-top: 27px;
-}
+.selectorCambio, .selectorCambioDepto,.selectorCambioColect { margin-top: 27px;}
+.dropdown-menu{width: 250px !important;}
+.dropdown-menu li a{width:250px !important}
+.dropdown-menu li a {width: 230px !important;white-space: normal !important;}
+#toolboxAbout #wrap{margin:0; padding:0; line-height:0}
+#toolboxAbout #wrap h6{padding-left: 19px;}

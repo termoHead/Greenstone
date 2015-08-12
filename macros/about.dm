@@ -21,6 +21,8 @@ _pagetitle_ {_collectionname_}
 _content_ {
 	<div class="row" id="toolboxAbout">		
 		_optnavigationbar_
+		
+		
 	</div>
 	
 

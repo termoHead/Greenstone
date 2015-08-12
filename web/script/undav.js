@@ -14,6 +14,9 @@ var indiceColecciones=new Array("arti","Artículos de revistas","tesis","Tesis d
 "eventos","Trabajos presentados a eventos","libros","Libros y capítulos de libros",
 "proy","Proyectos de investigación","informes","Informes")
 
+
+
+
 //Objeto donde se organiza la home
 function COLECCION  (){
 	this.id="";
@@ -235,10 +238,13 @@ function iniTemasPage(xml)
 	loadXML(clasificador,renderTematicas)
 }
 
+
+
 function parseTematicaCL(xml)
 {
+	
 	var filtraIndiceTitulo="temática";
-
+	
 	$(xml).find('base').each(function(indiceA,objt){
 		var flgTT=0;
 		var coleccName=$(objt).attr("name");		
@@ -252,6 +258,27 @@ function parseTematicaCL(xml)
 	});	
 	
 	//carga el select de 
+	if($(".selectorCambioDepto").length>0){
+		var listaT=UNDAV_TEMATICAS.dameDeptosActivos()
+		for(var ele in listaT){
+			var mli=$(document.createElement('li'))
+			var ma=$(document.createElement('a'))
+			var colesion=listaT[ele]
+			
+			var Atitulo=colesion.nombre.replace("Departamento de","")
+			Atitulo=Atitulo.replace("Departamento","")
+			ma.text(Atitulo)
+			
+			ma.attr("id",colesion.id)		
+			var strH = '?p=depto&area='+colesion.nombre.replace(/\ /g, '+')
+			ma.attr("href",strH)
+			mli.append(ma)
+			if(UNDAV_TEMATICAS.urlParams['area'].replace(/\+/g, ' ')!= colesion.nombre){
+				$(".dropdown-menu").append(mli)
+			}
+		}
+		$(".selectorCambioDepto .dropdown").show("slow")
+	}
 	
 	if($(".selectorCambio").length>0){
 		var listaT=UNDAV_TEMATICAS.dameTemasActivos()
@@ -272,7 +299,36 @@ function parseTematicaCL(xml)
 		}
 		$(".selectorCambio .dropdown").show("slow")
 	}
+
+	if($(".selectorCambioColect").length>0){
+		var listaT=UNDAV_TEMATICAS.listaColecciones
+		
+		for(var ele in listaT){
+			var mli=$(document.createElement('li'))
+			var ma=$(document.createElement('a'))
+			var colesion=listaT[ele]
+			
+			ma.text(colesion.nombre)
+			ma.attr("id",colesion.id)					
+			var strH ='c='+colesion.nombreCarpeta+'&a=d&cl=CL5'
+			
+			ma.attr("href",strH)
+			mli.append(ma)
+			if(UNDAV_TEMATICAS.urlParams['t'].replace(/\+/g, ' ')!= colesion.nombre){
+				$(".dropdown-menu").append(mli)
+			}
+		}
+		$(".selectorCambioColect .dropdown").show("slow")
+	}
+
+	
 }
+
+
+
+
+
+
 
 //function filtraDeptos(xml)
 function parseDeptosCL(xml)
@@ -360,10 +416,9 @@ function loadImg(url,urlA)
     var tAct=UNDAV_TEMATICAS.dameTemasActivos()
 	var tem=tAct[UNDAV_TEMATICAS.imgLoaded].id
 	var titutem=tAct[UNDAV_TEMATICAS.imgLoaded].titulo
-	var rutaE= rutaConLib+'idT='+tem+'&p=tema&t='+titutem
-	
-	var img = $("<img />").attr('src', ruataAIMG+url)	
-		.load(function() {
+	var rutaE= rutaConLib+'idT='+tem+'&p=tema&t='+titutem	
+	var img = $("<img />").attr('src', ruataAIMG+url)
+	.load(function() {
 		if (!this.complete || typeof this.naturalWidth == "undefined" || 
 			this.naturalWidth == 0) 		{
 			//imagen rota
@@ -395,6 +450,7 @@ function loadImg(url,urlA)
 //CARGA TEMAS DESDE TEMTATICAS XML
 function parseTemasXML(xml)
 {
+	
 	var miX=$(xml).find('tematicas');    
 	var colec=$(xml).find('base');	
 	miX.find('tematica').each(function(){
@@ -440,7 +496,7 @@ function parseDeptos(xml)
 
 
 function parseColecciones(xml){
-	
+
 	var colec=$(xml)	
 	colec.find('colec').each(function(i,oT){
 			var titulo=$(oT).attr("titulo");
@@ -452,6 +508,43 @@ function parseColecciones(xml){
 			dp.id= id
 			UNDAV_TEMATICAS.listaColecciones.push(dp);
 	})  
+	
+	if($(".selectorCambioColect").length>0 || 
+		UNDAV_TEMATICAS.urlParams['e'] != ""){
+		var listaT=UNDAV_TEMATICAS.listaColecciones		
+		
+			
+		for(var ele in listaT){
+			var mli=$(document.createElement('li'))
+			var ma=$(document.createElement('a'))
+			var colesion=listaT[ele]
+			
+			ma.text(colesion.nombre)
+			ma.attr("id",colesion.id)					
+			var strH ='?c='+colesion.nombreCarpeta+'&a=d&cl=CL5'			
+			ma.attr("href",strH)
+			mli.append(ma)
+			if(UNDAV_TEMATICAS.urlParams['e']!=undefined){
+				var str1=UNDAV_TEMATICAS.urlParams["e"]
+				var X=str1.replace("d-00000-00---off-0")
+				var XX=X.substr(0,X.indexOf("--"))
+				if(XX!= colesion.nombreCarpeta){
+					$(".dropdown-menu").append(mli)
+				}
+			}else{
+				if(UNDAV_TEMATICAS.urlParams['c']!=undefined){
+					if(UNDAV_TEMATICAS.urlParams['c'].replace(/\+/g, ' ')!= colesion.nombreCarpeta){
+						$(".dropdown-menu").append(mli)
+					}
+				}
+			}
+			
+		}
+		$(".selectorCambioColect .dropdown").show("slow")
+		
+		
+	}
+
 	delete UNDAV_TEMATICAS.xml
 	document.dispatchEvent(UNDAV_TEMATICAS.evtParseC);
 }
@@ -760,11 +853,91 @@ function  iniciaPagina()
 	}
 }
 function acomodaToolbar(){	
-	var miT=$('<h6 class="row">Navegar por:</h6>');
-	$(".btn-xs").first().before(miT)
-	$(".btn-xs").slice(0, 4).wrapAll('<div class="col-md-3 col-sm-4" />')
-	$(".btn-xs").slice(4, 10).wrapAll('<div class="col-md-3 col-sm-4" />')
+	var listado=ordenaEnlacesColeccToolbox()
+	
+	$( "a" ).remove( ".btn-xs" );
+	$( "#toolboxAbout #wrap" ).remove( "img" );
+	var miT=$('<h6 class="col-md-12">Navegar por:</h6>');
+	
+	var miC1=$(document.createElement("div"))
+	var miC2=$(document.createElement("div"))
+	miC1.attr("class","col-md-3 col-sm-4")
+	miC2.attr("class","col-md-3 col-sm-4")
+	
+	for(var ind in listado[0]){
+			var objA=listado[0][ind]
+			var tmpL=$(document.createElement("a"))			
+			tmpL.attr("class",objA.clase)
+			tmpL.attr("href",objA.href)
+			tmpL.text(objA.texto)
+			miC1.append(tmpL)
+	}
+	for(var ind in listado[1]){
+			var objA=listado[1][ind]
+			var tmpL=$(document.createElement("a"))			
+			tmpL.attr("class",objA.clase)
+			tmpL.attr("href",objA.href)
+			tmpL.text(objA.texto)
+			miC2.append(tmpL)
+	}
+	$("#toolboxAbout #wrap").append(miT)
+	$("#toolboxAbout #wrap").append(miC1)
+	$("#toolboxAbout #wrap").append(miC2)
+	
+	$("#toolboxAbout #wrap").show()
 }
+function ordenaEnlacesColeccToolbox(){
+
+	var col1=new Array()
+	var col2=new Array()
+	$("#toolboxAbout #wrap a").each(function (a,e){		
+		var href=$(this).attr("href")		
+		var texto=$(this).text()
+		var clase=$(this).attr("class")
+		var stmp="#"
+		if(href!=undefined){
+			stmp=href.substr(href.lastIndexOf("&")+1,100)		
+		}
+		if(stmp=="cl=CL2" || stmp=="cl=CL1" || 
+		   texto.toLowerCase()=="autores" || texto.toLowerCase()=="autores/colaboradores"  
+		   || texto.toLowerCase()=="año"  || texto.toLowerCase()=="investigadores" 
+		    || texto.toLowerCase()=="eventos"  || texto.toLowerCase()=="series"  
+		   ||  texto.toLowerCase()=="año de inicio" || texto.toLowerCase()=="disciplina" || 
+		   texto.toLowerCase()=="tipo de informe" ||
+		  (stmp=="cl=CL4" &&  texto.toLowerCase()!="carreras")
+		  ){
+			  
+				  col2.push( {href:href, texto:texto, clase:clase, orden:stmp} )			  
+			
+		}else{
+			var orden=0;
+			if(stmp!="a=q"){
+				if(stmp=="cl=CL5" ||  texto=="Ultimos ingresados"){
+					orden=1
+				}else if(stmp=="cl=CL3"){
+					orden=2
+				}else if(stmp=="cl=CL6"){
+					orden=3
+				}else{
+					orden=100
+				}
+				col1.push( {href:href, texto:texto, clase:clase, orden:orden} )
+			}		
+		}
+		
+	})
+	var list=new Array(col1.sort(compare),col2)
+	return list
+}
+
+function compare(a,b) {
+  if (a.orden < b.orden)
+    return -1;
+  if (a.orden > b.orden)
+    return 1;
+  return 0;
+}
+
 
 function acomodaFichas(){
 		var strA="pull-left col-md-3 "
@@ -816,7 +989,7 @@ function setup()
 				alert('No ha seleccionado ninguna colección.');
 				return false;
 			}
-	})
+	})	
 }
 
 

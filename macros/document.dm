@@ -44,14 +44,12 @@ _nextsearchresult_ {_If_("_cgiargsrn_" ne "0",<li id="nextresult"><a href="_http
 _prevsearchresult_ {_If_("_cgiargsrp_" ne "0",<li id="prevresult"><a href="_httpquery_&amp;ifl=1&amp;ifln=_cgiargsrp_">_textprevsearchresult_</a></li>)}
 
 _content_ {
-	 
 	_If_(_phindclassifier__collageclassifier_,
 	<p style="text-align: center;">
 	_phindclassifier_
 	_collageclassifier_
 	</p>
 	)
-	
 	_If_("_cgiargcl_" eq "search",
 	<ul id="searchresults">
 		_prevsearchresult_
@@ -672,28 +670,53 @@ _htmlhead_
 }
 
 _header_{_style:headerInterna_	
-	<ol class="breadcrumb">		
-		<li><a href="_gwcgi_?p=colecciones">Colecciones</a></li>
-		<li>_imagecollection_</li>			
-	</ol>
+
+	<div class="row">
+		<ol class="breadcrumb col-md-8">		
+			<li><a href="_gwcgi_?p=colecciones">Colecciones</a></li>
+			<li>_imagecollection_</li>			
+		</ol>
+		<div class="selectorCambioColect col-md-3" >
+			<div class="dropdown"  style="display:none">
+				<button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Otras colecciones <span class="caret"></span>
+				</button>
+				  <ul class="dropdown-menu" aria-labelledby="dLabel">		
+				  
+				  </ul>
+			</div>
+		</div>
+	</div>
 }
 
 _textheader_{
 	_style:headerInterna_	
-	<ol class="breadcrumb">
+	
+	<ol class="breadcrumb col-md-8">
 		<li><a href="#">Colecciones</a></li>
 		<li>_imagecollection_</li>			
 	</ol>
+	
+	<div class="selectorCambioColect col-md-3">	
+			<div class="dropdown" >
+				<button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Otras colecciones <span class="caret"></span>
+				</button>
+				  <ul class="dropdown-menu" aria-labelledby="dLabel">
+				  </ul>
+			</div>
+		</div>
 }
 _textheaderA_ {
 	_cgihead_
 	_htmlhead_
 	_startspacer_
 	<!-- document:textheader -->
+	
 		<div id="banner">
 			<!-- div class="pageinfo"><p class="bannerlinks">globallinks_</p></div -->
-			<ol class="breadcrumb">				
-				<li><a href="#">Colecciones</a></li>
+			<ol class="breadcrumb col-md-8">				
+				<li><a href="#">Colecciónes</a></li>				
 				<li class="active">_imagecollection_</li>
 			</ol>
 		</div>
@@ -701,6 +724,7 @@ _textheaderA_ {
 }
 
 _textheader_ [v=1] {
+888888888888888
 _cgihead_
 _htmlhead_
 _globallinks_

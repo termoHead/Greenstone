@@ -75,9 +75,10 @@ function addDomainToRSSAnchor (imgtag)
 # appear in the standard place, and then specify _navigationbar_ elsewhere
 # in a collection specific macro file(s) to be where you do want it.
 _optnavigationbar_{
-<div id="toolboxAbout" class="row">
-	_navigationbar_
-</div>
+	<div id="toolboxAbout" class="row">
+	<div id="wrap" style="display:none">
+		_navigationbar_
+	</div></div>
 }
 _Aoptnavigationbar_{
 <div class="navbar">

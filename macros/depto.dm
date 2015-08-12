@@ -6,10 +6,20 @@ package depto
 _content_ {
 <article class="aboutDepto" id="baseDepto">
 	<div class="row">
-		<ol class="breadcrumb">		
-			<li><a href="_gwcgi_?p=departamentos">Departamentos</a></li>
+		<ol class="breadcrumb col-md-8">					
 			<li><span> </span></li>			
 		</ol>
+		
+		<div class="selectorCambioDepto col-md-3">
+			<div class="dropdown" style="display:none">
+				<button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Otros departamentos<span class="caret"></span>
+				</button>
+				  <ul class="dropdown-menu" aria-labelledby="dLabel">				
+				  </ul>
+			</div>
+		</div>
+		
 		
     </div>
 	<div class="row" id="toolbox">
