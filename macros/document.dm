@@ -818,7 +818,7 @@ _sharemesmall_ {
 }
 
 _sharevertical_{
-<div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style" style="left:96%; top:150px; "
+<div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style" style="left:96%; top:240px; "
 >
     <a class="a2a_button_facebook"></a>
     <a class="a2a_button_twitter"></a>
