@@ -900,10 +900,10 @@ function ordenaEnlacesColeccToolbox(){
 		}
 		if(stmp=="cl=CL2" || stmp=="cl=CL1" || 
 		   texto.toLowerCase()=="autores" || texto.toLowerCase()=="autores/colaboradores"  
-		   || texto.toLowerCase()=="año"  || texto.toLowerCase()=="investigadores" 
-		    || texto.toLowerCase()=="eventos"  || texto.toLowerCase()=="series"  
-		   ||  texto.toLowerCase()=="año de inicio" || texto.toLowerCase()=="disciplina" || 
-		   texto.toLowerCase()=="tipo de informe" ||
+		  || texto.toLowerCase()=="año"  || texto.toLowerCase()=="investigadores" 
+		  || texto.toLowerCase()=="eventos"  || texto.toLowerCase()=="series"  
+		  ||  texto.toLowerCase()=="año de inicio" || texto.toLowerCase()=="disciplina" || 
+		  texto.toLowerCase()=="tipo de informe" || texto.toLowerCase()=="revistas" || 
 		  (stmp=="cl=CL4" &&  texto.toLowerCase()!="carreras")
 		  ){
 			  

@@ -732,7 +732,9 @@ _globallinks_
 
 _footer_ {
 </article> <!-- document:footer -->
-
+	
+	
+	
 _If_("_document:allowusercomments_" eq "1",
 <center>
 <table width=_pagewidth_ cellpadding=0 cellspacing=0 border=0>
@@ -792,7 +794,6 @@ _sharemescript_ {
 }
 
 _shareme_ {
-
 <div style=\'padding-left:50px;\' class=\'a2a_kit a2a_default_style\'>
   _sharemescript_(_1_,_2_)
   <center>
@@ -809,11 +810,33 @@ _shareme_ {
 }
 
 _sharemesmall_ {
-
 <span style=\'padding-left:8px;\' class=\'a2a_kit a2a_default_style\'>
   _sharemescript_(_1_,_2_)
     <a class=\'a2a_dd\' href=\'http://www.addtoany.com/share_save\'>Share</a>
   <script type=\"text/javascript\" src=\"http://static.addtoany.com/menu/page.js\"></script>
 </span>
+}
 
+_sharevertical_{
+<div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style" style="left:96%; top:150px; "
+>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_dd" href="http://www.addtoany.com/share_save"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+
+
+<script type="text/javascript">
+	a2a_config.icon_color = "transparent";
+	a2a.init('page');
+</script>
+<style type="text/css">
+/* Hide AddToAny vertical share bar when screen is less than 980 pixels wide */
+@media screen and (max-width: 980px) {
+    .a2a_floating_style.a2a_vertical_style { display: none; }
+}
+</style>
 }

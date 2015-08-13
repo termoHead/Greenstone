@@ -344,3 +344,8 @@ text-align: center;}
 .dropdown-menu li a {width: 230px !important;white-space: normal !important;}
 #toolboxAbout #wrap{margin:0; padding:0; line-height:0}
 #toolboxAbout #wrap h6{padding-left: 19px;}
+.a2a_vertical_style a {    
+    background: #999;
+    margin-bottom: 0.3em;}
+.a2a_svg a2a_w__default {background: #999 !important}
+a.a2a_i, i.a2a_i{background-color:#8ABAE0 !important}
