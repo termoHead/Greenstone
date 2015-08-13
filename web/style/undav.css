@@ -228,7 +228,8 @@ article.document .docHeader .mainHeader ,article.docQPlain  .docHeader .mainHead
 article.docQPlain   .referencia,
 article.docQPlain   .descrip,
 article.docQPlain  #capa1,article.docQPlain  #capa2,
-article.docQPlain  #capa3{padding-left:62px; clear: both; font-size:0.78em}
+article.docQPlain  #capa3,
+.licencia{padding-left:62px; clear: both; font-size:0.78em}
 article.docQPlain  h4{ margin-top:2em}
 article.docQPlain   .cita{font-size:0.78em;color: #333; position:relative;margin-bottom:15px; margin-top:15px;
 	padding: 10px 10px 10px 62px; background:url("/web/images/undav_citaDoc.gif") no-repeat 1% 25% #e4e6be;}
@@ -267,6 +268,7 @@ left: -90px;box-shadow: 1px 2px 8px #999;padding-left:
 5px;position:absolute;font-size:0.7em; background-color:white; 
 padding-top:1em; z-index:10; margin-top:2em;    background-color: #ededed;top: 55px;
 }
+
 .advanceToolbox .selected{background-color:#999}
 .advanceToolbox .btn{ padding: 4px 8px;font-size:11px; text-align:left}
 .advanceToolbox .dropdown li{font-size: 11px;}
