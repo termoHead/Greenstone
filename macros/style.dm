@@ -343,8 +343,8 @@ _htmlfooter_ {
     
     <script src="_httpscript_/bootstrap.js" ></script>		
     <script src="_httpscript_/undav.js" ></script>	
-	<script src="_httpscript_/panel.js" ></script>		
-	_If_("_cgiarge_" eq "", _document:sharevertical_)
+	<script src="_httpscript_/panel.js" ></script>		s
+	_document:sharevertical_
 </body>
 </html>
 }
