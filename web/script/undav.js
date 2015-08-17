@@ -92,6 +92,14 @@ function damePanelColeccionesParaTematica(idTema){
 
 
 //Metodos del objeto UNDAV_TEMATICAS
+UNDAV_TEMATICAS.dameColeccionPorNomCarpeta=function(nomCarpeta){
+	for(var a=0; a<UNDAV_TEMATICAS.listaColecciones.length;a++){
+		if (UNDAV_TEMATICAS.listaColecciones[a]["nombreCarpeta"].toLowerCase()==nomCarpeta.toLowerCase())
+		{
+			return UNDAV_TEMATICAS.listaColecciones[a]["nombre"]
+		}
+	}
+}
 UNDAV_TEMATICAS.dameColorTematica=function(tematica){
 	for(var a=0; a<UNDAV_TEMATICAS.listaTemas.length;a++){
 		if (UNDAV_TEMATICAS.listaTemas[a]["titulo"].toLowerCase()==tematica.toLowerCase()){
@@ -323,13 +331,6 @@ function parseTematicaCL(xml)
 
 	
 }
-
-
-
-
-
-
-
 //function filtraDeptos(xml)
 function parseDeptosCL(xml)
 {
@@ -449,8 +450,7 @@ function loadImg(url,urlA)
 //XML SETUP
 //CARGA TEMAS DESDE TEMTATICAS XML
 function parseTemasXML(xml)
-{
-	
+{	
 	var miX=$(xml).find('tematicas');    
 	var colec=$(xml).find('base');	
 	miX.find('tematica').each(function(){
@@ -509,6 +509,7 @@ function parseColecciones(xml){
 			UNDAV_TEMATICAS.listaColecciones.push(dp);
 	})  
 	
+	/*navegacion por hermanos*/
 	if($(".selectorCambioColect").length>0 || 
 		UNDAV_TEMATICAS.urlParams['e'] != ""){
 		var listaT=UNDAV_TEMATICAS.listaColecciones		
@@ -724,7 +725,6 @@ function aboutTema(){
 
 //////////////////////////
 //ABOUT DEPARTAMENTO
-
 function aboutDepto(){
 	if (document.addEventListener) {                
 		// For all major browsers, except IE 8 and earlier
@@ -738,7 +738,7 @@ function aboutDepto(){
 }
 
 
-//MANI BUSCA Y RENDER FICHAS
+//BUSCA Y MUESTRA FICHAS
 function buscarFichasCL(DeptoURL,objParam)
 {
 	var fftmp=0;
@@ -792,45 +792,57 @@ function buscarFichasCL(DeptoURL,objParam)
 			
 		})
 		})
-		.fail(function(){console.log("error")})
-	
+		.fail(function(){console.log("error")})	
 }
-
-
 var itervalo="";
 window.start = 0;
 window.end = 0;
-
 function parceTemaDCO(xml){	
 	parseTematicaCL(xml);
 	buscaBotonesTematicas()	
 }
-
-
-
 function creaFromQuery(html)
 {	
 	$(".resultados").append($("#group_top",$(html).html()))
 }
 //fin DEPTO
-////////////////
+//----------------------		
+
+
+//----------------------		
+//LUEGO DE LA CARGA DE LOS XML, 
+//DETERMINA CUAL ES LA PAGINA QUE SE ESTA MOSTRANDO
+//E INICIALIZA OTRAS ACCIONES
+//----------------------		
 function  iniciaPagina()
-{
+{	
 	if( $("#miSlider").children().length>0){
-		//loadXML(ruataAlXML+"tematicas.xml",iniTemasHome);		
+		//----------------------
+		//INICIO DE HOME
+		//----------------------		
 		var clasificador=UNDAV_TEMATICAS.CLTematicas
 		loadXML(clasificador,iniTemasHome)
 	}else if($("article.aboutDepto").children().length>0){
+		//----------------------
+		//INICIO DE UNA COLECCION
+		//----------------------		
 		$("ol li span").text(UNDAV_TEMATICAS.urlParams["area"].replace(/\+/g, ' '))
 		aboutDepto();
 	}else if($(".seccionTematicas").length>0){
+		//----------------------		
+		//INICIO LISTADO DE TEMATICAS
+		//----------------------		
 		var clasificador=UNDAV_TEMATICAS.CLTematicas
 		loadXML(clasificador,renderTematicas)
 	}else if($(".seccionDeptos").length>0){
-		 //var clasificador=UNDAV_TEMATICAS.CLDeptos
-		 //loadXML(clasificador, renderDeptosPage)
+		//----------------------		
+		 //INICIO LISTADO DE DEPARTAMENTOS
+		//----------------------		
 		 initPanel()
-	}else if($("#baseTema").length>0){	    
+	}else if($("#baseTema").length>0){
+		//----------------------		
+		//INICIO DE UN TEMA PARTICULAR
+		//----------------------		
 		var imgSRC=UNDAV_TEMATICAS.dameThumbTematicaByID(UNDAV_TEMATICAS.urlParams["idT"])
 		var artista=UNDAV_TEMATICAS.dameArtistaTematicaByID(UNDAV_TEMATICAS.urlParams["idT"])
     	var styles = {
@@ -846,19 +858,41 @@ function  iniciaPagina()
 		aboutTema();
 		//$("#toolbox").attr("style","background-color:#"+UNDAV_TEMATICAS.dameColorTematica(UNDAV_TEMATICAS.urlParams["t"].replace(/\+/g, " ")))
 	}else if($(".docQ").length>0 || $(".docQPlain").length>0){	
+		//----------------------		
+		//INCIO DE LA VISTAS DE UN DOCUMENTO 
+		//Y LISTADO DE COLECCIOES
+		//----------------------		
 		acomodaToolbar();
 		acomodaFichas();
+		
+		//BUSCADOR, saco el resto de las coleccioes
+		$("#_todas").attr("class","btn")
+		$('[type="checkbox"]').each(function(){
+			var nom=$(this).attr("id")
+			var titulo=UNDAV_TEMATICAS.dameColeccionPorNomCarpeta(nom)
+			if($('.collectiontitle').text()!=titulo){		
+				$("#_"+nom).attr("class","btn")		
+				$(this).prop( "checked", false );					
+			}
+		})		
 	}if($(".crossSearch").length>0){
+		//----------------------		
+		//INICIO DE PAGINA DE BUSQUEDA
+		//----------------------		
 		acomodaFichas();
 	}
 }
+//ACCIONES PARA LA VISTAS
+//COLECCIOES
 function acomodaToolbar(){	
+	//EN ESTA FUNCION SE ACOMODA
+	//EL MENU DE NAVEGACION LOCAL
+	//SE ELIINA EL ENLACE A BUSCAR EN LA COLECCION
 	var listado=ordenaEnlacesColeccToolbox()
 	
 	$( "a" ).remove( ".btn-xs" );
 	$( "#toolboxAbout #wrap" ).remove( "img" );
-	var miT=$('<h6 class="col-md-12">Navegar por:</h6>');
-	
+	var miT=$('<h6 class="col-md-12">Navegar por:</h6>');	
 	var miC1=$(document.createElement("div"))
 	var miC2=$(document.createElement("div"))
 	miC1.attr("class","col-md-3 col-sm-4")
@@ -882,12 +916,10 @@ function acomodaToolbar(){
 	}
 	$("#toolboxAbout #wrap").append(miT)
 	$("#toolboxAbout #wrap").append(miC1)
-	$("#toolboxAbout #wrap").append(miC2)
-	
+	$("#toolboxAbout #wrap").append(miC2)	
 	$("#toolboxAbout #wrap").show()
 }
 function ordenaEnlacesColeccToolbox(){
-
 	var col1=new Array()
 	var col2=new Array()
 	$("#toolboxAbout #wrap a").each(function (a,e){		
@@ -951,6 +983,7 @@ function acomodaFichas(){
 			//}
 			
 			
+			
 			if(fftmpT%2>0){
 				$(this).attr("class","ficha col-md-5  col-sm-5 ");
 			}else{
@@ -970,32 +1003,25 @@ function setup()
 	cargaUrlParametros();
 	initEscuchadores();
 	loadXML(ruataAlXML+"tematicas.xml",parseTemasXML);
-	$("#QueryForm").submit(
-		function () {
-			var estanActivos=false
-			var queryText = $.trim($('input.form-control').val());
-			if (queryText  === '') {
-				alert('Debe ingresar un texto en la busqueda.');
-				$('input.form-control').focus();
-				return false;
-			}	
-			
-			$(":checkbox").each(function(e){
-				if($(this).is( ":checked" )==true){
-					estanActivos=true
-				}
-			})	
-			if(estanActivos==false){
-				alert('No ha seleccionado ninguna colección.');
-				return false;
+	$("#QueryForm").submit(function () {
+		var estanActivos=false
+		var queryText = $.trim($('input.form-control').val());
+		if (queryText  === '') {
+			alert('Debe ingresar un texto en la busqueda.');
+			$('input.form-control').focus();
+			return false;
+		}
+		$(":checkbox").each(function(e){
+			if($(this).is( ":checked" )==true){
+				estanActivos=true
 			}
-	})	
-
-	
-	
+		})
+		if(estanActivos==false){
+			alert('No ha seleccionado ninguna colección.');
+			return false;
+		}
+	})
 }
-
-
 //AUXILIARES
 //dada una URL CARGA y llama al callbak
 function loadXML(_url,callbak)
