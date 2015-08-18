@@ -162,7 +162,7 @@ _pagebanner_ {
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
           <a class="navbar-brand" href="http://www.undav.edu.ar/"><img src="_httpimages_/logoUndav.gif" width="87" height="80" alt="Universidad Nacional de Avellaneda"></a> 
-		  <a class="navbar-brand" href="/cgi-bin/library.cgi"><img src="_httpimages_/logoRepositorio.gif" alt="Logo Repositorio Documental y de Datos"></a> 
+		  <a class="navbar-brand" href="_gwcgi_"><img src="_httpimages_/logoRepositorio.gif" alt="Logo Repositorio Documental y de Datos"></a> 
 	  </div>
         
 		<!-- Collect the nav links, forms, and other content for toggling -->
@@ -219,8 +219,8 @@ _query:formCross_
 }
 _navDereha_{
 	<ul class="nav navbar-nav navbar-right">
-		<li><a href="#">responsables</a></li>
-		<li><a href="#">política de uso</a></li>            
+		<li><a href="_gwcgi_?p=responsables">responsables</a></li>
+		<li><a href="_gwcgi_?p=politicas">política de uso</a></li>            
 	</ul>
 }
 _pagebanner_[v=1] {
