@@ -13,10 +13,6 @@ var ruataAlXML=rutaXML;
 var indiceColecciones=new Array("arti","Artículos de revistas","tesis","Tesis de grado y de posgrado",
 "eventos","Trabajos presentados a eventos","libros","Libros y capítulos de libros",
 "proy","Proyectos de investigación","informes","Informes")
-
-
-
-
 //Objeto donde se organiza la home
 function COLECCION  (){
 	this.id="";
@@ -47,7 +43,6 @@ function TEMA(){
 	this.ilustraNombre="";
 	this.ilustraTipo="";
 };
-
 var UNDAV_TEMATICAS = UNDAV_TEMATICAS || {};
 UNDAV_TEMATICAS.URLBASE = ruta.substr(0,ruta.lastIndexOf('/')+1) //"http://localhost/greenstone/cgi-bin/"  
 UNDAV_TEMATICAS.CLTematicas=UNDAV_TEMATICAS.URLBASE+"undav.pl?a=tematicas_undav&c=libros&metaname=Title&d=CL3"
@@ -63,11 +58,9 @@ UNDAV_TEMATICAS.sliderLock  = false;
 UNDAV_TEMATICAS.actualSlide = 0;
 UNDAV_TEMATICAS.urlParams   = new Object()
 UNDAV_TEMATICAS.tabResumen="capa1";
-
 //cuando creo enlaces ajaxs los almaceno
 //con sus parametros
 UNDAV_TEMATICAS.btns=new Array()
-
 function damePanelColeccionesParaDepto(depto){
 	//Devuleve un listado con las colecciones Activas		
 	for (var ele=0;ele<UNDAV_TEMATICAS.listaDeptos.length;ele++){			
@@ -89,8 +82,6 @@ function damePanelColeccionesParaTematica(idTema){
 	}
 	return new Array()
 }
-
-
 //Metodos del objeto UNDAV_TEMATICAS
 UNDAV_TEMATICAS.dameColeccionPorNomCarpeta=function(nomCarpeta){
 	for(var a=0; a<UNDAV_TEMATICAS.listaColecciones.length;a++){
@@ -200,7 +191,6 @@ UNDAV_TEMATICAS.dameDeptosActivos=function(){
 	}
     return result
 }
-
 UNDAV_TEMATICAS.cargaColecEnTematica=function(tema,colecA,posCL){	
 	for(var a=0; a<UNDAV_TEMATICAS.listaTemas.length;a++){
 		if (UNDAV_TEMATICAS.listaTemas[a]["titulo"].toLowerCase()==tema.toLowerCase()){			
@@ -236,8 +226,6 @@ function iniTemasHome(xml)
 	loadImg(UNDAV_TEMATICAS.dameTemasActivos()[0].img); 
 	dameNovedades();
 }
-
-
 ////////////////
 //Seccion TEMATICAS
 function iniTemasPage(xml)
@@ -245,14 +233,9 @@ function iniTemasPage(xml)
 	var clasificador=UNDAV_TEMATICAS.CLTematicas
 	loadXML(clasificador,renderTematicas)
 }
-
-
-
 function parseTematicaCL(xml)
 {
-	
 	var filtraIndiceTitulo="temática";
-	
 	$(xml).find('base').each(function(indiceA,objt){
 		var flgTT=0;
 		var coleccName=$(objt).attr("name");		
@@ -263,8 +246,7 @@ function parseTematicaCL(xml)
 				UNDAV_TEMATICAS.cargaColecEnTematica(titulo,coleccName,flgTT);
 				}
 		})  
-	});	
-	
+	});
 	//carga el select de 
 	if($(".selectorCambioDepto").length>0){
 		var listaT=UNDAV_TEMATICAS.dameDeptosActivos()
@@ -287,7 +269,6 @@ function parseTematicaCL(xml)
 		}
 		$(".selectorCambioDepto .dropdown").show("slow")
 	}
-	
 	if($(".selectorCambio").length>0){
 		var listaT=UNDAV_TEMATICAS.dameTemasActivos()
 		for(var ele in listaT){
@@ -307,19 +288,15 @@ function parseTematicaCL(xml)
 		}
 		$(".selectorCambio .dropdown").show("slow")
 	}
-
 	if($(".selectorCambioColect").length>0){
 		var listaT=UNDAV_TEMATICAS.listaColecciones
-		
 		for(var ele in listaT){
 			var mli=$(document.createElement('li'))
 			var ma=$(document.createElement('a'))
 			var colesion=listaT[ele]
-			
 			ma.text(colesion.nombre)
 			ma.attr("id",colesion.id)					
 			var strH ='c='+colesion.nombreCarpeta+'&a=d&cl=CL5'
-			
 			ma.attr("href",strH)
 			mli.append(ma)
 			if(UNDAV_TEMATICAS.urlParams['t'].replace(/\+/g, ' ')!= colesion.nombre){
@@ -328,8 +305,6 @@ function parseTematicaCL(xml)
 		}
 		$(".selectorCambioColect .dropdown").show("slow")
 	}
-
-	
 }
 //function filtraDeptos(xml)
 function parseDeptosCL(xml)
@@ -345,13 +320,11 @@ function parseDeptosCL(xml)
 				if(acT.toLowerCase()!=fTitulo){			
 					flgTT++				
 					UNDAV_TEMATICAS.cargaColecEnDepto(acT,colecName,flgTT)
-					
 				}				
 			})
 		}
 	});
 }
-
 function renderTematicas(xml)
 {
 	parseTematicaCL(xml);	
@@ -370,15 +343,10 @@ function renderTematicas(xml)
 		if(!ko){$(this).hide("slow")}
 	})
 }
-
-
-
-
 ////////////////////
 //SECCION DEPARTAMENTOS
 function renderDeptosPage(xml)
 {
-	
 	//parseDeptosCL(xml)
 	var acti=new Array()
 	var lis=UNDAV_TEMATICAS.dameDeptosActivos()
@@ -409,7 +377,6 @@ function renderDeptosPage(xml)
 		}
 	})
 }
-
 function loadImg(url,urlA)
 {
 	var itm=$('<div class="item active" />')
@@ -471,7 +438,6 @@ function parseTemasXML(xml)
 	UNDAV_TEMATICAS.xml=xml
 	document.dispatchEvent(UNDAV_TEMATICAS.evtParseT);
 }
-
 //CARGA DEPTOS DESDE TEMTATICAS XML
 function parseDeptos(xml)
 {
@@ -493,11 +459,8 @@ function parseDeptos(xml)
 		UNDAV_TEMATICAS.listaDeptos.push(dp);		
 	});	*/	
 }
-
-
 function parseColecciones(xml){
-
-	var colec=$(xml)	
+	var colec=$(xml)
 	colec.find('colec').each(function(i,oT){
 			var titulo=$(oT).attr("titulo");
 			var folderName=$(oT).attr("nombreCarpeta");
@@ -507,14 +470,11 @@ function parseColecciones(xml){
 			dp.nombreCarpeta=folderName
 			dp.id= id
 			UNDAV_TEMATICAS.listaColecciones.push(dp);
-	})  
-	
+	}) 
 	/*navegacion por hermanos*/
 	if($(".selectorCambioColect").length>0 || 
 		UNDAV_TEMATICAS.urlParams['e'] != ""){
-		var listaT=UNDAV_TEMATICAS.listaColecciones		
-		
-			
+		var listaT=UNDAV_TEMATICAS.listaColecciones	
 		for(var ele in listaT){
 			var mli=$(document.createElement('li'))
 			var ma=$(document.createElement('a'))
@@ -542,15 +502,10 @@ function parseColecciones(xml){
 			
 		}
 		$(".selectorCambioColect .dropdown").show("slow")
-		
-		
 	}
-
 	delete UNDAV_TEMATICAS.xml
 	document.dispatchEvent(UNDAV_TEMATICAS.evtParseC);
 }
-
-
 //////////////////////
 //NOVEDADES
 //
@@ -559,7 +514,6 @@ function dameNovedades()
 	var clasificador=UNDAV_TEMATICAS.CLNovedades
     loadXML(clasificador,filtraNovedades)
 }
-
 function filtraNovedades(xml)
 {	
 	var miX		= $(xml).find('base');
@@ -582,30 +536,24 @@ function filtraNovedades(xml)
 					"paginacion":$(this).find("meta[title='pr.paginacion']"),
 					"tematicas":$(this).find("meta[title='ma.tematica']").text().split(","),
 					"area":$(this).find("meta[title='ma.comunidad']").text().split(","),
-					"id":$(this).find("meta[title='ma.identificador']").text().split(","),
-					
+					"id":$(this).find("meta[title='ma.identificador']").text().split(","),	
 				});
 				if(flagC>2){return false;}
 			})
 		};
-		
 	});
 	//muestro los resultados
 	$(docus).each(function (){		
 		$(".nuevas").append(creaHTMLTarjeta(this))		
 	})
-
 }
-
 //funciones para armar html de las tarjetas
 //barra con el area a la que pertenece
 function creaHTMLTarjeta(dato)
 {
-
 	//IMPORTANTE QUITA los acentos y los espacios en blanco
 	//para hacer el class de estilo de la temática
 	var classCC=dato["tematicas"][0].replace(/[^a-z0-9]/gi,'').toLowerCase();
-	
 	var colcLink=rutaConLib+ "a=d&cl=CL5&c="+dato["coleccion"];		
 	var docuLink=rutaConLib+"a=d&c="+dato["coleccion"]+"&d="+dato["id"]
 	var inte=$(document.createElement('div'))
@@ -618,8 +566,7 @@ function creaHTMLTarjeta(dato)
 	}else{
 		PT.append(dato["area"][0].toLowerCase());
 	}
-	var ICO=$(document.createElement('div'))
-	
+	var ICO=$(document.createElement('div'))	
 	var HHT=$(document.createElement('a'))
 	HHT.attr("href",docuLink);
 	HHT.append(dato["titulo"])
@@ -632,21 +579,17 @@ function creaHTMLTarjeta(dato)
 	PC.attr("class","coleccion")
 	var PCA=$(document.createElement('a'))
 	PCA.attr("href",colcLink);
-	
 	PCA.append(indiceColecciones[indiceColecciones.indexOf(dato["coleccion"])+1]);
 	PC.append(PCA);
-	
 	var tarjeta=$(document.createElement('div'))
 	tarjeta.attr("class","tarjeta");
 	tarjeta.append(PT)
 	tarjeta.append(HH)
 	tarjeta.append(PA)
 	tarjeta.append(PC)
-
 	inte.append(tarjeta)	
 	return inte;	
 }
-
 //tiene la barra con los iconos
 function creaHTMLFicha(dato)
 {
@@ -675,10 +618,7 @@ function creaHTMLFicha(dato)
 	var HH=$(document.createElement('h3'))
 	var HHT=$(document.createElement('a'));
 	HHT.append(dato["titulo"])
-	
-	
 	HH.append(HHT)
-	
 	var PA=$(document.createElement('p'))
 	PA.attr("class","autor")
 	PA.append(dato["autor"])
@@ -688,7 +628,6 @@ function creaHTMLFicha(dato)
 	PCA.attr("href",colcLink)			
 	PCA.append(indiceColecciones[indiceColecciones.indexOf(dato["coleccion"])+1])
 	PC.append(PCA)
-	
 	var ficha=$(document.createElement('div'))
 	ficha.attr("class","ficha")
 	ficha.append(ICO)
@@ -696,11 +635,9 @@ function creaHTMLFicha(dato)
 	ficha.append(HH)
 	ficha.append(PA)
 	ficha.append(PC)
-
 	inte.append(ficha)	
 	return inte;
 }
-
 function creaImgVacia()
 {
 	var icoPDFE=$(document.createElement('img'));
@@ -717,12 +654,8 @@ function aboutTema(){
 		// For IE 8 and earlier versions
 		document.attachEvent("onPanelCargado", onPanelCargado);
 	}
-	
-
-	
 	initPanel("tematicas")
 }
-
 //////////////////////////
 //ABOUT DEPARTAMENTO
 function aboutDepto(){
@@ -751,19 +684,14 @@ function buscarFichasCL(DeptoURL,objParam)
 			return false;
 		}
 		var max=0
-		
-		
 		$($(".ficha",my_var).get().reverse()).each(function (a){
 			fftmp++
 			var temaOBJ=$(".iconos span.pull-left",$(this));			
-			var tema = temaOBJ.text();
-			
-			var temaId= UNDAV_TEMATICAS.dameIdTematica(tema);
-			
+			var tema = temaOBJ.text();			
+			var temaId= UNDAV_TEMATICAS.dameIdTematica(tema);			
 			//cambio el tema a titulo corto
 			temaOBJ.text(UNDAV_TEMATICAS.dameTituCortoByTema(tema));
 			temaOBJ.attr("class","pull-left col-md-3 "+temaId);
-			
 			if(fftmp%2>0){	
 				$(this).attr("class","ficha col-md-5  col-sm-5 ");
 			}else{
@@ -776,11 +704,8 @@ function buscarFichasCL(DeptoURL,objParam)
 			}else{				
 				$(this).css("min-height",max+5)
 			}
-			
 		})
-		
-		$("#msj").empty();
-		
+		$("#msj").empty();		
 		$(".ficha .iconos a").each(function(e){
 			$(this).click(function(){				
 				if($(this).attr("class")=="cita_bt collapsed" || $(this).attr("class")=="cita_bt") {
@@ -789,7 +714,6 @@ function buscarFichasCL(DeptoURL,objParam)
 					$(this).attr("class","cita_bt collapsed")
 				}
 			})
-			
 		})
 		})
 		.fail(function(){console.log("error")})	
@@ -806,9 +730,6 @@ function creaFromQuery(html)
 	$(".resultados").append($("#group_top",$(html).html()))
 }
 //fin DEPTO
-//----------------------		
-
-
 //----------------------		
 //LUEGO DE LA CARGA DE LOS XML, 
 //DETERMINA CUAL ES LA PAGINA QUE SE ESTA MOSTRANDO
@@ -996,7 +917,6 @@ function acomodaFichas(){
 				$(this).css("min-height",max+5);
 			}
 		})
-		
 }
 function setup()
 {
@@ -1021,6 +941,24 @@ function setup()
 			return false;
 		}
 	})
+	console.log($("#miSliderLoad").length)
+	if($("#miSliderLoad").length<1){
+		$(".form-control").focusin(function(){	
+			  $(this).animate({
+				width: "100%",
+			  }, 1000, function() {
+				// Animation complete.
+			  });
+		})
+		$(".form-control").focusout(function(){	
+			  $(this).animate({
+				width: "60%",
+			  }, 1000, function() {
+				// Animation complete.
+			  });
+		})
+	}
+	
 }
 //AUXILIARES
 //dada una URL CARGA y llama al callbak

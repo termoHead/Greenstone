@@ -812,7 +812,7 @@ _formCross_{
 	<input type="hidden" value="all" name="c">		
 	
 	
-	<input type="text" class="form-control pull-right" value="" name="q">
+	<input type="text" class="form-control pull-right" value="" name="q" width="143">
 	<a href="#" class="btnAvForm pull-right" onclick="javascript:activaAV()" rel="avForm">búsqueda avanzada</a>
 		<input type="checkbox" name="cc" checked="checked" id="arti" value="arti">
 		<input type="checkbox" name="cc" checked="checked" id="eventos" value="eventos">

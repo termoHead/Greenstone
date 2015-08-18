@@ -31,7 +31,7 @@ body{ color: #333}
 .sloganP2{color:#8cbade}
 header{clear:both; height:130px}
 input.form-control{background: url("/web/images/lupa_home.gif") no-repeat 5px 8px #ededed; border:none;
-width:280px !important;
+/*width:280px !important;*/
     text-indent: 20px;}
 .carousel-inner{overflow:visible !important; }
 .navbar-brand{padding-top:0;}
@@ -322,7 +322,7 @@ text-align: center;}
 .noAvanzada  p{line-height:0.5em; margin-bottom:1px}
 .noAvanzada  .botWrapper{padding-left:0 !important}
 #searchTop {position:relative}
-#searchTop .form-control{width:143px !important}
+/*#searchTop .form-control{width:143px !important}*/
 #searchTop  .btnAvForm  {clear:both}
 #searchTop #QueryForm  a.btnAvForm {font-weight: normal;margin-top:8px;border:0 !important; background-color: transparent !important; color:#666 !important}
 #searchTop  .advanceToolbox{left:-150px!important; top:45px !important}

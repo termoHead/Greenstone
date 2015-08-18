@@ -51,9 +51,25 @@ _content_ {
 	<div class="row envioTrabajos">
 		<!-- seccion envio trabajos -->
 		<p class="tituloCentrado">¿Interesado en colaborar con material?</p>		
-		<p calss="col-md-7 col-sm-9 textoHome" >Am ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur eleifend nulla, quis pellentesque leo pulvinar eget. Etiam eu sagittis elit, in viverra sapien. Pellentesque condimentum, magna eget dignissim ultricies, felis lacus gravida nulla, in rutrum enim lorem dictum sem. Ut vitae ex lobortis, imperdiet augue a, vestibulum justo. Aenean et eros nec tellus porta rhoncus. Donec tristique libero nec ante dictum, eget pretium neque porttitor. Donec sed tellus id sem tristique ornare eget vel eros. Nullam non egestas felis, id consectetur erat. Pellentesque iaculis viverra mauris, vel consequat felis tristique in. Mauris quis placerat velit. Proin ut ultrices nibh. Donec imperdiet nisi mi, in accumsan quam efficitur id. Integer aliquet arcu eget velit finibus, non auctor eros pharetra. Curabitur a lacus in lectus elementum efficitur. Cras euismod erat quis egestas molestie.
-
-Sed mattis felis massa, ut ullamcorper magna malesuada sed. Praesent suscipit id elit a tempor. Duis maximus blandit eros, vel porttitor justo iaculis ut. Aenean tempor, tellus non fermentum malesuada, nisl leo sagittis turpis, vel mattis mauris eros at ligula. Cras hendrerit blandit velit quis commodo. Cras placerat, augue eu ultricies rhoncus, tellus purus tincidunt velit, ut cursus erat enim id diam. Vestibulum at risus egestas, hendrerit justo quis, ultrices arcu. Curabitur massa orci, dictum nec venenatis id, maximus at purus. Proin sollicitudin risu</p>
+		<p calss="col-md-7 col-sm-9 textoHome" >
+		Si es miembro de la comunidad académica de la UNDAV (docente/investigador o estudiante), puede depositar en el Repositorio:
+		<ul><li>TESIS</li>
+<li>ARTÍCULOS</li>
+<li>PROYECTOS DE INVESTIGACIÓN</li>
+<li>INFORME FINAL DE INVESTIGACIÓN</li>
+<li>INFORME TÉCNICO</li>
+<li>TRABAJO PRESENTADO EN EVENTO</li>
+<li>CAPÍTULO DE LIBRO</li>
+<li>LIBRO</li>
+<li>DATOS PRIMARIOS</li>
+</ul>
+<p>Para ello deberá completar y firmar una autorización (<a href="">acceso al doc para descarga</a>) y una planilla de registro y verificación de datos (<a href="">acceso al doc para descarga</a>),que permitirá al Repositorio poner accesible su trabajo y proteger sus derechos de autor adecuadamente.
+Una vez completadas las planillas, envíelas por mail a <a href="mailto:">repo@undav.edu.ar </a>(crear dirección) adjuntando el o los archivos correspondientes al trabajo a depositar, preferentemente, en alguno de los siguientes formatos: DOC, ODT o RTF para textos, XLS u ODS para tablas y gráficos, JPG para imágenes, ZIP para datos primarios. También podrá enviar archivos en formato PDF en caso de no disponer de los originales. Máximo de tamaño de archivos permitidos: 10 megabytes. Si el archivo que desea enviar supera este máximo comuníquese por correo electrónico para acordar otra forma de envío.
+</p><p>Para completar el depósito, deberá pasar por la Biblioteca a firmar la autorización (también puede imprimir, firmar y escanear la autorización y enviarla en el correo con el trabajo). También puede acercar los archivos en forma personal a la Biblioteca.
+</p><p>Para un completo conocimiento del funcionamiento y normativa del repositorio, acceda a la página de políticas (link) 
+Muchas gracias por su colaboración! 
+</p>
+		</p>
 		
 	</div>
 	<!--div id="content">
