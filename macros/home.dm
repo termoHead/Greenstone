@@ -50,12 +50,12 @@ _content_ {
 	</div>
 	<div class="row envioTrabajos">
 		<!-- seccion envio trabajos -->
-		<p class="tituloCentrado">¿Interesado en colaborar con material?</p>		
+		<p class="tituloIzq">¿Interesado en participar?</p>		
 		<div class="row">
     <div class="col-md-8">
 		<p>Si es miembro de la comunidad académica de la UNDAV (docente/investigador o estudiante), 
         puede depositar en el Repositorio:</p>
-        <ul>
+        <ul class="tipoDocs">
 		<li>TESIS</li>
         <li>ARTÍCULOS</li>
         <li>PROYECTOS DE INVESTIGACIÓN</li>
@@ -66,7 +66,8 @@ _content_ {
         <li>LIBRO</li>
         <li>DATOS PRIMARIOS</li>
         </ul>
-        <p>Para esto deberá seguir los siguientes pasos:</p>
+		<p> </p>
+        <p class="extra">Para esto deberá seguir los siguientes pasos:</p>
 	</div>    
     </div>
     <div class="row paso1">    
