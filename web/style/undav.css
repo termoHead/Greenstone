@@ -180,6 +180,7 @@ margin-bottom:25px;}
 .ficha a.pdf_bt{background-image:url("/web/images/pdf_bt.gif"); font-size:24px; background-repeat:no-repeat}
 .ficha a.compartir_bt{background-image:url("/web/images/share_bt.gif"); font-size:24px; background-repeat:no-repeat}
 .ficha a.cita_bt{background-image:url("/web/images/cita_bt.gif"); font-size:24px; background-repeat:no-repeat}
+.ficha a.compartir_bt img{width:15px !important}
 .ficha .iconos a:hover{background-position: top right}
 .ficha .iconos a:active{background-position:top left}
 #msj{margin-left:25px; font-size:14px; color:#f00}

@@ -9,10 +9,10 @@ Falta de la UNDAV
   
 Falta Pablo
 
-  Redes sociales
+  Redes sociales _LISTO
   
-  Maquetar formulario Material
-  Maquetar una Interna general
+  Maquetar formulario Material _Nolo puse, deje el mailto
+  Maquetar una Interna general _LISTO
   
   Selector para cambio de tema,departamento y coleccion cuando se ve una en particular LISTO
   

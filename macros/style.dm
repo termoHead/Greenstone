@@ -259,95 +259,93 @@ _endspacer_ {
 }	
 
 _htmlfooter_ {
-<footer class="row-fluid pie">
- <div class="container">
-	<div class="row pieAlto">
-		<div class="col-md-4">
-		<a href="#"><img src="_httpimages_/logoFooterUndav.gif" width="107" height="100" alt="Logo UNDAV"></a>
-		<img src="_httpimages_/logoRepositoriofooter.gif" width="199" height="100" alt="Logo Repositorio"> 
-		</div>
-		<div class="col-md-4">
-		   <ul>       
-			   <li class=""><a href="_gwcgi_?p=colecciones">colecciones</a></li>
-			   <li class=""><a href="_gwcgi_?p=tematicas">temáticas</a></li>
-			   <li class=""><a href="_gwcgi_?p=departamentos">departamentos</a></li>       
-		   </ul>
-		   <ul>       
-			   <li class=""><a href="_gwcgi_?p=responsables">responsables</a></li>		   		   
-			   <li class=""><a href="_gwcgi_?p=politicas">políticas de uso</a></li>       
-		   </ul>
-		</div>
-		<div class="col-md-4">
-		<div class="contactos"> 
-			<p> <a href="mailto:biblioteca@undav.edu.ar" ><img src="_httpimages_/emal.gif" width="214" height="80" /></a></p>
-			<p class="telefonos">Teléfono: 4229 2484</p>
-			<p><img src="_httpimages_/socialSpace.gif" width="214" height="44" alt="Sociales" /> </p></div></div>
-	 </div>
-	<div class="row pieBajo">
-			<ul class="col-md-6 instit">
-				<li><strong>Universidad Nacional de Avellaneda.</strong> Buenos Aires. Argentina</li>
 
-				<li><strong>Sede España, Rectorado:</strong></li>                        
-				<li>España 350 esq. Colón, Avellaneda | (54 11) 4229-2400</li>
+		<footer class="row-fluid pie">
+			 <div class="container">
+				<div class="row pieAlto">
+					<div class="col-md-4">
+					<a href="#"><img src="_httpimages_/logoFooterUndav.gif" width="107" height="100" alt="Logo UNDAV"></a>
+					<img src="_httpimages_/logoRepositoriofooter.gif" width="199" height="100" alt="Logo Repositorio"> 
+					</div>
+					<div class="col-md-4">
+					   <ul>       
+						   <li class=""><a href="_gwcgi_?p=colecciones">colecciones</a></li>
+						   <li class=""><a href="_gwcgi_?p=tematicas">temáticas</a></li>
+						   <li class=""><a href="_gwcgi_?p=departamentos">departamentos</a></li>       
+					   </ul>
+					   <ul>       
+						   <li class=""><a href="_gwcgi_?p=responsables">responsables</a></li>		   		   
+						   <li class=""><a href="_gwcgi_?p=politicas">políticas de uso</a></li>       
+					   </ul>
+					</div>
+					<div class="col-md-4">
+					<div class="contactos"> 
+						<p> <a href="mailto:biblioteca@undav.edu.ar" ><img src="_httpimages_/emal.gif" width="214" height="80" /></a></p>
+						<p class="telefonos">Teléfono: 4229 2484</p>
+						<p><img src="_httpimages_/socialSpace.gif" width="214" height="44" alt="Sociales" /> </p></div></div>
+				 </div>
+				<div class="row pieBajo">
+						<ul class="col-md-6 instit">
+							<li><strong>Universidad Nacional de Avellaneda.</strong> Buenos Aires. Argentina</li>
 
-				<li><strong>Sede Piñeyro:</strong></li>                        
-				<li>Mario Bravo 1460 esq. Isleta, Piñeyro | (54 11) 5436-7500/7501</li>
+							<li><strong>Sede España, Rectorado:</strong></li>                        
+							<li>España 350 esq. Colón, Avellaneda | (54 11) 4229-2400</li>
 
-				<li><strong>Sede 12 de Octubre:</strong></li>                        
-				<li>12 de Octubre 463, Avellaneda | (54 11) 4201-7797</li>
+							<li><strong>Sede Piñeyro:</strong></li>                        
+							<li>Mario Bravo 1460 esq. Isleta, Piñeyro | (54 11) 5436-7500/7501</li>
 
-				<li><strong>Sede Constitución:</strong></li>                        
-				<li>Constitución 627, Avellaneda | (54 11) 4201-2479</li>
-				<li>&nbsp; </li>
+							<li><strong>Sede 12 de Octubre:</strong></li>                        
+							<li>12 de Octubre 463, Avellaneda | (54 11) 4201-7797</li>
+
+							<li><strong>Sede Constitución:</strong></li>                        
+							<li>Constitución 627, Avellaneda | (54 11) 4201-2479</li>
+							<li>&nbsp; </li>
 
 
-				<li>Sitio web diseñado, producido y administrado por la</li>
-				<li><strong>Dirección de Prensa de la UNDAV</strong> | prensa@undav.edu.ar</li>
-				<li> </li>
-			</ul>
-			<ul class="col-md-2">
-				<li><a href="http://undav.edu.ar/index.php?idcateg=19">Institucional</a></li>
-				<li><a href="http://undav.edu.ar/index.php?idcateg=4">Autoridades</a></li>
-				<li><a href="http://undav.edu.ar/index.php?idcateg=50">Vicerrectoría</a></li>
-				<li><a href="http://undav.edu.ar/index.php?idcateg=73">Secretaría General</a></li> 
-				<li><a href="http://undav.edu.ar/index.php?idcateg=6">Investigación</a></li>
-				<li><a href="http://undav.edu.ar/index.php?idcateg=7">Extensión Universitaria</a></li>
-			</ul>
-			<ul class="col-md-2" >
-				<li><a href="http://undav.edu.ar/index.php?idcateg=70">Secretaría Académica</a></li>
-				<li><a href="http://undav.edu.ar/index.php?idcateg=102">EAD</a></li>
-				<li><a href="http://undav.edu.ar/index.php?idcateg=68">Alumnos</a></li>
-				<li><a href="http://undav.edu.ar/index.php?idcateg=5">Ingresos</a></li>
-				<li><a href="http://undav.edu.ar/index.php?idcateg=21">Observatorios</a></li> 
-							<li><a href="http://undav.edu.ar/index.php?idcateg=30">Noticias</a></li>
+							<li>Sitio web diseñado, producido y administrado por la</li>
+							<li><strong>Dirección de Prensa de la UNDAV</strong> | prensa@undav.edu.ar</li>
+							<li> </li>
+						</ul>
+						<ul class="col-md-2">
+							<li><a href="http://undav.edu.ar/index.php?idcateg=19">Institucional</a></li>
+							<li><a href="http://undav.edu.ar/index.php?idcateg=4">Autoridades</a></li>
+							<li><a href="http://undav.edu.ar/index.php?idcateg=50">Vicerrectoría</a></li>
+							<li><a href="http://undav.edu.ar/index.php?idcateg=73">Secretaría General</a></li> 
+							<li><a href="http://undav.edu.ar/index.php?idcateg=6">Investigación</a></li>
+							<li><a href="http://undav.edu.ar/index.php?idcateg=7">Extensión Universitaria</a></li>
+						</ul>
+						<ul class="col-md-2" >
+							<li><a href="http://undav.edu.ar/index.php?idcateg=70">Secretaría Académica</a></li>
+							<li><a href="http://undav.edu.ar/index.php?idcateg=102">EAD</a></li>
+							<li><a href="http://undav.edu.ar/index.php?idcateg=68">Alumnos</a></li>
+							<li><a href="http://undav.edu.ar/index.php?idcateg=5">Ingresos</a></li>
+							<li><a href="http://undav.edu.ar/index.php?idcateg=21">Observatorios</a></li> 
+										<li><a href="http://undav.edu.ar/index.php?idcateg=30">Noticias</a></li>
 
-			</ul>
-			<ul class="col-md-2">			
-				<li><a href="http://undav.edu.ar/index.php?idcateg=22">Trabajo Social <br> Comunitario</a></li>
-				<li><a href="http://undav.edu.ar/index.php?idcateg=41">Becas</a></li>
-				<li><a href="http://undav.edu.ar/index.php?idcateg=271">Becas Cursar</a></li>
-				<li><a href="http://undav.edu.ar/index.php?idcateg=42">Posgrados</a></li> 
-				<li><a href="http://campusvirtual.undav.edu.ar/">Campus virtual</a></li> 
-			</ul>
-			</div>
-		<div class="row logosL">
-			<div id="col-md-1">		
-			<a href="http://www.greenstone.org/" target="_blank"><img height="25"  src="http://wiki.greenstone.org//lib/tpl/monobook/user/logo.png"></a>		
-			<a href="http://creativecommons.org/licenses/by-nc-nd/2.5/ar/" target="_blank"><img  height="25" src="http://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-nd.png"></a>
-			<a href="http://www.openarchives.org/" target="_blank"><img height="25" src="http://www.openarchives.org/images/OA100.gif"></a>
-			</div>
-		</div>
-	</div>
-	
-</footer>
-	
+						</ul>
+						<ul class="col-md-2">			
+							<li><a href="http://undav.edu.ar/index.php?idcateg=22">Trabajo Social <br> Comunitario</a></li>
+							<li><a href="http://undav.edu.ar/index.php?idcateg=41">Becas</a></li>
+							<li><a href="http://undav.edu.ar/index.php?idcateg=271">Becas Cursar</a></li>
+							<li><a href="http://undav.edu.ar/index.php?idcateg=42">Posgrados</a></li> 
+							<li><a href="http://campusvirtual.undav.edu.ar/">Campus virtual</a></li> 
+						</ul>
+						</div>
+					<div class="row logosL">
+						<div id="col-md-1">		
+						<a href="http://www.greenstone.org/" target="_blank"><img height="25"  src="http://wiki.greenstone.org//lib/tpl/monobook/user/logo.png"></a>		
+						<a href="http://creativecommons.org/licenses/by-nc-nd/2.5/ar/" target="_blank"><img  height="25" src="http://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-nd.png"></a>
+						<a href="http://www.openarchives.org/" target="_blank"><img height="25" src="http://www.openarchives.org/images/OA100.gif"></a>
+						</div>
+					</div>
+				</div>
+		</footer>
 
-    
-    <script src="_httpscript_/bootstrap.js" ></script>		
-    <script src="_httpscript_/undav.js" ></script>	
-	<script src="_httpscript_/panel.js" ></script>
-	_document:sharevertical_
-</body>
+		<script src="_httpscript_/bootstrap.js" ></script>		
+		<script src="_httpscript_/undav.js" ></script>	
+		<script src="_httpscript_/panel.js" ></script>
+		_document:sharevertical_
+	</body>
 </html>
 }
 
