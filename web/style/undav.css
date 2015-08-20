@@ -1,11 +1,11 @@
 /* CSS Document */
 @font-face {
     font-family: 'fira_sansextralight';
-    src: url('/web/fonts/firasans-extralight-webfont.eot');
+    src:  url('/web/fonts/firasans-extralight-webfont.woff') format('woff');
     src: url('/web/fonts/firasans-extralight-webfont.eot?#iefix') format('embedded-opentype'),
          url('/web/fonts/firasans-extralight-webfont.woff2') format('woff2'),
-         url('/web/fonts/firasans-extralight-webfont.woff') format('woff'),
          url('/web/fonts/firasans-extralight-webfont.ttf') format('truetype'),
+        url('/web/fonts/firasans-extralight-webfont.eot'),
          url('/web/fonts/firasans-extralight-webfont.svg#fira_sansextralight') format('svg');
     font-weight: normal;
     font-style: normal;
@@ -47,8 +47,8 @@ ul.navbar-right a{border-radius: 0!important;border: 0!important; background:tra
 .slider-inner .item { width: 565px !important ; float:left}
 .slider-inner{width:9000px; height:363px; position: relative;}
 .slogan{margin:10px 0 25px 0}
-.tituloCentrado{ text-align:center;color:#1c3259; font-size:18px; margin:30px 0 10px 0;font-family:'fira_sansextralight', 'Fira Sans', sans-serif !important;}
-.tituloIzq{color: #3784c1; font-size:24px; margin:30px 0 10px 0;font-family:'fira_sansextralight', 'Fira Sans', sans-serif !important;}
+.tituloCentrado{ text-align:center;color:#1c3259; font-size:18px; margin:30px 0 10px 0;font-family:'fira_sansextralight','fira_sansregular', sans-serif !important;}
+.envioTrabajos p.tituloIzq{color: #3784c1 !important; font-size:24px; margin:30px 0 10px 0;font-family:'fira_sansextralight','fira_sansregular', sans-serif !important;}
 .nuevas .tarjeta p.labelA{display:block; text-align:left; padding: 10px 10px 10px 25px ; color:#fff;}
 .conservacin .labelA,
 .seccionTematicas .conservacin  .wrap{background-color:#809879}
@@ -81,13 +81,13 @@ ul.navbar-right a{border-radius: 0!important;border: 0!important; background:tra
 .general .labelA{background-color:#333}
 
 
-.nuevas .tarjeta p,.nuevas .tarjeta h3{padding-left:25px;padding-right: 10px;font-family:'fira_sansextralight', 'Fira Sans', sans-serif !important;}
+.nuevas .tarjeta p,.nuevas .tarjeta h3{padding-left:25px;padding-right: 10px;font-family:'fira_sansextralight','fira_sansregular', sans-serif !important;}
 .nuevas .tarjeta h3{font-size:18px; color:#1a3c69;}
 .nuevas .tarjeta p{font-size:14px; color:#3e3e3e}
 .nuevas .tarjeta a{color:#757575;font-size:12px}
 .nuevas .tarjeta{ box-shadow: 1px 1px 10px 1px #dadada;min-height: 280px;
 margin-bottom: 25px;}
-.pie{clear: both;background-color:#f4f4f4; margin-top35px; border-top:8px solid #1a3c69;font-size:12px ;font-family:'fira_sansextralight', 'Fira Sans', sans-serif !important;margin-top: 31px;}
+.pie{clear: both;background-color:#f4f4f4; margin-top35px; border-top:8px solid #1a3c69;font-size:12px ;font-family:'fira_sansextralight','fira_sansregular', sans-serif !important;margin-top: 31px;}
 .pie .pieAlto ul{ float: left;width: 50%;padding-top: 30px;}
 .pie .pieAlto a{color:#62708b; font-size:14px}
 .pie li{list-style: none}
@@ -100,9 +100,9 @@ margin-bottom: 25px;}
 .colecciones a,.colecciones p,.seccionTematicas h1,
 .colecciones h1,.colecciones h3,
 .seccionDeptos .seccionDeptos a,.seccionDeptos h1,
-.seccionDeptos h3, .seccionDeptos p{font-family:'fira_sansextralight', 'Fira Sans', sans-serif !important;}
+.seccionDeptos h3, .seccionDeptos p{font-family:'fira_sansextralight','fira_sansregular', sans-serif !important;}
 
-ol.breadcrumb{font-family:'fira_sansextralight', 'Fira Sans', sans-serif !important; color:#4c9bd9 !important}
+ol.breadcrumb{font-family:'fira_sansextralight','fira_sansregular', sans-serif !important; color:#4c9bd9 !important}
 ol.breadcrumb a{color:#4c9bd9 !important}
 ol.breadcrumb{padding-left:0;margin-left: 30px;}
 
@@ -170,7 +170,7 @@ box-shadow: 6px 6px 9px 0px rgba(0, 0, 0, 0.2);
 margin-bottom:25px;}
 .ficha h4 a{color:#293f66 !important; font-size:1em}
 .ficha .wraper{padding:0 0.3em 1em 1.5em}
-.ficha .tipoDoc{color:#7c7c7c;font-size: .9em;}
+.ficha .TIPODOC{color:#7c7c7c;font-size: .9em;}
 .ficha .responsables{color:#3f3f3f;font-size:.9em}
 .ficha .institucional{font-size:.8em}
 .info{font-size:1em; line-height: 1em; margin-top:15px}
@@ -221,11 +221,11 @@ article.docQPlain .docHeader {margin-bottom: 20px; clear:both;min-height:86px}
 article.document .docHeader .mainHeader h1 span,
 article.docQPlain .docHeader .mainHeader h1 span{color: #294167 !important; font-size:28px;}
 article.document .docHeader .mainHeader h1,
-article.docQPlain .docHeader .mainHeader h1{margin-top: 0;}
+article.docQPlain .docHeader .mainHeader h1{margin-top: 0;  font-family: fira_sansregular !important;}
 article.document .mainHeader p ,
 article.docQPlain .mainHeader p {font-size:18px;margin-bottom: 0 !important;}
 article.document .docHeader .pdf,article.docQPlain .docHeader .pdf{height: 86px;width: 50px;float:left;}
-article.document .docHeader .mainHeader ,article.docQPlain  .docHeader .mainHeader {float:left; width:85%;padding-left: 12px;}
+article.document .docHeader .mainHeader ,article.docQPlain  .docHeader .mainHeader { float:left; width:85%;padding-left: 12px;}
 article.docQPlain   .referencia,
 article.docQPlain   .descrip,
 article.docQPlain  #capa1,article.docQPlain  #capa2,
@@ -355,10 +355,11 @@ a.a2a_i, i.a2a_i{background-color:#8ABAE0 !important}
 .staff h1{padding-left: 30px; color:#293F66; margin-top:0; margin-bottom:1em; }
 .staff  p{padding-left: 20px; color: #666}
 
-.paso1,.paso2,.paso3{border-bottom:1px solid #3784c1;padding-bottom:1em;padding-top: 2em; }
+.paso1,.paso2,.paso3{border-bottom:1px solid #3784c1;padding-bottom:1em;padding-top: 2em; padding-left: 15px;}
 .paso1 p,.paso2 p,.paso3 p{line-height:2em}
 ul.tipoDocs{margin-bottom:2.5em;}
 ul.tipoDocs li{list-style: none} 
 .envioTrabajos p{font-family: "fira_sansextralight","Fira Sans",sans-serif;
 color: #333 !important;
-line-height:2em}
+line-height:2em;padding-left:15px}
+.logosL a:first-child{margin-left:45px; }

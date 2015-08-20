@@ -85,7 +85,7 @@ _csslink_{
    type="text/css" title="Printer" charset="UTF-8" media="print, screen" _linktagend_
   <link rel="stylesheet" href="_httpstyle_/style-print.css" type="text/css" 
    title="Printer" charset="UTF-8" media="print" _linktagend_ 
-  <link href='http://fonts.googleapis.com/css?family=Fira+Sans:400,300' rel='stylesheet' type='text/css'>
+  
   <link rel="stylesheet" type="text/css" href="_httpstyle_/bootstrap-theme.min.css" _linktagend_
   <link href="_httpstyle_/undav.css" rel="stylesheet" type="text/css" _linktagend_
   <link href="_httpstyle_/bootstrap.css" rel="stylesheet" type="text/css" _linktagend_
@@ -260,31 +260,30 @@ _endspacer_ {
 
 _htmlfooter_ {
 <footer class="row-fluid pie">
-<div class="container">
+ <div class="container">
 	<div class="row pieAlto">
-	<div class="col-md-4">
-    <a href="#"><img src="_httpimages_/logoFooterUndav.gif" width="107" height="100" alt="Logo UNDAV"></a>
-    <img src="_httpimages_/logoRepositoriofooter.gif" width="199" height="100" alt="Logo Repositorio"> 
-	</div>
-  	<div class="col-md-4">
-	   <ul>       
-		   <li class=""><a href="?p=colecciones">colecciones</a></li>
-		   <li class=""><a href="?p=tematicas">temáticas</a></li>
-		   <li class=""><a href="?p=departamentos">departamentos</a></li>       
-       </ul>
-       <ul>       
-		   <li class=""><a href="">responsables</a></li>
-		   <li class=""><a href="">contactos</a></li>
-		   <li class=""><a href="">políticas de uso</a></li>       
-       </ul>
-	</div>
-    <div class="col-md-4">
+		<div class="col-md-4">
+		<a href="#"><img src="_httpimages_/logoFooterUndav.gif" width="107" height="100" alt="Logo UNDAV"></a>
+		<img src="_httpimages_/logoRepositoriofooter.gif" width="199" height="100" alt="Logo Repositorio"> 
+		</div>
+		<div class="col-md-4">
+		   <ul>       
+			   <li class=""><a href="_gwcgi_?p=colecciones">colecciones</a></li>
+			   <li class=""><a href="_gwcgi_?p=tematicas">temáticas</a></li>
+			   <li class=""><a href="_gwcgi_?p=departamentos">departamentos</a></li>       
+		   </ul>
+		   <ul>       
+			   <li class=""><a href="_gwcgi_?p=responsables">responsables</a></li>		   		   
+			   <li class=""><a href="_gwcgi_?p=politicas">políticas de uso</a></li>       
+		   </ul>
+		</div>
+		<div class="col-md-4">
 		<div class="contactos"> 
-			<p> <a href="malto: biblioteca@undav.edu.ar" ><img src="_httpimages_/emal.gif" width="214" height="80" /></a></p>
+			<p> <a href="mailto:biblioteca@undav.edu.ar" ><img src="_httpimages_/emal.gif" width="214" height="80" /></a></p>
 			<p class="telefonos">Teléfono: 4229 2484</p>
 			<p><img src="_httpimages_/socialSpace.gif" width="214" height="44" alt="Sociales" /> </p></div></div>
-	   </div>
-		<div class="row pieBajo">
+	 </div>
+	<div class="row pieBajo">
 			<ul class="col-md-6 instit">
 				<li><strong>Universidad Nacional de Avellaneda.</strong> Buenos Aires. Argentina</li>
 
@@ -331,19 +330,22 @@ _htmlfooter_ {
 				<li><a href="http://campusvirtual.undav.edu.ar/">Campus virtual</a></li> 
 			</ul>
 			</div>
+		<div class="row logosL">
+			<div id="col-md-1">		
+			<a href="http://www.greenstone.org/" target="_blank"><img height="25"  src="http://wiki.greenstone.org//lib/tpl/monobook/user/logo.png"></a>		
+			<a href="http://creativecommons.org/licenses/by-nc-nd/2.5/ar/" target="_blank"><img  height="25" src="http://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-nd.png"></a>
+			<a href="http://www.openarchives.org/" target="_blank"><img height="25" src="http://www.openarchives.org/images/OA100.gif"></a>
+			</div>
 		</div>
-</footer>
-	<div id="footer">
-		<a href="http://www.greenstone.org/" target="_blank"><img src="_httpprefix_/web/images/GREENSTONE.gif"></a>
-		<a href="http://creativecommons.org/" target="_blank"><img src="_httpprefix_/web/images/CREATIVECOMMONS.gif"></a>
-		<a href="http://creativecommons.org/licenses/by-nc-nd/2.5/ar/" target="_blank"><img src="_httpprefix_/web/images/SOMERIGHTSRESERVED.gif"></a>
-		<a href="http://www.openarchives.org/" target="_blank"><img src="_httpprefix_/web/images/Logo-Open-Archives.jpg"></a>
 	</div>
+	
+</footer>
+	
 
     
     <script src="_httpscript_/bootstrap.js" ></script>		
     <script src="_httpscript_/undav.js" ></script>	
-	<script src="_httpscript_/panel.js" ></script>		s
+	<script src="_httpscript_/panel.js" ></script>
 	_document:sharevertical_
 </body>
 </html>

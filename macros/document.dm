@@ -672,10 +672,17 @@ _htmlhead_
 _header_{_style:headerInterna_	
 
 	<div class="row">
-		<ol class="breadcrumb col-md-8">		
-			<li><a href="_gwcgi_?p=colecciones">Colecciones</a></li>
-			<li>_imagecollection_</li>			
-		</ol>
+	<ol class="breadcrumb col-md-8">
+		<li><a href="_gwcgi_?p=colecciones">Colecciones</a></li>
+		<li>
+_If_("_collectionname_" eq "Tesis",<a href="_gwcgi_?c=tesis&a=d&cl=CL5">_collectionname_</a>)
+_If_("_collectionname_" sw "Art",<a href="_gwcgi_?c=arti&a=d&cl=CL5">_collectionname_</a>)
+_If_("_collectionname_" sw "Trab",<a href="_gwcgi_?c=eventos&a=d&cl=CL5">_collectionname_</a>)
+_If_("_collectionname_" sw "Info",<a href="_gwcgi_?c=informes&a=d&cl=CL5">_collectionname_</a>)
+_If_("_collectionname_" sw "Proy",<a href="_gwcgi_?c=proy&a=d&cl=CL5">_collectionname_</a>)
+_If_("_collectionname_" sw "Lib",<a href="_gwcgi_?c=libros&a=d&cl=CL5">_collectionname_</a>)
+</li>			
+	</ol>
 		<div class="selectorCambioColect col-md-3" >
 			<div class="dropdown"  style="display:none">
 				<button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -693,8 +700,15 @@ _textheader_{
 	_style:headerInterna_	
 	
 	<ol class="breadcrumb col-md-8">
-		<li><a href="#">Colecciones</a></li>
-		<li>_imagecollection_</li>			
+		<li><a href="_gwcgi_?p=colecciones">Colecciones</a></li>
+		<li>
+_If_("_collectionname_" eq "Tesis",<a href="_gwcgi_?c=tesis&a=d&cl=CL5">_collectionname_</a>)
+_If_("_collectionname_" sw "Art",<a href="_gwcgi_?c=arti&a=d&cl=CL5">_collectionname_</a>)
+_If_("_collectionname_" sw "Trab",<a href="_gwcgi_?c=eventos&a=d&cl=CL5">_collectionname_</a>)
+_If_("_collectionname_" sw "Info",<a href="_gwcgi_?c=informes&a=d&cl=CL5">_collectionname_</a>)
+_If_("_collectionname_" sw "Proy",<a href="_gwcgi_?c=proy&a=d&cl=CL5">_collectionname_</a>)
+_If_("_collectionname_" sw "Lib",<a href="_gwcgi_?c=libros&a=d&cl=CL5">_collectionname_</a>)
+</li>			
 	</ol>
 	
 	<div class="selectorCambioColect col-md-3">	
