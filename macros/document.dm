@@ -675,13 +675,13 @@ _header_{_style:headerInterna_
 	<ol class="breadcrumb col-md-8">
 		<li><a href="_gwcgi_?p=colecciones">Colecciones</a></li>
 		<li>
-_If_("_collectionname_" eq "Tesis",<a href="_gwcgi_?c=tesis&a=d&cl=CL5">_collectionname_</a>)
-_If_("_collectionname_" sw "Art",<a href="_gwcgi_?c=arti&a=d&cl=CL5">_collectionname_</a>)
-_If_("_collectionname_" sw "Trab",<a href="_gwcgi_?c=eventos&a=d&cl=CL5">_collectionname_</a>)
-_If_("_collectionname_" sw "Info",<a href="_gwcgi_?c=informes&a=d&cl=CL5">_collectionname_</a>)
-_If_("_collectionname_" sw "Proy",<a href="_gwcgi_?c=proy&a=d&cl=CL5">_collectionname_</a>)
-_If_("_collectionname_" sw "Lib",<a href="_gwcgi_?c=libros&a=d&cl=CL5">_collectionname_</a>)
-</li>			
+		_If_("_collectionname_" eq "Tesis",<a href="_gwcgi_?c=tesis&a=d&cl=CL5">_collectionname_</a>)
+		_If_("_collectionname_" sw "Art",<a href="_gwcgi_?c=arti&a=d&cl=CL5">_collectionname_</a>)
+		_If_("_collectionname_" sw "Trab",<a href="_gwcgi_?c=eventos&a=d&cl=CL5">_collectionname_</a>)
+		_If_("_collectionname_" sw "Info",<a href="_gwcgi_?c=informes&a=d&cl=CL5">_collectionname_</a>)
+		_If_("_collectionname_" sw "Proy",<a href="_gwcgi_?c=proy&a=d&cl=CL5">_collectionname_</a>)
+		_If_("_collectionname_" sw "Lib",<a href="_gwcgi_?c=libros&a=d&cl=CL5">_collectionname_</a>)
+		</li>			
 	</ol>
 		<div class="selectorCambioColect col-md-3" >
 			<div class="dropdown"  style="display:none">
@@ -738,10 +738,9 @@ _textheaderA_ {
 }
 
 _textheader_ [v=1] {
-888888888888888
-_cgihead_
-_htmlhead_
-_globallinks_
+	_cgihead_
+	_htmlhead_
+	_globallinks_
 }
 
 _footer_ {
@@ -754,14 +753,14 @@ _If_("_document:allowusercomments_" eq "1",
 <table width=_pagewidth_ cellpadding=0 cellspacing=0 border=0>
 <tr><td align=left valign=top>
 <div class="commentssection">
-_usercomments_
-_addusercomment_
+	_usercomments_
+	_addusercomment_
 </div>
 </td></tr></table>
 </center>)
 
 <div class="navarrowsbottom">
-_navarrowsbottom_
+	_navarrowsbottom_
 </div>
 
 

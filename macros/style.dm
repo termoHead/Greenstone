@@ -124,7 +124,7 @@ _htmlhead_ {<!doctype html>
     <html>
     <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" _metatagend_
-    <title>Respositorio Institucional UNDAV</title>
+    <title>Repositorio Documental y de Datos UNDAV</title>
     <meta charset="utf-8"  _metatagend_    
     <meta name="Greenstone_version_number" content="_versionnum_" _metatagend_
 		_globalscripts_
@@ -213,7 +213,7 @@ _optionalNavDer_{
 		_navDereha_)
 }
 _formminimo_{
-<div id="searchTop" class="nav navbar-nav navbar-right">
+<div id="searchTop" class="nav navbar-nav navbar-right col-sm-push-9">
 _query:formCross_
 </div>
 }
@@ -263,11 +263,11 @@ _htmlfooter_ {
 		<footer class="row-fluid pie">
 			 <div class="container">
 				<div class="row pieAlto">
-					<div class="col-md-4">
-					<a href="#"><img src="_httpimages_/logoFooterUndav.gif" width="107" height="100" alt="Logo UNDAV"></a>
-					<img src="_httpimages_/logoRepositoriofooter.gif" width="199" height="100" alt="Logo Repositorio"> 
+					<div class="col-md-4 col-sm-4 col-xs-4">
+						<a href="#"><img src="_httpimages_/logoFooterUndav.gif" width="107" height="100" alt="Logo UNDAV"></a>
+						<img src="_httpimages_/logoRepositoriofooter.gif" width="199" height="100" alt="Logo Repositorio"> 
 					</div>
-					<div class="col-md-4">
+					<div class="col-md-4 col-sm-4 col-xs-4">
 					   <ul>       
 						   <li class=""><a href="_gwcgi_?p=colecciones">colecciones</a></li>
 						   <li class=""><a href="_gwcgi_?p=tematicas">temáticas</a></li>
@@ -278,14 +278,16 @@ _htmlfooter_ {
 						   <li class=""><a href="_gwcgi_?p=politicas">políticas de uso</a></li>       
 					   </ul>
 					</div>
-					<div class="col-md-4">
-					<div class="contactos"> 
-						<p> <a href="mailto:biblioteca@undav.edu.ar" ><img src="_httpimages_/emal.gif" width="214" height="80" /></a></p>
-						<p class="telefonos">Teléfono: 4229 2484</p>
-						<p><img src="_httpimages_/socialSpace.gif" width="214" height="44" alt="Sociales" /> </p></div></div>
+					<div class="col-md-4 col-sm-4 col-xs-4">
+						<div class="contactos"> 
+							<p> <a href="mailto:biblioteca@undav.edu.ar" ><img src="_httpimages_/emal.gif" width="214" height="80" /></a></p>
+							<p class="telefonos">Teléfono: 4229 2484</p>
+							<p><img src="_httpimages_/socialSpace.gif" width="214" height="44" alt="Sociales" /> </p>
+						</div>
+					</div>
 				 </div>
 				<div class="row pieBajo">
-						<ul class="col-md-6 instit">
+						<ul class="col-md-3 col-sm-3 col-xs-3 instit">
 							<li><strong>Universidad Nacional de Avellaneda.</strong> Buenos Aires. Argentina</li>
 
 							<li><strong>Sede España, Rectorado:</strong></li>                        
@@ -306,7 +308,7 @@ _htmlfooter_ {
 							<li><strong>Dirección de Prensa de la UNDAV</strong> | prensa@undav.edu.ar</li>
 							<li> </li>
 						</ul>
-						<ul class="col-md-2">
+						<ul class="col-md-3 col-sm-3 col-xs-3">
 							<li><a href="http://undav.edu.ar/index.php?idcateg=19">Institucional</a></li>
 							<li><a href="http://undav.edu.ar/index.php?idcateg=4">Autoridades</a></li>
 							<li><a href="http://undav.edu.ar/index.php?idcateg=50">Vicerrectoría</a></li>
@@ -314,7 +316,7 @@ _htmlfooter_ {
 							<li><a href="http://undav.edu.ar/index.php?idcateg=6">Investigación</a></li>
 							<li><a href="http://undav.edu.ar/index.php?idcateg=7">Extensión Universitaria</a></li>
 						</ul>
-						<ul class="col-md-2" >
+						<ul class="col-md-3 col-sm-3 col-xs-3" >
 							<li><a href="http://undav.edu.ar/index.php?idcateg=70">Secretaría Académica</a></li>
 							<li><a href="http://undav.edu.ar/index.php?idcateg=102">EAD</a></li>
 							<li><a href="http://undav.edu.ar/index.php?idcateg=68">Alumnos</a></li>
@@ -323,7 +325,7 @@ _htmlfooter_ {
 										<li><a href="http://undav.edu.ar/index.php?idcateg=30">Noticias</a></li>
 
 						</ul>
-						<ul class="col-md-2">			
+						<ul class="col-md-3 col-sm-3 col-xs-3">			
 							<li><a href="http://undav.edu.ar/index.php?idcateg=22">Trabajo Social <br> Comunitario</a></li>
 							<li><a href="http://undav.edu.ar/index.php?idcateg=41">Becas</a></li>
 							<li><a href="http://undav.edu.ar/index.php?idcateg=271">Becas Cursar</a></li>

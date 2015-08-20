@@ -52,33 +52,41 @@ _content_ {
 		<!-- seccion envio trabajos -->
 		<p class="tituloIzq">¿Interesado en participar?</p>		
 		<div class="row">
-    <div class="col-md-8">
-		<p>Si es miembro de la comunidad académica de la UNDAV (docente/investigador o estudiante), 
-        puede depositar en el Repositorio:</p>
-        <ul class="tipoDocs">
-		<li>TESIS</li>
-        <li>ARTÍCULOS</li>
-        <li>PROYECTOS DE INVESTIGACIÓN</li>
-        <li>INFORME FINAL DE INVESTIGACIÓN</li>
-        <li>INFORME TÉCNICO</li>
-        <li>TRABAJO PRESENTADO EN EVENTO</li>
-        <li>CAPÍTULO DE LIBRO</li>
-        <li>LIBRO</li>
-        <li>DATOS PRIMARIOS</li>
-        </ul>
-		<p> </p>
-        <p class="extra">Para esto deberá seguir los siguientes pasos:</p>
-	</div>    
+			<div class="col-md-8 col-sm-8 col-xs-8">
+			<p>Si es miembro de la comunidad académica de la UNDAV (docente/investigador o estudiante), 
+			puede depositar en el Repositorio:</p>
+			</div>
+		</div>
+	<div class="row">
+		<div class="col-md-4 col-sm-5 col-xs-5">
+			
+			<ul class="tipoDocs">
+			<li>TESIS</li>
+			<li>ARTÍCULOS</li>
+			<li>PROYECTOS DE INVESTIGACIÓN</li>
+			<li>INFORME FINAL DE INVESTIGACIÓN</li>
+			<li>INFORME TÉCNICO</li>
+			<li>TRABAJO PRESENTADO EN EVENTO</li>
+			<li>CAPÍTULO DE LIBRO</li>
+			<li>LIBRO</li>
+			<li>DATOS PRIMARIOS</li>
+			</ul>
+			<p> </p>
+			<p class="extra">Para esto deberá seguir los siguientes pasos:</p>
+		</div>    
+		<div class="col-md-4 col-sm-5 col-xs-5">
+			<img src="_httpimages_/icoRepoHome.gif" alt="icono repositorio undav"/>
+		</div>
     </div>
     <div class="row paso1">    
-    	<div class="col-md-4 col-sm-4"><img src="_httpimages_/paso1.gif"></div>
-       	<div class="col-md-8 col-sm-7"><p>Descargue las planillas de registro y verificación de datos, 
+    	<div class="col-md-4 col-sm-5 col-xs-5"><img src="_httpimages_/paso1.gif"></div>
+       	<div class="col-md-8 col-sm-7 col-xs-7"><p>Descargue las planillas de registro y verificación de datos, 
 que le permitirán al Repositorio poner accesible su trabajo 
 y proteger sus derechos de autor adecuadamente.</p></div>
 	</div>
     <div class="row paso2">
-    	<div class="col-md-4 col-sm-4"><img src="_httpimages_/paso2.gif"></div>
-       	<div class="col-md-8 col-sm-7"><p>Una vez completadas las planillas, envíelas por mail a 
+    	<div class="col-md-4 col-sm-5 col-xs-5"><img src="_httpimages_/paso2.gif"></div>
+       	<div class="col-md-8 col-sm-7 col-xs-7"><p>Una vez completadas las planillas, envíelas por mail a 
 repo@undav.edu.ar adjuntando el o los archivos correspondientes 
 al trabajo a depositar, preferentemente, en alguno de los siguientes 
 formatos: DOC, ODT o RTF para textos, XLS u ODS para tablas y gráficos, 
@@ -89,8 +97,8 @@ que desea enviar supera este máximo comuníquese por
 correo electrónico para acordar otra forma de envío.</p></div>
 </div>
     <div class="row paso3">
-		<div class="col-md-4 col-sm-4"><img src="_httpimages_/paso3.gif"></div>
-       	<div class="col-md-8 col-sm-7"><p>Para completar el depósito, deberá pasar por la Biblioteca a firmar 
+		<div class="col-md-4 col-sm-5 col-xs-5"><img src="_httpimages_/paso3.gif"></div>
+       	<div class="col-md-8 col-sm-7 col-xs-7"><p>Para completar el depósito, deberá pasar por la Biblioteca a firmar 
 la autorización (también puede imprimir, firmar y escanear la autorización 
 y enviarla en el correo con el trabajo). También puede acercar los archivos 
 en forma personal a la Biblioteca.</p><p>
@@ -101,22 +109,5 @@ Muchas gracias por su colaboración! <p></div>
     </div>
 		
 	</div>
-	<!--div id="content">
-		<p>Es posible navegar los documentos de este repositorio en las siguientes colecciones:</p>
-		<div class="bloqueLinks">
-			<div class=\"collectiontitle\"><a href="_gwcgi_?site=localhost&a=p&p=about&c=arti&l=es&w=utf-8">Art&iacute;culos de revistas</a></div>
-			<div class=\"collectiontitle\"><a href="_gwcgi_?site=localhost&a=p&p=about&c=tesis&l=es&w=utf-8">Tesis</a></div>
-			<div class=\"collectiontitle\"><a href="_gwcgi_?site=localhost&a=p&p=about&c=eventos&l=es&w=utf-8">Ponencias</a></div>	
-			<div class=\"collectiontitle\"><a href="_gwcgi_?site=localhost&a=p&p=about&c=libros&l=es&w=utf-8">Libros y capítulos de libros</a></div>	
-			<div class=\"collectiontitle\"><a href="_gwcgi_?site=localhost&a=p&p=about&c=informes&l=es&w=utf-8">Informes</a></div>	
-			<div class=\"collectiontitle\"><a href="_gwcgi_?site=localhost&a=p&p=about&c=proy&l=es&w=utf-8">Proyectos de investigación</a></div>	
-		</div>
-		<ul>
-			<li><a href="#">Inclusi&oacute;n de trabajos en el Repositorio</a></li>
-			<li><a href="#">Normativa de la Universidad</a></li>
-			<li><a href="#">Cont&aacute;ctese con nosotros</a></li>
-			<li><a href="#">Licencias de Uso</a></li>
-			<li><a href="_httpprefix_/cgi-bin/oaiserver.cgi?verb=Identify" target="_blank">Servidor OAI para cosecha de metadatos</a></li>
-		</ul>
-	</div -->
+
 }
