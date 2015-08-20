@@ -359,7 +359,7 @@ a.a2a_i, i.a2a_i{background-color:#8ABAE0 !important}
 .paso1,.paso2,.paso3{border-bottom:1px solid #3784c1;padding-bottom:1em;padding-top: 2em; padding-left: 15px;}
 .paso1 p,.paso2 p,.paso3 p{line-height:2em}
 ul.tipoDocs{margin-bottom:4em;}
-ul.tipoDocs li{list-style: none} 
+ul.tipoDocs li{list-style: none; line-height: 1.67em !important;} 
 .envioTrabajos p{font-family: "fira_sansextralight","Fira Sans",sans-serif;
 color: #333 !important;
 line-height:2em;padding-left:15px}

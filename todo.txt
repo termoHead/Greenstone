@@ -9,9 +9,17 @@ Falta de la UNDAV
   
 Falta Pablo
 
+  PAGINADO?
+  
+  DOCUMENTACION
+  
+  
+  
+  
+  
   Redes sociales _LISTO
   
-  Maquetar formulario Material _Nolo puse, deje el mailto
+  Maquetar formulario Material _No lo puse, deje el mailto
   Maquetar una Interna general _LISTO
   
   Selector para cambio de tema,departamento y coleccion cuando se ve una en particular LISTO
@@ -19,5 +27,5 @@ Falta Pablo
   COLECCIONES: Acomodar las recuperaciones LISTO
   TEMAS: Poner nombre de Artistas_ LISTO
   
-  PAGINADO?
+  
   
