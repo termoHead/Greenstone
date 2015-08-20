@@ -75,7 +75,7 @@ _content_ {
 			<p class="extra">Para esto deberá seguir los siguientes pasos:</p>
 		</div>    
 		<div class="col-md-4 col-sm-5 col-xs-5">
-			<img src="_httpimages_/icoRepoHome.gif" alt="icono repositorio undav"/>
+			<img class="icoRo"  src="_httpimages_/icoRepoHome.gif" alt="icono repositorio undav"/>
 		</div>
     </div>
     <div class="row paso1">    
