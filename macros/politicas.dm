@@ -6,7 +6,7 @@ _content_{
 <article class="staff">
 	<div class="row">
 		<ol class="breadcrumb col-md-8">					
-			<li>Polìticas de uso</li>			
+			<li>Políticas de uso</li>			
 		</ol>		
 	</div> 
 	

@@ -682,6 +682,7 @@ _header_{_style:headerInterna_
 		_If_("_collectionname_" sw "Proy",<a href="_gwcgi_?c=proy&a=d&cl=CL5">_collectionname_</a>)
 		_If_("_collectionname_" sw "Lib",<a href="_gwcgi_?c=libros&a=d&cl=CL5">_collectionname_</a>)
 		</li>			
+	
 	</ol>
 		<div class="selectorCambioColect col-md-3" >
 			<div class="dropdown"  style="display:none">
@@ -783,25 +784,34 @@ package Global
 _sharemescript_ {
   <script type="text/javascript">
     var a2a_config = a2a_config || \{ \};
-    a2a_config.linkname = "_1_";
-
-	_If_(_2_,
-    var srclink = \'_2_\';
-	
-	//If metadata value is a valid URL that starts with xxx:// 
-	// (e.g. any protocol\, http, https\, ftp ...) then that will be the link to share
-	if (srclink.match(/^[^:]+:\\\/\\\//i)) \{
-		  a2a_config.linkurl = srclink;
-	 \}
-	else \{
-	//if metadata value is [srclink] then we have to cut off the 'href' tag label
-		var href = srclink.match(/href=\"([^\"]*)\"/);
-		a2a_config.linkurl = gsapi.fullDomainURL(href[1]);
+	if($(".docQPlain").length>0)\{
+		a2a_config.linkname = $(\"h1 span\").text();
+	\}else\{
+		a2a_config.linkname = "_1_";
 	\}
+    a2a_config.show_title = 1;
+	
+	
+	a2a_config.icon_color = \"transparent\";
+	
+	_If_(_2_,
+		var srclink = \'_2_\';
+	
+		//If metadata value is a valid URL that starts with xxx:// 
+		// (e.g. any protocol\, http, https\, ftp ...) then that will be the link to share
+		if (srclink.match(/^[^:]+:\\\/\\\//i)) \{
+			  a2a_config.linkurl = srclink;
+		 \}
+		else \{
+		//if metadata value is [srclink] then we have to cut off the 'href' tag label
+			var href = srclink.match(/href=\"([^\"]*)\"/);
+			a2a_config.linkurl = gsapi.fullDomainURL(href[1]);
+		\}
 	,
-	//if no metadata was passed as link\, then the GS version of the document will be used.
-    a2a_config.linkurl = gsapi.fullDomainURL("_gwcgi_")+ "?c=_cgiargc_&a=d&d=_cgiargd_";
-)
+		//if no metadata was passed as link\, then the GS version of the document will be used.		
+		//a2a_config.linkurl = gsapi.fullDomainURL("_gwcgi_")+ "?c=_cgiargc_&a=d&d=_cgiargd_";,
+		a2a_config.linkurl=window.location.href;
+	)
 
   </script>
 }
@@ -831,26 +841,19 @@ _sharemesmall_ {
 }
 
 _sharevertical_{	
+	_sharemescript_(_1_,_2_)		
 	<div class=\"a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style\" 	
 	style=\"left:96%; top:240px;\" id=\"myShare\">
-		<a class=\"a2a_button_facebook\"></a>
+		<a class=\"a2a_button_facebook\"  id="faceB" rel="nofollow"></a>
 		<a class=\"a2a_button_twitter\"></a>
 		<a class=\"a2a_button_google_plus\"></a>
 		<a class=\"a2a_button_pinterest\"></a>
 		<a class=\"a2a_dd\" href=\"http://www.addtoany.com/share_save\"></a>
+		
 	</div>
-	<script type=\"text/javascript\" 
-				src=\"//static.addtoany.com/menu/page.js\">
-				</script>
-				
-	<script type=\"text/javascript\">	
-		if($(\"h1\").length>0)\{
-			$(\"title\").text($(\"title\").text() +\" : \"+$(\"h1\").text())
-		\}		
-		a2a_config.icon_color = \"transparent\";
-		a2a_config.onclick = 1;
-		a2a.init(\"page\");
-	</script>	
+	<script type=\"text/javascript\" src=\"http://static.addtoany.com/menu/page.js\"></script>
+	
+	
 	<style type=\"text/css\">
 		/* Hide AddToAny vertical share bar when screen is less than 980 pixels wide */
 		@media screen and (max-width: 980px) \{

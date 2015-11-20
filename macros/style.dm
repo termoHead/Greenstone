@@ -156,26 +156,25 @@ _optgloballinks_ {_globallinks_}
 _pagebanner_ {
 <!-- page banner (\_style:pagebanner\_) -->
 	<header class="row">
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default">	
       <div class="container-fluid"> 
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-          <a class="navbar-brand" href="http://www.undav.edu.ar/"><img src="_httpimages_/logoUndav.gif" width="87" height="80" alt="Universidad Nacional de Avellaneda"></a> 
-		  <a class="navbar-brand" href="_gwcgi_"><img src="_httpimages_/logoRepositorio.gif" alt="Logo Repositorio Documental y de Datos"></a> 
-	  </div>
-        
-		<!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<ul id="mainNav" class="nav navbar-nav">
-				<li><a href="?p=colecciones">colecciones</a></li>
-				<li><a href="?p=tematicas">temáticas<span class="sr-only">(current)</span></a></li>            
-				<li><a href="?p=departamentos">departamentos</a></li>
-			</ul>
-			_optionalNavDer_
-		
-		</div>
-		
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+			  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+			  <div class="navbar-brand">
+			  <a  href="http://www.undav.edu.ar/" target="_blank"><img src="_httpimages_/logoUndav.gif" width="87" height="80" alt="Universidad Nacional de Avellaneda"></a> 
+			  <a  href="_gwcgi_"><img src="_httpimages_/logoRepositorio.gif" alt="Logo Repositorio Documental y de Datos"></a> 
+			  </div>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul id="mainNav" class="nav navbar-nav">
+					<li><a href="?p=colecciones">colecciones</a></li>
+					<li><a href="?p=tematicas">temáticas<span class="sr-only">(current)</span></a></li>            
+					<li><a href="?p=departamentos">departamentos</a></li>
+				</ul>
+				_optionalNavDer_
+			</div>
         <!-- /.navbar-collapse --> 
 		</div>
 		<!-- /.container-fluid --> 
@@ -193,18 +192,18 @@ _pagebanner_ {
 
 
 _optionalNavDer_{
-	_If_( "_cgiargp_" eq "colecciones" ,
-		_formminimo_,
-		_If_( "_cgiargp_" eq "tematicas", 
-		_formminimo_,
-			_If_( "_cgiargp_" eq "departamentos", 
-				_formminimo_,
-				_If_( "_cgiarga_" eq "d", 
-					_formminimo_ ,
-						_If_( "_cgiargp_" eq "tema", 
-							_formminimo_ ,
-							_If_( "_cgiargp_" eq "depto", 
-								_formminimo_ ,								
+	_If_( "_cgiargp_" eq "colecciones" , _formminimo_,
+		_If_( "_cgiargp_" eq "tematicas",  _formminimo_,
+			_If_( "_cgiargp_" eq "departamentos", _formminimo_,
+				_If_( "_cgiarga_" eq "d", 	_formminimo_ ,
+						_If_( "_cgiargp_" eq "tema", _formminimo_ ,
+							_If_( "_cgiargp_" eq "depto", _formminimo_ ,								
+								_If_( "_cgiargp_" eq "participar", _formminimo_ ,								
+									_If_( "_cgiargp_" eq "politicas", _formminimo_ ,
+										_If_( "_cgiargp_" eq "responsables", _formminimo_ ,
+										_navDereha_),								
+										_navDereha_),								
+									_navDereha_),
 								_navDereha_),
 						_navDereha_),
 					_navDereha_),
@@ -213,14 +212,16 @@ _optionalNavDer_{
 		_navDereha_)
 }
 _formminimo_{
-<div id="searchTop" class="nav navbar-nav navbar-right col-sm-push-9">
-_query:formCross_
-</div>
+	_navDereha_
+	<div id="searchTop" class="nav navbar-nav navbar-right buscaInterno">
+		_query:formCross_
+	</div>
 }
 _navDereha_{
 	<ul class="nav navbar-nav navbar-right">
 		<li><a href="_gwcgi_?p=responsables">responsables</a></li>
 		<li><a href="_gwcgi_?p=politicas">política de uso</a></li>            
+		<li><a href="_gwcgi_?p=participar">como participar</a></li>            
 	</ul>
 }
 _pagebanner_[v=1] {
@@ -262,32 +263,8 @@ _htmlfooter_ {
 
 		<footer class="row-fluid pie">
 			 <div class="container">
-				<div class="row pieAlto">
-					<div class="col-md-4 col-sm-4 col-xs-4">
-						<a href="#"><img src="_httpimages_/logoFooterUndav.gif" width="107" height="100" alt="Logo UNDAV"></a>
-						<img src="_httpimages_/logoRepositoriofooter.gif" width="199" height="100" alt="Logo Repositorio"> 
-					</div>
-					<div class="col-md-4 col-sm-4 col-xs-4">
-					   <ul>       
-						   <li class=""><a href="_gwcgi_?p=colecciones">colecciones</a></li>
-						   <li class=""><a href="_gwcgi_?p=tematicas">temáticas</a></li>
-						   <li class=""><a href="_gwcgi_?p=departamentos">departamentos</a></li>       
-					   </ul>
-					   <ul>       
-						   <li class=""><a href="_gwcgi_?p=responsables">responsables</a></li>		   		   
-						   <li class=""><a href="_gwcgi_?p=politicas">políticas de uso</a></li>       
-					   </ul>
-					</div>
-					<div class="col-md-4 col-sm-4 col-xs-4">
-						<div class="contactos"> 
-							<p> <a href="mailto:biblioteca@undav.edu.ar" ><img src="_httpimages_/emal.gif" width="214" height="80" /></a></p>
-							<p class="telefonos">Teléfono: 4229 2484</p>
-							<p><img src="_httpimages_/socialSpace.gif" width="214" height="44" alt="Sociales" /> </p>
-						</div>
-					</div>
-				 </div>
 				<div class="row pieBajo">
-						<ul class="col-md-3 col-sm-3 col-xs-3 instit">
+						<ul class="col-md-4 col-sm-3 col-xs-3 instit">
 							<li><strong>Universidad Nacional de Avellaneda.</strong> Buenos Aires. Argentina</li>
 
 							<li><strong>Sede España, Rectorado:</strong></li>                        
@@ -303,41 +280,70 @@ _htmlfooter_ {
 							<li>Constitución 627, Avellaneda | (54 11) 4201-2479</li>
 							<li>&nbsp; </li>
 
-
-							<li>Sitio web diseñado, producido y administrado por la</li>
-							<li><strong>Dirección de Prensa de la UNDAV</strong> | prensa@undav.edu.ar</li>
-							<li> </li>
 						</ul>
 						<ul class="col-md-3 col-sm-3 col-xs-3">
 							<li><a href="http://undav.edu.ar/index.php?idcateg=19">Institucional</a></li>
 							<li><a href="http://undav.edu.ar/index.php?idcateg=4">Autoridades</a></li>
 							<li><a href="http://undav.edu.ar/index.php?idcateg=50">Vicerrectoría</a></li>
-							<li><a href="http://undav.edu.ar/index.php?idcateg=73">Secretaría General</a></li> 
-							<li><a href="http://undav.edu.ar/index.php?idcateg=6">Investigación</a></li>
-							<li><a href="http://undav.edu.ar/index.php?idcateg=7">Extensión Universitaria</a></li>
+							<li><a href="http://undav.edu.ar/index.php?idcateg=102">. Educación a Distancia</a></li>
+							<li><a href="http://undav.edu.ar/index.php?idcateg=269">. Comisión de Discapacidad</a></li>
+							<li><a href="http://www.undav.edu.ar/index.php?idcateg=333">. Nueva Escuela</a></li>
+							<li><a href="http://www.progresar.anses.gob.ar/">. Progresar</a></li>	
+							<li><a href="http://undav.edu.ar/index.php?idcateg=73">Secretaría General</a></li>
+							<li><a href="http://undav.edu.ar/index.php?idcateg=204">. Ceremonial</a></li>
+							<li><a href="http://undav.edu.ar/index.php?idcateg=83">. Cooperación Internacional</a></li>
+							<li><a href="http://undav.edu.ar/index.php?idcateg=206">. Evaluación Institucional</a></li>
+							<li><a href="http://undav.edu.ar/index.php?idcateg=21">. Observatorios</a></li>
+							<li><a href="http://undav.edu.ar/index.php?idcateg=207">. Prensa</a></li>
+							<li><a href="http://radio.undav.edu.ar/">. Radio UNDAV</a></li>
+							<li><a href="http://ediciones.undav.edu.ar/">. UNDAV Ediciones</a></li>
 						</ul>
 						<ul class="col-md-3 col-sm-3 col-xs-3" >
 							<li><a href="http://undav.edu.ar/index.php?idcateg=70">Secretaría Académica</a></li>
-							<li><a href="http://undav.edu.ar/index.php?idcateg=102">EAD</a></li>
-							<li><a href="http://undav.edu.ar/index.php?idcateg=68">Alumnos</a></li>
-							<li><a href="http://undav.edu.ar/index.php?idcateg=5">Ingresos</a></li>
-							<li><a href="http://undav.edu.ar/index.php?idcateg=21">Observatorios</a></li> 
-										<li><a href="http://undav.edu.ar/index.php?idcateg=30">Noticias</a></li>
-
+							<li><a href="http://undav.edu.ar/index.php?idcateg=5">. Ingreso</a></li>
+							<li><a href="http://undav.edu.ar/index.php?idcateg=68">. Alumnos</a></li>
+							<li><a href="http://undav.edu.ar/index.php?idcateg=238">. Egresados</a></li>	
+							<li><a href="http://undav.edu.ar/index.php?idcateg=298">. Biblioteca</a></li>	
+							<li><a href="http://undav.edu.ar/index.php?idcateg=6">Investigación</a></li>
+							<li><a href="http://undav.edu.ar/index.php?idcateg=42">. Posgrados</a></li>
+							<li><a href="http://undav.edu.ar/index.php?idcateg=289">. Proyectos de Investigación</a></li>
+							<li><a href="http://undav.edu.ar/index.php?idcateg=108">. Programa de Incentivos</a></li>
+							<li><a href="http://undav.edu.ar/index.php?idcateg=6">. Becas</a></li>		
+							<li><a href="http://cartografiasdelsur.undav.edu.ar/">. Cartografías del Sur</a></li>	
+							<li><a href="http://undav.edu.ar/index.php?idcateg=7">Extensión Universitaria</a></li>
+							<li><a href="http://undav.edu.ar/index.php?idcateg=324">. FinEs</a></li>
 						</ul>
-						<ul class="col-md-3 col-sm-3 col-xs-3">			
+						<ul class="col-md-2 col-sm-3 col-xs-3">			
+							<li><a href="http://undav.edu.ar/index.php?idcateg=248">Bienestar Universitario</a></li>
+							<li><a href="http://undav.edu.ar/index.php?idcateg=271">. Becas CURSAR</a></li>
+							<li><a href="http://undav.edu.ar/index.php?idcateg=41">. Becas</a></li>
+							<li><a href="http://undav.edu.ar/index.php?idcateg=250">. Cultura</a></li>
+							<li><a href="http://undav.edu.ar/index.php?idcateg=251">. Salud</a></li>
+							<li><a href="http://undav.edu.ar/index.php?idcateg=252">. Deportes</a></li>
+							<li><a href="http://undav.edu.ar/index.php?idcateg=260">. Participación Estudiantil</a></li>	
+							<li><a href="http://campusvirtual.undav.edu.ar/">Campus Virtual</a></li>
 							<li><a href="http://undav.edu.ar/index.php?idcateg=22">Trabajo Social <br> Comunitario</a></li>
-							<li><a href="http://undav.edu.ar/index.php?idcateg=41">Becas</a></li>
-							<li><a href="http://undav.edu.ar/index.php?idcateg=271">Becas Cursar</a></li>
-							<li><a href="http://undav.edu.ar/index.php?idcateg=42">Posgrados</a></li> 
-							<li><a href="http://campusvirtual.undav.edu.ar/">Campus virtual</a></li> 
+							<li><a href="http://undav.edu.ar/index.php?idcateg=325">Comisión de Etica</a></li>
+							<li><a href="http://undav.edu.ar/index.php?idcateg=352">Junta Electoral</a></li>
+							<li><a href="http://consejo.undav.edu.ar/">Consejo Superior</a></li>
+							<li><a href="http://concursos.undav.edu.ar/">Concursos</a></li>
 						</ul>
 						</div>
+						<br>
 					<div class="row logosL">
-						<div id="col-md-1">		
-						<a href="http://www.greenstone.org/" target="_blank"><img height="25"  src="http://wiki.greenstone.org//lib/tpl/monobook/user/logo.png"></a>		
+						<div class="col-md-4">								
+							<a href="http://www.greenstone.org/" target="_blank"><img height="25"  src="http://wiki.greenstone.org//lib/tpl/monobook/user/logo.png"></a>		
+							Sitio web desarrollado con Greenstone 2.86 
+						</div>
+						<div class="col-md-4">		
 						<a href="http://creativecommons.org/licenses/by-nc-nd/2.5/ar/" target="_blank"><img  height="25" src="http://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-nd.png"></a>
-						<a href="http://www.openarchives.org/" target="_blank"><img height="25" src="http://www.openarchives.org/images/OA100.gif"></a>
+						Licencia Creative Commons Atribución-NoComercial-SinDerivadas 4.0 Internacional a menos que se indique lo contrario
+						</div>
+						<div class="col-md-4">		
+						<a href="http://170.210.71.22/cgi-bin/oaiserver.cgi" target="_blank"><img height="25" src="http://www.openarchives.org/images/OA100.gif"></a>
+						Open Archives Initiative Protocol for Metadata Harvesting (OAI-PMH) Version 2.0
+
+						</div>
 						</div>
 					</div>
 				</div>

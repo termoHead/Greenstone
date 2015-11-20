@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tematicas>
+<raiz>
 	<tematica id="tema0" img="carrousel/1.jpg" color="4599c3" 
 		titulo="Arte y Diseño Industrial" 
 		corto="Arte y Diseño Industrial"
@@ -11,9 +11,9 @@
 	<tematica id="tema1" img="carrousel/2.jpg" color="7c6054" 
 		corto="Arte y Cultura"
 		titulo="Arte y Cultura" thum="tema_arte.gif"
-		ilustraNombre="Adollfo Nigro"
-		ilustraTitulo="El barco (2012)"
-		ilustraTipo="Serigrafía"
+		ilustraNombre=""
+		ilustraTitulo=""
+		ilustraTipo=""
 		></tematica>
 	<tematica id="tema2" img="carrousel/3.jpg" color="873e35" 		
 		corto="Ingeniería y Tecnología"
@@ -88,18 +88,41 @@
 		ilustraTitulo="Identidad Saltense (2014)"
 		ilustraTipo="Esgrafiado"></tematica>
 		
-	<depto titulo="Departamento de Ciencias Ambientales" id="dt0" />
-	<depto titulo="Departamento de Producción y Trabajo" id="dt1" />
-	<depto titulo="Departamento de Cultura y Arte" id="dt2" />
-	<depto titulo="Departamento Transversal de Salud y Desarrollo Comunitario" id="dt3" />
-	<depto titulo="Actividad Física, Deporte y Recreación" id="dt4" />
-	<depto titulo="Departamento Transversal de Comunicación y Tecnologías de la Información" id="dt5" />
-	<depto titulo="Maestría en Estéticas Contemporáneas Latinoamericanas" id="dt6" />
+	<depto titulo="Departamento de Ambiente y Turismo" id="dt0" />
+	<depto titulo="Departamento de Arquitectura, Diseño y Urbanismo" id="dt1" />
+	<depto titulo="Departamento de Humanidades y Artes" id="dt2" />
+	<depto titulo="Departamento de Salud y Actividad Física" id="dt3" />
+	<depto titulo="Departamento de Tecnología y Administración" id="dt4" />
+	<depto titulo="Departamento de Ciencias Sociales" id="dt5" />
 	
-	<colec titulo="Artículos de revistas" nombreCarpeta="arti" id="colec0" />
-	<colec titulo="Tesis de grado y de posgrado" nombreCarpeta="tesis" id="colec1" />
-	<colec titulo="Trabajos presentados a eventos" nombreCarpeta="eventos" id="colec2" />
-	<colec titulo="Libros y capítulos de libros" nombreCarpeta="libros" id="colec3" />
-	<colec titulo="Proyectos de investigación" nombreCarpeta="proy" id="colec4" />
-	<colec titulo="Informes" nombreCarpeta="informes" id="colec5" />
-</tematicas>
+	<colec titulo="Artículos de revistas" nombreCarpeta="arti" id="colec0">
+		<descri>
+		<![CDATA[Artículos, dossiers y reseñas publicados por los miembros de UNDAV (investigadores, tecnólogos, docentes, becarios y estudiantes de grado y postgrado) en ediciones propias o externas.]]>		
+		</descri>
+	</colec>
+	<colec titulo="Tesis de grado y de posgrado" nombreCarpeta="tesis" id="colec1">
+		<descri>
+		<![CDATA[Tesis de grado (licenciatura, ciclo de complementación curricular); de posgrado (doctorado, maestría, especialización); y trabajos de finalización de carrera.]]>		
+		</descri>
+	</colec>	
+	<colec titulo="Trabajos presentados a eventos" nombreCarpeta="eventos" id="colec2">
+	<descri>
+		<![CDATA[Comunicaciones y presentaciones realizadas en cualquier tipo de evento científico (congreso, encuentro, simposio, jornada, etc.) organizado por la UNDAV, así como aquellos trabajos presentados por sus miembros (investigadores, tecnólogos, docentes, becarios y estudiantes de grado y postgrado) en eventos externos.]]>		
+		</descri>
+	</colec>	
+	<colec titulo="Libros y capítulos de libros" nombreCarpeta="libros" id="colec3">
+		<descri>
+			<![CDATA[Libros y capítulos de libros publicados por los miembros de UNDAV (investigadores, tecnólogos, docentes, becarios y estudiantes de grado y postgrado) en ediciones propias o externas a la Universidad.]]>		
+		</descri>
+	</colec>	
+	<colec titulo="Proyectos de investigación" nombreCarpeta="proy" id="colec4">
+		<descri>
+			<![CDATA[Proyectos de investigación presentados y seleccionados para ser financiados en las diversas convocatorias realizadas por la UNDAV. Los documentos incluidos corresponden a los formularios en los que se resume la información relativa a integrantes, antecedentes, objetivos, cronogramas de trabajo, bibliografía, etc.]]>		
+		</descri>
+	</colec>	
+	<colec titulo="Informes" nombreCarpeta="informes" id="colec5">
+		<descri>
+			<![CDATA[Documentos de trabajo, monografías, informes técnicos, informes de avances e informes finales de los proyectos de investigación presentados y seleccionados para ser financiados en las diversas convocatorias realizadas por la UNDAV.]]>		
+		</descri>
+	</colec>	
+</raiz>

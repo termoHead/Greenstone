@@ -865,8 +865,7 @@ _formCross_{
 				<li><a href="#"  onclick="javascript:setValorForm('sf','byAB',this)">Palabras claves</a></li>
 				<li><a href="#"  onclick="javascript:setValorForm('sf','byCM',this)">Departamento</a></li>
 				<li><a href="#"  onclick="javascript:setValorForm('sf','byTE',this)">Temática</a></li>
-				</ul>
-			  <input type="hidden" value="byAU" name="sf" id="sf">   
+				</ul>			  
 			</div>
 
 			<div class="dropdown">

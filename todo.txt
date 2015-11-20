@@ -9,23 +9,20 @@ Falta de la UNDAV
   
 Falta Pablo
 
-  PAGINADO?
+! 1. Sacar pie de la Dirección de Prensa
+! 2. Texto pie (ponelo como te parezca)
+
+! Licencia Creative Commons Atribución-NoComercial-SinDerivadas 4.0 Internacional a menos que se indique lo contrario
+! Sitio web desarrollado con Greenstone 2.86 (enlace a sitio greenstone)
+! Open Archives Initiative Protocol for Metadata Harvesting (OAI-PMH) Version 2.0 (Enlace a http://170.210.71.22/cgi-bin/oaiserver.cgi)
+
+! 3. Pasar a una página el envío de trabajos
+4. La cita se ve mal en las tarjetitas que no son de Ultimos ingresados
+5. El acceso por temáticas las colecciones están las iniciales en mayúscula
+6. El acceso por departamentos no levanta las temáticas
   
-  DOCUMENTACION
-  
-  
-  
-  
-  
-  Redes sociales _LISTO
-  
-  Maquetar formulario Material _No lo puse, deje el mailto
-  Maquetar una Interna general _LISTO
-  
-  Selector para cambio de tema,departamento y coleccion cuando se ve una en particular LISTO
-  
-  COLECCIONES: Acomodar las recuperaciones LISTO
-  TEMAS: Poner nombre de Artistas_ LISTO
-  
-  
-  
+ Nuevo
+ ...Ese párametro se lo está pasando el formulario.....<input id="sf" type="hidden" name="sf" value="byAU">
+sacale este parámetro porque la rompe..... no es necesario por defecto.....
+
+ 

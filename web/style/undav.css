@@ -34,7 +34,8 @@ input.form-control{background: url("/web/images/lupa_home.gif") no-repeat 5px 8p
 /*width:280px !important;*/
     text-indent: 20px;}
 .carousel-inner{overflow:visible !important; }
-.navbar-brand{padding-top:0;}
+.navbar-brand{padding-top:0;clear: both;
+min-height: 80px;}
 .navbar-nav{margin-top: 46px !important;margin-left: 10px !important;}
 ul.navbar-right a{border-radius: 0!important;border: 0!important; background:transparent !important; color:#999 !important}
 .navbar-nav a{border-radius: 10px;border: 2px solid #8abae0}
@@ -50,37 +51,6 @@ ul.navbar-right a{border-radius: 0!important;border: 0!important; background:tra
 .tituloCentrado{ text-align:center;color:#1c3259; font-size:18px; margin:30px 0 10px 0;font-family:'fira_sansextralight','fira_sansregular', sans-serif !important;}
 .envioTrabajos p.tituloIzq{color: #3784c1 !important; font-size:24px; margin:30px 0 10px 0;font-family:'fira_sansextralight','fira_sansregular', sans-serif !important;}
 .nuevas .tarjeta p.labelA{display:block; text-align:left; padding: 10px 10px 10px 25px ; color:#fff;}
-.conservacin .labelA,
-.seccionTematicas .conservacin  .wrap{background-color:#809879}
-.arteydiseoindustrial  .labelA,
-.seccionTematicas .arteydiseoindustrial  .wrap{background-color:#4599c3}
-.arteycultura  .labelA,
-.seccionTematicas .arteycultura  .wrap{background-color:#7c6054}
-.ingenieraytecnologa  .labelA,
-.seccionTematicas .ingenieraytecnologa  .wrap{background-color:#873e35}
-.arquitecturayurbanismo .labelA,
-.seccionTematicas .arquitecturayurbanismo  .wrap{background-color:#d48830}
-.trabajosocialycomunitario .labelA,
-.seccionTematicas .trabajosocialycomunitario  .wrap{background-color:#687ca1}
-.estadoysociedad .labelA,
-.seccionTematicas .estadoysociedad  .wrap{background-color:#c45c26}
-.derecho .labelA,
-.seccionTematicas .derecho  .wrap{ background-color:#392626;}
-.economaygestin .labelA,
-.seccionTematicas .economaygestin  .wrap{background-color:#873e35}
-.turismoyrecreacin .labelA,
-.seccionTematicas .turismoyrecreacin  .wrap{background-color:#5b7782}
-.comunicacinymedios .labelA,
-.seccionTematicas .comunicacinymedios  .wrap{background-color:#b62529}
-.actividadfsicaydeporte .labelA,
-.seccionTematicas .actividadfsicaydeporte  .wrap{background-color:#a5c1dd}
-.cienciasdelasalud .labelA,
-.seccionTematicas .cienciasdelasalud  .wrap{background-color:#edcc49}
-.historia .labelA,
-.seccionTematicas .historia  .wrap{background-color:#c9b64c}
-.general .labelA{background-color:#333}
-
-
 .nuevas .tarjeta p,.nuevas .tarjeta h3{padding-left:25px;padding-right: 10px;font-family:'fira_sansextralight','fira_sansregular', sans-serif !important;}
 .nuevas .tarjeta h3{font-size:18px; color:#1a3c69;}
 .nuevas .tarjeta p{font-size:14px; color:#3e3e3e}
@@ -90,7 +60,7 @@ margin-bottom: 25px;}
 .pie{clear: both;background-color:#f4f4f4; margin-top35px; border-top:8px solid #1a3c69;font-size:12px ;font-family:'fira_sansextralight','fira_sansregular', sans-serif !important;margin-top: 31px;}
 .pie .pieAlto ul{ float: left;width: 50%;padding-top: 30px;}
 .pie .pieAlto a{color:#62708b; font-size:14px}
-.pie li{list-style: none}
+.pie li{list-style: none;font-size: 9pt;}
 .pie a{color:#7a7a7a; font-size:14px}
 .pieBajo {margin-top:31px}
 .pieBajo ul{ border-left:1px solid #c4c6c6}
@@ -114,31 +84,10 @@ ol.breadcrumb{padding-left:0;margin-left: 30px;}
 .colecciones  h1,.aboutDepto h1 ,
 .seccionDeptos h1,.seccionTematicas h1{ color:#4c9ad8; font-size:34px}
 .seccionDeptos h1{padding-left: 30px;}
-.seccionTematicas h1{padding-left: 0;}
 .seccionDeptos p.descripcion{padding-left:20px; border-left:2px solid #99ccff;}
-.seccionTematicas a{color:#fff}
-.seccionTematicas .col-md-3{margin-bottom:16px}
-.seccionTematicas h3{ height: 88px; margin:8px 0 0 0; font-family:'Fira Sans',"fira_sansextralight", sans-serif; font-size:1.1em}
-.seccionTematicas h3 span{display: block; }
-.seccionTematicas .wrap{padding: 0 1.3em 0 1.3em;;}
-.seccionTematicas .wrap img {margin-left:-1.3em;width:118% }
-.seccionTematicas  .row{padding-left:30px}
 
-.seccionTematicas .tema_arteIndustrial .wrap, .tema0{ background-color:#4599c3;}
-.seccionTematicas .tema_econo .wrap,.tema7{ background-color:#873e35}
-.seccionTematicas .tema_conservacion .wrap,.tema8{ background-color:#809879}
-.seccionTematicas .tema_inge .wrap,.tema2{ background-color:#873e35}
-.seccionTematicas .tema_trabajo  .wrap,.tema4{ background-color:#687ca1}
-.seccionTematicas .tema_estado .wrap, .tema5{ background-color:#c45c26}
-.seccionTematicas .tema_arte .wrap, .tema1{ background-color:#7c6054}
-.seccionTematicas .tema_actiFisica  .wrap,.tema11{ background-color:#a5c1dd}
-.seccionTematicas .tema_actiFisica h3 a{color:#3c5c6c}
-.seccionTematicas .tema_arq  .wrap,.tema3{ background-color:#d48830}
-.seccionTematicas .tema_historia .wrap,.tema13{ background-color:#c9b64c}
-.seccionTematicas .tema_salud  .wrap,.tema12{ background-color:#edcc49}
-.seccionTematicas .tema_medios  .wrap,.tema10{ background-color:#c9b64c}
-.seccionTematicas .tema_turismo  .wrap, .tema9{ background-color:#5b7782}
-.seccionTematicas .tema_derecho  .wrap,.tema6{ background-color:#392626}
+
+
 #baseTema .tema7{color:white;}
 #baseTema #toolbox{min-height:143px}
 #toolbox{margin-left:17px;margin-right:10px; margin-bottom:2em}
@@ -151,15 +100,9 @@ left: 0;
 width: 50%;
 text-align: left;
 padding: 10px 0px 10px 30px;}
-.seccionTematicas .tema_salud h3 a,
-.seccionTematicas .tema_historia h3 a{color:#7f0100}
-.seccionTematicas .tema_medios h3 a{color:#141d28}
-.seccionTematicas .colCell{width: auto; margin: .5em; height:217px; overflow:hidden;}
-.seccionTematicas .colCell{box-sizing: content-box !important;}
-#grillado{position: relative;}
+
 #toolboxAbout , .aboutDepto #toolbox{ background-color:#4c9bd9; color:white; padding:8px; margin-bottom:2em;margin-left: 15px;
 margin-right: 15px;}
-
 #toolboxAbout
 #resultados{margin-top:25px; padding-left:20px;}
 .ficha {border:1px solid #e3e3e3; 
@@ -295,25 +238,10 @@ text-align: center;}
     border-left: 1px solid rgb(238, 238, 238);
     padding-left: 15px;
 }
-.queryform {
-    background-color: #EDEDED;
-    padding: 20px;
-}
-.resultF .navbar {
-    text-align: left;
-    font-size: 32px;
-    color: #1d335a;
-    padding-top: 0.5em;
-    font-family: "fira_sansextralight";
-}
+.queryform {background-color: #EDEDED;padding: 20px;}
+.resultF .navbar {text-align: left;font-size: 32px;color: #1d335a;padding-top: 0.5em;font-family: "fira_sansextralight";}
 .resultF .navbar span{text-transform: capitalize;}
-.resultSmall {
-    font-family: "fira_sansregular" !important;
-    color: #9aa7b7;
-    font-size: 1.2em;
-    line-height: .8em;
-    padding-top: .6em;
-}
+.resultSmall {font-family: "fira_sansregular" !important;color: #9aa7b7;font-size: 1.2em;line-height: .8em;padding-top: .6em;}
 .crossSearch form{font-size:.75em}
 .crossSearch .querybox input{ width:300px}
 #j,#sf,#fSubmit{width:160px}
@@ -328,29 +256,19 @@ text-align: center;}
 #searchTop  .btnAvForm  {clear:both}
 #searchTop #QueryForm  a.btnAvForm {font-weight: normal;margin-top:8px;border:0 !important; background-color: transparent !important; color:#666 !important}
 #searchTop  .advanceToolbox{left:-150px!important; top:45px !important}
-.breadcrumb sapn{}
 .wrapObra {font-size: 10px; margin-top: 58px; color:#fff}
 .wrapObra .tituloObra{font-size: 1.17em}
 .wrapObra p{ margin:0; padding:0; font-family: "fira_sansregular"; }
 .wrapObra p a{color:#eee; }
-.tema12 .wrapObra,
-.tema12 .wrapObra p a{color:#333}
-#dLabel {
-    font-family: "fira_sansextralight","Fira Sans",sans-serif !important;
-    background: transparent none repeat scroll 0% 0%;
-    border: medium none;
-    color: rgb(76, 155, 217);
-    font-size: 1.2em;
-}
+.tema12 .wrapObra,.tema12 .wrapObra p a{color:#333}
+#dLabel {font-family: "fira_sansextralight","Fira Sans",sans-serif !important;background: transparent none repeat scroll 0% 0%;border: medium none;color: rgb(76, 155, 217);font-size: 1.2em;}
 .selectorCambio, .selectorCambioDepto,.selectorCambioColect { margin-top: 27px;}
 .dropdown-menu{width: 250px !important;}
 .dropdown-menu li a{width:250px !important}
 .dropdown-menu li a {width: 230px !important;white-space: normal !important;}
 #toolboxAbout #wrap{margin:0; padding:0; line-height:0}
 #toolboxAbout #wrap h6{padding-left: 19px;}
-.a2a_vertical_style a {    
-    background: #999;
-    margin-bottom: 0.3em;}
+.a2a_vertical_style a {background: #999;margin-bottom: 0.3em;}
 .a2a_svg a2a_w__default {background: #999 !important}
 a.a2a_i, i.a2a_i{background-color:#8ABAE0 !important}
 .staff h1{padding-left: 30px; color:#293F66; margin-top:0; margin-bottom:1em; }
@@ -360,10 +278,76 @@ a.a2a_i, i.a2a_i{background-color:#8ABAE0 !important}
 .paso1 p,.paso2 p,.paso3 p{line-height:2em}
 ul.tipoDocs{margin-bottom:4em;}
 ul.tipoDocs li{list-style: none; line-height: 1.67em !important;} 
-.envioTrabajos p{font-family: "fira_sansextralight","Fira Sans",sans-serif;
-color: #333 !important;
-line-height:2em;padding-left:15px}
+.envioTrabajos p{font-family: "fira_sansextralight","Fira Sans",sans-serif;color: #333 !important;line-height:2em;padding-left:15px}
 .logosL a:first-child{margin-left:45px; }
-.icoRo {
-    margin-left: 20px;
-}
+.icoRo {    margin-left: 20px;}
+.nuevas{min-height:100px}
+.collapse.in{overflow-y: visible !important;}
+.buscaInterno{margin-top:20px !important}
+
+/*-----------------------------------------------------*/
+/*estilos para el listado de TEMATICAS
+.conservacin .labelA,
+.seccionTematicas .conservacin  .wrap{background-color:#809879}
+.arteydiseoindustrial  .labelA,
+.seccionTematicas .arteydiseoindustrial  .wrap{background-color:#4599c3}
+.arteycultura  .labelA,
+.seccionTematicas .arteycultura  .wrap{background-color:#7c6054}
+.ingenieraytecnologa  .labelA,
+.seccionTematicas .ingenieraytecnologa  .wrap{background-color:#873e35}
+.arquitecturayurbanismo .labelA,
+.seccionTematicas .arquitecturayurbanismo  .wrap{background-color:#d48830}
+.trabajosocialycomunitario .labelA,
+.seccionTematicas .trabajosocialycomunitario  .wrap{background-color:#687ca1}
+.estadoysociedad .labelA,
+.seccionTematicas .estadoysociedad  .wrap{background-color:#c45c26}
+.derecho .labelA,
+.seccionTematicas .derecho  .wrap{ background-color:#392626;}
+.economaygestin .labelA,
+.seccionTematicas .economaygestin  .wrap{background-color:#873e35}
+.turismoyrecreacin .labelA,
+.seccionTematicas .turismoyrecreacin  .wrap{background-color:#5b7782}
+.comunicacinymedios .labelA,
+.seccionTematicas .comunicacinymedios  .wrap{background-color:#b62529}
+.actividadfsicaydeporte .labelA,
+.seccionTematicas .actividadfsicaydeporte  .wrap{background-color:#a5c1dd}
+.cienciasdelasalud .labelA,
+.seccionTematicas .cienciasdelasalud  .wrap{background-color:#edcc49}
+.historia .labelA,
+.seccionTematicas .historia  .wrap{background-color:#c9b64c}
+.general .labelA{background-color:#333}*/
+/*----------------------------------------------------*/
+.seccionTematicas .tema_salud h3 a,
+.seccionTematicas .tema_historia h3 a{color:#7f0100}
+.seccionTematicas .tema_medios h3 a{color:#141d28}
+.seccionTematicas .colCell{ height:217px; }
+
+#grillado{position: relative;}
+
+.seccionTematicas h1{padding-left: 0;}
+.seccionTematicas a{color:#fff;}
+.seccionTematicas .col-md-3{margin-bottom:30px}
+.seccionTematicas h3{ height: 88px; margin:8px 0 0 0; 
+	font-family:'Fira Sans',"fira_sansextralight", sans-serif; font-size:1.1em; clear:both; 
+	padding: 0 1.3em 0 1.3em;}
+.seccionTematicas h3 span{display: block; }
+.seccionTematicas .wrap{overflow:hidden;}
+.seccionTematicas .wrap div{text-align: center;}
+.seccionTematicas  .row{padding-left:30px}
+
+.seccionTematicas .tema_arteIndustrial .wrap, .tema0{ background-color:#4599c3;}
+.seccionTematicas .tema_econo .wrap,.tema7{ background-color:#873e35}
+.seccionTematicas .tema_conservacion .wrap,.tema8{ background-color:#809879}
+.seccionTematicas .tema_inge .wrap,.tema2{ background-color:#873e35}
+.seccionTematicas .tema_trabajo  .wrap,.tema4{ background-color:#687ca1}
+.seccionTematicas .tema_estado .wrap, .tema5{ background-color:#c45c26}
+.seccionTematicas .tema_arte .wrap, .tema1{ background-color:#7c6054}
+.seccionTematicas .tema_actiFisica  .wrap,.tema11{ background-color:#a5c1dd}
+.seccionTematicas .tema_actiFisica h3 a{color:#3c5c6c}
+.seccionTematicas .tema_arq  .wrap,.tema3{ background-color:#d48830}
+.seccionTematicas .tema_historia .wrap,.tema13{ background-color:#c9b64c}
+.seccionTematicas .tema_salud  .wrap,.tema12{ background-color:#edcc49}
+.seccionTematicas .tema_medios  .wrap,.tema10{ background-color:#c9b64c}
+.seccionTematicas .tema_turismo  .wrap, .tema9{ background-color:#5b7782}
+.seccionTematicas .tema_derecho  .wrap,.tema6{ background-color:#392626}
+
